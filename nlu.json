@@ -37,6 +37,72 @@
       "refs" : [ ]
     },
     "priority" : 0
+  }, {
+    "path" : "/CallTheOperator",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Переведи на оператора"
+    }, {
+      "text" : "Хочу говорить с человеком"
+    }, {
+      "text" : "Переведи на живого"
+    }, {
+      "text" : "переведи на человека"
+    }, {
+      "text" : "хочу говорить только с живым"
+    }, {
+      "text" : "на человека"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AccountDetails",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "сменить собственника"
+    }, {
+      "text" : "сменить фамилию"
+    }, {
+      "text" : "изменить владельца"
+    }, {
+      "text" : "поменять имя в квитанции"
+    }, {
+      "text" : "поменять фио"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Tenants",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "изменить число проживающих"
+    }, {
+      "text" : "поменять количество человек"
+    }, {
+      "text" : "количество людей изменить"
+    }, {
+      "text" : "уменьшить количество проживающих"
+    }, {
+      "text" : "увеличить число людей"
+    }, {
+      "text" : "число человек в квитанции"
+    }, {
+      "text" : "уменьшить человек в квитанции"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],

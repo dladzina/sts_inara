@@ -5,11 +5,16 @@ theme: /
     state: Start
         q!: $regex</start>
         a: Здравствуйте! Я Инара, ваш помощник.
-        #random:
-            #a: Что вы хотите узнать?
-            #a: По какому вопросу вы обращаетесь?
-            #a: Задайте Ваш вопрос
-            #a: Скажите свой вопрос
+        random:
+            a: Что вы хотите узнать?
+            a: По какому вопросу вы обращаетесь?
+            a: Задайте Ваш вопрос
+            a: Скажите свой вопрос
+        # заглушки
+        event: noMatch || onlyThisState = false, toState = "/NoMatch" 
+        intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
+        intent: /AccountDetails || onlyThisState = false, toState = "/AccountDetails" 
+        intent: /Tenants || onlyThisState = false, toState = "/Tenants" 
 
     state: Hello
         intent!: /привет
@@ -21,7 +26,17 @@ theme: /
 
     state: NoMatch
         event!: noMatch
-        a: Я не понял. Вы сказали: {{$request.query}}
+        # a: Я не понял. Вы сказали: {{$request.query}}
+        a: Не поняла Вас. Перевожу на оператора
+
+    state: CallTheOperator
+        a: Хорошо. Перевожу на оператора
+
+    state: AccountDetails
+        a: Хорошо. Давайте обсудим способы смены реквизитов
+        
+    state: Tenants
+        a: Хорошо. Давайте сменим количество проживающих
 
     state: Match
         event!: match
