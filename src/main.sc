@@ -1,5 +1,11 @@
 require: slotfilling/slotFilling.sc
   module = sys.zb-common
+  
+require: patterns.sc
+  module = sys.zb-common
+  
+require: changeAccountDetails.sc
+
 theme: /
 
     state: Start
