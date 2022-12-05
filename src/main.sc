@@ -4,7 +4,12 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Привет! Начнём.
+        a: Здравствуйте! Я Инара, ваш помощник.
+        #random:
+            #a: Что вы хотите узнать?
+            #a: По какому вопросу вы обращаетесь?
+            #a: Задайте Ваш вопрос
+            #a: Скажите свой вопрос
 
     state: Hello
         intent!: /привет
@@ -21,3 +26,7 @@ theme: /
     state: Match
         event!: match
         a: {{$context.intent.answer}}
+        
+    state: repeat || noContext = true
+        q!:  * ( повтор* / что / еще раз* / ещё раз*) *
+        go!: {{$session.contextPath}}
