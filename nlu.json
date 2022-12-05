@@ -53,6 +53,10 @@
       "text" : "хочу говорить только с живым"
     }, {
       "text" : "на человека"
+    }, {
+      "text" : "не хочу общаться с роботом"
+    }, {
+      "text" : "не робот"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -60,7 +64,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/AccountDetails",
+    "path" : "/ChangeAccountDetails",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
@@ -73,6 +77,8 @@
       "text" : "поменять имя в квитанции"
     }, {
       "text" : "поменять фио"
+    }, {
+      "text" : "изменить хозяина в квитанции"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -80,7 +86,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/Tenants",
+    "path" : "/ChangeTenants",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {

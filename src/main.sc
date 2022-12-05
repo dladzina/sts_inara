@@ -13,8 +13,8 @@ theme: /
         # заглушки
         event: noMatch || onlyThisState = false, toState = "/NoMatch" 
         intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
-        intent: /AccountDetails || onlyThisState = false, toState = "/AccountDetails" 
-        intent: /Tenants || onlyThisState = false, toState = "/Tenants" 
+        intent: /ChangeAccountDetails || onlyThisState = false, toState = "/AccountDetails" 
+        intent: /ChangeTenants || onlyThisState = false, toState = "/Tenants" 
 
     state: Hello
         intent!: /привет
