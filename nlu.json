@@ -16,6 +16,42 @@
     "shared" : false
   },
   "intents" : [ {
+    "path" : "/Онлайн",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "онлайн"
+    }, {
+      "text" : "через интернет"
+    }, {
+      "text" : "по сети"
+    }, {
+      "text" : "из дома"
+    }, {
+      "text" : "удаленно"
+    }, {
+      "text" : "по компьютеру"
+    }, {
+      "text" : "через компьютер"
+    }, {
+      "text" : "через смартфон"
+    }, {
+      "text" : "по смартфону"
+    }, {
+      "text" : "сделаю сам"
+    }, {
+      "text" : "самостоятельно"
+    }, {
+      "text" : "хочу самостоятельно"
+    }, {
+      "text" : "сам могу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/пока",
     "enabled" : true,
     "shared" : false,
@@ -79,6 +115,8 @@
       "text" : "поменять фио"
     }, {
       "text" : "изменить хозяина в квитанции"
+    }, {
+      "text" : "сменить собственника"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -103,6 +141,34 @@
       "text" : "число человек в квитанции"
     }, {
       "text" : "уменьшить человек в квитанции"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Лично",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "лично"
+    }, {
+      "text" : "приду сам"
+    }, {
+      "text" : "прийду самостоятельно"
+    }, {
+      "text" : "посещу вас"
+    }, {
+      "text" : "офлайн"
+    }, {
+      "text" : "оффлайн"
+    }, {
+      "text" : "вживую"
+    }, {
+      "text" : "хочу прийти"
+    }, {
+      "text" : "хочу придти"
     } ],
     "classificationRules" : {
       "refs" : [ ]

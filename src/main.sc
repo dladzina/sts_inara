@@ -6,6 +6,12 @@ require: patterns.sc
   
 require: changeAccountDetails.sc
 
+patterns:
+    $Yes = (да/конечно/yes/if/ага)
+    $No = (нет/не хочу/no/не/yt/неа)
+    $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline)
+    $Online = (онлайн/*интернет*/online/электрон*)
+
 theme: /
 
     state: Start
@@ -15,11 +21,11 @@ theme: /
             a: Что вы хотите узнать?
             a: По какому вопросу вы обращаетесь?
             a: Задайте Ваш вопрос
-            a: Скажите свой вопрос
+            a: Скажите свой вопрос!
         # заглушки
         event: noMatch || onlyThisState = false, toState = "/NoMatch" 
         intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
-        intent: /ChangeAccountDetails || onlyThisState = false, toState = "/AccountDetails" 
+        intent: /ChangeAccountDetails || onlyThisState = false, toState = "/PersonChange/PersonChange" 
         intent: /ChangeTenants || onlyThisState = false, toState = "/Tenants" 
 
     state: Hello
@@ -30,16 +36,13 @@ theme: /
         intent!: /пока
         a: Пока пока
 
-    state: NoMatch
+    state: NoMatch || noContext = true
         event!: noMatch
         # a: Я не понял. Вы сказали: {{$request.query}}
         a: Не поняла Вас. Перевожу на оператора
 
     state: CallTheOperator
         a: Хорошо. Перевожу на оператора
-
-    state: AccountDetails
-        a: Хорошо. Давайте обсудим способы смены реквизитов
         
     state: Tenants
         a: Хорошо. Давайте сменим количество проживающих
