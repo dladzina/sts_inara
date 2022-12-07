@@ -3,10 +3,12 @@ theme: /PersonChange
     state: PersonChange
         intent!: /PersonChange
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
+        
 
         state: Offline
             #intent: /Offline
             q: * $Offline *
+            q: * $No *
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату.
             #go!: /AfterPersonalAccount
             go!: /PersonChange/PersonChange/Offline/AfterPersonalAccount
@@ -60,6 +62,7 @@ theme: /PersonChange
         state: Online
             #intent: /Online
             q: * $Online *
+            q: * $Yes *
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки.
             a: Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку.
