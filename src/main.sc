@@ -54,3 +54,31 @@ theme: /
     state: repeat || noContext = true
         q!:  * ( повтор* / что / еще раз* / ещё раз*) *
         go!: {{$session.contextPath}}
+        
+    state: bye
+        q!: $bye
+        a: Благодарим за обращение!
+        random: 
+            a: До свидания! || htmlEnabled = false, html = "До свидания!"
+            a: Надеюсь, я смогла вам помочь. Удачи! || htmlEnabled = false, html = "Надеюсь, я смогла вам помочь. Удачи!"
+        script:
+            $dialer.hangUp();
+            
+    state: greeting
+        intent: /greeting
+        random: 
+            a: Пожалуйста || htmlEnabled = false, html = "Пожалуйста"
+            a: Не за что || htmlEnabled = false, html = "Не за что"
+            a: Я старалась || htmlEnabled = false, html = "Я старалась"
+            
+    state: looser
+        q!: * $looser *
+        q!: * $obsceneWord  *
+        q!: * $stupid  * 
+        random: 
+            a: Спасибо. Мне крайне важно ваше мнение || htmlEnabled = false, html = "Спасибо. Мне крайне важно ваше мнение"
+            a: Вы очень любезны сегодня || htmlEnabled = false, html = "Вы очень любезны сегодня"
+            a: Это комплимент или оскорбление? || htmlEnabled = false, html = "Это комплимент или оскорбление?"
+            # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
+
+            
