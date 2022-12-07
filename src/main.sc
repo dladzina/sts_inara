@@ -62,10 +62,6 @@ theme: /
     state: Tenants
         a: Хорошо. Давайте сменим количество проживающих
 
-    # state: Match
-    #     event!: match
-    #     a: {{$context.intent.answer}}
-        
     state: repeat || noContext = true
         q!:  * ( повтор* / что / еще раз* / ещё раз*) *
         go!: {{$session.contextPath}}
@@ -121,6 +117,7 @@ theme: /ИнициацияЗавершения
         state: CanIHelpYouAgree
             q: $yes
             q: $agree
+            
             
         state: CanIHelpYouDisagree
             q: $no

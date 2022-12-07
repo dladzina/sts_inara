@@ -1,7 +1,6 @@
 theme: /PersonChange
     
     state: PersonChange
-        intent!: /PersonChange
         intent!: /ChangeAccountDetails
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
         
@@ -17,6 +16,9 @@ theme: /PersonChange
             
             state: AfterPersonalAccount
                 a: Хотите узнать, к каким поставщикам можно обратиться?
+                script:
+                    if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
+                
     
                 state: NoCurrent
                     q: $no
@@ -35,36 +37,35 @@ theme: /PersonChange
                         go!: /PersonChange/PersonChange/DocumentsForLandlords/YesCurrent
                                 
                 state: YesCurrent
+                    # пользователь сказал, что хочет узнать контакты поставщиков 
+                    #  уточняем, есть ли ЛС. Если нет, то даем контакты всех
+                    # если говорит номер ЛС, то даем только тех, что есть в квитанции
                     q: $yes
                     q: $agree
                     # смотрим, был ли лицевой счет выявлен в ходе диалога
                     if: ($session.Account && $session.Account.Number > 0)
+                        # Есть номер лицевого счета, будем давать информацию по нему по контактам поставщиков
                         go!: SupplierContactsByAccount
                         # a: сейчас дам вам еще информацию по счёту {{$session.Account.Number}}
-                        script: 
-                             $reactions.answer(GetAccountNumAnswer($session.Account.Number));
+                        # script: 
+                        #      $reactions.answer(GetAccountNumAnswer($session.Account.Number));
                     elseif: ($session.Account && $session.Account.Number < 0)
                         # a: что ж с тобой делать? нет у тебя лицевого счёта ... 
                         go!: SupplierContactsFull
                     else: 
+                        # здесь идет определение, что ЛС в рамках дилагога еще не запрашивался - передаем управление туда
                         a: Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
                         go!:/AccountNumInput/AccountInput                    
                     
-                    # a: Чтобы я дала Вам контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
-                    # a:   Мы в блоке определения ЛС
-                    # a:  ЛС определился? да или Нет?
-                    
+
                     state: SupplierContactsFull
-                        q: $no
-                        q: $disagree
-                        a:   ЛС не определен
+                        # a:   ЛС не определен
                         a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
                         a:  Перечислить необходимые документы?
                         go!: /PersonChange/PersonChange/DocumentsForLandlords
                                     
                     state: SupplierContactsByAccount
-                        q: $yes
-                        q: $agree
+                        # где-то здесь надо получить список поставщиков из БД и сформировать строку 
                         a:   ЛС определен
                         a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
                         a:  Перечислить необходимые документы?
