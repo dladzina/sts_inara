@@ -37,11 +37,24 @@ theme: /PersonChange
                 state: YesCurrent
                     q: $yes
                     q: $agree
-                    a:   Чтобы я дала Вам контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
-                    a:   Мы в блоке определения ЛС
-                    a:  ЛС определился? да или Нет?
+                    # смотрим, был ли лицевой счет выявлен в ходе диалога
+                    if: ($session.Account && $session.Account.Number > 0)
+                        go!: SupplierContactsByAccount
+                        # a: сейчас дам вам еще информацию по счёту {{$session.Account.Number}}
+                        script: 
+                             $reactions.answer(GetAccountNumAnswer($session.Account.Number));
+                    elseif: ($session.Account && $session.Account.Number < 0)
+                        # a: что ж с тобой делать? нет у тебя лицевого счёта ... 
+                        go!: SupplierContactsFull
+                    else: 
+                        a: Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
+                        go!:/AccountNumInput/AccountInput                    
                     
-                    state: NoCurrent
+                    # a: Чтобы я дала Вам контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
+                    # a:   Мы в блоке определения ЛС
+                    # a:  ЛС определился? да или Нет?
+                    
+                    state: SupplierContactsFull
                         q: $no
                         q: $disagree
                         a:   ЛС не определен
@@ -49,7 +62,7 @@ theme: /PersonChange
                         a:  Перечислить необходимые документы?
                         go!: /PersonChange/PersonChange/DocumentsForLandlords
                                     
-                    state: YesCurrent
+                    state: SupplierContactsByAccount
                         q: $yes
                         q: $agree
                         a:   ЛС определен

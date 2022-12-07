@@ -211,6 +211,22 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/DontKnow",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не помню"
+    }, {
+      "text" : "откуда я знаю"
+    }, {
+      "text" : "я не знаю"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],

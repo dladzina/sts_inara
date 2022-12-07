@@ -107,6 +107,12 @@ theme: /
         a: {{$context.contextPath}}
         #a: {{$context.session._lastState}}            
 
+    state: ClearAccount
+        q!: сбрось лицев* 
+        script: FindAccountNumberClear();
+        #a: Ок
+
+
 theme: /ИнициацияЗавершения
     
     state: CanIHelpYou 
