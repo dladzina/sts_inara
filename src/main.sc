@@ -9,8 +9,8 @@ require: Functions/GetNumbers.js
 require: AccountInput.sc 
 
 patterns:
-    $Yes = (да/конечно/yes/if/ага)
-    $No = (нет/не хочу/no/не/yt/неа)
+#    $Yes = (да/конечно/yes/if/ага)
+#    $No = (нет/не хочу/no/не/yt/неа)
     $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline)
     $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
@@ -25,17 +25,23 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Здравствуйте! Я Инара, ваш помощник.
+        a: Здравствуйте! Я Инара, ваш виртуальный помощник. 
+        a: Я могу рассказать, как поменять фамилию или количество человек в квитанции, дать общую информацию по лицевому счёту или подсказать контакты поставщика услуг
         random:
             a: Что вы хотите узнать?
             a: По какому вопросу вы обращаетесь?
             a: Задайте Ваш вопрос
-            a: Скажите свой вопрос!
+            a: Скажите свой вопрос
+        script:
+            $dialer.bargeInResponse({
+                bargeIn: "forced",
+                bargeInTrigger: "interim",
+                noInterruptTime: 0});
         # заглушки
-        event: noMatch || onlyThisState = false, toState = "/NoMatch" 
-        intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
-        intent: /ChangeAccountDetails || onlyThisState = false, toState = "/PersonChange/PersonChange" 
-        intent: /ChangeTenants || onlyThisState = false, toState = "/Tenants" 
+        # event: noMatch || onlyThisState = false, toState = "/NoMatch" 
+        # intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
+        # intent: /ChangeAccountDetails || onlyThisState = false, toState = "/PersonChange/PersonChange" 
+        # intent: /ChangeTenants || onlyThisState = false, toState = "/Tenants" 
 
     state: Hello
         intent!: /привет
@@ -56,20 +62,21 @@ theme: /
     state: Tenants
         a: Хорошо. Давайте сменим количество проживающих
 
-    state: Match
-        event!: match
-        a: {{$context.intent.answer}}
+    # state: Match
+    #     event!: match
+    #     a: {{$context.intent.answer}}
         
     state: repeat || noContext = true
         q!:  * ( повтор* / что / еще раз* / ещё раз*) *
         go!: {{$session.contextPath}}
+        # go!: {{ $context.session._lastState }} 
         
     state: bye
         q!: $bye
         a: Благодарим за обращение!
         random: 
-            a: До свидания! || htmlEnabled = false, html = "До свидания!"
-            a: Надеюсь, я смогла вам помочь. Удачи! || htmlEnabled = false, html = "Надеюсь, я смогла вам помочь. Удачи!"
+            a: До свидания! 
+            a: Надеюсь, я смогла вам помочь. Удачи! 
         script:
             $dialer.hangUp();
             
@@ -91,7 +98,25 @@ theme: /
             # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
 
     state: HangUp
-        event!:hangup
-        event: botHangup
+        event!: hangup
+        event!: botHangup
         script: FindAccountNumberClear()
+
+    state: WhereAreYou || noContext = true
+        q!: где ты [сейчас]
+        a: {{$context.contextPath}}
+        #a: {{$context.session._lastState}}            
+
+theme: /ИнициацияЗавершения
+    
+    state: CanIHelpYou 
+        a: Нужна ли моя помощь дальше?
+        
+        state: CanIHelpYouAgree
+            q: $yes
+            q: $agree
             
+        state: CanIHelpYouDisagree
+            q: $no
+            q: $disagree
+            go!: /bye
