@@ -19,6 +19,9 @@ theme: /
 # 5. Подключен файл GetNumbers.js - вычленяет номер ЛС из найденных сущностей
 # require: Functions/GetNumbers.js    
 # 6. Добавить интент "подождите", "ГдеНомерЛС" в CAILA
+# 7. Добавить в паттерны цифры
+# patterns:
+#     $numbers = $regexp<(\d+(-|\/)*)+>
 
 # подключение модуля: 
 #    require: AccountInput.sc
