@@ -5,12 +5,21 @@ require: patterns.sc
   module = sys.zb-common
   
 require: changeAccountDetails.sc
+require: Functions/GetNumbers.js
+require: AccountInput.sc 
 
 patterns:
     $Yes = (да/конечно/yes/if/ага)
     $No = (нет/не хочу/no/не/yt/неа)
     $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline)
     $Online = (онлайн/*интернет*/online/электрон*)
+    $numbers = $regexp<(\d+(-|\/)*)+>
+
+init:
+    bind("preProcess", function($context) {
+        $context.session._lastState = $context.currentState;
+        //$context.session._lastState = $context.contextPath ;
+    });
 
 theme: /
 
@@ -81,4 +90,8 @@ theme: /
             a: Это комплимент или оскорбление? || htmlEnabled = false, html = "Это комплимент или оскорбление?"
             # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
 
+    state: HangUp
+        event!:hangup
+        event: botHangup
+        script: FindAccountNumberClear()
             

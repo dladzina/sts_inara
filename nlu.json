@@ -16,6 +16,42 @@
     "shared" : false
   },
   "intents" : [ {
+    "path" : "/подождите",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "минуточку"
+    }, {
+      "text" : "щас"
+    }, {
+      "text" : "сейчас"
+    }, {
+      "text" : "подождите"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ГдеНомерЛС",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "куда смотреть "
+    }, {
+      "text" : "где он"
+    }, {
+      "text" : "где можно посмотреть"
+    }, {
+      "text" : "где я его возьму"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/Онлайн",
     "enabled" : true,
     "shared" : false,
