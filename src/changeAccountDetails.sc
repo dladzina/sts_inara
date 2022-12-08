@@ -12,31 +12,20 @@ theme: /PersonChange
             q: $disagree 
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату.
             #go!: /AfterPersonalAccount
-            go!: /PersonChange/PersonChange/Offline/AfterPersonalAccount
+            go!: /PersonChange/PersonChange/Offline/Suppliers_List_Info
             
-            state: AfterPersonalAccount
+            state: Suppliers_List_Info
                 a: Хотите узнать, к каким поставщикам можно обратиться?
                 script:
                     if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
                 
     
-                state: NoCurrent
+                state: No_Suppliers_List
                     q: $no
                     q: $disagree
-                    a: Перечислить необходимые документы?
-                    
-                    state: NoCurrent
-                        q: $no
-                        q: $disagree
-                        # a:  Интент "Инициация завершения диалога"
-                        go!: /ИнициацияЗавершения/CanIHelpYou
-                        
-                    state: YesCurrent
-                        q: $yes
-                        q: $agree
-                        go!: /PersonChange/PersonChange/DocumentsForLandlords/YesCurrent
+                    go!: /PersonChange/PersonChange/DocumentsForLandlords
                                 
-                state: YesCurrent
+                state: Yes_Suppliers_List
                     # пользователь сказал, что хочет узнать контакты поставщиков 
                     #  уточняем, есть ли ЛС. Если нет, то даем контакты всех
                     # если говорит номер ЛС, то даем только тех, что есть в квитанции
@@ -61,25 +50,24 @@ theme: /PersonChange
                     state: SupplierContactsFull
                         # a:   ЛС не определен
                         a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
-                        a:  Перечислить необходимые документы?
                         go!: /PersonChange/PersonChange/DocumentsForLandlords
                                     
                     state: SupplierContactsByAccount
                         # где-то здесь надо получить список поставщиков из БД и сформировать строку 
                         a:   ЛС определен
                         a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
-                        a:  Перечислить необходимые документы?
-                        go!: /PersonChange/PersonChange/DocumentsForLandlords
+                        # go!: /PersonChange/PersonChange/Offline/Yes_Suppliers_List/Contacts
+                        go!: ../Contacts
                         
                     state: Contacts
                         a:   Контакты можно узнать в приложении алсеко. Мне продиктовать Вам телефоны сейчас?
                         
-                        state: NoCurrent
+                        state: No_Contacts
                             q: $no
                             q: $disagree
                             go!: /PersonChange/PersonChange/DocumentsForLandlords
                                     
-                        state: YesCurrent
+                        state: Yes_Contacts
                             q: $yes
                             q: $agree
                             a:   Записывайте. --- АлматыЭнергоСбыт - телефон 356, 99, 99. Алматинские тепловые сети, 341, 0, 777.  АлматыСу,  3, 777, 444. Алматыгаз,  244, 55,  33. Тартып - 393, 08, 03.
@@ -97,25 +85,26 @@ theme: /PersonChange
             go!: /ИнициацияЗавершения/CanIHelpYou
                 
         state: DocumentsForLandlords
+            a:  Перечислить необходимые документы?
             
-            state: NoCurrent
+            state: No_List_Doc
                 q: $no
                 q: $disagree
                 # a:  Интент "Инициация завершения диалога"
                 go!: /ИнициацияЗавершения/CanIHelpYou                                
                 
-            state: YesCurrent
+            state: Yes_List_Doc
                 q: $yes
                 q: $agree
                 a:  Необходимые документы: заявление, и правоустанавливающими документами на объект недвижимости. Хотите узнать какие документы на собственность подходят?
             
-                state: NoCurrent
+                state: No_Property_Documents
                     q: $no
                     q: $disagree
                     # a:  Интент "Инициация завершения диалога"
                     go!: /ИнициацияЗавершения/CanIHelpYou
                                     
-                state: YesCurrent
+                state: Yes_Property_Documents
                     q: $yes
                     q: $agree
                     a:  Подходят --копии договора купли-продажи, -дарения, -справка о наличии недвижимого имущества, или  зарегистрированных правах на недвижимое имущество с портала е гов

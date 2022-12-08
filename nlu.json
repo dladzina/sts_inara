@@ -11,6 +11,7 @@
     "timezone" : "Europe/Moscow",
     "extendedSettings" : {
       "tokenizerEngine" : "mystem",
+      "allowedPatterns" : [ ],
       "useShared" : false
     },
     "shared" : false
@@ -228,7 +229,42 @@
     "patterns" : [ ],
     "priority" : 0
   } ],
-  "entities" : [ ],
+  "entities" : [ {
+    "entity" : {
+      "name" : "ОсновныеПоставщики",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "АлматыЭнергоСбыт" ],
+      "value" : "{\n  \"suppl_id\": 600,\n  \"suppl_full_name\": \"ТОО АЛМАТЫЭНЕРГОСБЫТ\",\n  \"suppl_talk_name\": \"АлматыЭнергоСбыт\",\n  \"phone\": \"3569999\",\n  \"talk_phone\": \"356, 99, 99\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Алматинские тепловые сети" ],
+      "value" : "{\n  \"suppl_id\": 609,\n  \"suppl_full_name\": \"АЛМАТИНСКИЕ ТЕПЛОВЫЕ СЕТИ\",\n  \"suppl_talk_name\": \"Алматинские тепловые сети\",\n  \"phone\": \"3410777\",\n  \"talk_phone\": \"341, 0, 777\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "АлматыГаз" ],
+      "value" : "{\n  \"suppl_id\": 620,\n  \"suppl_full_name\": \"АРЦ  Алматыгаз\",\n  \"suppl_talk_name\": \"Алматыгаз\",\n  \"phone\": \"2445533\",\n  \"talk_phone\": \"244, 55,  33\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "АлматыСу" ],
+      "value" : "{\n  \"suppl_id\": 604,\n  \"suppl_full_name\": \"Алматы Су\",\n  \"suppl_talk_name\": \"Алматы Су\",\n  \"phone\": \"3777444\",\n  \"talk_phone\": \"3, 777, 444\"\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Тартып" ],
+      "value" : "{\n  \"suppl_id\": 954,\n  \"suppl_full_name\": \"АО Тартып\",\n  \"suppl_talk_name\": \"Тартып\",\n  \"phone\": \"3777444\",\n  \"talk_phone\": \"3, 777, 444\"\n}"
+    } ]
+  } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
   "spellerDictionary" : [ ],
   "systemEntities" : [ {
