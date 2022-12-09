@@ -228,6 +228,22 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/ЛС_ИнойТипВвода",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "а можно по иин"
+    }, {
+      "text" : "по адресу можете"
+    }, {
+      "text" : "как по другому можно"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {

@@ -17,7 +17,7 @@
 # 4. Подключен файл AccountNumberInput.js  - запросы к Сервису, информация по ЛС
 # 5. Подключен файл GetNumbers.js - вычленяет номер ЛС из найденных сущностей
 # require: Functions/GetNumbers.js    
-# 6. Добавить интент "подождите", "ГдеНомерЛС", "DontKnow" в CAILA
+# 6. Добавить интент "подождите", "ГдеНомерЛС", "DontKnow","ЛС_ИнойТипВвода" в CAILA
 # 7. Добавить в паттерны цифры
 # patterns:
 #     $numbers = $regexp<(\d+(-|\/)*)+>
@@ -79,6 +79,24 @@ theme: /AccountNumInput
         state: AccountInputWait    
             intent: /подождите
             a: да, жду Вас
+        
+        state: AccountInputNotNumbersWay
+            intent: /ЛС_ИнойТипВвода
+            a: Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?
+            state: AccountInputNotNumbersWayYes
+                q: $yes
+                q: $agree
+                script:  
+                    $session.Account.RetryAccount--;
+                go!: ../..
+            
+            state: AccountInputNotNumbersWayDecline 
+                q: $no
+                q: $disagree
+                script: 
+                    FindAccountNumberSetResult("DontKnow"); 
+                go!: {{ $session.oldState }}
+            
             
         state: AccountInputWhereIsAccount
             intent: /ГдеНомерЛС
