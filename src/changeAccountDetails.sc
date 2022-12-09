@@ -4,7 +4,10 @@ theme: /PersonChange
         intent!: /ChangeAccountDetails
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
         
-
+        state: noMatch_local
+            event: noMatch
+            a: Поймался гад!
+        
         state: Offline
             #intent: /Offline
             q: * $Offline *
@@ -48,9 +51,9 @@ theme: /PersonChange
                     
 
                     state: SupplierContactsFull
-                        # a:   ЛС не определен
+                        a:   ЛС не определен
                         a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
-                        go!: /PersonChange/PersonChange/DocumentsForLandlords
+                        go!: ../Contacts
                                     
                     state: SupplierContactsByAccount
                         # где-то здесь надо получить список поставщиков из БД и сформировать строку 

@@ -47,10 +47,6 @@ theme: /
         intent!: /привет
         a: Привет привет
 
-    state: Bye
-        intent!: /пока
-        a: Пока пока
-
     state: NoMatch || noContext = true
         event!: noMatch
         # a: Я не понял. Вы сказали: {{$request.query}}
