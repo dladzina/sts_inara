@@ -7,7 +7,9 @@ language: ru
 
 tests:
   include:
-    - test.xml
+    - test_global_intents.xml
+    - test_PersonChange / test_PersonChange_offline_ls.xml
+    - test_PersonChange / test_PersonChange_offline_nols.xml
     - test_PersonChange / test_PersonChange_online.xml
 
 sts:
