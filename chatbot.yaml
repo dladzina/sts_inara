@@ -7,11 +7,28 @@ language: ru
 
 tests:
   include:
-    - test_global_intents.xml
-    - test_PersonChange / test_PersonChange_offline_ls.xml
-    - test_PersonChange / test_PersonChange_offline_nols.xml
-    - test_PersonChange / test_PersonChange_online.xml
+    - test_PersonChange/test_PersonChange_online.xml
+    #- test_global_intents.xml
+    - test_PersonChange/test_PersonChange_offline_ls.xml
+    - test_PersonChange/test_PersonChange_offline_nols.xml
+    - test_PersonChange/test_ntents.xml
+#  exclude: 
+#     - test_global_intents.xml
 
+messages:
+  onError:
+    locales:
+      ru: Что-то пошло не так. 
+        # - Что-то пошло не так. 
+        # - Произошла ошибка. Пожалуйста, повторите запрос позже. 
+        # - Все сломалось. Попробуйте еще раз.
+      en: Failed on request processing.
+    defaultMessage: Что-то пошло не так.
+    # defaultMessages:
+    #   - Извините, что-то сломалось.
+    #   - Произошла ошибка при обработке запроса.
+
+  
 sts:
     noMatchThreshold: 0.2
 

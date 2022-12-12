@@ -65,6 +65,7 @@ theme: /
         
     state: bye
         q!: $bye
+        intent!: /пока
         a: Благодарим за обращение!
         random: 
             a: До свидания! 

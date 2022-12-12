@@ -1,0 +1,51 @@
+<test>
+            
+    # intent changeAccountDetails
+    
+    <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
+        <q>сменить собственника</q>
+        <a state="/PersonChange/PersonChange"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_сменить фамилию_ChangeAccountDetails">
+        <q>сменить фамилию</q>
+        <a state="/PersonChange/PersonChange"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_изменить владельца_ChangeAccountDetails">
+        <q>изменить владельца</q>
+        <a state="/PersonChange/PersonChange"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_поменять имя в квитанции_ChangeAccountDetails">
+        <q>поменять имя в квитанции</q>
+        <a state="/PersonChange/PersonChange"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_поменять фио_ChangeAccountDetails">
+        <q>поменять фио</q>
+        <a state="/PersonChange/PersonChange"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_изменить хозяина в квитанции_ChangeAccountDetails">
+        <q>изменить хозяина в квитанции</q>
+        <a state="/PersonChange/PersonChange"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
+        <q>сменить собственника</q>
+        <a state="/PersonChange/PersonChange"/>
+    </test-case>
+    
+    # intent changeAccountDetails - no ChangeTenants
+    
+    # intent changeAccountDetails
+    
+    # intent changeAccountDetails
+</test>     
