@@ -8,11 +8,17 @@ theme: /ChangeAccountPerson
             # event: noMatch
             # a: Поймался гад!
         
+        state: ToTheOperator
+            event: noMatch
+            a: Перевод на оператора!
+            
         state: Offline
             #intent: /Offline
             q: * $Offline *
             q: $no 
             q: $disagree 
+            event: speechNotRecognized
+            #event: NoMatch
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
             #go!: /AfterPersonalAccount
             go!: /ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info
@@ -26,6 +32,7 @@ theme: /ChangeAccountPerson
                 state: No_Suppliers_List
                     q: $no
                     q: $disagree
+                    event: noMatch
                     go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
                                 
                 state: Yes_Suppliers_List
@@ -67,11 +74,14 @@ theme: /ChangeAccountPerson
                         state: No_Contacts
                             q: $no
                             q: $disagree
+                           # q: $No_for_contacts
                             go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
                                     
                         state: Yes_Contacts
                             q: $yes
                             q: $agree
+                            q: $Yes_for_contacts
+                            event: noMatch
                             a:   Записывайте городские номера. Код города - 727. --- АлматыЭнергоСбыт - телефон 356, 99, 99. Алматинские тепловые сети, 341, 0, 777.  АлматыСу,  3, 777, 444. Алматыгаз,  244, 55,  33. Тартып - 393, 08, 03. Повторить номера?
                             
                             state: No_Repeat

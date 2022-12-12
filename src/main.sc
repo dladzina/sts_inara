@@ -8,9 +8,13 @@ require: ChangeAccountPerson.sc
 require: Functions/GetNumbers.js
 require: AccountInput.sc 
 
+require: dicts/MainSuppl.csv
+    name = MainSuppl
+    var = $MainSuppl
+
 patterns:
-#    $Yes = (да/конечно/yes/if/ага)
-#    $No = (нет/не хочу/no/не/yt/неа)
+    $Yes_for_contacts = (сейчас/*диктуй*/говори*/давай*)
+    $No_for_contacts = (самостоятельно/сам/посмотр* сам/найд* сам)
     $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline)
     $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
@@ -105,6 +109,12 @@ theme: /
         script: FindAccountNumberClear();
         #a: Ок
 
+    state: CatchSpeech
+        event!: speechNotRecognized
+        random: 
+            a: Извините, я не расслышала. Повторите, пожалуйста.
+            a: Не совсем поняла. Можете повторить, пожалуйста?
+            a: Повторите, пожалуйста. Вас плохо слышно.
 
 theme: /ИнициацияЗавершения
     
