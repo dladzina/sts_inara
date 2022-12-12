@@ -6,14 +6,15 @@ botEngine: v2
 language: ru
 
 tests:
-  include:
-    - test_PersonChange/test_PersonChange_online.xml
-    #- test_global_intents.xml
+#   include:
+#     - test_PersonChange/test_PersonChange_online.xml
+#     #- test_global_intents.xml
+#     - test_PersonChange/test_PersonChange_offline_ls.xml
+#     - test_PersonChange/test_PersonChange_offline_nols.xml
+#     - test_PersonChange/test_ntents.xml
+ exclude: 
+    - test_global_intents.xml
     - test_PersonChange/test_PersonChange_offline_ls.xml
-    - test_PersonChange/test_PersonChange_offline_nols.xml
-    - test_PersonChange/test_ntents.xml
-#  exclude: 
-#     - test_global_intents.xml
 
 messages:
   onError:
