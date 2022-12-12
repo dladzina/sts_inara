@@ -70,7 +70,7 @@ theme: /AccountNumInput
             $session.Account.RetryAccount = $session.Account.RetryAccount || 0;
             $session.Account.RetryAccount++;
         if: $session.Account.RetryAccount <= $session.Account.MaxRetryCount
-            a: Назовите номер вашего лицевого счета. Пожалуйста, оставайтесь на линии, пока я буду искать его
+            a: Назовите номер вашего лицевого счета
         else: // уже запрашивали номер ЛС больше 2-х раз. Зафиксировать результат - не смогла Вас понять и вернуть управление в исходный стейт со всеми данными
             script: FindAccountNumberSetResult("DontUnderstand");
             #a: Возвращаюсь назад в {{toPrettyString($session.oldState)}}
@@ -123,7 +123,8 @@ theme: /AccountNumInput
             q: * @duckling.number *
             script: 
                 TrySetNumber(words_to_number($entities));
-            a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. Подождете?
+            a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. 
+            a: Подождёте?
             script:
                 $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
             

@@ -7,7 +7,7 @@
         <a>Хотите узнать, к каким поставщикам можно обратиться?</a>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
-        <a>Назовите номер вашего лицевого счета. Пожалуйста, оставайтесь на линии, пока я буду искать его</a>
+        <a>Назовите номер вашего лицевого счета</a>
         <mockData>
           <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=5888492</query>
           <!--<query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=</query>-->
@@ -44,7 +44,8 @@
           </response>
         </mockData>        
         <q>58 88 492</q>
-        <a>Номер Вашего лицевого счёта 5888492. Поиск займет время. Подождете?</a>
+        <a>Номер Вашего лицевого счёта 5888492. Поиск займет время.</a>
+        <a>Подождёте?</a>
         <q>да</q>
         <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
         <q>да</q>
@@ -68,7 +69,7 @@
         <a>Хотите узнать, к каким поставщикам можно обратиться?</a>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
-        <a>Назовите номер вашего лицевого счета. Пожалуйста, оставайтесь на линии, пока я буду искать его</a>
+        <a>Назовите номер вашего лицевого счета</a>
         <mockData>
           <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
           <!--<query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=</query>-->
@@ -83,13 +84,15 @@
           </response>
         </mockData>        
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5888490. Поиск займет время. Подождете?</a>
+        <a>Номер Вашего лицевого счёта 5888490. Поиск займет время.</a>
+        <a>Подождёте?</a>
         <q>да</q>
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Давайте еще раз проверим</a>
-        <a>Назовите номер вашего лицевого счета. Пожалуйста, оставайтесь на линии, пока я буду искать его</a>
+        <a>Назовите номер вашего лицевого счета</a>
         <q>58 88 490</q>
-        <a>Номер Вашего лицевого счёта 5888490. Поиск займет время. Подождете?</a>
+        <a>Номер Вашего лицевого счёта 5888490. Поиск займет время.</a>
+        <a>Подождёте?</a>
         <q>да</q>
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз, Тартып или Алматы Су.</a>
