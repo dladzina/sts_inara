@@ -124,6 +124,8 @@ theme: /AccountNumInput
             script: 
                 TrySetNumber(words_to_number($entities));
             a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. Подождете?
+            script:
+                $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
             
             state: AccountInputNumberYes
                 q: $yes
