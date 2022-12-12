@@ -14,15 +14,12 @@ tests:
 #     - test_PersonChange/test_ntents.xml
  exclude: 
     - test_global_intents.xml
-    - test_PersonChange/test_PersonChange_offline_ls.xml
+    # - test_PersonChange/test_PersonChange_offline_ls.xml
 
 messages:
   onError:
     locales:
-      ru: Что-то пошло не так. 
-        # - Что-то пошло не так. 
-        # - Произошла ошибка. Пожалуйста, повторите запрос позже. 
-        # - Все сломалось. Попробуйте еще раз.
+      ru: Произошла ошибка. Пожалуйста, повторите запрос позже.
       en: Failed on request processing.
     defaultMessage: Что-то пошло не так.
     # defaultMessages:
