@@ -1,7 +1,7 @@
-theme: /PersonChange
+theme: /ChangeAccountPerson
     
-    state: PersonChange
-        intent!: /ChangeAccountDetails
+    state: ChangeAccountPerson
+        intent!: /ChangeAccountPerson
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
         
         # state: noMatch_local || noContext = true
@@ -15,7 +15,7 @@ theme: /PersonChange
             q: $disagree 
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
             #go!: /AfterPersonalAccount
-            go!: /PersonChange/PersonChange/Offline/Suppliers_List_Info
+            go!: /ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info
             
             state: Suppliers_List_Info
                 a: Хотите узнать, к каким поставщикам можно обратиться?
@@ -26,7 +26,7 @@ theme: /PersonChange
                 state: No_Suppliers_List
                     q: $no
                     q: $disagree
-                    go!: /PersonChange/PersonChange/DocumentsForLandlords
+                    go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
                                 
                 state: Yes_Suppliers_List
                     # пользователь сказал, что хочет узнать контакты поставщиков 
@@ -51,7 +51,6 @@ theme: /PersonChange
                     
 
                     state: SupplierContactsFull
-                        a:   ЛС не определен
                         a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
                         go!: ../Contacts
                                     
@@ -68,7 +67,7 @@ theme: /PersonChange
                         state: No_Contacts
                             q: $no
                             q: $disagree
-                            go!: /PersonChange/PersonChange/DocumentsForLandlords
+                            go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
                                     
                         state: Yes_Contacts
                             q: $yes
@@ -78,7 +77,7 @@ theme: /PersonChange
                             state: No_Repeat
                                 q: $no
                                 q: $disagree
-                                go!: /PersonChange/PersonChange/DocumentsForLandlords
+                                go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
                                 
                             state: Yes_Repeat
                                 q: $yes

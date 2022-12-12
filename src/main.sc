@@ -4,7 +4,7 @@ require: slotfilling/slotFilling.sc
 require: patterns.sc
   module = sys.zb-common
   
-require: changeAccountDetails.sc
+require: ChangeAccountPerson.sc
 require: Functions/GetNumbers.js
 require: AccountInput.sc 
 
@@ -40,8 +40,8 @@ theme: /
         # заглушки
         # event: noMatch || onlyThisState = false, toState = "/NoMatch" 
         # intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
-        # intent: /ChangeAccountDetails || onlyThisState = false, toState = "/PersonChange/PersonChange" 
-        # intent: /ChangeTenants || onlyThisState = false, toState = "/Tenants" 
+        # intent: /ChangeAccountPerson || onlyThisState = false, toState = "/ChangeAccountPerson/ChangeAccountPerson" 
+        # intent: /ChangeAccountPersonCount || onlyThisState = false, toState = "/ChangeAccountPersonCount" 
 
     state: Hello
         intent!: /привет
@@ -55,7 +55,7 @@ theme: /
     state: CallTheOperator
         a: Хорошо. Перевожу на оператора
         
-    state: Tenants
+    state: ChangeAccountPersonCount
         a: Хорошо. Давайте сменим количество проживающих
 
     state: repeat || noContext = true

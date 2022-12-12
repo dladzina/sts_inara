@@ -137,7 +137,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/ChangeAccountDetails",
+    "path" : "/ChangeAccountPerson",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
@@ -161,7 +161,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/ChangeTenants",
+    "path" : "/ChangeAccountPersonCount",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
