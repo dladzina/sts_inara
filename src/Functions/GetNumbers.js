@@ -23,3 +23,4 @@ function words_to_number(array){
     });
     return return_string;
 }
+

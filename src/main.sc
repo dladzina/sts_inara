@@ -40,6 +40,7 @@ theme: /
                 bargeIn: "forced",
                 bargeInTrigger: "interim",
                 noInterruptTime: 0});
+            FindAccountNumberClear();
         # заглушки
         # event: noMatch || onlyThisState = false, toState = "/NoMatch" 
         # intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 

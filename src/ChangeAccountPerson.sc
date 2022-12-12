@@ -33,7 +33,7 @@ theme: /ChangeAccountPerson
                     q: $no
                     q: $disagree
                     event: noMatch
-                    go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
+                    go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                 
                 state: Yes_Suppliers_List
                     # пользователь сказал, что хочет узнать контакты поставщиков 
@@ -69,13 +69,13 @@ theme: /ChangeAccountPerson
                         go!: ../Contacts
                         
                     state: Contacts
-                        a:   Контакты можно узнать в приложении алсеко. Мне продиктовать Вам телефоны сейчас?
+                        a:   Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?
                         
                         state: No_Contacts
                             q: $no
                             q: $disagree
                            # q: $No_for_contacts
-                            go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
+                            go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                     
                         state: Yes_Contacts
                             q: $yes
@@ -87,7 +87,7 @@ theme: /ChangeAccountPerson
                             state: No_Repeat
                                 q: $no
                                 q: $disagree
-                                go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsForLandlords
+                                go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                 
                             state: Yes_Repeat
                                 q: $yes
@@ -102,7 +102,7 @@ theme: /ChangeAccountPerson
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки. Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку. Дальше следуйте инструкции
             go!: /ИнициацияЗавершения/CanIHelpYou
                 
-        state: DocumentsForLandlords
+        state: DocumentsToChangeAccountPerson
             a:  Перечислить необходимые документы?
             
             state: No_List_Doc
