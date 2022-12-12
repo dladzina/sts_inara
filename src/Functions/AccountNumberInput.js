@@ -68,6 +68,10 @@ function FindAccountAddress(){
         });
     
 }
+function GetTempAccountNumber(){
+    var $session = $jsapi.context().session;
+    return $session.Account._number;
+}
 
 // ищем номер ЛС - пока интеграция с гугл - таблицей
 // URL таблицы https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing

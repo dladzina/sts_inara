@@ -121,11 +121,28 @@ theme: /AccountNumInput
             # проверяем наличие цифр в запросе. если есть, значит говорит номер лицевого счета
             q: * $numbers *
             q: * @duckling.number *
-            go!: FindAccount
+            script: 
+                TrySetNumber(words_to_number($entities));
+            a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. Подождете?
+            
+            state: AccountInputNumberYes
+                q: $yes
+                q: $agree
+                event: speechNotRecognized
+                go!: ../FindAccount
+
+            state: AccountInputNumberNo
+                q: $no
+                q: $disagree
+                script: 
+                    FindAccountNumberSetResult("AddressCancel"); 
+                if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
+                    a: Давайте еще раз проверим
+                go!: /AccountNumInput/AccountInput
 
             state: FindAccount
                 script: 
-                    TrySetNumber(words_to_number($entities));
+                    TrySetNumber(GetTempAccountNumber());
 
                     FindAccountAddress().then(function(res){
                         log(toPrettyString(res));
