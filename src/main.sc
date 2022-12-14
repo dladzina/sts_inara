@@ -92,8 +92,8 @@ theme: /
                     phoneNumber = 4606
                     errorState = /CallTheOperator/Error    
             
-            state: Error
-                a: К сожалению, сейчас нет свободных операторов. Задайте свой вопрос
+        state: Error
+            a: К сожалению, сейчас нет свободных операторов. Задайте свой вопрос
                 
             # script:
             #     # Александр Цепелев:
