@@ -98,7 +98,7 @@ function GetMainSupplNamesContracts(MainSuppList){
         // last не работает. надо как-то понять, что это элемент последний
         var last = (i == MainSuppList.length-1) && (i>1);
 //        $reactions.answer(i);
-        return_str = return_str + (return_str.length > 0 ? ", ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
+        return_str = return_str + (return_str.length > 0 ? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
     });
         
     return return_str;
@@ -112,7 +112,7 @@ function GetAccountMainSupplNamesContracts(MainSuppList){
     if (GetAccountMainSuppls()){
         $session.Account.MainSuppliers.forEach(function(elem, i){
             var last = (i == ($session.Account.MainSuppliers.length-1)) && (i>1);
-            return_str = return_str + (return_str.length>0? ", ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
+            return_str = return_str + (return_str.length>0? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
         });
         
     }
