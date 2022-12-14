@@ -5,6 +5,8 @@ require: patterns.sc
   module = sys.zb-common
   
 require: Functions/GetNumbers.js
+require: Functions/AccountsSuppliers.js
+
 require: AccountInput.sc 
 require: ChangeAccountPerson.sc
 require: ChangeAccountPersonCount.sc
@@ -19,12 +21,20 @@ patterns:
     $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline/*офис*)
     $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
+    $mainSuppl = $entity<MainSuppl> || converter = mainSupplConverter
+    
 
 init:
     bind("preProcess", function($context) {
         $context.session._lastState = $context.currentState;
         //$context.session._lastState = $context.contextPath ;
     });
+
+    $global.mainSupplConverter = function($parseTree){
+        var id = $parseTree.MainSuppl[0].value;
+        return $MainSuppl[id].value;
+    }
+    
 
 theme: /
 

@@ -21,7 +21,7 @@ function FindAccountNumberSetResult(result_comment)
     $session.Account.Result = result_comment;
     $session.Account._number = 0;
     $session.Account.Number = -1;
-    $session.Succeed = false;
+    $session.Account.Succeed = false;
 }
 function FindAccountNumberSetSuccees(result_comment)
 {
@@ -29,7 +29,7 @@ function FindAccountNumberSetSuccees(result_comment)
     $session.Account.Result = result_comment;
     $session.Account.Number = $session.Account._number;
     $session.Account._number = 0;
-    $session.Succeed = true;
+    $session.Account.Succeed = true;
 }
 
 function TrySetNumber(acc_num)
@@ -66,14 +66,18 @@ function FindAccountAddress(){
         return $http.query(url, {method: "GET",
             timeout: 20000        // таймаут выполнения запроса в мс
         });
-    
+// ищем номер ЛС - пока интеграция с гугл - таблицей
+// URL таблицы https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing
+// название листа - ЛС
+// https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL={url}&sheetName={sheet}&filterHead=account_number&filterValue={accountNumber}
+
 }
 function GetTempAccountNumber(){
     var $session = $jsapi.context().session;
     return $session.Account._number;
 }
+// Как говорить номер ЛС (разбиение по разрядам)
+function AccountTalkNumber(acc_num){
+    return acc_num.toString().replace(/\B(?=(\d{2})+(?!\d))/g, " ")    
+}
 
-// ищем номер ЛС - пока интеграция с гугл - таблицей
-// URL таблицы https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing
-// название листа - ЛС
-// https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL={url}&sheetName={sheet}&filterHead=account_number&filterValue={accountNumber}

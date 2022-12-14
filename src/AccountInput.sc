@@ -127,7 +127,7 @@ theme: /AccountNumInput
             script: 
                 TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
-            a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. 
+            a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. 
             a: Подождёте?
             script:
                 $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
