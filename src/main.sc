@@ -30,6 +30,15 @@ init:
         //$context.session._lastState = $context.contextPath ;
     });
 
+    bind("postProcess", function($context) {
+        //$context.session._lastState = $context.currentState;
+        log("**********" + toPrettyString($context.currentState));
+        $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
+        $context.session.AnswerCnt += 1;
+        
+        //$context.session._lastState = $context.contextPath ;
+    });
+
     $global.mainSupplConverter = function($parseTree){
         var id = $parseTree.MainSuppl[0].value;
         return $MainSuppl[id].value;
@@ -40,6 +49,8 @@ theme: /
 
     state: Start
         q!: $regex</start>
+        script:
+            $context.session.AnswerCnt = 0;
         a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
         random:
             a: Что вы хотите узнать?
@@ -65,13 +76,61 @@ theme: /
     state: NoMatch || noContext = true
         event!: noMatch
         # a: Я не понял. Вы сказали: {{$request.query}}
-        a: Не поняла Вас. Перевожу на оператора
+        a: Не поняла Вас
+        # . Перевожу на оператора
+        go!: /CallTheOperator
 
     state: CallTheOperator
-        a: Хорошо. Перевожу на оператора
-        
-    state: ChangeAccountPersonCount
-        a: Хорошо. Давайте сменим количество проживающих
+        q!: перевод на оператора
+        intent!: /CallTheOperator
+        # a: {{$context.session.AnswerCnt}}
+        if: $context.session.AnswerCnt == 1
+            a: Чтобы я переключила Вас на нужного оператора, озвучьте свой вопрос
+        else:
+            a: Перевожу на оператора
+            TransferCallToOperator:
+                    phoneNumber = 4606
+                    errorState = /CallTheOperator/Error            
+            # script:
+            #     # Александр Цепелев:
+            #     # Привет. Кто-то делал перевод звонка на оператора с подставлением номера абонента? Как вы в поле FROM передавали этот номер?
+                
+            #     # Anatoly Belov:
+            #     # у нас работает так:
+                
+            #     # var switchReply = {type:"switch"};
+            #     # switchReply.phoneNumber = "ТУТВНУТРЕННИЙНОМЕР";
+            #     # var callerIdHeader = "\""+$dialer.getCaller()+"\""+" <sip:"+$dialer.getCaller()+"@ТУТВНУТРIP>";
+            #     # switchReply.headers = { "P-Asserted-Identity":  callerIdHeader};
+            #     # $response.replies = $response.replies || [];
+            #     # $response.replies.push(switchReply);
+                
+            #     # если звонок передается внутри АТС, т все ок )            
+            #     var switchReply = {type:"switch"};
+            #     switchReply.phoneNumber = "4606"; // номер, на который переключаем
+            #     var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.218>"; // последнеее - внутренний IP 
+            #     //
+            #     switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
+                
+            #     // при true, абонент будет возвращен к диалогу с ботом после разговора с оператором, а также, если оператор недоступен.
+            #     switchReply.continueCall = true; 
+
+            #     // при true, разговор продолжает записываться, в том числе с оператором и при повторном возвращении абонента в диалог с ботом. Запись звонка будет доступна в логах диалогов.
+            #     switchReply.continueRecording = true; 
+                
+            #     $response.replies = $response.replies || [];
+            #     $response.replies.push(switchReply);
+            
+
+    state: CallTheOperatorTransferEvent
+        event: transfer
+        script:
+            var status = $dialer.getTransferStatus();
+            log(status);
+        if: $dialer.getTransferStatus().status === 'FAIL'
+            a: Оператор сейчас не может ответить на ваш вопрос. 
+        # else:
+        #     a: Спасибо, что связались с нами. Оцените, пожалуйста, качество обслуживания.                
 
     state: repeat || noContext = true
         q!:  * ( повтор* / что / еще раз* / ещё раз*) *

@@ -18,7 +18,7 @@ function words_to_number(array){
         if (entity.pattern == "duckling.number"){
             number = entity.value;
             return_string =  return_string + number + "";
-            log(return_string);
+            //log(return_string);
         }
     });
     return return_string;

@@ -1,24 +1,8 @@
 <test>
+    
+<!--по инн-->
+
     <test-case id="лс_по_инн">
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
-        <!--<q>да</q>-->
-        <!--<a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
-        <!--<a>Назовите номер вашего лицевого счета</a>-->
-        <!--<q>А можно по ИИН?</q>-->
-        <!--<a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>-->
-        <!--<q>Нет</q>-->
-        <!--<a state= "/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
-        
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
@@ -28,31 +12,11 @@
         <q>Не хочу</q>
         <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
-        <!--SupplierContactsFull-->
-        <!--<a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
     </test-case>    
     
-    
+<!--не знаю-->
+
     <test-case id="лс_не знаю">
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
-        <!--<q>да</q>-->
-        <!--<a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
-        <!--<a>Назовите номер вашего лицевого счета</a>-->
-        <!--<q>А можно по ИИН?</q>-->
-        <!--<a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>-->
-        <!--<q>Нет</q>-->
-        <!--<a state= "/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
-        
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
@@ -60,31 +24,11 @@
         <q>Не знаю</q>
         <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
-        <!--SupplierContactsFull-->
-        <!--<a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
     </test-case>    
     
-    
-    <test-case id="лс_где_взять">
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
-        <!--<q>да</q>-->
-        <!--<a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
-        <!--<a>Назовите номер вашего лицевого счета</a>-->
-        <!--<q>А можно по ИИН?</q>-->
-        <!--<a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>-->
-        <!--<q>Нет</q>-->
-        <!--<a state= "/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
-        
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
+<!--где_взять -->
+
+    <test-case id="лс_где_взять_нет">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
@@ -94,74 +38,104 @@
         <q>нет</q>
         <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
-        <!--SupplierContactsFull-->
-        <!--<a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
     </test-case>    
     
-    
-    <test-case id="лс_не знаю">
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
-        <!--<q>да</q>-->
-        <!--<a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
-        <!--<a>Назовите номер вашего лицевого счета</a>-->
-        <!--<q>А можно по ИИН?</q>-->
-        <!--<a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>-->
-        <!--<q>Нет</q>-->
-        <!--<a state= "/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
-        
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
+    <test-case id="лс_где_взять_да">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
-        <q>Не знаю</q>
-        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
+                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
+                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
+              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
+          </response>
+        </mockData>        
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <sheetName>ЛСПост</sheetName>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети.</a>
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
-        <!--SupplierContactsFull-->
-        <!--<a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
     </test-case>    
     
+<!--no_match-->
+
     <test-case id="лс_no_match">
-        <!--<state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
-        <!--<q>да</q>-->
-        <!--<a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
-        <!--<a>Назовите номер вашего лицевого счета</a>-->
-        <!--<q>А можно по ИИН?</q>-->
-        <!--<a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>-->
-        <!--<q>Нет</q>-->
-        <!--<a state= "/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
-        
-        <!--<q>Как сменить фамилию</q>-->
-        <!--<a>Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?</a>-->
-        <!--<q>нет</q>-->
-        <!--<a>Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.</a>-->
-        <!--<a>Хотите узнать, к каким поставщикам можно обратиться?</a>-->
-        <!--<state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
-        <!--<q>да</q>-->
-        <!--<a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
-        <!--<a>Назовите номер вашего лицевого счета</a>-->
-        <!--<q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>-->
-        <!--<a>Это не похоже на номер лицевого счета.</a>-->
-        <!--<a>Давайте еще раз проверим</a>-->
-        <!--<a>Назовите номер вашего лицевого счета</a>-->
-        <!--<q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>-->
-        <!--<a>Это не похоже на номер лицевого счета.</a>-->
-        <!--<a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып или Алматы Су.</a>-->
-        <!--<a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>-->
-        <!--SupplierContactsFull-->
-        <!--<a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
+        <a>Это не похоже на номер лицевого счета.</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
+        <a>Это не похоже на номер лицевого счета.</a>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц Алматыгаз, Тартып, Алматы Су.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
     </test-case>   
+    
+<!--лс_задан-->
+
+    <test-case id="лс_задан_распознан_адрес_определен">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
+                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
+                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
+              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
+          </response>
+        </mockData>        
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <sheetName>ЛСПост</sheetName>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
+    
+    
+    
 </test>  

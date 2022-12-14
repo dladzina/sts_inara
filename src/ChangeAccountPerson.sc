@@ -3,14 +3,6 @@ theme: /ChangeAccountPerson
     state: ChangeAccountPerson
         intent!: /ChangeAccountPerson
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
-        
-        # state: noMatch_local || noContext = true
-            # event: noMatch
-            # a: Поймался гад!
-        
-        state: ToTheOperator
-            event: noMatch
-            a: Перевод на оператора!
             
         state: Offline
             #intent: /Offline
@@ -18,7 +10,6 @@ theme: /ChangeAccountPerson
             q: $no 
             q: $disagree 
             event: speechNotRecognized
-            #event: NoMatch
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
             #go!: /AfterPersonalAccount
             go!: /ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info
@@ -32,7 +23,7 @@ theme: /ChangeAccountPerson
                 state: No_Suppliers_List
                     q: $no
                     q: $disagree
-                    # event: noMatch
+                    event: noMatch
                     go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                 
                 state: Yes_Suppliers_List
@@ -77,7 +68,7 @@ theme: /ChangeAccountPerson
                         state: No_Contacts
                             q: $no
                             q: $disagree
-                           # q: $No_for_contacts
+                            q: $No_for_contacts
                             go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                     
                         state: Yes_Contacts
