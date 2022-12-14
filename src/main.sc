@@ -88,42 +88,42 @@ theme: /
             a: Чтобы я переключила Вас на нужного оператора, озвучьте свой вопрос
         else:
             a: Перевожу на оператора
-            TransferCallToOperator:
-                    phoneNumber = 4606
-                    errorState = /CallTheOperator/Error    
+        #     TransferCallToOperator:
+        #             phoneNumber = 4606
+        #             errorState = /CallTheOperator/Error    
             
-        state: Error
-            a: К сожалению, сейчас нет свободных операторов. Задайте свой вопрос
+        # state: Error
+        #     a: К сожалению, сейчас нет свободных операторов. Задайте свой вопрос
                 
-            # script:
-            #     # Александр Цепелев:
-            #     # Привет. Кто-то делал перевод звонка на оператора с подставлением номера абонента? Как вы в поле FROM передавали этот номер?
+            script:
+                # Александр Цепелев:
+                # Привет. Кто-то делал перевод звонка на оператора с подставлением номера абонента? Как вы в поле FROM передавали этот номер?
                 
-            #     # Anatoly Belov:
-            #     # у нас работает так:
+                # Anatoly Belov:
+                # у нас работает так:
                 
-            #     # var switchReply = {type:"switch"};
-            #     # switchReply.phoneNumber = "ТУТВНУТРЕННИЙНОМЕР";
-            #     # var callerIdHeader = "\""+$dialer.getCaller()+"\""+" <sip:"+$dialer.getCaller()+"@ТУТВНУТРIP>";
-            #     # switchReply.headers = { "P-Asserted-Identity":  callerIdHeader};
-            #     # $response.replies = $response.replies || [];
-            #     # $response.replies.push(switchReply);
+                # var switchReply = {type:"switch"};
+                # switchReply.phoneNumber = "ТУТВНУТРЕННИЙНОМЕР";
+                # var callerIdHeader = "\""+$dialer.getCaller()+"\""+" <sip:"+$dialer.getCaller()+"@ТУТВНУТРIP>";
+                # switchReply.headers = { "P-Asserted-Identity":  callerIdHeader};
+                # $response.replies = $response.replies || [];
+                # $response.replies.push(switchReply);
                 
-            #     # если звонок передается внутри АТС, т все ок )            
-            #     var switchReply = {type:"switch"};
-            #     switchReply.phoneNumber = "4606"; // номер, на который переключаем
-            #     var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.218>"; // последнеее - внутренний IP 
-            #     //
-            #     switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
+                # если звонок передается внутри АТС, т все ок )            
+                var switchReply = {type:"switch"};
+                switchReply.phoneNumber = "4606"; // номер, на который переключаем
+                var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.218>"; // последнеее - внутренний IP 
+                //
+                switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
                 
-            #     // при true, абонент будет возвращен к диалогу с ботом после разговора с оператором, а также, если оператор недоступен.
-            #     switchReply.continueCall = true; 
+                // при true, абонент будет возвращен к диалогу с ботом после разговора с оператором, а также, если оператор недоступен.
+                switchReply.continueCall = true; 
 
-            #     // при true, разговор продолжает записываться, в том числе с оператором и при повторном возвращении абонента в диалог с ботом. Запись звонка будет доступна в логах диалогов.
-            #     switchReply.continueRecording = true; 
+                // при true, разговор продолжает записываться, в том числе с оператором и при повторном возвращении абонента в диалог с ботом. Запись звонка будет доступна в логах диалогов.
+                switchReply.continueRecording = true; 
                 
-            #     $response.replies = $response.replies || [];
-            #     $response.replies.push(switchReply);
+                $response.replies = $response.replies || [];
+                $response.replies.push(switchReply);
             
 
     state: CallTheOperatorTransferEvent
