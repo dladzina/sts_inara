@@ -4,9 +4,10 @@ require: slotfilling/slotFilling.sc
 require: patterns.sc
   module = sys.zb-common
   
-require: ChangeAccountPerson.sc
 require: Functions/GetNumbers.js
 require: AccountInput.sc 
+require: ChangeAccountPerson.sc
+require: ChangeAccountPersonCount.sc
 
 require: dicts/MainSuppl.csv
     name = MainSuppl

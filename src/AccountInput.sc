@@ -79,6 +79,8 @@ theme: /AccountNumInput
         state: AccountInputWait    
             intent: /подождите
             a: да, жду Вас
+            script:
+               $dialer.setNoInputTimeout(20000); // 20 сек
         
         state: AccountInputNotNumbersWay
             intent: /ЛС_ИнойТипВвода
@@ -112,6 +114,7 @@ theme: /AccountNumInput
             state: AccountInputWhereIsAccountDecline 
                 q: $no
                 q: $disagree
+                event: noMatch
                 script: 
                     FindAccountNumberSetResult("DontKnow"); 
                 go!: {{ $session.oldState }}
@@ -123,6 +126,7 @@ theme: /AccountNumInput
             q: * @duckling.number *
             script: 
                 TrySetNumber(words_to_number($entities));
+                # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. 
             a: Подождёте?
             script:
@@ -196,7 +200,7 @@ theme: /AccountNumInput
 
         state: AccountInputNoNumber
             event: noMatch || noContext = true
-            a: Это не похоже на номер лицевого счета. Попробуйте еще раз.
+            a: Это не похоже на номер лицевого счета.
             go!: ..
     
     state: DontKnow

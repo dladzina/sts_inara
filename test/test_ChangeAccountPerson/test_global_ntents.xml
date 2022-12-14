@@ -43,7 +43,12 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
     
-    # intent changeAccountDetails - no ChangeTenants
+    # intent ChangeAccountPersonCount
+    
+    <test-case id="Phrase_изменить число проживающих_ChangeAccountPersonCount">
+        <q>изменить число проживающих</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>
     
     # intent changeAccountDetails
     

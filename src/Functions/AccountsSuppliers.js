@@ -6,9 +6,7 @@ function GetAccountMainSuppls(){
         $session.Account.MainSuppliers = [];
         //
         $session.Account.MainSuppliers = [“aes”, “alts”, “Almaty_gaz”, “tartyp”];
-        
-        
-        
+        // название или телефон 
     }
     
 }

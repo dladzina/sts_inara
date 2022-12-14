@@ -32,7 +32,7 @@ theme: /ChangeAccountPerson
                 state: No_Suppliers_List
                     q: $no
                     q: $disagree
-                    event: noMatch
+                    # event: noMatch
                     go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                 
                 state: Yes_Suppliers_List
@@ -40,6 +40,7 @@ theme: /ChangeAccountPerson
                     #  уточняем, есть ли ЛС. Если нет, то даем контакты всех
                     # если говорит номер ЛС, то даем только тех, что есть в квитанции
                     q: $yes
+                    event: да
                     q: $agree
                     # смотрим, был ли лицевой счет выявлен в ходе диалога
                     if: ($session.Account && $session.Account.Number > 0)
