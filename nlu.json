@@ -17,24 +17,6 @@
     "shared" : false
   },
   "intents" : [ {
-    "path" : "/подождите",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "минуточку"
-    }, {
-      "text" : "щас"
-    }, {
-      "text" : "сейчас"
-    }, {
-      "text" : "подождите"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
     "path" : "/ГдеНомерЛС",
     "enabled" : true,
     "shared" : false,
@@ -87,17 +69,6 @@
       "refs" : [ ]
     },
     "patterns" : [ ],
-    "priority" : 0
-  }, {
-    "path" : "/пока",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "пока"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
     "priority" : 0
   }, {
     "path" : "/привет",

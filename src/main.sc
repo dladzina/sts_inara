@@ -90,7 +90,11 @@ theme: /
             a: Перевожу на оператора
             TransferCallToOperator:
                     phoneNumber = 4606
-                    errorState = /CallTheOperator/Error            
+                    errorState = /CallTheOperator/Error    
+            
+            state: Error
+                a: К сожалению, сейчас нет свободных операторов. Задайте свой вопрос
+                
             # script:
             #     # Александр Цепелев:
             #     # Привет. Кто-то делал перевод звонка на оператора с подставлением номера абонента? Как вы в поле FROM передавали этот номер?
@@ -139,7 +143,7 @@ theme: /
         
     state: bye
         q!: $bye
-        intent!: /пока
+        intent!: /sys/aimylogic/ru/offerreject || onlyThisState = false, toState = "/Инициация завершения разговора"
         a: Благодарим за обращение!
         random: 
             a: До свидания! 
