@@ -1,6 +1,6 @@
 //*****************************************************************
 // Модуль предназначен для вывода информации по основным поставщикам 
-// работает как с лицеввым счетом, так и предоставляет общую информацию
+// работает как с лицеввым счетом, так и предоставляет общую информацию по всем поставщикам
 
 // Функции:
 // получает список  и контакты  поставщиков по ЛС и в целом
@@ -44,11 +44,8 @@ function GetAccountMainSuppls(){
                 log('--------------- произошла ошибка' );
                 return false;
             };
-            log('*******************************' );
-            log(toPrettyString(response));
-            
+
             if(response.isOk){
-                log('--------------- response.isOk' );
                 if (response.data && response.data.data){
                     $session.Account.MainSuppliers =  response.data.data[0].suppl_list;
                     if (typeof($session.Account.MainSuppliers)=="string"){
