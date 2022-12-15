@@ -157,6 +157,7 @@ theme: /AccountNumInput
                             log(res.data[0].address_full_name);
                             $session.Account.Address = res.data[0].address_full_name;
                             $reactions.transition('../AccountAddressConfirm')
+                            $session.Account.AddressRepeatCount = 0;
                         }else {
                             $session.Account.Address = "";
                             $reactions.transition('../AccountNotFound');
@@ -168,6 +169,8 @@ theme: /AccountNumInput
                         
 
             state: AccountAddressConfirm
+                script:
+                    $session.Account.AddressRepeatCount += 1;
                 a: Ваш адрес {{$session.Account.Address}}. Верно? 
 
                 state: AccountAddressConfirmYes
@@ -188,9 +191,13 @@ theme: /AccountNumInput
                     go!: /AccountNumInput/AccountInput
                 
                 state: AccountAddressNoMatch
-                     event: noMatch || noContext = true
-                     a: Извините, я Вас не расслышала.
-                     go!: ..
+                    event: noMatch || noContext = true
+                    event: speechNotRecognized || noContext = true
+                    if: $session.Account.AddressRepeatCount < 2
+                        a: Я Вас не расслышала. Повторите еще раз.
+                        go!: ..
+                    else:
+                        go!:../AccountAddressDecline
 
             state: AccountNotFound
                 a: Извините, я не нашла Ваш лицевой счёт. 

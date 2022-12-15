@@ -88,48 +88,61 @@ theme: /
             } else{
                 $session.catchAll.repetition = $session.catchAll.repetition || 0;
             }
-        a: Не поняла Вас
-        # . Перевожу на оператора
-        go!: /CallTheOperator
-
-    state: CallTheOperator
+            $session.catchAll.repetition += 1;
+        if: $context.session.AnswerCnt == 1
+            random:
+                a: Извините, я Вас не поняла. Повторите пожалуйста 
+                a: Я Вас не поняла. Сформулируйте по-другому 
+                a: Скажите еще раз 
+                a: Мне плохо слышно, повторите
+        else:
+            a: Для решения Вашего вопроса перевожу Вас на оператора. Пожалуйста, подождите
+            go!: /CallTheOperator
+    
+    state: SwitchToOperator
         q!: перевод на оператора
+        q!: $switchToOperator
         intent!: /CallTheOperator
-        # a: {{$context.session.AnswerCnt}}
         if: $context.session.AnswerCnt == 1
             a: Чтобы я переключила Вас на нужного оператора, озвучьте свой вопрос
         else:
-            a: Перевожу на оператора
+            a: Переключаю Вас на оператора. Пожалуйста, подождите
+            go!: /CallTheOperator
+        
 
-            script:
-                # Александр Цепелев:
-                # Привет. Кто-то делал перевод звонка на оператора с подставлением номера абонента? Как вы в поле FROM передавали этот номер?
-                
-                # Anatoly Belov:
-                # у нас работает так:
-                
-                # var switchReply = {type:"switch"};
-                # switchReply.phoneNumber = "ТУТВНУТРЕННИЙНОМЕР";
-                # var callerIdHeader = "\""+$dialer.getCaller()+"\""+" <sip:"+$dialer.getCaller()+"@ТУТВНУТРIP>";
-                # switchReply.headers = { "P-Asserted-Identity":  callerIdHeader};
-                # $response.replies = $response.replies || [];
-                # $response.replies.push(switchReply);
-                
-                # если звонок передается внутри АТС, т все ок )            
-                var switchReply = {type:"switch"};
-                switchReply.phoneNumber = "4606"; // номер, на который переключаем
-                var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.218>"; // последнеее - внутренний IP 
-                //
-                switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
-                
-                // при true, абонент будет возвращен к диалогу с ботом после разговора с оператором, а также, если оператор недоступен.
-                switchReply.continueCall = true; 
+    # перевод на оператора.
+    # В А Ж Н О: слова перед переводом говорит стейт, который вызывает этот переход
+    state: CallTheOperator
+        # a: Перевожу Вас на оператора
+        script:
+            # Александр Цепелев:
+            # Привет. Кто-то делал перевод звонка на оператора с подставлением номера абонента? Как вы в поле FROM передавали этот номер?
+            
+            # Anatoly Belov:
+            # у нас работает так:
+            
+            # var switchReply = {type:"switch"};
+            # switchReply.phoneNumber = "ТУТВНУТРЕННИЙНОМЕР";
+            # var callerIdHeader = "\""+$dialer.getCaller()+"\""+" <sip:"+$dialer.getCaller()+"@ТУТВНУТРIP>";
+            # switchReply.headers = { "P-Asserted-Identity":  callerIdHeader};
+            # $response.replies = $response.replies || [];
+            # $response.replies.push(switchReply);
+            
+            # если звонок передается внутри АТС, т все ок )            
+            var switchReply = {type:"switch"};
+            switchReply.phoneNumber = "4606"; // номер, на который переключаем
+            var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.218>"; // последнеее - внутренний IP 
+            //
+            switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
+            
+            // при true, абонент будет возвращен к диалогу с ботом после разговора с оператором, а также, если оператор недоступен.
+            switchReply.continueCall = true; 
 
-                // при true, разговор продолжает записываться, в том числе с оператором и при повторном возвращении абонента в диалог с ботом. Запись звонка будет доступна в логах диалогов.
-                switchReply.continueRecording = true; 
-                
-                $response.replies = $response.replies || [];
-                $response.replies.push(switchReply);
+            // при true, разговор продолжает записываться, в том числе с оператором и при повторном возвращении абонента в диалог с ботом. Запись звонка будет доступна в логах диалогов.
+            switchReply.continueRecording = true; 
+            
+            $response.replies = $response.replies || [];
+            $response.replies.push(switchReply);
             
 
     state: CallTheOperatorTransferEvent
@@ -189,12 +202,19 @@ theme: /
         script: FindAccountNumberClear();
         #a: Ок
 
-    state: CatchSpeech
+    state: speechNotRecognizedGlobal
         event!: speechNotRecognized
         script:
-            $session.noInputCounter = $session.noInputCounter || 0;
-            $session.noInputCounter++;
-        if: $session.noInputCounter >= 3
+            $session.speechNotRecognized = $session.speechNotRecognized || {};
+            //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+            if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
+                $session.speechNotRecognized.repetition = 0;
+            } else{
+                $session.speechNotRecognized.repetition = $session.catchAll.repetition || 0;
+            }
+            $session.speechNotRecognized.repetition += 1;
+            
+        if: $session.speechNotRecognized.repetition >= 3
             a: Кажется, проблемы со связью.
             script:
                 $dialer.hangUp();
