@@ -215,6 +215,30 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/Платеж",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "заплатил"
+    }, {
+      "text" : "оплачено"
+    }, {
+      "text" : "оплачивать квитанцию"
+    }, {
+      "text" : "оплатить счет"
+    }, {
+      "text" : "вернуть платеж"
+    }, {
+      "text" : "доплатить сумму"
+    }, {
+      "text" : "информация по платежам"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],

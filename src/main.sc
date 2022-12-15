@@ -29,6 +29,9 @@ init:
         $context.session._lastState = $context.currentState;
         //$context.session._lastState = $context.contextPath ;
     });
+    bind("postProcess", function($context) {
+        $context.session.lastState = $context.currentState;
+    });
 
     bind("postProcess", function($context) {
         //$context.session._lastState = $context.currentState;
@@ -76,6 +79,15 @@ theme: /
     state: NoMatch || noContext = true
         event!: noMatch
         # a: Я не понял. Вы сказали: {{$request.query}}
+        script:
+            $session.catchAll = $session.catchAll || {};
+        
+            //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+            if ($session.lastState && !$session.lastState.startsWith("/CatchAll")) {
+                $session.catchAll.repetition = 0;
+            } else{
+                $session.catchAll.repetition = $session.catchAll.repetition || 0;
+            }
         a: Не поняла Вас
         # . Перевожу на оператора
         go!: /CallTheOperator
@@ -88,13 +100,7 @@ theme: /
             a: Чтобы я переключила Вас на нужного оператора, озвучьте свой вопрос
         else:
             a: Перевожу на оператора
-        #     TransferCallToOperator:
-        #             phoneNumber = 4606
-        #             errorState = /CallTheOperator/Error    
-            
-        # state: Error
-        #     a: К сожалению, сейчас нет свободных операторов. Задайте свой вопрос
-                
+
             script:
                 # Александр Цепелев:
                 # Привет. Кто-то делал перевод звонка на оператора с подставлением номера абонента? Как вы в поле FROM передавали этот номер?

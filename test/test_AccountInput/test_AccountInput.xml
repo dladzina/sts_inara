@@ -2,7 +2,18 @@
     
 <!--по инн-->
 
-    <test-case id="лс_по_инн">
+    <test-case id="лс_по_инн_да">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А можно по ИИН?</q>
+        <a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>
+        <q>Да</q>
+        <a>Назовите номер вашего лицевого счета</a>
+    </test-case>    
+    
+    <test-case id="лс_по_инн_нет">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
@@ -12,7 +23,7 @@
         <q>Не хочу</q>
         <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
-    </test-case>    
+    </test-case>  
     
 <!--не знаю-->
 
@@ -83,7 +94,7 @@
     
 <!--no_match-->
 
-    <test-case id="лс_no_match">
+    <test-case id="лс_no_match_2_раза">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
@@ -94,6 +105,89 @@
         <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
         <a>Это не похоже на номер лицевого счета.</a>
         <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц Алматыгаз, Тартып, Алматы Су.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
+    
+    <test-case id="лс_no_match_1_раза_я не знаю">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
+        <a>Это не похоже на номер лицевого счета.</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>Не знаю</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
+    
+    <test-case id="лс_no_match_1_раза_где я его возьму">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
+        <a>Это не похоже на номер лицевого счета.</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А где его взять?</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**.  Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <q>нет</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
+    
+    <test-case id="лс_no_match_1_раза_А можно по адресу?">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
+        <a>Это не похоже на номер лицевого счета.</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>А можно по ИИН?</q>
+        <a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>
+        <q>Не хочу</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети, А Р Ц  Алматыгаз, Тартып, Алматы Су.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
+
+    <test-case id="лс_no_match_1_раза_лс_распознан">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>ЕДИНОРОЖКА ОБЕДАЕТ ОСЛИКОМ!!!!!</q>
+        <a>Это не похоже на номер лицевого счета.</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
+                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
+                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
+              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
+          </response>
+        </mockData>        
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <sheetName>ЛСПост</sheetName>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети.</a>
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
     </test-case>   
     
@@ -136,6 +230,78 @@
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
     </test-case>   
     
+    <test-case id="лс_задан_не ждет">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
+                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
+                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
+              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
+          </response>
+        </mockData>        
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <sheetName>ЛСПост</sheetName>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
     
+    <test-case id="лс_задан_ждет">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
+                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
+                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
+              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
+          </response>
+        </mockData>        
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <sheetName>ЛСПост</sheetName>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
     
 </test>  

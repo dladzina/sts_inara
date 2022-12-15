@@ -40,13 +40,16 @@ theme: /ChangeAccountPersonCount
                     
 
                 state: SupplierContactsFull
-                    a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
+                    a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetMainSupplNames($MainSuppl)}}.
                     go!: ../Contacts
                                     
                 state: SupplierContactsByAccount
-                    # где-то здесь надо получить список поставщиков из БД и сформировать строку 
-                    a:   ЛС определен
-                    a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  АлматыЭнергоСбыт, Алматинские тепловые сети, а р це Алматыгаз,  Тартып или Алматы Су.
+                    # где-то здесь надо получить список поставщиков из БД и сформировать строку
+                        # где-то здесь надо получить список поставщиков из БД и сформировать строку 
+                    if: GetAccountMainSuppls()
+                        a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetAccountMainSupplNames($MainSuppl)}}.
+                    else:
+                        go!: ../SupplierContactsFull
                     # go!: /PersonChange/PersonChange/Offline/Yes_Suppliers_List/Contacts
                     go!: ../Contacts
                         
@@ -64,11 +67,15 @@ theme: /ChangeAccountPersonCount
                         q: $agree
                         q: $Yes_for_contacts
                         event: noMatch
-                        a:   Записывайте городские номера. Код города - 727. --- АлматыЭнергоСбыт - телефон 356, 99, 99. Алматинские тепловые сети, 341, 0, 777.  АлматыСу,  3, 777, 444. Алматыгаз,  244, 55,  33. Тартып - 393, 08, 03. Повторить номера?
-                            
+                        if: GetAccountMainSuppls()
+                            a:   Записывайте городские номера. Код города - 727. --- {{GetAccountMainSupplNamesContracts($MainSuppl)}}. Повторить номера?
+                        else:
+                            a:   Записывайте городские номера. Код города - 727. --- {{GetMainSupplNamesContracts($MainSuppl)}}. Повторить номера?
+
                         state: No_Repeat
                             q: $no
                             q: $disagree
+                            event: noMaatch
                             go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
                                 
                         state: Yes_Repeat
