@@ -210,7 +210,7 @@ theme: /
             if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
                 $session.speechNotRecognized.repetition = 0;
             } else{
-                $session.speechNotRecognized.repetition = $session.catchAll.repetition || 0;
+                $session.speechNotRecognized.repetition = $session.speechNotRecognized.repetition || 0;
             }
             $session.speechNotRecognized.repetition += 1;
             
