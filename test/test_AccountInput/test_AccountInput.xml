@@ -306,48 +306,48 @@
         <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
     </test-case>   
     
-    <!--<test-case id="ЛС_ждет_лс_найден_no_match_2_раз">-->
-    <!--    <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
-    <!--    <q>да</q>-->
-    <!--    <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
-    <!--    <a>Назовите номер вашего лицевого счета</a>-->
-    <!--    <mockData>-->
-    <!--      <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>-->
-    <!--      <parameters>-->
-    <!--        <filterValue>5888492</filterValue>-->
-    <!--      </parameters>-->
-    <!--      <response>-->
-    <!--      {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",-->
-    <!--              "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,-->
-    <!--              "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],-->
-    <!--          "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}-->
-    <!--      </response>-->
-    <!--    </mockData>        -->
-    <!--    <mockData>-->
-    <!--      <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>-->
-    <!--      <parameters>-->
-    <!--        <sheetName>ЛСПост</sheetName>-->
-    <!--        <filterValue>5888492</filterValue>-->
-    <!--      </parameters>-->
-    <!--      <response>-->
-    <!--         {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}-->
-    <!--      </response>-->
-    <!--    </mockData>        -->
-    <!--    <q>58 88 492</q>-->
-    <!--    <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>-->
-    <!--    <a>Подождёте?</a>-->
-    <!--    <q>да</q>-->
-    <!--    <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>-->
-    <!--    <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>-->
-    <!--    <a>Давайте еще раз проверим</a>-->
-    <!--    <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>-->
-    <!--    <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>-->
-    <!--    <a>Давайте еще раз проверим</a>-->
-    <!--    <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>-->
-    <!--    <q>да</q>-->
-    <!--    <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети.</a>-->
-    <!--    <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>-->
-    <!--</test-case>   -->
+    <test-case id="ЛС_ждет_лс_найден_no_match_2_раз">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
+                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
+                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
+              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
+          </response>
+        </mockData>        
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <sheetName>ЛСПост</sheetName>
+            <filterValue>5888492</filterValue>
+          </parameters>
+          <response>
+             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 492</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <q>да</q>
+        <a>Вы можете обратиться к одному из поставщиков коммунальных услуг на выбор - АлматыЭнергоСбыт, Алматинские тепловые сети.</a>
+        <a>Контакты можно узнать в мобильном приложении алсеко или я могу продиктовать Вам телефоны сейчас?</a>
+    </test-case>   
     
     <!--<test-case id="ЛС_ждет_лс_найден_да">-->
     <!--    <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
