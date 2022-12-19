@@ -1,0 +1,43 @@
+<test>
+    <test-case id = "ChangeAccountPerson_1">
+        <q>поменять имя в лицевом счете</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    <test-case id = "ChangeAccountPerson_2">
+        <q>Мы приобрели квартиру и хотели бы получить лицевой счет на свое имя и расчеты согласно нынешней прописке</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+
+    <test-case id = "ChangeAccountPerson_3">
+        <q>Я хотела поменять собственника в Алсеко</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+
+    <test-case id = "ChangeAccountPerson_4">
+        <q>я хотел узнать мы купили там квартиру теперь хотим лицевой счёт на себя переоформить как это лучше сделать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+
+    <test-case id = "ChangeAccountPerson_5">
+        <q>Как можно поменять имя на квитанции</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    <test-case id = "ChangeAccountPerson_6">
+        <q>Как можно оформить счета с предыдущего владельца на своё имя</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    <test-case id = "ChangeAccountPerson_7">
+        <q>Счет приходит на старого хозяина, как поменять</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+
+    <test-case id = "ChangeAccountPerson_9">
+        <q>здравствуйте я приобрела квартиру и хотела бы изменить фамилию собственника как лучше мне это сделать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>    
+    
+
+</test>

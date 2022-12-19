@@ -60,7 +60,7 @@ theme: /AccountNumInput
 
     state: AccountInput || modal = true
         script: 
-            log( toPrettyString($context.session._lastState) );
+            //log( toPrettyString($context.session._lastState) );
             if (($context.session._lastState.substr(1,15)) != "AccountNumInput")
             {
                 $session.oldState = $context.session._lastState;  
@@ -152,9 +152,9 @@ theme: /AccountNumInput
                     TrySetNumber(GetTempAccountNumber());
 
                     FindAccountAddress().then(function(res){
-                        log(toPrettyString(res));
+                        //log(toPrettyString(res));
                         if (res && res.count > 0){
-                            log(res.data[0].address_full_name);
+                            //log(res.data[0].address_full_name);
                             $session.Account.Address = res.data[0].address_full_name;
                             $reactions.transition('../AccountAddressConfirm')
                             $session.Account.AddressRepeatCount = 0;

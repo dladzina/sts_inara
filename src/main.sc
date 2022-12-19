@@ -31,16 +31,24 @@ init:
     });
     bind("postProcess", function($context) {
         $context.session.lastState = $context.currentState;
-    });
-
-    bind("postProcess", function($context) {
         //$context.session._lastState = $context.currentState;
-        log("**********" + toPrettyString($context.currentState));
+        // log("**********" + toPrettyString($context.currentState));
         $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
-        $context.session.AnswerCnt += 1;
+        if (!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
+            $context.session.AnswerCnt += 1;
         
         //$context.session._lastState = $context.contextPath ;
     });
+
+    # bind("postProcess", function($context) {
+    #     //$context.session._lastState = $context.currentState;
+    #     log("**********" + toPrettyString($context.currentState));
+    #     $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
+    #     //if (!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
+    #         $context.session.AnswerCnt += 1;
+        
+    #     //$context.session._lastState = $context.contextPath ;
+    # });
 
     $global.mainSupplConverter = function($parseTree){
         var id = $parseTree.MainSuppl[0].value;
@@ -156,14 +164,14 @@ theme: /
         event: transfer
         script:
             var status = $dialer.getTransferStatus();
-            log(status);
+            //log(status);
         if: $dialer.getTransferStatus().status === 'FAIL'
             a: Оператор сейчас не может ответить на ваш вопрос. 
         # else:
         #     a: Спасибо, что связались с нами. Оцените, пожалуйста, качество обслуживания.                
 
     state: repeat || noContext = true
-        q!:  * ( повтор* / что / еще раз* / ещё раз*) *
+        q!:  ( повтор* / что / еще раз* / ещё раз*)
         go!: {{$session.contextPath}}
         # go!: {{ $context.session._lastState }} 
         

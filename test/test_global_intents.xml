@@ -1,345 +1,401 @@
 <test>
     
-    <test-case id="Phrase_минуточку_подождите">
-        <q>минуточку</q>
-        <a state="/подождите"/>
-    </test-case>
+<test>
             
-            
-    <test-case id="Phrase_щас_подождите">
-        <q>щас</q>
-        <a state="/подождите"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_сейчас_подождите">
-        <q>сейчас</q>
-        <a state="/подождите"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_подождите_подождите">
-        <q>подождите</q>
-        <a state="/подождите"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_куда смотреть _ГдеНомерЛС">
-        <q>куда смотреть </q>
-        <a state="/ГдеНомерЛС"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_где он_ГдеНомерЛС">
-        <q>где он</q>
-        <a state="/ГдеНомерЛС"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_где можно посмотреть_ГдеНомерЛС">
-        <q>где можно посмотреть</q>
-        <a state="/ГдеНомерЛС"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_где я его возьму_ГдеНомерЛС">
-        <q>где я его возьму</q>
-        <a state="/ГдеНомерЛС"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_онлайн_Онлайн">
-        <q>онлайн</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_через интернет_Онлайн">
-        <q>через интернет</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_по сети_Онлайн">
-        <q>по сети</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_из дома_Онлайн">
-        <q>из дома</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_удаленно_Онлайн">
-        <q>удаленно</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_по компьютеру_Онлайн">
-        <q>по компьютеру</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_через компьютер_Онлайн">
-        <q>через компьютер</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_через смартфон_Онлайн">
-        <q>через смартфон</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_по смартфону_Онлайн">
-        <q>по смартфону</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_сделаю сам_Онлайн">
-        <q>сделаю сам</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_самостоятельно_Онлайн">
-        <q>самостоятельно</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_хочу самостоятельно_Онлайн">
-        <q>хочу самостоятельно</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_сам могу_Онлайн">
-        <q>сам могу</q>
-        <a state="/Онлайн"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_пока_пока">
-        <q>пока</q>
-        <a state="/пока"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_привет_привет">
-        <q>привет</q>
-        <a state="/привет"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_Переведи на оператора_CallTheOperator">
-        <q>Переведи на оператора</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_Хочу говорить с человеком_CallTheOperator">
-        <q>Хочу говорить с человеком</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_Переведи на живого_CallTheOperator">
-        <q>Переведи на живого</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_переведи на человека_CallTheOperator">
-        <q>переведи на человека</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_хочу говорить только с живым_CallTheOperator">
-        <q>хочу говорить только с живым</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_на человека_CallTheOperator">
-        <q>на человека</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_не хочу общаться с роботом_CallTheOperator">
-        <q>не хочу общаться с роботом</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
-    <test-case id="Phrase_не робот_CallTheOperator">
-        <q>не робот</q>
-        <a state="/CallTheOperator"/>
-    </test-case>
-            
-            
+    # intent changeAccountDetails
+    
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
         <q>сменить собственника</q>
-        <a state="/ChangeAccountDetails"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
             
             
     <test-case id="Phrase_сменить фамилию_ChangeAccountDetails">
         <q>сменить фамилию</q>
-        <a state="/ChangeAccountDetails"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
             
             
     <test-case id="Phrase_изменить владельца_ChangeAccountDetails">
         <q>изменить владельца</q>
-        <a state="/ChangeAccountDetails"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
             
             
     <test-case id="Phrase_поменять имя в квитанции_ChangeAccountDetails">
         <q>поменять имя в квитанции</q>
-        <a state="/ChangeAccountDetails"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
             
             
     <test-case id="Phrase_поменять фио_ChangeAccountDetails">
         <q>поменять фио</q>
-        <a state="/ChangeAccountDetails"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
             
             
     <test-case id="Phrase_изменить хозяина в квитанции_ChangeAccountDetails">
         <q>изменить хозяина в квитанции</q>
-        <a state="/ChangeAccountDetails"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
             
             
     <test-case id="Phrase_сменить собственника_ChangeAccountDetails">
         <q>сменить собственника</q>
-        <a state="/ChangeAccountDetails"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
-            
-            
-    <test-case id="Phrase_изменить число проживающих_ChangeTenants">
+    
+    # intent ChangeAccountPersonCount
+    
+    <test-case id="Phrase_изменить число проживающих_ChangeAccountPersonCount">
         <q>изменить число проживающих</q>
-        <a state="/ChangeTenants"/>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>
+    
+    # intent changeAccountDetails
+    
+    # intent changeAccountDetails
+    
+    <!--<test-case id="Phrase_минуточку_подождите">-->
+    <!--    <q>минуточку</q>-->
+    <!--    <a state="/подождите"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_поменять количество человек_ChangeTenants">
-        <q>поменять количество человек</q>
-        <a state="/ChangeTenants"/>
-    </test-case>
+    <!--<test-case id="Phrase_щас_подождите">-->
+    <!--    <q>щас</q>-->
+    <!--    <a state="/подождите"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_количество людей изменить_ChangeTenants">
-        <q>количество людей изменить</q>
-        <a state="/ChangeTenants"/>
-    </test-case>
+    <!--<test-case id="Phrase_сейчас_подождите">-->
+    <!--    <q>сейчас</q>-->
+    <!--    <a state="/подождите"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_уменьшить количество проживающих_ChangeTenants">
-        <q>уменьшить количество проживающих</q>
-        <a state="/ChangeTenants"/>
-    </test-case>
+    <!--<test-case id="Phrase_подождите_подождите">-->
+    <!--    <q>подождите</q>-->
+    <!--    <a state="/подождите"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_увеличить число людей_ChangeTenants">
-        <q>увеличить число людей</q>
-        <a state="/ChangeTenants"/>
-    </test-case>
+    <!--<test-case id="Phrase_куда смотреть _ГдеНомерЛС">-->
+    <!--    <q>куда смотреть </q>-->
+    <!--    <a state="/ГдеНомерЛС"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_число человек в квитанции_ChangeTenants">
-        <q>число человек в квитанции</q>
-        <a state="/ChangeTenants"/>
-    </test-case>
+    <!--<test-case id="Phrase_где он_ГдеНомерЛС">-->
+    <!--    <q>где он</q>-->
+    <!--    <a state="/ГдеНомерЛС"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_уменьшить человек в квитанции_ChangeTenants">
-        <q>уменьшить человек в квитанции</q>
-        <a state="/ChangeTenants"/>
-    </test-case>
+    <!--<test-case id="Phrase_где можно посмотреть_ГдеНомерЛС">-->
+    <!--    <q>где можно посмотреть</q>-->
+    <!--    <a state="/ГдеНомерЛС"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_лично_Лично">
-        <q>лично</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_где я его возьму_ГдеНомерЛС">-->
+    <!--    <q>где я его возьму</q>-->
+    <!--    <a state="/ГдеНомерЛС"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_приду сам_Лично">
-        <q>приду сам</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_онлайн_Онлайн">-->
+    <!--    <q>онлайн</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_прийду самостоятельно_Лично">
-        <q>прийду самостоятельно</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_через интернет_Онлайн">-->
+    <!--    <q>через интернет</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_посещу вас_Лично">
-        <q>посещу вас</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_по сети_Онлайн">-->
+    <!--    <q>по сети</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_офлайн_Лично">
-        <q>офлайн</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_из дома_Онлайн">-->
+    <!--    <q>из дома</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_оффлайн_Лично">
-        <q>оффлайн</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_удаленно_Онлайн">-->
+    <!--    <q>удаленно</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_вживую_Лично">
-        <q>вживую</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_по компьютеру_Онлайн">-->
+    <!--    <q>по компьютеру</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_хочу прийти_Лично">
-        <q>хочу прийти</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_через компьютер_Онлайн">-->
+    <!--    <q>через компьютер</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_хочу придти_Лично">
-        <q>хочу придти</q>
-        <a state="/Лично"/>
-    </test-case>
+    <!--<test-case id="Phrase_через смартфон_Онлайн">-->
+    <!--    <q>через смартфон</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_не помню_DontKnow">
-        <q>не помню</q>
-        <a state="/DontKnow"/>
-    </test-case>
+    <!--<test-case id="Phrase_по смартфону_Онлайн">-->
+    <!--    <q>по смартфону</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_откуда я знаю_DontKnow">
-        <q>откуда я знаю</q>
-        <a state="/DontKnow"/>
-    </test-case>
+    <!--<test-case id="Phrase_сделаю сам_Онлайн">-->
+    <!--    <q>сделаю сам</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
             
             
-    <test-case id="Phrase_я не знаю_DontKnow">
-        <q>я не знаю</q>
-        <a state="/DontKnow"/>
-    </test-case>
+    <!--<test-case id="Phrase_самостоятельно_Онлайн">-->
+    <!--    <q>самостоятельно</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_хочу самостоятельно_Онлайн">-->
+    <!--    <q>хочу самостоятельно</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_сам могу_Онлайн">-->
+    <!--    <q>сам могу</q>-->
+    <!--    <a state="/Онлайн"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_пока_пока">-->
+    <!--    <q>пока</q>-->
+    <!--    <a state="/пока"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_привет_привет">-->
+    <!--    <q>привет</q>-->
+    <!--    <a state="/привет"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_Переведи на оператора_CallTheOperator">-->
+    <!--    <q>Переведи на оператора</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_Хочу говорить с человеком_CallTheOperator">-->
+    <!--    <q>Хочу говорить с человеком</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_Переведи на живого_CallTheOperator">-->
+    <!--    <q>Переведи на живого</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_переведи на человека_CallTheOperator">-->
+    <!--    <q>переведи на человека</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_хочу говорить только с живым_CallTheOperator">-->
+    <!--    <q>хочу говорить только с живым</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_на человека_CallTheOperator">-->
+    <!--    <q>на человека</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_не хочу общаться с роботом_CallTheOperator">-->
+    <!--    <q>не хочу общаться с роботом</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_не робот_CallTheOperator">-->
+    <!--    <q>не робот</q>-->
+    <!--    <a state="/CallTheOperator"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_сменить собственника_ChangeAccountDetails">-->
+    <!--    <q>сменить собственника</q>-->
+    <!--    <a state="/ChangeAccountDetails"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_сменить фамилию_ChangeAccountDetails">-->
+    <!--    <q>сменить фамилию</q>-->
+    <!--    <a state="/ChangeAccountDetails"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_изменить владельца_ChangeAccountDetails">-->
+    <!--    <q>изменить владельца</q>-->
+    <!--    <a state="/ChangeAccountDetails"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_поменять имя в квитанции_ChangeAccountDetails">-->
+    <!--    <q>поменять имя в квитанции</q>-->
+    <!--    <a state="/ChangeAccountDetails"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_поменять фио_ChangeAccountDetails">-->
+    <!--    <q>поменять фио</q>-->
+    <!--    <a state="/ChangeAccountDetails"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_изменить хозяина в квитанции_ChangeAccountDetails">-->
+    <!--    <q>изменить хозяина в квитанции</q>-->
+    <!--    <a state="/ChangeAccountDetails"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_сменить собственника_ChangeAccountDetails">-->
+    <!--    <q>сменить собственника</q>-->
+    <!--    <a state="/ChangeAccountDetails"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_изменить число проживающих_ChangeTenants">-->
+    <!--    <q>изменить число проживающих</q>-->
+    <!--    <a state="/ChangeTenants"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_поменять количество человек_ChangeTenants">-->
+    <!--    <q>поменять количество человек</q>-->
+    <!--    <a state="/ChangeTenants"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_количество людей изменить_ChangeTenants">-->
+    <!--    <q>количество людей изменить</q>-->
+    <!--    <a state="/ChangeTenants"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_уменьшить количество проживающих_ChangeTenants">-->
+    <!--    <q>уменьшить количество проживающих</q>-->
+    <!--    <a state="/ChangeTenants"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_увеличить число людей_ChangeTenants">-->
+    <!--    <q>увеличить число людей</q>-->
+    <!--    <a state="/ChangeTenants"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_число человек в квитанции_ChangeTenants">-->
+    <!--    <q>число человек в квитанции</q>-->
+    <!--    <a state="/ChangeTenants"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_уменьшить человек в квитанции_ChangeTenants">-->
+    <!--    <q>уменьшить человек в квитанции</q>-->
+    <!--    <a state="/ChangeTenants"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_лично_Лично">-->
+    <!--    <q>лично</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_приду сам_Лично">-->
+    <!--    <q>приду сам</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_прийду самостоятельно_Лично">-->
+    <!--    <q>прийду самостоятельно</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_посещу вас_Лично">-->
+    <!--    <q>посещу вас</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_офлайн_Лично">-->
+    <!--    <q>офлайн</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_оффлайн_Лично">-->
+    <!--    <q>оффлайн</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_вживую_Лично">-->
+    <!--    <q>вживую</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_хочу прийти_Лично">-->
+    <!--    <q>хочу прийти</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_хочу придти_Лично">-->
+    <!--    <q>хочу придти</q>-->
+    <!--    <a state="/Лично"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_не помню_DontKnow">-->
+    <!--    <q>не помню</q>-->
+    <!--    <a state="/DontKnow"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_откуда я знаю_DontKnow">-->
+    <!--    <q>откуда я знаю</q>-->
+    <!--    <a state="/DontKnow"/>-->
+    <!--</test-case>-->
+            
+            
+    <!--<test-case id="Phrase_я не знаю_DontKnow">-->
+    <!--    <q>я не знаю</q>-->
+    <!--    <a state="/DontKnow"/>-->
+    <!--</test-case>-->
         
     
 </test>     
