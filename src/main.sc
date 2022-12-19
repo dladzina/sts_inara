@@ -75,6 +75,13 @@ theme: /
     state: Hello
         intent!: /привет
         a: Привет привет
+    
+    state: WhatDoYouWant
+        random:
+            a: Что вы хотите узнать?
+            a: По какому вопросу вы обращаетесь?
+            a: Задайте Ваш вопрос
+            a: Скажите свой вопрос
 
     state: NoMatch || noContext = true
         event!: noMatch
@@ -232,7 +239,7 @@ theme: /ИнициацияЗавершения
         state: CanIHelpYouAgree
             q: $yes
             q: $agree
-            
+            a: Задайте свой вопрос
             
         state: CanIHelpYouDisagree
             q: $no

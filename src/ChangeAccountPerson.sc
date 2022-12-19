@@ -99,7 +99,15 @@ theme: /ChangeAccountPerson
             q: $agree
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки. Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку. Дальше следуйте инструкции
-            go!: /ИнициацияЗавершения/CanIHelpYou
+            script:
+                $dialer.bargeInResponse({
+                    bargeIn: "forced",
+                    bargeInTrigger: "interim",
+                    noInterruptTime: 1});
+                FindAccountNumberClear();
+            
+            go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou
+            
                 
         state: DocumentsToChangeAccountPerson
             a:  Перечислить необходимые документы?
@@ -108,7 +116,7 @@ theme: /ChangeAccountPerson
                 q: $no
                 q: $disagree
                 # a:  Интент "Инициация завершения диалога"
-                go!: /ИнициацияЗавершения/CanIHelpYou                                
+                go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou                              
                 
             state: Yes_List_Doc
                 q: $yes
@@ -119,12 +127,24 @@ theme: /ChangeAccountPerson
                     q: $no
                     q: $disagree
                     # a:  Интент "Инициация завершения диалога"
-                    go!: /ИнициацияЗавершения/CanIHelpYou
+                    go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou
                                     
                 state: Yes_Property_Documents
                     q: $yes
                     q: $agree
                     a:  Подходят --копии договора купли-продажи, -дарения, -справка о наличии недвижимого имущества, или  зарегистрированных правах на недвижимое имущество с портала е гов
                     # a:  Интент "Инициация завершения диалога"
-                    go!: /ИнициацияЗавершения/CanIHelpYou
-        
+                    go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou
+
+        state: CanIHelpYou 
+            a: Нужна ли моя помощь дальше?
+            
+            state: CanIHelpYouAgree
+                q: $yes
+                q: $agree
+                go!: /WhatDoYouWant
+                
+            state: CanIHelpYouDisagree
+                q: $no
+                q: $disagree
+                go!: /bye        

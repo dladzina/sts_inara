@@ -91,7 +91,7 @@ theme: /ChangeAccountPersonCount
             q: $agree
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки. Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку. Дальше следуйте инструкции
-            go!: /ИнициацияЗавершения/CanIHelpYou
+            go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou
             
         state: DocumentsToChangePersonCount
             a:  Перечислить необходимые документы?
@@ -99,11 +99,23 @@ theme: /ChangeAccountPersonCount
             state: No_List_Doc
                 q: $no
                 q: $disagree
-                # a:  Интент "Инициация завершения диалога"
-                go!: /ИнициацияЗавершения/CanIHelpYou                                
+                go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou
                 
             state: Yes_List_Doc
                 q: $yes
                 q: $agree
                 a:  Необходимые документы: удостоверение личности собственника и сведения о зарегистрированных лицах с портала е гов
-                go!: /ИнициацияЗавершения/CanIHelpYou
+                go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou
+
+        state: CanIHelpYou 
+            a: Нужна ли моя помощь дальше?
+            
+            state: CanIHelpYouAgree
+                q: $yes
+                q: $agree
+                go!: /WhatDoYouWant
+                
+            state: CanIHelpYouDisagree
+                q: $no
+                q: $disagree
+                go!: /bye        
