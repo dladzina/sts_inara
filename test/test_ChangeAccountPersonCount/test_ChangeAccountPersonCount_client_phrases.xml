@@ -43,5 +43,16 @@
     <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
     <!--</test-case>    -->
 
-
+    <test-case id = "ChangeAccountPersonCount_6">
+        <q>хочу увеличить количество человек в квитанции. платить надо поменьше</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+        <q>да</q>
+        <a class="/ChangeAccountPersonCount/ChangeAccountPersonCount/Online"/>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Online"/>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou"/>
+        <q>как в офисе сделать</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"/>
+        <q>а если я не могу онлайн подать а вот в офис приехать</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"/>
+    </test-case>   
 </test>
