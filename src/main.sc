@@ -43,7 +43,7 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", function($context) {
         log('-----' + toPrettyString($context));
-        if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.5)) {
+        if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
             $context.nluResults.selected = $context.nluResults.intents[0];
             return;
         }

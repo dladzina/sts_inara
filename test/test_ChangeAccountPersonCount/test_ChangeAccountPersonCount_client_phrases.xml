@@ -55,4 +55,12 @@
         <q>а если я не могу онлайн подать а вот в офис приехать</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"/>
     </test-case>   
+
+    <test-case id = "ChangeAccountPersonCount_7">
+        <q>хочу увеличить количество человек в квитанции. платить надо поменьше</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+        <q>я хочу в офис приехать</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"/>
+    </test-case>   
+
 </test>

@@ -76,4 +76,12 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
     </test-case>    
 
+    <test-case id = "ChangeAccountPerson_14">
+        <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+        <q>я хочу в офис приехать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
+    </test-case>   
+
 </test>
