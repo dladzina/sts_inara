@@ -15,6 +15,9 @@ require: dicts/MainSuppl.csv
     name = MainSuppl
     var = $MainSuppl
 
+require: CommonAnswers.yaml
+    var = CommonAnswers
+
 patterns:
     $Yes_for_contacts = (сейчас/*диктуй*/говори*/давай*)
     $No_for_contacts = (самостоятельно/сам/посмотр* сам/найд* сам)
@@ -78,11 +81,9 @@ theme: /
         script:
             $context.session.AnswerCnt = 0;
         a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
-        random:
-            a: Что вы хотите узнать?
-            a: По какому вопросу вы обращаетесь?
-            a: Задайте Ваш вопрос
-            a: Скажите свой вопрос
+        script:
+            $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+        a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
         script:
             $dialer.bargeInResponse({
                 bargeIn: "forced",
@@ -100,11 +101,9 @@ theme: /
         a: Здравствуйте!
     
     state: WhatDoYouWant
-        random:
-            a: Что вы хотите узнать?
-            a: По какому вопросу вы обращаетесь?
-            a: Задайте Ваш вопрос
-            a: Скажите свой вопрос
+        script:
+            $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+        a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
     state: NoMatch || noContext = true
         event!: noMatch
@@ -257,12 +256,14 @@ theme: /
 theme: /ИнициацияЗавершения
     
     state: CanIHelpYou 
-        a: Нужна ли моя помощь дальше?
+        script:
+            $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
+        a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
         
         state: CanIHelpYouAgree
             q: $yes
             q: $agree
-            a: Задайте свой вопрос
+            go!: /WhatDoYouWant
             
         state: CanIHelpYouDisagree
             q: $no

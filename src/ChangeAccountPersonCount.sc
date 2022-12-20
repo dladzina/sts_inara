@@ -110,7 +110,9 @@ theme: /ChangeAccountPersonCount
                 go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou
 
         state: CanIHelpYou 
-            a: Нужна ли моя помощь дальше?
+            script:
+                $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
+            a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
             
             state: CanIHelpYouAgree
                 q: $yes
