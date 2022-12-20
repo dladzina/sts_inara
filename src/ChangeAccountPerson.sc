@@ -5,8 +5,8 @@ theme: /ChangeAccountPerson
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
             
         state: Offline
-            #intent: /Offline
-            q: * $Offline *
+            intent: /Лично
+            # q: * $Offline *
             q: $no 
             q: $disagree 
             event: speechNotRecognized
@@ -31,7 +31,6 @@ theme: /ChangeAccountPerson
                     #  уточняем, есть ли ЛС. Если нет, то даем контакты всех
                     # если говорит номер ЛС, то даем только тех, что есть в квитанции
                     q: $yes
-                    event: да
                     q: $agree
                     # смотрим, был ли лицевой счет выявлен в ходе диалога
                     if: ($session.Account && $session.Account.Number > 0)
@@ -93,19 +92,19 @@ theme: /ChangeAccountPerson
                                 q: $agree
                                 go!: ../../Yes_Contacts
         state: Online
-            #intent: /Online
-            q: * $Online *
+            intent: /Online
+            # q: * $Online *
             q: $yes
             q: $agree
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки. Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку. Дальше следуйте инструкции
             script:
+            # встраиваем перебивание в длинный ответ 
                 $dialer.bargeInResponse({
                     bargeIn: "forced",
                     bargeInTrigger: "interim",
-                    noInterruptTime: 1});
-                FindAccountNumberClear();
-            
+                    noInterruptTime: 2});
+
             go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou
             
                 

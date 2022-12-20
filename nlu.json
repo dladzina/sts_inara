@@ -112,17 +112,21 @@
     "phrases" : [ {
       "text" : "сменить собственника"
     }, {
-      "text" : "сменить фамилию"
+      "text" : "сменить с предыдущего владельца на свое имя"
     }, {
       "text" : "изменить владельца"
     }, {
       "text" : "поменять имя в квитанции"
     }, {
-      "text" : "поменять фио"
+      "text" : "купил @Недвижимость поменять имя в квитанции"
     }, {
       "text" : "изменить хозяина в квитанции"
     }, {
-      "text" : "сменить собственника"
+      "text" : "купил  @Недвижимость сменить собственника"
+    }, {
+      "text" : "приобрел @Недвижимость  оформить лицевой счет на себя"
+    }, {
+      "text" : "приходит квитанция на старого хозяина хочу чтобы на меня приходило"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -175,6 +179,10 @@
       "text" : "хочу прийти"
     }, {
       "text" : "хочу придти"
+    }, {
+      "text" : "не онлайн"
+    }, {
+      "text" : "я не могу онлайн подать а вот в офис приехать"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -238,7 +246,38 @@
     "patterns" : [ ],
     "priority" : 0
   } ],
-  "entities" : [ ],
+  "entities" : [ {
+    "entity" : {
+      "name" : "Недвижимость",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "Дом" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Офис" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Квартира" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "недвижимость" ],
+      "value" : ""
+    } ]
+  } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
   "spellerDictionary" : [ ],
   "systemEntities" : [ {

@@ -39,5 +39,26 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>    
     
+    <test-case id = "ChangeAccountPerson_10">
+        <q>здравствуйте мне приходит квитанция на старого хозяина хочу чтобы на меня приходило</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>    
+    
+    <test-case id = "ChangeAccountPerson_11">
+        <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>    
+    
+    
+    <test-case id = "ChangeAccountPerson_12">
+        <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+        <q>нет не онлайн</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
+        <q>а если я не могу онлайн подать а вот в офис приехать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
+    </test-case>    
 
 </test>

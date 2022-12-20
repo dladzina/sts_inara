@@ -22,6 +22,7 @@ patterns:
     $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
     $mainSuppl = $entity<MainSuppl> || converter = mainSupplConverter
+    $changeOwner = [приобрел* @Недвижимость] *мени* (собственника|хозяина|имя|фамилию)
     
 
 init:
@@ -39,6 +40,20 @@ init:
         
         //$context.session._lastState = $context.contextPath ;
     });
+    ///ChangeAccountPerson/ChangeAccountPerson
+    bind("selectNLUResult", function($context) {
+        log('-----' + toPrettyString($context));
+        if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.5)) {
+            $context.nluResults.selected = $context.nluResults.intents[0];
+            return;
+        }
+    
+        if ($context.nluResults.patterns.length > 0) {
+            $context.nluResults.selected = $context.nluResults.patterns[0];
+        }
+        
+    });
+    
 
     # bind("postProcess", function($context) {
     #     //$context.session._lastState = $context.currentState;
@@ -82,7 +97,7 @@ theme: /
 
     state: Hello
         intent!: /привет
-        a: Привет привет
+        a: Здравствуйте!
     
     state: WhatDoYouWant
         random:
