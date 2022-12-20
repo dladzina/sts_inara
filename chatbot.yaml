@@ -11,8 +11,8 @@ tests:
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
        # - test_ChangeAccountPerson/test_global_ntents.xml
-    exclude: 
-        - test_global_intents.xml
+    # exclude: 
+    #     - test_global_intents.xml
         # - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
 
 
