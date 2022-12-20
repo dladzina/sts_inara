@@ -41,7 +41,7 @@ theme: /ChangeAccountPersonCount
                     
 
                 state: SupplierContactsFull
-                    a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetMainSupplNames($MainSuppl)}}.
+                    a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetMainSupplNames($MainSuppl)}}. Если вы уменьшаете количество проживающих, то еще необходимо обратиться в Тартып.
                     go!: ../Contacts
                                     
                 state: SupplierContactsByAccount
@@ -49,6 +49,8 @@ theme: /ChangeAccountPersonCount
                         # где-то здесь надо получить список поставщиков из БД и сформировать строку 
                     if: GetAccountMainSuppls()
                         a:   Вы можете обратиться  к одному из поставщиков коммунальных услуг на выбор -  {{GetAccountMainSupplNames($MainSuppl)}}.
+                        if: isAccountHasSuppl('tartyp')
+                            a: Если вы уменьшаете количество проживающих, то еще необходимо обратиться в Тартып.
                     else:
                         go!: ../SupplierContactsFull
                     # go!: /PersonChange/PersonChange/Offline/Yes_Suppliers_List/Contacts

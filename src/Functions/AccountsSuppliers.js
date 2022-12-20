@@ -119,3 +119,16 @@ function GetAccountMainSupplNamesContracts(MainSuppList){
     return return_str;
 }
 
+//-----------------------------------------------------------------
+// возвращает, есть ли на ЛС указанный поставщик
+
+function isAccountHasSuppl(name) {
+    var $session = $jsapi.context().session;
+    $session.Account.MainSuppliers.forEach(function(elem){
+        if (elem == name)
+            return true;
+    });
+    return false;
+    
+}
+
