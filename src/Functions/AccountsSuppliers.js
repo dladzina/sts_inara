@@ -124,11 +124,13 @@ function GetAccountMainSupplNamesContracts(MainSuppList){
 
 function isAccountHasSuppl(name) {
     var $session = $jsapi.context().session;
+    var res = false;
     $session.Account.MainSuppliers.forEach(function(elem){
-        if (elem == name)
-            return true;
+        if (elem === name){
+            return res = true;
+        }
     });
-    return false;
+    return res;
     
 }
 
