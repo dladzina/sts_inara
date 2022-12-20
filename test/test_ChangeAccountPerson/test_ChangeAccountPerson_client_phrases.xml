@@ -61,4 +61,19 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
     </test-case>    
 
+    <test-case id = "ChangeAccountPerson_13">
+        <q>сменить собственника</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+        <q>да</q>
+        <a class="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou"/>
+        <q>как в офисе сделать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
+        <q>а если я не могу онлайн подать а вот в офис приехать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
+    </test-case>    
+
 </test>
