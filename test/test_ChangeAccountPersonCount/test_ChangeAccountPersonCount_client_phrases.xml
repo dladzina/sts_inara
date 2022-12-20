@@ -1,0 +1,47 @@
+<test>
+    <test-case id = "ChangeAccountPersonCount_1">
+        <q>хочу уменьшить количество людей в квитанции до 3-х человек. папа недавно выехал</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+        <q>нет не онлайн</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"/>
+        <q>а если я не могу онлайн подать а вот в офис приехать</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"/>
+    </test-case>    
+
+    <test-case id = "ChangeAccountPersonCount_2">
+        <q>Как изменить число проживающих в квартире</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>    
+    
+    <test-case id = "ChangeAccountPersonCount_3">
+        <q>Мне нужно исключить из квитанции двух человек. как это сделать?</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>    
+
+    <test-case id = "ChangeAccountPersonCount_4">
+        <q>Мне надо уменьшить количество людей в квитанции</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>    
+
+    <test-case id = "ChangeAccountPersonCount_5">
+        <q>у меня количество людей изменилось. Куда можно обратиться чтобы мне поменять количество людей </q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>    
+
+    <test-case id = "ChangeAccountPersonCount_5">
+        <q>Как можно убрать из квитанции человека, который выписался давно</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>    
+
+    <test-case id = "ChangeAccountPersonCount_5">
+        <q>теперь надо вот убрать меня да одного человека нужно исключить чтобы этот квартплата приходила на троих</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>    
+
+    <!--<test-case id = "ChangeAccountPersonCount_5">-->
+    <!--    <q>знаете хотела  уточнить смотрите я  у меня там проживали двое я одного выписала да ну как бы я хозяйка квартиры но почему мне в этот раз опять в Алсеко пришли  опять всё по двойное</q>-->
+    <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
+    <!--</test-case>    -->
+
+
+</test>

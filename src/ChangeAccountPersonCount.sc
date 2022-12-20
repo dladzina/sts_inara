@@ -6,7 +6,8 @@ theme: /ChangeAccountPersonCount
         
         state: Offline
             #intent: /Offline
-            q: * $Offline *
+            intent: /Лично
+            # q: * $Offline *
             q: $no 
             q: $disagree 
             event: speechNotRecognized
@@ -86,7 +87,8 @@ theme: /ChangeAccountPersonCount
 
         state: Online
             #intent: /Online
-            q: * $Online *
+            intent: /Online
+            # q: * $Online *
             q: $yes
             q: $agree
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
