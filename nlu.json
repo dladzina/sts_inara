@@ -251,6 +251,22 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/GetDateLastPay",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "когда в последний раз платили по моему счету"
+    }, {
+      "text" : "прошла ли оплата по лицевому счету"
+    }, {
+      "text" : "дата последней оплаты "
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {

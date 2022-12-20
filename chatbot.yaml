@@ -39,6 +39,7 @@ injector:
   AccountTableURL: 'https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing'
   AccountSheetName: 'ЛС'
   AccountSheetSupplName: 'ЛСПост'
+  AccountSheetPayName: 'Оплаты'
   MacrosUrl: 'https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?'
     #   sheetURL={url}&sheetName={sheet}&filterHead=account_number&filterValue={accountNumber}'
     # Ниже полная ссылка на файл в режиме макроса

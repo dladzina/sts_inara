@@ -10,6 +10,7 @@ require: Functions/AccountsSuppliers.js
 require: AccountInput.sc 
 require: ChangeAccountPerson.sc
 require: ChangeAccountPersonCount.sc
+require: PaymentTotal.sc
 
 require: dicts/MainSuppl.csv
     name = MainSuppl
@@ -42,10 +43,22 @@ init:
             $context.session.AnswerCnt += 1;
         
         //$context.session._lastState = $context.contextPath ;
+        // добавляю логи всех ответов бота
+        /*
+        if ($context.response.replies) {
+            $context.response.replies.forEach(function(reply) {
+                if (reply.type === "text") {
+                    if (reply.text.match(/\[|\]/g) && reply.text.match(/\(|\)/g)) {
+                        log("Bot: " + formatLink(reply.text));
+                    } else {
+                        log("Bot: " + reply.text);
+                    }
+                }
+            });
+        }*/        
     });
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", function($context) {
-        # log('-----' + toPrettyString($context));
         if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
             $context.nluResults.selected = $context.nluResults.intents[0];
             return;
@@ -119,11 +132,14 @@ theme: /
             }
             $session.catchAll.repetition += 1;
         if: $context.session.AnswerCnt == 1
-            random:
-                a: Извините, я Вас не поняла. Повторите пожалуйста 
-                a: Я Вас не поняла. Сформулируйте по-другому 
-                a: Скажите еще раз 
-                a: Мне плохо слышно, повторите
+            script:
+                $temp.index = $reactions.random(CommonAnswers.NoMatch.answers.length);
+            a: {{CommonAnswers.NoMatch.answers[$temp.index]}}
+            # random:
+            #     a: Извините, я Вас не поняла. Повторите пожалуйста 
+            #     a: Я Вас не поняла. Сформулируйте по-другому 
+            #     a: Скажите еще раз 
+            #     a: Мне плохо слышно, повторите
         else:
             a: Для решения Вашего вопроса перевожу Вас на оператора. Пожалуйста, подождите
             go!: /CallTheOperator
