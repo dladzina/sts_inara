@@ -2,11 +2,12 @@ theme: /ChangeAccountPersonCount
     
     state: ChangeAccountPersonCount
         intent!: /ChangeAccountPersonCount
-        a: Изменить количество проживающих реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
+        a: Изменить количество проживающих можно в офисе или онлайн. Вы хотите подать заявку онлайн?
         
         state: Offline
             #intent: /Offline
             intent: /Лично
+            intent: /НеОнлайн
             # q: * $Offline *
             q: $no 
             q: $disagree 
@@ -89,7 +90,7 @@ theme: /ChangeAccountPersonCount
 
         state: Online
             #intent: /Online
-            intent: /Online
+            intent: /Онлайн
             # q: * $Online *
             q: $yes
             q: $agree

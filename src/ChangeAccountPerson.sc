@@ -6,6 +6,7 @@ theme: /ChangeAccountPerson
             
         state: Offline
             intent: /Лично
+            intent: /НеОнлайн
             # q: * $Offline *
             q: $no 
             q: $disagree 
@@ -92,7 +93,7 @@ theme: /ChangeAccountPerson
                                 q: $agree
                                 go!: ../../Yes_Contacts
         state: Online
-            intent: /Online
+            intent: /Онлайн
             # q: * $Online *
             q: $yes
             q: $agree

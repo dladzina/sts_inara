@@ -66,7 +66,13 @@
       "text" : "сам могу"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "classRule_9651",
+        "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "classRule_7988",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -182,13 +188,13 @@
     }, {
       "text" : "хочу придти"
     }, {
-      "text" : "не онлайн"
-    }, {
       "text" : "я не могу онлайн подать а вот в офис приехать"
     }, {
       "text" : "как в офисе сделать"
     }, {
       "text" : "я хочу в офис приехать"
+    }, {
+      "text" : "я не могу онлайн подать а вот в офис приехать"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -267,6 +273,26 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/НеОнлайн",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не @Сущность_Онлайн"
+    }, {
+      "text" : "у меня нет компьютера"
+    } ],
+    "classificationRules" : {
+      "refs" : [ {
+        "entityName" : "Сущность_Онлайн",
+        "predicate" : "CONTAINS"
+      }, {
+        "entityName" : "classRule_6476",
+        "predicate" : "CONTAINS"
+      } ]
+    },
+    "patterns" : [ "не (хочу/надо) @Сущность_Онлайн" ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -297,6 +323,86 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "недвижимость" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Сущность_Онлайн",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "онлайн" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "компьютер" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_9651",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "фамилия" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_7988",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "лично" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_6476",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "не", "нет" ],
       "value" : ""
     } ]
   } ],
@@ -404,5 +510,6 @@
   }, {
     "name" : "zb.number",
     "enabled" : false
-  } ]
+  } ],
+  "faq" : [ ]
 }

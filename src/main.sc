@@ -3,7 +3,9 @@ require: slotfilling/slotFilling.sc
   
 require: patterns.sc
   module = sys.zb-common
-  
+require: dateTime/dateTime.sc
+  module = sys.zb-common  
+
 require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
 
@@ -58,8 +60,11 @@ init:
         }*/        
     });
     ///ChangeAccountPerson/ChangeAccountPerson
-    bind("selectNLUResult", function($context) {
+    bind("selectNLUResult", 
+    function($context) {
+         log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
+            //log($context);
             $context.nluResults.selected = $context.nluResults.intents[0];
             return;
         }
@@ -68,7 +73,44 @@ init:
             $context.nluResults.selected = $context.nluResults.patterns[0];
         }
         
-    });
+    }
+    //,     '/ChangeAccountPerson/' // path
+    );
+    /*
+    bind("selectNLUResult", function($context) {
+        log("$context.nluResults.intents.length = "  + $context.nluResults.intents.length );
+        if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
+            //log($context);
+            $context.nluResults.selected = $context.nluResults.intents[0];
+            return;
+        }
+    
+        if ($context.nluResults.patterns.length > 0) {
+            $context.nluResults.selected = $context.nluResults.patterns[0];
+        }
+        
+    });*/
+    # bind("selectNLUResult", function($context) {
+    #     // Получим все результаты от всех классификаторов в виде массива.
+    #     var allResults = _.chain($context.nluResults)
+    #         .omit("selected")
+    #         .values()
+    #         .flatten()
+    #         .value();
+    
+    #     // Сосчитаем максимальное значение `score` среди всех результатов.
+    #     var maxScore = _.chain(allResults)
+    #         .pluck("score")
+    #         .max()
+    #         .value();
+    
+    #     // Запишем в `nluResults.selected` результат с максимальным весом.
+    #     $context.nluResults.selected = _.findWhere(allResults, {
+    #         score: maxScore
+    #     });
+    #     log(toPrettyString($context.nluResults.selected));
+    # });
+    
     
 
     # bind("postProcess", function($context) {
@@ -88,6 +130,14 @@ init:
     
 
 theme: /
+
+    state: DateLastPayTest
+        q!: 1
+        script:
+            $session.Account = {};
+            $session.Account.PaymentInfo ={};
+            $session.Account.PaymentInfo.date_last_pay = new currentDate()
+        a: {{GetPaymentAnswer()}}
 
     state: Start
         q!: $regex</start>
