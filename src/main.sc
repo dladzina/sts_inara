@@ -9,7 +9,6 @@ require: dateTime/dateTime.sc
 require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
 
-require: AccountInput.sc 
 require: ChangeAccountPerson.sc
 require: ChangeAccountPersonCount.sc
 require: PaymentTotal.sc
