@@ -9,7 +9,7 @@ theme: /PaymentTotal
         # запрашивает информацию с БД по дате последней оплаты 
         # если ЛС нет, то отрабатывает тоже: запрашивает ЛС. 
         AccountPayDateMessage:
-            needCleanEmptyAccount = false
+            needCleanEmptyAccount = true
             okState = /PaymentTotal/GetDateLastPay/CanIHelpYou
             errorState = /PaymentTotal/GetDateLastPay/CanIHelpYou 
             # errorState = /CallTheOperator
