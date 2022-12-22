@@ -135,8 +135,10 @@ theme: /
         q!: 1
         script:
             $session.Account = {};
-            $session.Account.PaymentInfo ={};
-            $session.Account.PaymentInfo.date_last_pay = new currentDate()
+            $session.Account.Number = 5888301;
+            GetAccountPayShortInfo();
+            # $session.Account.PaymentInfo ={};
+            # $session.Account.PaymentInfo.date_last_pay = new currentDate()
         a: {{GetPaymentAnswer()}}
 
     state: Start
