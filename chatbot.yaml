@@ -49,3 +49,7 @@ injector:
     
 nlp:
   nbest: 3
+
+customTags:
+  - src/Blocks/AccountPayDate/account_pay_date.json
+  - src/Blocks/AccountNumberInput/account_number_input.json

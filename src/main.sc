@@ -62,7 +62,7 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-         log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        # log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
             //log($context);
             $context.nluResults.selected = $context.nluResults.intents[0];
@@ -130,16 +130,6 @@ init:
     
 
 theme: /
-
-    state: DateLastPayTest
-        q!: 1
-        script:
-            $session.Account = {};
-            $session.Account.Number = 5888301;
-            GetAccountPayShortInfo();
-            # $session.Account.PaymentInfo ={};
-            # $session.Account.PaymentInfo.date_last_pay = new currentDate()
-        a: {{GetPaymentAnswer()}}
 
     state: Start
         q!: $regex</start>
