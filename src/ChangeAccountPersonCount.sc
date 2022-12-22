@@ -29,16 +29,13 @@ theme: /ChangeAccountPersonCount
                 if: ($session.Account && $session.Account.Number > 0)
                     # Есть номер лицевого счета, будем давать информацию по нему по контактам поставщиков
                     go!: SupplierContactsByAccount
-                    # a: сейчас дам вам еще информацию по счёту {{$session.Account.Number}}
-                    # script: 
-                    #      $reactions.answer(GetAccountNumAnswer($session.Account.Number));
-                elseif: ($session.Account && $session.Account.Number < 0)
-                    # a: что ж с тобой делать? нет у тебя лицевого счёта ... 
-                    go!: SupplierContactsFull
                 else: 
                     # здесь идет определение, что ЛС в рамках дилагога еще не запрашивался - передаем управление туда
                     a: Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
-                    go!:/AccountNumInput/AccountInput                    
+                    BlockAccountNumber:
+                        okState = SupplierContactsByAccount
+                        errorState = SupplierContactsFull
+                        noAccountState = SupplierContactsFull
                     
 
                 state: SupplierContactsFull

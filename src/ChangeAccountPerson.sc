@@ -17,8 +17,8 @@ theme: /ChangeAccountPerson
             
             state: Suppliers_List_Info
                 a: Хотите узнать, к каким поставщикам можно обратиться?
-                script:
-                    if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
+                # script:
+                #     if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
                 
     
                 state: No_Suppliers_List
@@ -40,13 +40,22 @@ theme: /ChangeAccountPerson
                         # a: сейчас дам вам еще информацию по счёту {{$session.Account.Number}}
                         # script: 
                         #      $reactions.answer(GetAccountNumAnswer($session.Account.Number));
-                    elseif: ($session.Account && $session.Account.Number < 0)
-                        # a: что ж с тобой делать? нет у тебя лицевого счёта ... 
-                        go!: SupplierContactsFull
+                    # else:
+                    #     BlockAccountNumber:
+                    #         okState = SupplierContactsByAccount
+                    #         errorState = SupplierContactsFull
+                    #         noAccountState = SupplierContactsFull
+                    # elseif: ($session.Account && $session.Account.Number < 0)
+                    #     # a: что ж с тобой делать? нет у тебя лицевого счёта ... 
+                    #     go!: SupplierContactsFull
                     else: 
                         # здесь идет определение, что ЛС в рамках дилагога еще не запрашивался - передаем управление туда
                         a: Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
-                        go!:/AccountNumInput/AccountInput                    
+                        BlockAccountNumber:
+                            okState = SupplierContactsByAccount
+                            errorState = SupplierContactsFull
+                            noAccountState = SupplierContactsFull
+                        # go!:/AccountNumInput/AccountInput                    
                     
 
                     state: SupplierContactsFull
