@@ -51,14 +51,14 @@ function GetPaymentAnswer(){
     if ($session.Account.PaymentInfo){
         if ($session.Account.PaymentInfo.date_last_pay && $session.Account.PaymentInfo.date_last_pay != ""){
             var dat = $session.Account.PaymentInfo.date_last_pay;
-            log(dat.substring(8, 10));
-            log(dat.substring(5, 7));
+            // log(dat.substring(8, 10));
+            // log(dat.substring(5, 7));
             var day_num = (dat.substring(8, 10));
             var month_num = Number(dat.substring(5, 7))-1;
             message = "Последняя оплата - ";
             // message += dat.getDate() + ' ' + $nlp.inflect(MonthNames[dat.getMonth()], "gent");
             message += day_num + ' ' + $nlp.inflect(MonthNames[month_num], "gent");
-            message += " dat = " + dat;
+            // message += " dat = " + dat;
             // message += typeof dat;
             return message; //"Последняя оплата  " + $session.Account.PaymentInfo.date_last_pay;
         }
