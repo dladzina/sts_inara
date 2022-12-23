@@ -12,7 +12,12 @@ theme: /ChangeAccountPerson
             q: $disagree 
             event: speechNotRecognized
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
-            #go!: /AfterPersonalAccount
+            # script:
+            # # встраиваем перебивание в длинный ответ 
+            #     $dialer.bargeInResponse({
+            #         bargeIn: "forced",
+            #         bargeInTrigger: "interim",
+            #         noInterruptTime: 2});
             go!: /ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info
             
             state: Suppliers_List_Info
@@ -108,12 +113,12 @@ theme: /ChangeAccountPerson
             q: $agree
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки. Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку. Дальше следуйте инструкции
-            script:
-            # встраиваем перебивание в длинный ответ 
-                $dialer.bargeInResponse({
-                    bargeIn: "forced",
-                    bargeInTrigger: "interim",
-                    noInterruptTime: 2});
+            # script:
+            # # встраиваем перебивание в длинный ответ 
+            #     $dialer.bargeInResponse({
+            #         bargeIn: "forced",
+            #         bargeInTrigger: "interim",
+            #         noInterruptTime: 2});
 
             go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou
             

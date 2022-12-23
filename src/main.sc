@@ -138,12 +138,12 @@ theme: /
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
-        script:
-            $dialer.bargeInResponse({
-                bargeIn: "forced",
-                bargeInTrigger: "interim",
-                noInterruptTime: 0});
-            FindAccountNumberClear();
+        # script:
+        #     $dialer.bargeInResponse({
+        #         bargeIn: "forced",
+        #         bargeInTrigger: "interim",
+        #         noInterruptTime: 0});
+        #     FindAccountNumberClear();
         # заглушки
         # event: noMatch || onlyThisState = false, toState = "/NoMatch" 
         # intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
