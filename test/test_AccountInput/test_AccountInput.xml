@@ -386,4 +386,163 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
     </test-case>   
     
+    <test-case  id="AccountInput_Block_1">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>подождите</q>
+        <a>да, жду Вас</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888490</filterValue>
+          </parameters>
+          <response>
+            {"count":0,"data":[],"filterHead":"account_number","filterValue":"5888490","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>
+
+    <test-case  id="AccountInput_Block_2">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>минуточку</q>
+        <a>да, жду Вас</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888490</filterValue>
+          </parameters>
+          <response>
+            {"count":0,"data":[],"filterHead":"account_number","filterValue":"5888490","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>
+
+    <test-case  id="AccountInput_Block_3">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>щас</q>
+        <a>да, жду Вас</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888490</filterValue>
+          </parameters>
+          <response>
+            {"count":0,"data":[],"filterHead":"account_number","filterValue":"5888490","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>
+
+    <test-case  id="AccountInput_Block_4">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>сейчас</q>
+        <a>да, жду Вас</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888490</filterValue>
+          </parameters>
+          <response>
+            {"count":0,"data":[],"filterHead":"account_number","filterValue":"5888490","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>    
+
+    <test-case  id="AccountInput_Block_5">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>лицевой счет да сейчас подождите</q>
+        <a>да, жду Вас</a>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888490</filterValue>
+          </parameters>
+          <response>
+            {"count":0,"data":[],"filterHead":"account_number","filterValue":"5888490","needFilter":true,"msg":"Success"}
+          </response>
+        </mockData>        
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
+    </test-case>      
 </test>  

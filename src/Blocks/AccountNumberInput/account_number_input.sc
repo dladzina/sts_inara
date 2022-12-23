@@ -88,6 +88,17 @@ theme: /BlockAccountNumInput
             a: да, жду Вас
             script:
                $dialer.setNoInputTimeout(20000); // 20 сек
+
+        state: looser
+            q: * $looser *
+            q: * $obsceneWord  *
+            q: * $stupid  * 
+            random: 
+                a: Спасибо. Мне крайне важно ваше мнение
+                a: Вы очень любезны сегодня
+                a: Это комплимент или оскорбление?
+            go!: {{$session.contextPath}}
+               
         
         state: AccountInputNotNumbersWay
             intent: /ЛС_ИнойТипВвода

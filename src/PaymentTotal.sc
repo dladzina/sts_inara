@@ -31,43 +31,20 @@ theme: /PaymentTotal
                 q: $disagree
                 go!: /bye        
     
-    
-    state: GetDateLastPayAnswer
-        # смотрим, был ли лицевой счет выявлен в ходе диалога
-        if: ($session.Account && $session.Account.Number > 0)
-            # Есть номер лицевого счета, будем давать информацию по нему по контактам поставщиков
-            go!: GetDateLastPayInfo
-            # a: сейчас дам вам еще информацию по счёту {{$session.Account.Number}}
-            # script: 
-            #      $reactions.answer(GetAccountNumAnswer($session.Account.Number));
-        elseif: ($session.Account && $session.Account.Number < 0)
-            # a: что ж с тобой делать? нет у тебя лицевого счёта ... 
-            go!: SendToOperator
-        else: 
-            # здесь идет определение, что ЛС в рамках дилагога еще не запрашивался - передаем управление туда
-            a: Давайте уточним Ваш лицевой счет
-            go!:/AccountNumInput/AccountInput      
-            
-        state: SendToOperator
-            a: Для решения вашего вопроса перевожу Вас на оператора.
-            go!: /CallTheOperator
-            
-        state: GetDateLastPayInfo
-            if: GetAccountPayShortInfo()
-                a: {{GetPaymentAnswer()}} 
-            else: 
-                a: К сожалению, мне не удалось получить информацию по оплате. 
-            go!: ../SendToOperator
 
     state: PaymentQuestion
         intent!: /Платеж
-        a: Давайте посмотрим Ваши платежи
-        go!: PaymentQuestionAnswerDateLastPay
+        a: Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора
+        AccountPayDateMessage:
+            needCleanEmptyAccount = true
+            okState = SendToOperator
+            errorState = SendToOperator
+            noAccountState = SendToOperator
         
-        state: PaymentQuestionAnswerDateLastPay
-            script:
-                if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
-            go!: /PaymentTotal/GetDateLastPayAnswer
-            
+        state: SendToOperator
+            a: Для решения вашего вопроса перевожу Вас на оператора.
+            go!: /CallTheOperator
+        
+
 
         

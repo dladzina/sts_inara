@@ -295,6 +295,34 @@
     },
     "patterns" : [ "не (хочу/надо) @Сущность_Онлайн" ],
     "priority" : 0
+  }, {
+    "path" : "/подождите",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "минуточку"
+    }, {
+      "text" : "щас"
+    }, {
+      "text" : "сейчас"
+    }, {
+      "text" : "подождите"
+    }, {
+      "text" : "ожидайте"
+    }, {
+      "text" : "секунду"
+    }, {
+      "text" : "секундочку"
+    }, {
+      "text" : "ищу"
+    }, {
+      "text" : "поищу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
