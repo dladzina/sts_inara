@@ -1,0 +1,71 @@
+<test>
+    <test-case id="test_Payment_DateLast_Pay_intent_1">
+        <q>дата последней оплаты</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case id="test_Payment_DateLast_Pay_intent_2">
+        <q>прошла ли оплата по лицевому счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case id="test_Payment_DateLast_Pay_intent_3">
+        <q>когда в последний раз платили по моему счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <!--ошибка получения данных с сервиса-->
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_1">
+        <context var="session">
+        {
+          "Account":{
+            "Number":5888492,
+            "Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"
+          }
+        }</context>
+        <q>когда в последний раз платили по моему счету</q>
+        <a>К сожалению, мне не удалось получить информацию по оплате.</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_1">
+        <context var="session">
+        {
+          "Account":{
+            "Number":5888492,
+            "Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"
+          }
+        }</context>
+        <q>когда в последний раз платили по моему счету</q>
+        <a>К сожалению, мне не удалось получить информацию по оплате.</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>
+
+    <!--<test-case id="test_Payment_DateLast_Pay_AccountCheckPay_1">-->
+    <!--    <mockData>-->
+    <!--      <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>-->
+    <!--      <parameters>-->
+    <!--        <sheetName>Оплаты</sheetName>-->
+    <!--        <filterValue>5888492</filterValue>-->
+    <!--      </parameters>-->
+    <!--      <response>-->
+    <!--         {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}-->
+    <!--      </response>-->
+    <!--    </mockData>        -->
+    <!--    <context var="session">-->
+    <!--    {-->
+    <!--      "Account":{-->
+    <!--        "Number":5888492,-->
+    <!--        "Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"-->
+    <!--      }-->
+    <!--    }</context>-->
+    <!--    <q>когда в последний раз платили по моему счету</q>-->
+    <!--    <a>К сожалению, мне не удалось получить информацию по оплате.</a>-->
+    <!--    <a>Нужна ли моя помощь дальше?</a>-->
+    <!--</test-case>-->
+
+
+</test>

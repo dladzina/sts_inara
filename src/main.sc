@@ -63,7 +63,6 @@ init:
     function($context) {
         # log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
-            //log($context);
             $context.nluResults.selected = $context.nluResults.intents[0];
             return;
         }
@@ -73,22 +72,7 @@ init:
         }
         
     }
-    //,     '/ChangeAccountPerson/' // path
     );
-    /*
-    bind("selectNLUResult", function($context) {
-        log("$context.nluResults.intents.length = "  + $context.nluResults.intents.length );
-        if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
-            //log($context);
-            $context.nluResults.selected = $context.nluResults.intents[0];
-            return;
-        }
-    
-        if ($context.nluResults.patterns.length > 0) {
-            $context.nluResults.selected = $context.nluResults.patterns[0];
-        }
-        
-    });*/
     # bind("selectNLUResult", function($context) {
     #     // Получим все результаты от всех классификаторов в виде массива.
     #     var allResults = _.chain($context.nluResults)
@@ -110,17 +94,6 @@ init:
     #     log(toPrettyString($context.nluResults.selected));
     # });
     
-    
-
-    # bind("postProcess", function($context) {
-    #     //$context.session._lastState = $context.currentState;
-    #     log("**********" + toPrettyString($context.currentState));
-    #     $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
-    #     //if (!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
-    #         $context.session.AnswerCnt += 1;
-        
-    #     //$context.session._lastState = $context.contextPath ;
-    # });
 
     $global.mainSupplConverter = function($parseTree){
         var id = $parseTree.MainSuppl[0].value;
@@ -138,17 +111,12 @@ theme: /
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
-        # script:
+        script:
         #     $dialer.bargeInResponse({
         #         bargeIn: "forced",
         #         bargeInTrigger: "interim",
         #         noInterruptTime: 0});
-        #     FindAccountNumberClear();
-        # заглушки
-        # event: noMatch || onlyThisState = false, toState = "/NoMatch" 
-        # intent: /CallTheOperator || onlyThisState = false, toState = "/NoMatch" 
-        # intent: /ChangeAccountPerson || onlyThisState = false, toState = "/ChangeAccountPerson/ChangeAccountPerson" 
-        # intent: /ChangeAccountPersonCount || onlyThisState = false, toState = "/ChangeAccountPersonCount" 
+             FindAccountNumberClear();
 
     state: Hello
         intent!: /привет
