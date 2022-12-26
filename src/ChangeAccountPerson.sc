@@ -29,6 +29,8 @@ theme: /ChangeAccountPerson
                 state: No_Suppliers_List
                     q: $no
                     q: $disagree
+                    intent: /Несогласие_продиктовать_список_поставщиков
+                    intent: /Несогласие
                     event: noMatch
                     go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                 
@@ -38,6 +40,8 @@ theme: /ChangeAccountPerson
                     # если говорит номер ЛС, то даем только тех, что есть в квитанции
                     q: $yes
                     q: $agree
+                    intent: /Согласие_продиктовать_список_поставщиков
+                    intent: /Согласие
                     # смотрим, был ли лицевой счет выявлен в ходе диалога
                     if: ($session.Account && $session.Account.Number > 0)
                         # Есть номер лицевого счета, будем давать информацию по нему по контактам поставщиков
@@ -82,13 +86,15 @@ theme: /ChangeAccountPerson
                         state: No_Contacts
                             q: $no
                             q: $disagree
-                            q: $No_for_contacts
+                            intent: /Несогласие_продиктовать_список_поставщиков
+                            intent: /Несогласие
                             go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                     
                         state: Yes_Contacts
                             q: $yes
                             q: $agree
-                            q: $Yes_for_contacts
+                            intent: /Согласие_продиктовать_список_поставщиков
+                            intent: /Согласие
                             event: noMatch
                             if: GetAccountMainSuppls()
                                 a:   Записывайте городские номера. Код города - 727. --- {{GetAccountMainSupplNamesContracts($MainSuppl)}}. Повторить номера?

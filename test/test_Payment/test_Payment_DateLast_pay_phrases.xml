@@ -4,6 +4,12 @@
         <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
+
+    <test-case>
+        <q>недавно оплатила по лицевому счету но не знаю прошел ли мой платеж</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
     
 
 </test>

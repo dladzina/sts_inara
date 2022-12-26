@@ -1,7 +1,8 @@
 require: Functions/AccountPay.js
 
 patterns:
-    $TotalPay = (о/за)(плат*|плач*) (платеж/сумм*/квитанц*)
+    $TotalPay = {оплачена квитанция}
+    #  $TotalPay = {(*плат*|*плач*) * (платеж/сумм*/квитанц*)}
 
 theme: /PaymentTotal
 

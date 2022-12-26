@@ -62,14 +62,22 @@ init:
     bind("selectNLUResult", 
     function($context) {
         log("$context.nluResults"  + toPrettyString( $context.nluResults) );
-        if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
+        // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
+        if (
+                ($context.nluResults.intents.length > 0) && 
+                ($context.nluResults.intents[0].score > 0.45) && 
+                $context.nluResults.intents[0].clazz &&
+                ($context.nluResults.intents[0].clazz != "/NoMatch")
+            ) {
             $context.nluResults.selected = $context.nluResults.intents[0];
+            log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
+            
             return;
         }
     
-        if ($context.nluResults.patterns.length > 0) {
-            $context.nluResults.selected = $context.nluResults.patterns[0];
-        }
+        # if ($context.nluResults.patterns.length > 0) {
+        #     $context.nluResults.selected = $context.nluResults.patterns[0];
+        # }
         
     }
     );

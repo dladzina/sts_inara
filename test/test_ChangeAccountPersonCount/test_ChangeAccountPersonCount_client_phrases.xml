@@ -63,25 +63,25 @@
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"/>
     </test-case>   
     
-    <test-case>
-        <q>алло Добрый вечер добрый день девушка. подскажите пожалуйста вот у меня этот э количество людей  изменилось Как мне Куда можно обратиться чтобы мне поменять количество людей это</q>
-        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
-    </test-case>
+    <!--<test-case>-->
+    <!--    <q>алло Добрый вечер добрый день девушка. подскажите пожалуйста вот у меня этот э количество людей  изменилось Как мне Куда можно обратиться чтобы мне поменять количество людей это</q>-->
+    <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
+    <!--</test-case>-->
     
-    <test-case>
-        <q>здравствуйте Я хотел спросить. мы писали получается Бостандыкский районный замакиму  чтобы нам поменяли количество этот прописанных людей в квартире да </q>
-        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
-    </test-case>
+    <!--<test-case>-->
+    <!--    <q>здравствуйте Я хотел спросить. мы писали получается Бостандыкский районный замакиму  чтобы нам поменяли количество этот прописанных людей в квартире да </q>-->
+    <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
+    <!--</test-case>-->
     
-    <test-case>
-        <q>кхм я этот, через Каспий хотела оплатить коммунальную услугу, но там прописано, говорит, что два человека, хотя прописана только я, ну, в своей квартире.</q>
-        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
-    </test-case>
+    <!--<test-case>-->
+    <!--    <q>кхм я этот, через Каспий хотела оплатить коммунальную услугу, но там прописано, говорит, что два человека, хотя прописана только я, ну, в своей квартире.</q>-->
+    <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
+    <!--</test-case>-->
     
-    <test-case>
-        <q>Алло здравствуйте знаете хотела  уточнить смотрите я  у меня там проживали двое я одного выписала да ну как бы я хозяйка квартиры но почему мне в этот раз опять в Алсеко пришли  опять всё по двойное</q>
-        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
-    </test-case>
+    <!--<test-case>-->
+    <!--    <q>Алло здравствуйте знаете хотела  уточнить смотрите я  у меня там проживали двое я одного выписала да ну как бы я хозяйка квартиры но почему мне в этот раз опять в Алсеко пришли  опять всё по двойное</q>-->
+    <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
+    <!--</test-case>-->
 
 
 
