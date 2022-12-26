@@ -1,0 +1,9 @@
+<test>
+    <test-case>
+        <q>А добрый день можно узнать июньская оплата поступила или нет по лицевому счету</q>
+        <!--<a class = "/PaymentTotal/GetDateLastPay"></a>-->
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+
+</test>

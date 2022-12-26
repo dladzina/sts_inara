@@ -1,5 +1,8 @@
 require: Functions/AccountPay.js
 
+patterns:
+    $TotalPay = (о/за)(плат*|плач*) (платеж/сумм*/квитанц*)
+
 theme: /PaymentTotal
 
     # скрипт - вовзращает дату последеней оплаты по лицевому счету
@@ -34,6 +37,7 @@ theme: /PaymentTotal
 
     state: PaymentQuestion
         intent!: /Платеж
+        q!: * $TotalPay *
         a: Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора
         AccountPayDateMessage:
             needCleanEmptyAccount = true

@@ -61,7 +61,7 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-        # log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         if (($context.nluResults.intents.length > 0) && ($context.nluResults.intents[0].score > 0.45)) {
             $context.nluResults.selected = $context.nluResults.intents[0];
             return;
@@ -214,15 +214,13 @@ theme: /
     state: repeat || noContext = true
         q!:  ( повтор* / что / еще раз* / ещё раз*)
         go!: {{$session.contextPath}}
-        # go!: {{ $context.session._lastState }} 
-        
+    # go!: {{ $context.session._lastState }} 
     state: bye
         q!: $bye
-        intent!: /sys/aimylogic/ru/offerreject || onlyThisState = false, toState = "/Инициация завершения разговора"
         a: Благодарим за обращение!
         random: 
-            a: До свидания! 
-            a: Надеюсь, я смогла вам помочь. Удачи! 
+            a: До свидания!
+            a: Надеюсь, я смогла вам помочь. Удачи!
         script:
             $dialer.hangUp();
             

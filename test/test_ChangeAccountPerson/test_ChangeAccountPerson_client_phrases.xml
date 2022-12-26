@@ -48,8 +48,7 @@
         <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>    
-    
-    
+
     <test-case id = "ChangeAccountPerson_12">
         <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
@@ -82,6 +81,21 @@
         <q>я хочу в офис приехать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
+    </test-case>   
+    
+    <test-case id = "ChangeAccountPerson_15">
+        <q>алло девушка здравствуйте нам это нужно изменить вернее это фамилию это в этом в получателях</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>   
+    
+    <test-case id = "ChangeAccountPerson_16">
+        <q>Здравствуйте! Подскажите, пожалуйста, вот мы сейчас вносим изменения по нашему адресу в базе, через ЦОН, нам нужно будет потом ехать вот в Ваш офис АЛСЕКО и там что-то менять?</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>   
+    
+    <test-case id = "ChangeAccountPerson_17">
+        <q>фамилию в квитанции поменять это что нужно сделать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
 
 </test>

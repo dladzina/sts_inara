@@ -12,7 +12,8 @@
     "extendedSettings" : {
       "tokenizerEngine" : "mystem",
       "allowedPatterns" : [ ],
-      "useShared" : false
+      "useShared" : true,
+      "zflPatternsEnabled" : true
     },
     "shared" : false
   },
@@ -82,10 +83,17 @@
     "shared" : false,
     "phrases" : [ {
       "text" : "привет"
+    }, {
+      "text" : "доброе утро"
+    }, {
+      "text" : "здравствуйте"
+    }, {
+      "text" : "я вас приветствую"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
+    "patterns" : [ ],
     "priority" : 0
   }, {
     "path" : "/CallTheOperator",
@@ -160,7 +168,7 @@
     }, {
       "text" : "исключить из квитанции @duckling.number человек чтобы приходила на @duckling.number "
     }, {
-      "text" : "(сменить | поменять | изменить | выписать) [состав] жильцов"
+      "text" : "(сменить | поменять | изменить | выписать  | уменьшить  | увеличить  | исключить  | внести  | модифицировать) [состав  | количество  | список  | перечень] (жильцов  | человек  | людей  | проживающих  | прописанных)"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -253,6 +261,8 @@
       "text" : "доплатить сумму"
     }, {
       "text" : "информация по платежам"
+    }, {
+      "text" : "узнать по оплате"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -266,7 +276,7 @@
     "phrases" : [ {
       "text" : "когда в последний раз платили по моему счету"
     }, {
-      "text" : "прошла ли оплата по лицевому счету"
+      "text" : "прошла оплата по лицевому счету"
     }, {
       "text" : "дата последней оплаты "
     } ],
@@ -317,6 +327,71 @@
       "text" : "ищу"
     }, {
       "text" : "поищу"
+    }, {
+      "text" : "ща"
+    } ],
+    "classificationRules" : {
+      "refs" : [ {
+        "entityName" : "classRule_9714",
+        "predicate" : "CONTAINS_NOT"
+      } ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_наше",
+    "enabled" : false,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "да"
+    }, {
+      "text" : "давай"
+    }, {
+      "text" : "ну давай"
+    }, {
+      "text" : "ок"
+    }, {
+      "text" : "окей"
+    }, {
+      "text" : "почему нет"
+    }, {
+      "text" : "ну что поделать"
+    }, {
+      "text" : "да давайте"
+    }, {
+      "text" : "согласна"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие_наше",
+    "enabled" : false,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "нет"
+    }, {
+      "text" : "не"
+    }, {
+      "text" : "неа"
+    }, {
+      "text" : "не хочу"
+    }, {
+      "text" : "да ну"
+    }, {
+      "text" : "фу нет"
+    }, {
+      "text" : "когда-нибудь потом"
+    }, {
+      "text" : "не стоит"
+    }, {
+      "text" : "не думаю, что нужно"
+    }, {
+      "text" : "нет времени на это"
+    }, {
+      "text" : "не нужно"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -437,6 +512,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "не", "нет" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_9714",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "давай", "давайте" ],
       "value" : ""
     } ]
   } ],

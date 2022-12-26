@@ -148,6 +148,7 @@ theme: /BlockAccountNumInput
             a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. 
             a: Подождёте?
             script:
+                $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
                 $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
             
             state: AccountInputNumberYes
