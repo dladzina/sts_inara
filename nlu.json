@@ -12,8 +12,7 @@
     "extendedSettings" : {
       "tokenizerEngine" : "mystem",
       "allowedPatterns" : [ ],
-      "useShared" : true,
-      "zflPatternsEnabled" : true
+      "useShared" : false
     },
     "shared" : false
   },
