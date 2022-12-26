@@ -140,6 +140,8 @@
       "text" : "приобрел @Недвижимость  оформить лицевой счет на себя"
     }, {
       "text" : "приходит квитанция на старого хозяина хочу чтобы на меня приходило"
+    }, {
+      "text" : "нужно изменить фамилию в @Собственник"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -399,6 +401,25 @@
     "priority" : 0
   } ],
   "entities" : [ {
+    "entity" : {
+      "name" : "Собственник",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "владелец", "собственник", "хозяин", "получатель" ],
+      "value" : ""
+    } ]
+  }, {
     "entity" : {
       "name" : "Недвижимость",
       "enabled" : true,

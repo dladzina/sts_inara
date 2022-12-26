@@ -88,10 +88,10 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
     
-    <test-case id = "ChangeAccountPerson_16">
-        <q>Здравствуйте! Подскажите, пожалуйста, вот мы сейчас вносим изменения по нашему адресу в базе, через ЦОН, нам нужно будет потом ехать вот в Ваш офис АЛСЕКО и там что-то менять?</q>
-        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
-    </test-case>   
+    <!--<test-case id = "ChangeAccountPerson_16">-->
+    <!--    <q>Здравствуйте! Подскажите, пожалуйста, вот мы сейчас вносим изменения по нашему адресу в базе, через ЦОН, нам нужно будет потом ехать вот в Ваш офис АЛСЕКО и там что-то менять?</q>-->
+    <!--    <a state="/ChangeAccountPerson/ChangeAccountPerson"/>-->
+    <!--</test-case>   -->
     
     <test-case id = "ChangeAccountPerson_17">
         <q>фамилию в квитанции поменять это что нужно сделать</q>
