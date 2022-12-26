@@ -10,6 +10,7 @@
     "classificationAlgorithm" : "sts",
     "timezone" : "Europe/Moscow",
     "extendedSettings" : {
+      "patternsEnabled" : true,
       "tokenizerEngine" : "mystem",
       "allowedPatterns" : [ ],
       "useShared" : false
