@@ -74,11 +74,22 @@ init:
             
             return;
         }
-    
-        # if ($context.nluResults.patterns.length > 0) {
-        #     $context.nluResults.selected = $context.nluResults.patterns[0];
-        # }
-        
+        // паттерн TotalPay должен иметь минимальный вес среди всех интентов
+        if  ($context.nluResults.selected.clazz == "/PaymentTotal/PaymentQuestion" &&
+            $context.nluResults.selected.ruleType == "pattern"){
+            if (
+                    ($context.nluResults.intents.length > 0) && 
+                    # ($context.nluResults.intents[0].score > 0.45) && 
+                    $context.nluResults.intents[0].clazz &&
+                    ($context.nluResults.intents[0].clazz != "/NoMatch")
+                ) {
+                $context.nluResults.selected = $context.nluResults.intents[0];
+                log("$context.nluResults.selected TotalPayReplace = "  + toPrettyString( $context.nluResults.selected) );
+                
+                return;
+            }
+        }
+
     }
     );
     # bind("selectNLUResult", function($context) {

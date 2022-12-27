@@ -19,7 +19,7 @@
   },
   "intents" : [ {
     "path" : "/Согласие_повторить",
-    "enabled" : false,
+    "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "повтори"
@@ -33,6 +33,24 @@
       "text" : "снова давай"
     }, {
       "text" : "сначала можно"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие_перечислить",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не начинай"
+    }, {
+      "text" : "заканчивай уже"
+    }, {
+      "text" : "достало"
+    }, {
+      "text" : "начинается"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -364,7 +382,7 @@
     "priority" : 0
   }, {
     "path" : "/Согласие",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "да"
@@ -486,7 +504,7 @@
     "priority" : 0
   }, {
     "path" : "/Несогласие_повторить",
-    "enabled" : false,
+    "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "не повторяй"
@@ -494,6 +512,36 @@
       "text" : "не начинай"
     }, {
       "text" : "прекрати"
+    }, {
+      "text" : "не стоит"
+    }, {
+      "text" : "лучше не надо"
+    }, {
+      "text" : "это лишнее"
+    }, {
+      "text" : "начинается"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_перечислить",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "ну перечисляй"
+    }, {
+      "text" : "говори"
+    }, {
+      "text" : "жду"
+    }, {
+      "text" : "слушаю"
+    }, {
+      "text" : "о норм"
+    }, {
+      "text" : "давай"
     } ],
     "classificationRules" : {
       "refs" : [ ]

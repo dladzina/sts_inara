@@ -1,8 +1,9 @@
 require: Functions/AccountPay.js
 
 patterns:
-    $TotalPay = {оплачена квитанция}
-    #  $TotalPay = {(*плат*|*плач*) * (платеж/сумм*/квитанц*)}
+    # $TotalPay = {оплачена квитанция}
+    $TotalPay = {(*плат*|*плач*) * (платеж/сумм*/квитанц*)}
+    $HaveAnyPayWord = (~платеж/~проплата/~сумма/~оплачивать/~оплатить/~оплата)
 
 theme: /PaymentTotal
 
@@ -16,7 +17,6 @@ theme: /PaymentTotal
             needCleanEmptyAccount = true
             okState = /PaymentTotal/GetDateLastPay/CanIHelpYou
             errorState = /PaymentTotal/GetDateLastPay/CanIHelpYou 
-            # errorState = /CallTheOperator
             noAccountState = /PaymentTotal/GetDateLastPay/CanIHelpYou
         
         state: CanIHelpYou
@@ -39,6 +39,7 @@ theme: /PaymentTotal
     state: PaymentQuestion
         intent!: /Платеж
         q!: * $TotalPay *
+        q!: * $HaveAnyPayWord *
         a: Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора
         AccountPayDateMessage:
             needCleanEmptyAccount = true

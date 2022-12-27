@@ -106,15 +106,18 @@ theme: /ChangeAccountPerson
                                 event: noMatch
                                 q: $no
                                 q: $disagree
+                                intent: /Несогласие_повторить
+                                intent: /Несогласие
                                 go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
                                 
                             state: Yes_Repeat
                                 q: $yes
                                 q: $agree
+                                intent: /Согласие_повторить
+                                intent: /Согласие
                                 go!: ../../Yes_Contacts
         state: Online
             intent: /Онлайн
-            # q: * $Online *
             q: $yes
             q: $agree
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
@@ -135,12 +138,16 @@ theme: /ChangeAccountPerson
             state: No_List_Doc
                 q: $no
                 q: $disagree
+                intent: /Несогласие_перечислить
+                intent: /Несогласие
                 # a:  Интент "Инициация завершения диалога"
                 go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou                              
                 
             state: Yes_List_Doc
                 q: $yes
                 q: $agree
+                intent: /Cогласие_перечислить
+                intent: /Согласие
                 a:  Необходимые документы: удостоверение личности собственника и правоустанавливающие документы на объект недвижимости. Хотите узнать какие документы на собственность подходят?
             
                 state: No_Property_Documents
