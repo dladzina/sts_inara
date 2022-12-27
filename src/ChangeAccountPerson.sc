@@ -146,7 +146,7 @@ theme: /ChangeAccountPerson
             state: Yes_List_Doc
                 q: $yes
                 q: $agree
-                intent: /Cогласие_перечислить
+                intent: /Согласие_перечислить
                 intent: /Согласие
                 a:  Необходимые документы: удостоверение личности собственника и правоустанавливающие документы на объект недвижимости. Хотите узнать какие документы на собственность подходят?
             
@@ -177,9 +177,11 @@ theme: /ChangeAccountPerson
             state: CanIHelpYouAgree
                 q: $yes
                 q: $agree
+                intent: /Согласие
                 go!: /WhatDoYouWant
                 
             state: CanIHelpYouDisagree
                 q: $no
                 q: $disagree
+                intent: /Несогласие
                 go!: /bye        

@@ -49,8 +49,6 @@
       "text" : "заканчивай уже"
     }, {
       "text" : "достало"
-    }, {
-      "text" : "начинается"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -547,6 +545,20 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
+    "path" : "/Согласие_помочь",
+    "enabled" : false,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "помоги"
+    }, {
+      "text" : "не откажусь от помощи"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/Прощание",
     "enabled" : true,
     "shared" : false,
@@ -561,6 +573,18 @@
       "refs" : [ ]
     },
     "patterns" : [ "прощай*", "не поминай* лихом", "[(ладно|все|давай|ну)] (пока [пока]|(до|да) (свидан*|встречи|завтра|скорого [свидания]|скорой встречи))" ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие_помочь",
+    "enabled" : false,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не надо мне помощи"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
     "priority" : 0
   } ],
   "entities" : [ {

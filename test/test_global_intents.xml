@@ -127,6 +127,78 @@
         <a state="/BlockAccountNumInput/AccountInput"/>
     </test-case>
     
+    # intent Несогласие
+    
+    <test-case id="Phrase_не нужно_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>не нужно</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_нет времени на это_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>нет времени на это</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_не думаю, что нужно_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>не думаю, что нужно</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_не стоит_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>не стоит</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_когда-нибудь потом_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>когда-нибудь потом</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_фу нет_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>фу нет</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_не хочу_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>не хочу</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_неа_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>неа</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_не_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>не</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_нет_/Несогласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>нет</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson"/>
+    </test-case>
+    
+
     <!--<test-case id="Phrase_минуточку_подождите">-->
     <!--    <q>минуточку</q>-->
     <!--    <a state="/подождите"/>-->
