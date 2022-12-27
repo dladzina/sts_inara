@@ -544,12 +544,16 @@
     "priority" : 0
   }, {
     "path" : "/Согласие_помочь",
-    "enabled" : false,
+    "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "помоги"
     }, {
       "text" : "не откажусь от помощи"
+    }, {
+      "text" : "ну помоги"
+    }, {
+      "text" : "если хочешь, то да"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -574,10 +578,14 @@
     "priority" : 0
   }, {
     "path" : "/Несогласие_помочь",
-    "enabled" : false,
+    "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "не надо мне помощи"
+    }, {
+      "text" : "не нужна мне она"
+    }, {
+      "text" : "обойдусь без твоей помощи"
     } ],
     "classificationRules" : {
       "refs" : [ ]

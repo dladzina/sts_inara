@@ -152,7 +152,7 @@ theme: /BlockAccountNumInput
                 $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
                 $dialer.bargeInResponse({
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
-                    bargeIn: "forced", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
+                    bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
                     bargeInTrigger: "interim",
                     noInterruptTime: 1500});
             state: BargeInIntent || noContext = true
@@ -161,7 +161,7 @@ theme: /BlockAccountNumInput
                     var bargeInIntentStatus = $dialer.getBargeInIntentStatus();
                     log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
                     var text = bargeInIntentStatus.text;
-                    var res = $nlp.matchPatterns(text,[$no, $disagree])
+                    var res = $nlp.matchPatterns(text,["$no", "$disagree"])
         
                     if (res) {
                         $dialer.bargeInInterrupt(true);

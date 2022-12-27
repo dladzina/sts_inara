@@ -178,10 +178,12 @@ theme: /ChangeAccountPerson
                 q: $yes
                 q: $agree
                 intent: /Согласие
+                intent: /Согласие_помочь
                 go!: /WhatDoYouWant
                 
             state: CanIHelpYouDisagree
                 q: $no
                 q: $disagree
                 intent: /Несогласие
+                intent: /Несогласие_помочь
                 go!: /bye        
