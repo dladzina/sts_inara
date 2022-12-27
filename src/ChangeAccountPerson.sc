@@ -153,12 +153,16 @@ theme: /ChangeAccountPerson
                 state: No_Property_Documents
                     q: $no
                     q: $disagree
+                    intent: /Несогласие
+                    intent: /Несогласие_перечислить
                     # a:  Интент "Инициация завершения диалога"
                     go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou
                                     
                 state: Yes_Property_Documents
                     q: $yes
                     q: $agree
+                    intent: /Cогласие_перечислить
+                    intent: /Согласие
                     a:  Подходят --копии договора купли-продажи, -дарения, -справка о наличии недвижимого имущества, или  зарегистрированных правах на недвижимое имущество с портала е гов
                     # a:  Интент "Инициация завершения диалога"
                     go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou

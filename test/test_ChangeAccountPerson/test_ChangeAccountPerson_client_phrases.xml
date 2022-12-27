@@ -98,4 +98,9 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
 
+    <test-case id = "ChangeAccountPerson_18">
+        <q>подскажите как мне оформить квитанцию на себя я квартиру недавно купила вот теперь не знаю что делать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>   
+
 </test>
