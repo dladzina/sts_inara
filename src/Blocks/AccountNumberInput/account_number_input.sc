@@ -145,7 +145,7 @@ theme: /BlockAccountNumInput
             script: 
                 TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
-            a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. 
+            a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
             a: Подождёте?
             script:
                 $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
@@ -154,6 +154,17 @@ theme: /BlockAccountNumInput
                     bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
                     bargeInTrigger: "interim",
                     noInterruptTime: 1000});
+            state: BargeInIntent || noContext = true
+                event: bargeInIntent
+                script:
+                    var bargeInIntentStatus = $dialer.getBargeInIntentStatus();
+                    log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
+                    var text = bargeInIntentStatus.text;
+                    var res = $nlp.matchPatterns(text,[$no, $disagree])
+        
+                    if (res) {
+                        $dialer.bargeInInterrupt(true);
+                    }
             
             state: AccountInputNumberYes
                 q: $yes

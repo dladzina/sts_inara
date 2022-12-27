@@ -10,6 +10,8 @@ tests:
         #- test_my.xml
         -  test_local_intents/test_soglasie_perechislit.xml
         -  test_local_intents/test_nesoglasie_perechislit.xml
+        -  test_local_intents/test_soglasie_povtorit.xml
+        -  test_local_intents/test_nesoglasie_povtorit.xml
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_online.xml
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
