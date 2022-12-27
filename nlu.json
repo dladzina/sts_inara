@@ -469,8 +469,6 @@
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "фу"
-    }, {
       "text" : "не нужны поставщики"
     }, {
       "text" : "заткнись"
