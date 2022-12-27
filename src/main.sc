@@ -61,7 +61,7 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-        log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        # log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -70,7 +70,7 @@ init:
                 ($context.nluResults.intents[0].clazz != "/NoMatch")
             ) {
             $context.nluResults.selected = $context.nluResults.intents[0];
-            log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
+            # log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
             
             return;
         }

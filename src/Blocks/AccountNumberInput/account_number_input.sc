@@ -150,6 +150,10 @@ theme: /BlockAccountNumInput
             script:
                 $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
                 $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                $dialer.bargeInResponse({
+                    bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
+                    bargeInTrigger: "interim",
+                    noInterruptTime: 1000});
             
             state: AccountInputNumberYes
                 q: $yes
