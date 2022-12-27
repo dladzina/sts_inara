@@ -54,6 +54,79 @@
     
     # intent changeAccountDetails
     
+    # intent Согласие
+    
+    <test-case id="Phrase_согласна_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>согласна</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_да давайте_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да давайте</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_ну что поделать_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>ну что поделать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_почему нет_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>почему нет</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_окей_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>окей</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_ок_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>ок</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_ну давай_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>ну давай</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_давай_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>давай</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_да_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+    
     <!--<test-case id="Phrase_минуточку_подождите">-->
     <!--    <q>минуточку</q>-->
     <!--    <a state="/подождите"/>-->

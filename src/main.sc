@@ -228,12 +228,24 @@ theme: /
         if: $dialer.getTransferStatus().status === 'FAIL'
             a: К сожалению, на данный момент все операторы заняты. Могу ли я Вам еще чем-то помочь? 
         # else:
-        #     a: Спасибо, что связались с нами. Оцените, пожалуйста, качество обслуживания.                
+        #     a: Спасибо, что связались с нами. Оцените, пожалуйста, качество обслуживания.    
+        state: CanIHelpYouAgree
+            q: $yes
+            q: $agree
+            intent: /Согласие
+            go!: /WhatDoYouWant
+            
+        state: CanIHelpYouDisagree
+            q: $no
+            q: $disagree
+            intent: /Несогласие
+            go!: /bye                
 
     state: repeat || noContext = true
         q!:  ( повтор* / что / еще раз* / ещё раз*)
         go!: {{$session.contextPath}}
     # go!: {{ $context.session._lastState }} 
+
     state: bye
         q!: $bye
         intent!: /Прощание
