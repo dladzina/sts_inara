@@ -236,6 +236,7 @@ theme: /
     # go!: {{ $context.session._lastState }} 
     state: bye
         q!: $bye
+        intent!: /Прощание
         a: Благодарим за обращение!
         random: 
             a: До свидания!
