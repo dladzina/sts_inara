@@ -10,6 +10,7 @@ theme: /ChangeAccountPerson
             # q: * $Offline *
             q: $no 
             q: $disagree 
+            intent: /Несогласие
             event: speechNotRecognized
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
             # script:

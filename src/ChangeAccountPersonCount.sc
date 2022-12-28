@@ -11,6 +11,7 @@ theme: /ChangeAccountPersonCount
             # q: * $Offline *
             q: $no 
             q: $disagree 
+            intent: /Несогласие
             event: speechNotRecognized
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату, или в Алсеко по адресу Карасай Батыра, 155. Хотите узнать, к каким поставщикам можно обратиться?
             # script:
@@ -23,6 +24,8 @@ theme: /ChangeAccountPersonCount
             state: No_Suppliers_List
                 q: $no
                 q: $disagree
+                intent: /Несогласие_продиктовать_список_поставщиков
+                intent: /Несогласие
                 event: noMatch
                 go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
                     
@@ -32,6 +35,8 @@ theme: /ChangeAccountPersonCount
                 # если говорит номер ЛС, то даем только тех, что есть в квитанции
                 q: $yes
                 q: $agree
+                intent: /Согласие_продиктовать_список_поставщиков
+                intent: /Согласие
                 # смотрим, был ли лицевой счет выявлен в ходе диалога
                 if: ($session.Account && $session.Account.Number > 0)
                     # Есть номер лицевого счета, будем давать информацию по нему по контактам поставщиков
@@ -67,13 +72,15 @@ theme: /ChangeAccountPersonCount
                     state: No_Contacts
                         q: $no
                         q: $disagree
-                        q: $No_for_contacts
+                        intent: /Несогласие_продиктовать_список_поставщиков
+                        intent: /Несогласие
                         go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
                                     
                     state: Yes_Contacts
                         q: $yes
                         q: $agree
-                        q: $Yes_for_contacts
+                        intent: /Согласие_продиктовать_список_поставщиков
+                        intent: /Согласие
                         event: noMatch
                         if: GetAccountMainSuppls()
                             a:   Записывайте городские номера. Код города - 727. --- {{GetAccountMainSupplNamesContracts($MainSuppl)}}. Повторить номера?
@@ -83,12 +90,16 @@ theme: /ChangeAccountPersonCount
                         state: No_Repeat
                             q: $no
                             q: $disagree
+                            intent: /Несогласие_повторить
+                            intent: /Несогласие
                             event: noMaatch
                             go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
                                 
                         state: Yes_Repeat
                             q: $yes
                             q: $agree
+                            intent: /Согласие_повторить
+                            intent: /Согласие
                             go!: ../../Yes_Contacts
                     
 
@@ -98,6 +109,7 @@ theme: /ChangeAccountPersonCount
             # q: * $Online *
             q: $yes
             q: $agree
+            intent: /Согласие
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки. Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку. Дальше следуйте инструкции
             # script:
@@ -114,11 +126,15 @@ theme: /ChangeAccountPersonCount
             state: No_List_Doc
                 q: $no
                 q: $disagree
+                intent: /Несогласие_перечислить
+                intent: /Несогласие
                 go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou
                 
             state: Yes_List_Doc
                 q: $yes
                 q: $agree
+                intent: /Согласие_перечислить
+                intent: /Согласие
                 a:  Необходимые документы: удостоверение личности собственника и сведения о зарегистрированных лицах с портала е гов
                 go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou
 
@@ -130,9 +146,13 @@ theme: /ChangeAccountPersonCount
             state: CanIHelpYouAgree
                 q: $yes
                 q: $agree
+                intent: /Согласие
+                intent: /Согласие_помочь
                 go!: /WhatDoYouWant
                 
             state: CanIHelpYouDisagree
                 q: $no
                 q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_помочь
                 go!: /bye        
