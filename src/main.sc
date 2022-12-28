@@ -127,17 +127,20 @@ theme: /
         q!: $regex</start>
         script:
             $context.session.AnswerCnt = 0;
-        a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
+        # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
+        a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
+        a: подсказать дату последней оплаты или 
+        a: контакты поставщика услуг
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
         script:
             if ($dialer.getCaller())
                 $analytics.setSessionData("Телефон", $dialer.getCaller());
-        #     $dialer.bargeInResponse({
-        #         bargeIn: "forced",
-        #         bargeInTrigger: "interim",
-        #         noInterruptTime: 0});
+            $dialer.bargeInResponse({
+                bargeIn: "phrase",
+                bargeInTrigger: "final",
+                noInterruptTime: 0});
              FindAccountNumberClear();
 
     state: Hello
@@ -323,9 +326,13 @@ theme: /ИнициацияЗавершения
         state: CanIHelpYouAgree
             q: $yes
             q: $agree
+            intent: /Согласие
+            intent: /Согласие_помочь
             go!: /WhatDoYouWant
             
         state: CanIHelpYouDisagree
             q: $no
             q: $disagree
+            intent: /Несогласие
+            intent: /Несогласие_помочь
             go!: /bye

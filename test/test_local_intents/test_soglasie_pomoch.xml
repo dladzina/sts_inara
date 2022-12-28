@@ -1,0 +1,30 @@
+<test>
+    
+    <test-case id="Phrase_если хочешь, то да_/CanIHelpYouAgree">
+        <state>CanIHelpYouAgree</state>
+        <q>если хочешь, то да</q>
+        <a state="/WhatDoYouWant"/>
+    </test-case>
+        
+        
+    <test-case id="Phrase_ну помоги_/CanIHelpYouAgree">
+        <state>CanIHelpYouAgree</state>
+        <q>ну помоги</q>
+        <a state="/WhatDoYouWant"/>
+    </test-case>
+        
+        
+    <test-case id="Phrase_не откажусь от помощи_/CanIHelpYouAgree">
+        <state>CanIHelpYouAgree</state>
+        <q>не откажусь от помощи</q>
+        <a state="/WhatDoYouWant"/>
+    </test-case>
+        
+        
+    <test-case id="Phrase_помоги_/CanIHelpYouAgree">
+        <state>CanIHelpYouAgree</state>
+        <q>помоги</q>
+        <a state="/WhatDoYouWant"/>
+    </test-case>
+    
+</test>

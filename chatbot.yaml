@@ -6,19 +6,22 @@ botEngine: v2
 language: ru
 
 tests:
-    include:
+    # include:
         #- test_my.xml
-        -  test_local_intents/test_soglasie_perechislit.xml
-        -  test_local_intents/test_nesoglasie_perechislit.xml
-        -  test_local_intents/test_soglasie_povtorit.xml
-        -  test_local_intents/test_nesoglasie_povtorit.xml
-        -  test_local_intents/test_soglasie_prodictovat.xml
-        -  test_local_intents/test_nesoglasie_prodictovat.xml
+        # -  test_local_intents/test_soglasie_perechislit.xml
+        # -  test_local_intents/test_nesoglasie_perechislit.xml
+        # -  test_local_intents/test_soglasie_povtorit.xml
+        # # -  test_local_intents/test_soglasie_pomoch.xml
+        # -  test_local_intents/test_nesoglasie_povtorit.xml
+        # -  test_local_intents/test_soglasie_prodictovat.xml
+        # -  test_local_intents/test_nesoglasie_prodictovat.xml
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_online.xml
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
        # - test_ChangeAccountPerson/test_global_ntents.xml
-    #   exclude: 
+    exclude: 
+        - test_main/test_main.xml
+        - test_local_intents/test_soglasie_pomoch.xml
     #      - test/test_Payment/*
     #      - test/test_AccountInput/*
     #      - test/test_ChangeAccountPerson/*
