@@ -120,6 +120,7 @@ theme: /ChangeAccountPerson
             intent: /Онлайн
             q: $yes
             q: $agree
+            intent: /Согласие
             a: Это можно сделать на сайте смарт точка алсеко точка кей зет.
             a: Зайдите в личный кабинет через э це пэ собственника жилья. Выберите раздел Мои Заявки. Там создайте новую заявку, укажите Алсеко как поставщика услуг и выберите заявку. Дальше следуйте инструкции
             # script:
@@ -177,13 +178,13 @@ theme: /ChangeAccountPerson
             state: CanIHelpYouAgree
                 q: $yes
                 q: $agree
-                # intent: /Согласие
-                # intent: /Согласие_помочь
+                intent: /Согласие
+                intent: /Согласие_помочь
                 go!: /WhatDoYouWant
                 
             state: CanIHelpYouDisagree
                 q: $no
                 q: $disagree
-                # intent: /Несогласие
-                # intent: /Несогласие_помочь
+                intent: /Несогласие
+                intent: /Несогласие_помочь
                 go!: /bye        
