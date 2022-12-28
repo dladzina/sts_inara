@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_dlya_sts_kopiy-1000039011-Uja",
-    "name" : "inara_dlya_sts_kopiy-1000039011-Uja",
+    "id" : "inara_dlya_sts-1000039011-rMg",
+    "name" : "inara_dlya_sts-1000039011-rMg",
     "folder" : "/jaicp"
   },
   "settings" : {
@@ -512,8 +512,6 @@
       "text" : "лучше не надо"
     }, {
       "text" : "это лишнее"
-    }, {
-      "text" : "начинается"
     } ],
     "classificationRules" : {
       "refs" : [ ]
