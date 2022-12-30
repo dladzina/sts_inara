@@ -30,6 +30,7 @@ function FindAccountNumberSetSuccees(result_comment)
     $session.Account.Number = $session.Account._number;
     $session.Account._number = 0;
     $session.Account.Succeed = true;
+
 }
 
 function TrySetNumber(acc_num)

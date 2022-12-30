@@ -80,6 +80,8 @@ theme: /BlockAccountNumInput
         else: 
             #  уже запрашивали номер ЛС больше 2-х раз. Зафиксировать результат - не смогла Вас понять и вернуть управление в исходный стейт со всеми данными
             script: FindAccountNumberSetResult("DontUnderstand");
+                # $analytics.setSessionData("Блок ЛС", "ЛС не определен")
+
             #a: Возвращаюсь назад в {{toPrettyString($session.oldState)}}
             go!: {{$session.AccountErrorState}}
         
@@ -106,6 +108,7 @@ theme: /BlockAccountNumInput
             state: AccountInputNotNumbersWayYes
                 q: $yes
                 q: $agree
+                intent: /Согласие
                 script:  
                     $session.Account.RetryAccount--;
                 go!: ../..
@@ -113,8 +116,10 @@ theme: /BlockAccountNumInput
             state: AccountInputNotNumbersWayDecline 
                 q: $no
                 q: $disagree
+                intent: /Несогласие
                 script: 
                     FindAccountNumberSetResult("DontKnow"); 
+                    $analytics.setSessionData("Блок ЛС", "Не знаю ЛС")
                 go!: {{$session.AccountNoAccounState}}
             
             
@@ -124,6 +129,9 @@ theme: /BlockAccountNumInput
             state: AccountInputWhereIsAccountYes
                 q: $yes
                 q: $agree
+                intent: /Согласие_назвать_номер
+                intent: /Согласие
+                
                 script:  
                     $session.Account.RetryAccount--;
                 # a: Ваш лицевой счет {{$session.AccountNumber}}. {{ $session.oldState }}
@@ -132,9 +140,12 @@ theme: /BlockAccountNumInput
             state: AccountInputWhereIsAccountDecline 
                 q: $no
                 q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_назвать_номер
                 event: noMatch
                 script: 
                     FindAccountNumberSetResult("DontKnow"); 
+                    $analytics.setSessionData("Блок ЛС", "Не знаю ЛС")
                 go!: {{$session.AccountNoAccounState}}
         
         state: AccountInputNumber 
@@ -170,6 +181,8 @@ theme: /BlockAccountNumInput
             state: AccountInputNumberYes
                 q: $yes
                 q: $agree
+                intent: /Согласие
+                intent: /Согласие_подожду
                 event: speechNotRecognized
                 event: noMatch
                 go!: ../FindAccount
@@ -177,8 +190,11 @@ theme: /BlockAccountNumInput
             state: AccountInputNumberNo
                 q: $no
                 q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_подожду
                 script: 
                     FindAccountNumberSetResult("AddressCancel"); 
+                    $analytics.setSessionData("Блок ЛС", "Неверный номер")
                 if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                     a: Давайте еще раз проверим
                 go!: /BlockAccountNumInput/AccountInput
@@ -213,16 +229,23 @@ theme: /BlockAccountNumInput
                 state: AccountAddressConfirmYes
                     q: $yes
                     q: $agree
+                    intent: /Согласие
+                    intent: /Согласие_адрес_определен_верно
                     script:  
                         FindAccountNumberSetSuccees("Address");
+                        $analytics.setSessionData("Блок ЛС", "ЛС найден")
+                        
                     # a: Ваш лицевой счет {{$session.AccountNumber}}. {{ $session.oldState }}
                     go!: {{$session.AccountOkState}}
                 
                 state: AccountAddressDecline 
                     q: $no
                     q: $disagree
+                    intent: /Несогласие
+                    intent: /Несогласие_адрес_определен_верно
                     script: 
                         FindAccountNumberSetResult("AddressCancel"); 
+                        $analytics.setSessionData("Блок ЛС", "Другой адрес")
                     if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                         a: Давайте еще раз проверим
                     go!: /BlockAccountNumInput/AccountInput
@@ -249,6 +272,9 @@ theme: /BlockAccountNumInput
     
     state: DontKnow
         intent: /DontKnow || fromState = "/BlockAccountNumInput/AccountInput"
-        script:FindAccountNumberSetResult("DontKnow"); 
+        script:
+            FindAccountNumberSetResult("DontKnow"); 
+            $analytics.setSessionData("Блок ЛС", "Не знаю ЛС")
+        
         # a: Возвращаю управление в стейт {{$session.oldState}}
         go!: {{$session.AccountNoAccounState}}

@@ -1,0 +1,35 @@
+<test>
+    <test-case>
+        <mockData>
+          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
+          <parameters>
+            <filterValue>5888379</filterValue>
+          </parameters>
+          <response>
+          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
+                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
+                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 8","Row": 21}],
+              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
+          </response>
+        </mockData>        
+        <q>оплата</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>пятьсот восемьдесят восемь восемьдесят три шестьдесят</q>
+        <a>Номер Вашего лицевого счёта 5  88  83  60. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <timeoutReply interval="1"/>
+        <q>нет нет нет нет нет</q>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>пятьсот восемьдесят восемь восемьдесят три семьдесят девять</q>
+        <a>Номер Вашего лицевого счёта 5  88  83  79. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <timeoutReply interval="1"/>
+        <timeout/>
+        <a>Ваш адрес Микрорайон "Алмагуль"  Дом 15 Квартира 8. Верно?</a>
+        <q>нет не правильно</q>
+        <a>К сожалению, мне не удалось получить информацию по оплате.</a>
+        <a state="/PaymentTotal/PaymentQuestion/SendToOperator"/>
+    </test-case>
+</test>

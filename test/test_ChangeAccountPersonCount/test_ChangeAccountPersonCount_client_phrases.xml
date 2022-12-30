@@ -83,7 +83,10 @@
     <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
     <!--</test-case>-->
 
-
+    <!--<test-case>-->
+    <!--    <q>У в квартире по адресу Мамыр 7 прописано 2 человека, квартплата за 4 приходит Что нужно сделать</q>-->
+    <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
+    <!--</test-case>-->
 
 
 </test>

@@ -18,6 +18,40 @@
     "shared" : false
   },
   "intents" : [ {
+    "path" : "/Несогласие_подожду",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не буду ждать"
+    }, {
+      "text" : "да ну"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_адрес_определен_верно",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "это мой адрес"
+    }, {
+      "text" : "понял верно"
+    }, {
+      "text" : "распознал верно"
+    }, {
+      "text" : "норм"
+    }, {
+      "text" : "правильно"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/Согласие_повторить",
     "enabled" : true,
     "shared" : false,
@@ -179,6 +213,10 @@
       "text" : "приходит квитанция на старого хозяина хочу чтобы на меня приходило"
     }, {
       "text" : "нужно изменить фамилию в @Собственник"
+    }, {
+      "text" : "переоформить со старого владельца на себя"
+    }, {
+      "text" : "переоформить квартиру на себя"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -584,6 +622,86 @@
       "text" : "не нужна мне она"
     }, {
       "text" : "обойдусь без твоей помощи"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_назвать_номер",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "сейчас назову номер счета"
+    }, {
+      "text" : "называю номер"
+    }, {
+      "text" : "диктую цифры"
+    }, {
+      "text" : "могу продиктовать числа"
+    }, {
+      "text" : "сообщу цифры"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие_назвать_номер",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не назову числа"
+    }, {
+      "text" : "диктовать не буду"
+    }, {
+      "text" : "не хочу сообщать"
+    }, {
+      "text" : "не желаю диктовать"
+    }, {
+      "text" : "не хочу сейчас"
+    }, {
+      "text" : "сейчас нет"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_подожду",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хорошо подожду"
+    }, {
+      "text" : "жду"
+    }, {
+      "text" : "ну давай"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Несогласие_адрес_определен_верно",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не мой"
+    }, {
+      "text" : "чушь"
+    }, {
+      "text" : "не верно распознал"
+    }, {
+      "text" : "хрень сказал"
+    }, {
+      "text" : "это не мой дом"
+    }, {
+      "text" : "не тот адрес"
     } ],
     "classificationRules" : {
       "refs" : [ ]

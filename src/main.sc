@@ -271,12 +271,14 @@ theme: /
             
     state: looser
         q!: * $looser *
-        q!: * $obsceneWord  *
+        q!: * $obsceneWord *
         q!: * $stupid  * 
         random: 
             a: Спасибо. Мне крайне важно ваше мнение
             a: Вы очень любезны сегодня
             a: Это комплимент или оскорбление?
+        script:
+            $analytics.setMessageLabel("Отрицательная")
             # здесь хочется Чем я могу Вам помочь? Иначе провисание диалога
 
     state: HangUp

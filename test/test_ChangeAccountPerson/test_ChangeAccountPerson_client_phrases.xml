@@ -103,4 +103,9 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
 
+    <test-case id = "ChangeAccountPerson_18">
+        <q>знаете я недавно купила квартиру хотела переоформить со старого владельца на себя как это лучше сделать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>   
+
 </test>
