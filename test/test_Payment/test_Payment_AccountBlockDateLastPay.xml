@@ -51,23 +51,16 @@
         <q>да</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
-        </mockData>        
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>       
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/Blocks/AccountPayDateMessage/AccountPayGetDateLastPayInfo"/>
         <a state="/PaymentTotal/GetDateLastPay/CanIHelpYou"/>
@@ -133,23 +126,16 @@
         <a>Это не похоже на номер лицевого счета.</a>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
-        </mockData>        
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>       
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/Blocks/AccountPayDateMessage/AccountPayGetDateLastPayInfo"/>
         <a state="/PaymentTotal/GetDateLastPay/CanIHelpYou"/>
@@ -161,16 +147,9 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
@@ -185,26 +164,19 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
-        </mockData>        
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>         
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>
         <a>Я Вас не расслышала. Повторите еще раз.</a>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/Blocks/AccountPayDateMessage/AccountPayGetDateLastPayInfo"/>
         <a state="/PaymentTotal/GetDateLastPay/CanIHelpYou"/>
@@ -215,23 +187,16 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/Blocks/AccountPayDateMessage/AccountPayGetDateLastPayInfo"/>
         <a state="/PaymentTotal/GetDateLastPay/CanIHelpYou"/>
@@ -241,26 +206,19 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>
         <a>Я Вас не расслышала. Повторите еще раз.</a>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>ЕДИНОРОЖКА УЕХАЛА ЖИТЬ В ГОРЫ ОТШЕЛЬНИКОМ!!!! С ЦЕЛЬЮ ОКОЧУРИТЬСЯ ТАМ В ОДИНОЧЕСТВЕ</q>
         <a>Давайте еще раз проверим</a>
         <a state="/BlockAccountNumInput/AccountInput"/>
@@ -270,23 +228,16 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
-        </mockData>       
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>        
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>нет</q>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета</a>
@@ -295,7 +246,7 @@
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>да</q>
         <a state="/Blocks/AccountPayDateMessage/AccountPayGetDateLastPayInfo"/>
         <a state="/PaymentTotal/GetDateLastPay/CanIHelpYou"/>
@@ -305,23 +256,16 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-          {"count": 1,"data": [{"account_number": 5888492,"City": "Алматы","MicroType": "Микрорайон","MicroName": "Алмагуль",
-                  "StreetType": "","StreetName": "","HomeType": "Дом","HomeName": 15,"FlatType": "Квартира","FlatName": 20,
-                  "address_full_name": "Микрорайон \"Алмагуль\"  Дом 15 Квартира 21","Row": 21}],
-              "filterHead": "account_number","filterValue": "5888492","needFilter": true,"msg": "Success"}
-          </response>
-        </mockData>        
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
+        </mockData>         
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>нет</q>
         <a>Давайте еще раз проверим</a>
         <a>Назовите номер вашего лицевого счета</a>
@@ -330,7 +274,7 @@
         <a>Подождёте?</a>
         <timeoutReply interval="1"/>
         <q>да</q>
-        <a>Ваш адрес Микрорайон "Алмагуль" Дом 15 Квартира 21. Верно?</a>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
         <q>нет</q>
         <a>К сожалению, мне не удалось получить информацию по оплате.</a>
         <a state ="/PaymentTotal/GetDateLastPay/CanIHelpYou"></a>
@@ -342,14 +286,10 @@
         <q>дата последней оплаты</q>
         <a>Назовите номер вашего лицевого счета</a>
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=ЛС&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <filterValue>5888490</filterValue>
-          </parameters>
-          <response>
-            {"count":0,"data":[],"filterHead":"account_number","filterValue":"5888490","needFilter":true,"msg":"Success"}
-          </response>
-        </mockData>        
+          <query method="get">https://inara.alseco.kz/dev/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888490</filterValue></parameters>
+          <response/>
+        </mockData>         
         <q>58 88 490</q>
         <a>Номер Вашего лицевого счёта 5 88 84 90. Поиск займет время.</a>
         <a>Подождёте?</a>

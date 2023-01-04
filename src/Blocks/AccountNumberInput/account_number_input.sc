@@ -205,8 +205,7 @@ theme: /BlockAccountNumInput
 
                     FindAccountAddress().then(function(res){
                         //log(toPrettyString(res));
-                        if (res //&& res.count > 0
-                        ){
+                        if (res && res.accountId){
                             //log(res.data[0].address_full_name);
                             $session.Account.Address = res.fullAddressName;
                             // $session.Account.Address = res.data[0].address_full_name;

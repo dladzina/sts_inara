@@ -6,8 +6,8 @@ botEngine: v2
 language: ru
 
 tests:
-    include:
-        - test_AccountInput/test_AccountInput.xml
+    # include:
+    #     - test_AccountInput/test_AccountInput.xml
     #      - test.xml
     #      -  test_local_intents/test_soglasie_perechislit.xml
     #      -  test_local_intents/test_nesoglasie_perechislit.xml
