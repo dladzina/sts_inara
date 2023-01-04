@@ -127,6 +127,13 @@
         <a state="/BlockAccountNumInput/AccountInput"/>
     </test-case>
     
+    <test-case id="Phrase_согласна_/Согласие">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>океюшки</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+    
     # intent Несогласие
     
     <test-case id="Phrase_не нужно_/Несогласие">

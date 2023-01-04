@@ -61,12 +61,18 @@ function TrySetNumber(acc_num)
 function FindAccountAddress(){
     var $injector = $jsapi.context().injector;
     var $session = $jsapi.context().session;
+    var url = $injector.InaraServiceUrl + $session.Account._number + '/address';
+    return $http.query(url, {method: "GET",
+        timeout: 20000        // таймаут выполнения запроса в мс
+        ,headers: {"Content-Type": "application/json", "Authorization": "Basic dXNlcl9zZXJ2aWNlOk5TV0tvZ0RZX1BIcVZvNWM="}
+    });
+    
 // функция для поиска адреса - асинхронный вариант (пробуем)
-        var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetName
-        url = url + "&filterHead=account_number&filterValue="+$session.Account._number;
-        return $http.query(url, {method: "GET",
-            timeout: 20000        // таймаут выполнения запроса в мс
-        });
+        // var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetName
+        // url = url + "&filterHead=account_number&filterValue="+$session.Account._number;
+        // return $http.query(url, {method: "GET",
+        //     timeout: 20000        // таймаут выполнения запроса в мс
+        // });
 // ищем номер ЛС - пока интеграция с гугл - таблицей
 // URL таблицы https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing
 // название листа - ЛС

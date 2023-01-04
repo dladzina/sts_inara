@@ -137,6 +137,12 @@
       "text" : "хочу самостоятельно"
     }, {
       "text" : "сам могу"
+    }, {
+      "text" : "не смогу выйти из дома"
+    }, {
+      "text" : " не смогу подъехать"
+    }, {
+      "text" : "отлучиться из дома не могу"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -272,7 +278,7 @@
     }, {
       "text" : "приду сам"
     }, {
-      "text" : "прийду самостоятельно"
+      "text" : "прийду"
     }, {
       "text" : "посещу вас"
     }, {
@@ -293,9 +299,24 @@
       "text" : "я хочу в офис приехать"
     }, {
       "text" : "я не могу онлайн подать а вот в офис приехать"
+    }, {
+      "text" : "дома не удобно"
+    }, {
+      "text" : "а можно не с телефона?"
+    }, {
+      "text" : "с экрана не могу"
+    }, {
+      "text" : "как по-другому можно?"
+    }, {
+      "text" : "а можно не через Интернет?"
+    }, {
+      "text" : "а к вам прийти можно?"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "classRule_2937",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -448,6 +469,8 @@
       "text" : "да давайте"
     }, {
       "text" : "согласна"
+    }, {
+      "text" : "океюшки"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -478,6 +501,8 @@
       "text" : "нет времени на это"
     }, {
       "text" : "не нужно"
+    }, {
+      "text" : "давайте без этого"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -872,6 +897,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "давай", "давайте" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_2937",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "самостоятельно", "самостоятельный" ],
       "value" : ""
     } ]
   } ],

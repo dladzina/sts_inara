@@ -6,7 +6,8 @@ botEngine: v2
 language: ru
 
 tests:
-    # include:
+    include:
+        - test_AccountInput/test_AccountInput.xml
     #      - test.xml
     #      -  test_local_intents/test_soglasie_perechislit.xml
     #      -  test_local_intents/test_nesoglasie_perechislit.xml
@@ -54,6 +55,8 @@ caila:
     noMatchThreshold: 0.2
 
 injector:
+  InaraServiceUrl: 'https://inara.alseco.kz/dev/api/accounts/'
+
   AccountTableURL: 'https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing'
   AccountSheetName: 'ЛС'
   AccountSheetSupplName: 'ЛСПост'
