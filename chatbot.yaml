@@ -55,8 +55,6 @@ caila:
     noMatchThreshold: 0.2
 
 injector:
-  InaraServiceUrl: 'https://inara.alseco.kz/dev/api/accounts/'
-
   AccountTableURL: 'https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing'
   AccountSheetName: 'ЛС'
   AccountSheetSupplName: 'ЛСПост'

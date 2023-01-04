@@ -61,7 +61,11 @@ function TrySetNumber(acc_num)
 function FindAccountAddress(){
     var $injector = $jsapi.context().injector;
     var $session = $jsapi.context().session;
-    var url = $injector.InaraServiceUrl + $session.Account._number + '/address';
+    var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+    
+    // log("addr value = "+ addr);
+    // var url = $injector.InaraServiceUrl + $session.Account._number + '/address';
+    var url = addr + $session.Account._number + '/address';
     var token = $secrets.get("InaraSeviceToken", "Токен не найден")
 
     
