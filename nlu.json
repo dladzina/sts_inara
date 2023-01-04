@@ -143,6 +143,10 @@
       "text" : " не смогу подъехать"
     }, {
       "text" : "отлучиться из дома не могу"
+    }, {
+      "text" : "сам сделаю"
+    }, {
+      "text" : "хочу самостоятельно"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -311,12 +315,15 @@
       "text" : "а можно не через Интернет"
     }, {
       "text" : "а к вам прийти можно"
+    }, {
+      "text" : "к вам сам прийду"
+    }, {
+      "text" : "зайду самостоятельно"
+    }, {
+      "text" : "заскочу"
     } ],
     "classificationRules" : {
-      "refs" : [ {
-        "entityName" : "classRule_2937",
-        "predicate" : "CONTAINS_NOT"
-      } ]
+      "refs" : [ ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -745,6 +752,27 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/КонтактыПоставщика",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "дайте телефон по @Услуга"
+    }, {
+      "text" : "какой номер по @Услуга"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Услуга",
+      "entity" : "Услуга",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : true
+    } ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -901,22 +929,30 @@
     } ]
   }, {
     "entity" : {
-      "name" : "classRule_2937",
+      "name" : "Услуга",
       "enabled" : true,
       "shared" : false,
       "type" : "annotation",
       "priority" : 1,
-      "noSpelling" : false,
+      "noSpelling" : true,
       "noMorph" : false,
       "phoneticSearch" : false,
-      "fuzzySearch" : false,
+      "fuzzySearch" : true,
       "client" : false,
-      "hidden" : true
+      "hidden" : false
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "самостоятельно", "самостоятельный" ],
-      "value" : ""
+      "rule" : [ "электроэнергия", "электро энергия", "свет", "электричество", "электроснабжение" ],
+      "value" : "{\n  \"SERV_ID\": [\n    13,\n    118\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "отопление", "тепло" ],
+      "value" : "{\n  \"SERV_ID\": [\n    8,\n    31,\n    32,\n    166,\n    458,\n    198,\n    181,\n    150,\n    90\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "вывоз тбо", "мусор", "вывоз мусора", "твердый бытовой отход", "мусорка" ],
+      "value" : "{\"SERV_ID\":[11, 400,94,135]}"
     } ]
   } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
