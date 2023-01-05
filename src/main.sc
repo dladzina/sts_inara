@@ -9,10 +9,20 @@ require: dateTime/dateTime.sc
 require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
 
+# логирование произошедших ошибок
+# require: ErrorBind/ErrorLogger.js
+
+#########################################
+# ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ СЦЕНАРИЕВ
+# сценарий смена собственника
 require: ChangeAccountPerson.sc
+# сценарий смена количества проживающих
 require: ChangeAccountPersonCount.sc
+# сценарии по платежам
 require: PaymentTotal.sc
 
+#########################################
+# Справочник - основные поставщики
 require: dicts/MainSuppl.csv
     name = MainSuppl
     var = $MainSuppl
@@ -339,34 +349,34 @@ theme: /ИнициацияЗавершения
             intent: /Несогласие_помочь
             go!: /bye
 
-# theme: /SupplierContacts
-#     state: SupplierContacts
-#         intent!: /КонтактыПоставщика
-#         script: 
-#         # если есть услуга, то выделяем ее 
-#             log($parseTree);
-#             if ($parseTree._Услуга){
-#                 $session.Serv = $parseTree._Услуга.SERV_ID;
-#             }
-#         a: даем контакты по услуге
-#         #  если есть ЛС, то смотрим по нему. если ЛС нет, то надо спрашивать
-#                     # смотрим, был ли лицевой счет выявлен в ходе диалога
-#         if: ($session.Account && $session.Account.Number > 0)
-#             # Есть номер лицевого счета, будем давать информацию по нему по контактам поставщиков
-#             go!: SupplierContactsByAccountServ
-#         else: 
-#             # здесь идет определение, что ЛС в рамках дилагога еще не запрашивался - передаем управление туда
-#             a: Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
-#             BlockAccountNumber:
-#                 okState = SupplierContactsByAccountServ
-#                 errorState = SupplierContactsError
-#                 noAccountState = SupplierContactsError
+theme: /SupplierContacts
+    state: SupplierContacts
+        intent!: /КонтактыПоставщика
+        script: 
+        # если есть услуга, то выделяем ее 
+            log($parseTree);
+            if ($parseTree._Услуга){
+                $session.Serv = $parseTree._Услуга.SERV_ID;
+            }
+        a: даем контакты по услуге
+        #  если есть ЛС, то смотрим по нему. если ЛС нет, то надо спрашивать
+                    # смотрим, был ли лицевой счет выявлен в ходе диалога
+        if: ($session.Account && $session.Account.Number > 0)
+            # Есть номер лицевого счета, будем давать информацию по нему по контактам поставщиков
+            go!: SupplierContactsByAccountServ
+        else: 
+            # здесь идет определение, что ЛС в рамках дилагога еще не запрашивался - передаем управление туда
+            a: Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт
+            BlockAccountNumber:
+                okState = SupplierContactsByAccountServ
+                errorState = SupplierContactsError
+                noAccountState = SupplierContactsError
             
-#         state: SupplierContactsError
-#             a: нет лицевого - нет контактов
+        state: SupplierContactsError
+            a: нет лицевого - нет контактов
         
-#         state: SupplierContactsByAccountServ
-#             a: ЛС {{AccountTalkNumber($session.Account.Number)}}, услуга {{$session.Serv}}
+        state: SupplierContactsByAccountServ
+            a: ЛС {{AccountTalkNumber($session.Account.Number)}}, услуга {{$session.Serv}}
     
         
         
