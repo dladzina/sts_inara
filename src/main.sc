@@ -10,7 +10,7 @@ require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
 
 # логирование произошедших ошибок
-# require: ErrorBind/ErrorLogger.js
+require: ErrorBind/ErrorLogger.js
 
 #########################################
 # ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ СЦЕНАРИЕВ
@@ -328,6 +328,12 @@ theme: /
                 a: Не совсем поняла. Можете повторить, пожалуйста?
                 a: Повторите, пожалуйста. Вас не слышно.
 
+    state: sessionDataSoftLimitExceeded
+        # // обрабатываем событие о достижении soft лимита
+        event!: sessionDataSoftLimitExceeded
+        script:
+            SendWarningMessage('Достигнут лимит sessionDataSoftLimitExceeded')
+
 theme: /ИнициацияЗавершения
     
     state: CanIHelpYou 
@@ -354,7 +360,7 @@ theme: /SupplierContacts
         intent!: /КонтактыПоставщика
         script: 
         # если есть услуга, то выделяем ее 
-            log($parseTree);
+            # log($parseTree);
             if ($parseTree._Услуга){
                 $session.Serv = $parseTree._Услуга.SERV_ID;
             }
@@ -376,7 +382,7 @@ theme: /SupplierContacts
             a: нет лицевого - нет контактов
         
         state: SupplierContactsByAccountServ
-            a: ЛС {{AccountTalkNumber($session.Account.Number)}}, услуга {{$session.Serv}}
+            a: ЛС {{AccountTalkNumber($session.Account.Number)}}, услуга [{{$session.Serv}}]
     
         
         
