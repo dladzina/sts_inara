@@ -7,7 +7,7 @@
   "settings" : {
     "language" : "ru",
     "spellingCorrection" : false,
-    "classificationAlgorithm" : "deeplearning",
+    "classificationAlgorithm" : "sts",
     "timezone" : "Europe/Moscow",
     "extendedSettings" : {
       "patternsEnabled" : true,
