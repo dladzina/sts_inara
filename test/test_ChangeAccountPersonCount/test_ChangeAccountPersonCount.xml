@@ -74,15 +74,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData>        
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <sheetName>ЛСПост</sheetName>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts', 'tartyp']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
-          </response>
-        </mockData>        
+          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/mainSuppliers</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"mainSuppliers": ["Aes","Alts","tartyp"]}</response>
+        </mockData> 
+        
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
@@ -115,15 +111,11 @@
           <response>{"accountId":5888492,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}</response>
         </mockData> 
         <mockData>
-          <query method="get">https://script.google.com/macros/s/AKfycbywN2f6PJs_2OhVSgDaN1oUEK9N-OmBuancUMJA-wuIfPXovZ0PJnY9iAsZ12sYd_LP/exec?sheetURL=https://docs.google.com/spreadsheets/d/1_tdWUTlZZtPJTX64JVqg-kmbIaBOdpCdbOpghyZI22g/edit?usp=sharing&amp;sheetName=${sheetName}&amp;filterHead=account_number&amp;filterValue=${filterValue}</query>
-          <parameters>
-            <sheetName>ЛСПост</sheetName>
-            <filterValue>5888492</filterValue>
-          </parameters>
-          <response>
-             {"count":1,"data":[{"account_number":5888379,"suppl_list":"['aes', 'alts']","Row":9}],"filterHead":"account_number","filterValue":"5888379","needFilter":true,"msg":"Success"}
-          </response>
-        </mockData>        
+          <query method="get">https://inara.alseco.kz/tst/api/accounts/${filterValue}/mainSuppliers</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"mainSuppliers": ["Aes","Alts"]}</response>
+        </mockData> 
+
         <q>58 88 492</q>
         <a>Номер Вашего лицевого счёта 5 88 84 92. Поиск займет время.</a>
         <a>Подождёте?</a>
