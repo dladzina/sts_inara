@@ -10,7 +10,7 @@ require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
 
 # логирование произошедших ошибок
-# require: ErrorBind/ErrorLogger.js
+require: ErrorBind/ErrorLogger.js
 
 #########################################
 # ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ СЦЕНАРИЕВ
@@ -240,7 +240,7 @@ theme: /
         event: transfer
         script:
             var status = $dialer.getTransferStatus();
-            //log(status);
+            log('transfer_status = ' + toPrettyString(status));
         if: $dialer.getTransferStatus().status === 'FAIL'
             a: К сожалению, на данный момент все операторы заняты. Могу ли я Вам еще чем-то помочь? 
         # else:
