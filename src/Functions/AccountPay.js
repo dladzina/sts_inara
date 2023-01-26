@@ -10,11 +10,16 @@ function GetAccountPayShortInfo(){
         //if (!$session.Account.MainSuppliers)
         {
             // функция для поиска поставщиков
-            var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetPayName
-            url = url + "&filterHead=account_number&filterValue="+$session.Account.Number;
+            // var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetPayName
+            // url = url + "&filterHead=account_number&filterValue="+$session.Account.Number;
+            var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+            var url = addr + $session.Account.Number + '/lastPay';
+            var token = $secrets.get("InaraSeviceToken", "Токен не найден")
+
             try{
                 var response =  $http.query(url, {method: "GET",
                     timeout: 20000        // таймаут выполнения запроса в мс
+                    ,headers: {"Content-Type": "application/json", "Authorization": "Basic " + token}//dXNlcl9zZXJ2aWNlOk5TV0tvZ0RZX1BIcVZvNWM="
                 });
             }
             catch(e){
@@ -24,16 +29,15 @@ function GetAccountPayShortInfo(){
             };
 
             if(response.isOk){
-                if (response.data && response.data.data[0]){
+                if (response.data /*&& response.data.data[0]*/){
                     $session.Account.PaymentInfo = $session.Account.PaymentInfo || {};
-                    $session.Account.PaymentInfo.date_last_pay =  response.data.data[0].date_last_pay;
-                    $session.Account.PaymentInfo.sum_last_pay =  response.data.data[0].sum_last_pay;
-                    $session.Account.PaymentInfo.registration_date =  response.data.data[0].registration_date;
-                    // if ($session.Account.PaymentInfo.date_last_pay != "")
-                    //     $session.Account.PaymentInfo.date_last_pay = Date($session.Account.PaymentInfo.date_last_pay);
-                    // log( Date('2022-12-05'));
-                    // log(toPrettyString($session.Account.PaymentInfo));
-                    // log(typeof $session.Account.PaymentInfo.date_last_pay)
+
+                    $session.Account.PaymentInfo.date_last_pay =  response.data.payDate;
+                    $session.Account.PaymentInfo.registration_date =  response.data.registrationDate;
+
+                    // $session.Account.PaymentInfo.date_last_pay =  response.data.data[0].date_last_pay;
+                    // $session.Account.PaymentInfo.sum_last_pay =  response.data.data[0].sum_last_pay;
+                    // $session.Account.PaymentInfo.registration_date =  response.data.data[0].registration_date;
 
                 }
             }

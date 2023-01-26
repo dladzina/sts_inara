@@ -10,7 +10,7 @@ require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
 
 # логирование произошедших ошибок
-require: ErrorBind/ErrorLogger.js
+# require: ErrorBind/ErrorLogger.js
 
 #########################################
 # ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ СЦЕНАРИЕВ

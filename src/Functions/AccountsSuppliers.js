@@ -32,11 +32,17 @@ function GetAccountMainSuppls(){
         // смотрим, была ли получена ранее информация по основным поставщикам
         if (!$session.Account.MainSuppliers){
             // функция для поиска поставщиков
-            var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetSupplName
-            url = url + "&filterHead=account_number&filterValue="+$session.Account.Number;
+            // var url = $injector.MacrosUrl + "sheetURL=" + $injector.AccountTableURL + "&sheetName="+$injector.AccountSheetSupplName
+            // url = url + "&filterHead=account_number&filterValue="+$session.Account.Number;
+
+            var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+            var url = addr + $session.Account.Number + '/mainSuppliers';
+            var token = $secrets.get("InaraSeviceToken", "Токен не найден")
+
             try{
                 var response =  $http.query(url, {method: "GET",
                     timeout: 20000        // таймаут выполнения запроса в мс
+                    ,headers: {"Content-Type": "application/json", "Authorization": "Basic " + token}
                 });
             }
             catch(e){
@@ -46,8 +52,10 @@ function GetAccountMainSuppls(){
             };
 
             if(response.isOk){
-                if (response.data && response.data.data){
-                    $session.Account.MainSuppliers =  response.data.data[0].suppl_list;
+                if (response.data /*&& response.data.data*/){
+                    // $session.Account.MainSuppliers =  response.data.data[0].suppl_list;
+                    $session.Account.MainSuppliers =  response.data.mainSuppliers;
+
                     if (typeof($session.Account.MainSuppliers)=="string"){
                         var  Names = $session.Account.MainSuppliers;
                         Names = Names.replaceAll( "\"","\'");
@@ -69,7 +77,7 @@ function GetAccountMainSupplNames(MainSuppList){
     var return_str = "";
     if (GetAccountMainSuppls()){
         $session.Account.MainSuppliers.forEach(function(elem){
-            return_str = return_str + (return_str.length>0? ", ": " ")  + MainSuppList[elem].value.suppl_talk_name;
+            return_str = return_str + (return_str.length>0? ", ": " ")  + MainSuppList[elem.toLowerCase()].value.suppl_talk_name;
         });
     }
     return return_str;
@@ -97,6 +105,7 @@ function GetMainSupplNamesContracts(MainSuppList){
     Object.keys(MainSuppList).forEach(function(elem,i){
         // last не работает. надо как-то понять, что это элемент последний
         var last = (i == MainSuppList.length-1) && (i>1);
+        
 //        $reactions.answer(i);
         return_str = return_str + (return_str.length > 0 ? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
     });
@@ -111,6 +120,7 @@ function GetAccountMainSupplNamesContracts(MainSuppList){
     var return_str = "";
     if (GetAccountMainSuppls()){
         $session.Account.MainSuppliers.forEach(function(elem, i){
+            elem = elem.toLowerCase();
             var last = (i == ($session.Account.MainSuppliers.length-1)) && (i>1);
             return_str = return_str + (return_str.length>0? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
         });
