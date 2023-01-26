@@ -243,7 +243,8 @@ theme: /
             log('transfer_status = ' + toPrettyString(status));
         if: $dialer.getTransferStatus().status === 'FAIL'
             a: К сожалению, на данный момент все операторы заняты. Могу ли я Вам еще чем-то помочь? 
-        # else:
+        elseif: status.hangup 
+            a: Вы вернулись в бота после оператора. 
         #     a: Спасибо, что связались с нами. Оцените, пожалуйста, качество обслуживания.    
         state: CanIHelpYouAgree
             q: $yes
