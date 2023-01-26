@@ -170,7 +170,7 @@ theme: /BlockAccountNumInput
                 event: bargeInIntent
                 script:
                     var bargeInIntentStatus = $dialer.getBargeInIntentStatus();
-                    log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
+                    # log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
                     var text = bargeInIntentStatus.text;
                     var res = $nlp.matchPatterns(text,["$no", "$disagree"])
         
@@ -224,7 +224,7 @@ theme: /BlockAccountNumInput
             state: AccountAddressConfirm
                 script:
                     $session.Account.AddressRepeatCount += 1;
-                    log('$request = ' + toPrettyString($request));
+                    # log('$request = ' + toPrettyString($request));
                 a: Ваш адрес {{$session.Account.Address}}. Верно? 
 
                 state: AccountAddressConfirmYes
