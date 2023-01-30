@@ -65,6 +65,14 @@
         <a state="/Blocks/AccountPayDateMessage/AccountPayGetDateLastPayInfo"/>
         <a state="/PaymentTotal/GetDateLastPay/CanIHelpYou"/>
     </test-case>    
+
+    <test-case id="лс_я_не_хочу">
+        <q>дата последней оплаты</q>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>я не хочу</q>
+        <a>К сожалению, без лицевого счёта я не могу дать дату последней оплаты</a>
+        <a>Нужна ли моя помощь дальше?</a>
+    </test-case>        
     
 <!--no_match-->
 
