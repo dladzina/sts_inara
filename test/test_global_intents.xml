@@ -50,6 +50,274 @@
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>
     
+    <test-case id="Phrase_сменить владельца_/ChangeAccountPerson">
+            <q>сменить владельца</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_сменить хозяина_/ChangeAccountPerson">
+            <q>сменить хозяина</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_хозяина изменить хочу_/ChangeAccountPerson">
+            <q>хозяина изменить хочу</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_исправить владельца_/ChangeAccountPerson">
+            <q>исправить владельца</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_исправить хозяина в квитанции_/ChangeAccountPerson">
+            <q>исправить хозяина в квитанции</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_сменить хозяина в документа_/ChangeAccountPerson">
+            <q>сменить хозяина в документа</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_оформить счет на свое имя_/ChangeAccountPerson">
+            <q>оформить счет на свое имя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_переоформить лицевой счет_/ChangeAccountPerson">
+            <q>переоформить лицевой счет</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_изменить фамилию владельца_/ChangeAccountPerson">
+            <q>изменить фамилию владельца</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_поменять имя собственника_/ChangeAccountPerson">
+            <q>поменять имя собственника</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_поменять владельца_/ChangeAccountPerson">
+            <q>поменять владельца</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_сменить владельца_/ChangeAccountPerson">
+            <q>сменить владельца</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_изменить фио в получателях_/ChangeAccountPerson">
+            <q>изменить фио в получателях</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_оформить квитанцию на себя_/ChangeAccountPerson">
+            <q>оформить квитанцию на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_переоформить квитанцию на себя_/ChangeAccountPerson">
+            <q>переоформить квитанцию на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_переоформить документы на себя_/ChangeAccountPerson">
+            <q>переоформить документы на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_переоформить документы со старого владельцапереоформить на себя квартиру_/ChangeAccountPerson">
+            <q>переоформить документы со старого владельцапереоформить на себя квартиру</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_исправить фамилию в документах_/ChangeAccountPerson">
+            <q>исправить фамилию в документах</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_оформить квитанцию на себя_/ChangeAccountPerson">
+            <q>оформить квитанцию на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_переоформить расчеты на себя_/ChangeAccountPerson">
+            <q>переоформить расчеты на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_переоформить счет на себя_/ChangeAccountPerson">
+            <q>переоформить счет на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_переоформить счет согласно прописке_/ChangeAccountPerson">
+            <q>переоформить счет согласно прописке</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_приобрели квартиру_/ChangeAccountPerson">
+            <q>приобрели квартиру</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_получить лицевой счет на свое имя_/ChangeAccountPerson">
+            <q>получить лицевой счет на свое имя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_перенести лицевой счет на свое имя_/ChangeAccountPerson">
+            <q>перенести лицевой счет на свое имя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_перенести счет согласно прописке_/ChangeAccountPerson">
+            <q>перенести счет согласно прописке</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_изменить фамилию в получателях_/ChangeAccountPerson">
+            <q>изменить фамилию в получателях</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_оформить квитанцию на себя_/ChangeAccountPerson">
+            <q>оформить квитанцию на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_квартиру недавно купила_/ChangeAccountPerson">
+            <q>квартиру недавно купила</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил дом поменять имя в квитанции_/ChangeAccountPerson">
+            <q>купил дом поменять имя в квитанции</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил офис поменять имя в квитанции_/ChangeAccountPerson">
+            <q>купил офис поменять имя в квитанции</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил недвижимость поменять имя в квитанции_/ChangeAccountPerson">
+            <q>купил недвижимость поменять имя в квитанции</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил офис поменять имя в квитанции_/ChangeAccountPerson">
+            <q>купил офис поменять имя в квитанции</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил дом сменить собственника_/ChangeAccountPerson">
+            <q>купил дом сменить собственника</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил офис сменить собственника_/ChangeAccountPerson">
+            <q>купил офис сменить собственника</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил недвижимость сменить собственника_/ChangeAccountPerson">
+            <q>купил недвижимость сменить собственника</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_купил офис сменить собственника_/ChangeAccountPerson">
+            <q>купил офис сменить собственника</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    <test-case id="Phrase_приобрести дом  оформить лицевой счет на себя_/ChangeAccountPerson">
+        <q>приобрести дом  оформить лицевой счет на себя</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_приобрести офис  оформить лицевой счет на себя_/ChangeAccountPerson">
+            <q>приобрести офис  оформить лицевой счет на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_приобрести недвижимость  оформить лицевой счет на себя_/ChangeAccountPerson">
+            <q>приобрести недвижимость  оформить лицевой счет на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_приобрести офис  оформить лицевой счет на себя_/ChangeAccountPerson">
+            <q>приобрести офис  оформить лицевой счет на себя</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_нужно изменить фамилию владелец_/ChangeAccountPerson">
+            <q>нужно изменить фамилию владелец</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_нужно изменить фамилию собственник_/ChangeAccountPerson">
+            <q>нужно изменить фамилию собственник</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_нужно изменить фамилию хозяин_/ChangeAccountPerson">
+            <q>нужно изменить фамилию хозяин</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+            
+            
+    <test-case id="Phrase_нужно изменить фамилию получатель_/ChangeAccountPerson">
+            <q>нужно изменить фамилию получатель</q>
+            <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
     # intent changeAccountDetails
     
     # intent changeAccountDetails
