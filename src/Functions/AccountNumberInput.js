@@ -94,6 +94,6 @@ function GetTempAccountNumber(){
 }
 // Как говорить номер ЛС (разбиение по разрядам)
 function AccountTalkNumber(acc_num){
-    return acc_num.toString().replace(/\B(?=(\d{2})+(?!\d))/g, " ")    
+    return acc_num.toString().replace(/\B(?=(\d{2})+(?!\d))/g, "- ")    
 }
 

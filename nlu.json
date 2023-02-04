@@ -395,9 +395,14 @@
       "text" : "прошла оплата по лицевому счету"
     }, {
       "text" : "дата последней оплаты "
+    }, {
+      "text" : "я хочу узнать последний платёж"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "Услуга",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -419,7 +424,7 @@
         "predicate" : "CONTAINS"
       } ]
     },
-    "patterns" : [ "не (хочу/надо) @Сущность_Онлайн" ],
+    "patterns" : [ "не (хочу/надо/через) @Сущность_Онлайн" ],
     "priority" : 0
   }, {
     "path" : "/подождите",
@@ -952,7 +957,11 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "вывоз тбо", "мусор", "вывоз мусора", "твердый бытовой отход", "мусорка" ],
-      "value" : "{\"SERV_ID\":[11, 400,94,135]}"
+      "value" : "{\n  \"SERV_ID\": [\n    11,\n    400,\n    94,\n    135\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "налог" ],
+      "value" : ""
     } ]
   } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],

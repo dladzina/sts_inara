@@ -10,7 +10,7 @@ require: Functions/GetNumbers.js
 require: Functions/AccountsSuppliers.js
 
 # логирование произошедших ошибок
-require: ErrorBind/ErrorLogger.js
+# require: ErrorBind/ErrorLogger.js
 
 #########################################
 # ПОДКЛЮЧЕНИЕ ДОПОЛНИТЕЛЬНЫХ СЦЕНАРИЕВ
@@ -75,7 +75,7 @@ init:
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
-                ($context.nluResults.intents[0].score > 0.45) && 
+                ($context.nluResults.intents[0].score > 0.35) && 
                 $context.nluResults.intents[0].clazz &&
                 ($context.nluResults.intents[0].clazz != "/NoMatch")
             ) {
