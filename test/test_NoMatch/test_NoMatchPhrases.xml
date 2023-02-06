@@ -1,0 +1,7 @@
+<test>
+    <test-case id="Узнать номер ЛС">
+        <q>хочу узнать номер лицевого счета</q>
+        <a state = "/NoMatch"></a>
+        
+    </test-case>
+</test>

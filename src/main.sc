@@ -164,6 +164,10 @@ theme: /
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
+    state: OtherTheme
+        intent!: /РазноеНаОператора
+        go!: /NoMatch
+
     state: NoMatch || noContext = true
         event!: noMatch
         # a: Я не понял. Вы сказали: {{$request.query}}
@@ -227,10 +231,10 @@ theme: /
             switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
             
             // при true, абонент будет возвращен к диалогу с ботом после разговора с оператором, а также, если оператор недоступен.
-            switchReply.continueCall = true; 
+            switchReply.continueCall = false; 
 
             // при true, разговор продолжает записываться, в том числе с оператором и при повторном возвращении абонента в диалог с ботом. Запись звонка будет доступна в логах диалогов.
-            switchReply.continueRecording = true; 
+            switchReply.continueRecording = false; 
             
             $response.replies = $response.replies || [];
             $response.replies.push(switchReply);
@@ -260,6 +264,7 @@ theme: /
 
     state: repeat || noContext = true
         q!:  ( повтор* / что / еще раз* / ещё раз*)
+        intent!: /Повторить
         go!: {{$session.contextPath}}
     # go!: {{ $context.session._lastState }} 
 

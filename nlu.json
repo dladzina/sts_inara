@@ -67,6 +67,8 @@
       "text" : "снова давай"
     }, {
       "text" : "сначала можно"
+    }, {
+      "text" : "можешь повторить помедленнее"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -777,6 +779,36 @@
       "prompts" : [ ],
       "array" : true
     } ],
+    "priority" : 0
+  }, {
+    "path" : "/РазноеНаОператора",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "хочу узнать номер своего лицевого счёта"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Повторить",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "повтори"
+    }, {
+      "text" : "помедленней пожалуйста"
+    }, {
+      "text" : "еще разочек"
+    }, {
+      "text" : "я не расслышала что ты сказала"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
     "priority" : 0
   } ],
   "entities" : [ {
