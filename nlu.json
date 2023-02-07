@@ -238,6 +238,12 @@
       "refs" : [ ]
     },
     "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Сущность_Онлайн",
+      "entity" : "Сущность_Онлайн",
+      "required" : false,
+      "prompts" : [ ]
+    } ],
     "priority" : 0
   }, {
     "path" : "/ChangeAccountPersonCount",

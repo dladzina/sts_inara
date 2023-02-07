@@ -3,8 +3,10 @@ theme: /ChangeAccountPerson
     state: ChangeAccountPerson
         intent!: /ChangeAccountPerson
         # a: {{toPrettyString($parseTree)}}
-        
-        if: ($parseTree._Сущность_Онлайн)
+        script:
+            $temp.IsOnline = ($parseTree._Сущность_Онлайн)? true: false;
+                // $temp.IsOnline = true;
+        if: $temp.IsOnline
             go!: Online 
         
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
