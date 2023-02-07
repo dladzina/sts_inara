@@ -55,18 +55,22 @@ init:
         
         //$context.session._lastState = $context.contextPath ;
         // добавляю логи всех ответов бота
-        /*
+        $context.session._last_reply = "";
         if ($context.response.replies) {
+            var last_reply = "";
             $context.response.replies.forEach(function(reply) {
                 if (reply.type === "text") {
                     if (reply.text.match(/\[|\]/g) && reply.text.match(/\(|\)/g)) {
-                        log("Bot: " + formatLink(reply.text));
+                        last_reply += formatLink(reply.text)
+                        # log("Bot: " + formatLink(reply.text));
                     } else {
-                        log("Bot: " + reply.text);
+                        # log("Bot: " + reply.text);
+                        last_reply += reply.text
                     }
                 }
             });
-        }*/        
+            $context.session._last_reply =  last_reply;
+        }        
     });
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
@@ -265,7 +269,10 @@ theme: /
     state: repeat || noContext = true
         q!:  ( повтор* / что / еще раз* / ещё раз*)
         intent!: /Повторить
-        go!: {{$session.contextPath}}
+        if: $session._last_reply
+            a: {{$session._last_reply}}
+        else:
+            go!: {{$session.contextPath}}
     # go!: {{ $context.session._lastState }} 
 
     state: bye
