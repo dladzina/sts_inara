@@ -1,13 +1,17 @@
 <test>
-    <test-case id="Узнать номер ЛС">
+    <test-case id="NoMatch_Узнать_ЛС">
         <q>хочу узнать номер лицевого счета</q>
         <a state = "/NoMatch"></a>
-        
     </test-case>
-    <test-case id="Узнать номер ЛС">
+
+    <test-case id="NoMatch_Долг">
         <q>откуда у меня долги в квитанции</q>
         <a state = "/NoMatch"></a>
-        
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат">
+        <q>получить дубликат счета</q>
+        <a state = "/NoMatch"></a>
     </test-case>
 
 </test>
