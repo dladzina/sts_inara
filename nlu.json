@@ -786,6 +786,8 @@
     "shared" : false,
     "phrases" : [ {
       "text" : "хочу узнать номер своего лицевого счёта"
+    }, {
+      "text" : "долги в квитанции"
     } ],
     "classificationRules" : {
       "refs" : [ ]
