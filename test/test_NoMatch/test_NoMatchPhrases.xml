@@ -28,4 +28,10 @@
         <q>когда принесут квитанцию</q>
         <a state = "/NoMatch"></a>
     </test-case>
+
+    <test-case id="NoMatch_Дубликат_3">
+        <q>расскажите как можно уменьшить счет за коммуналку</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
 </test>
