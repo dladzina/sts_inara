@@ -107,6 +107,15 @@
         <q>знаете я недавно купила квартиру хотела переоформить со старого владельца на себя как это лучше сделать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
+    
+    <test-case id = "ChangeAccountPerson_18">
+        <q>я купила новую квартиру мне нужно чтобы моя фамилия печаталась что мне нужно сделать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case> 
+        <test-case id = "ChangeAccountPerson_18">
+        <q>подскажите как мне оформить квитанцию но себя я квартиру недавно купила вот теперь не знаю что делать</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case> 
 
     <test-case id = "ChangeAccountPerson_19">
         <q>сменить собственника</q>
