@@ -13,5 +13,19 @@
         <q>получить дубликат счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
-
+    
+    <test-case id="NoMatch_Дубликат_1">
+        <q>хочу получить новую квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат_2">
+        <q>где моя квитанция. обычно приходит пятого, а сегодня уже десятое и ее нет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат_3">
+        <q>когда принесут квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
 </test>
