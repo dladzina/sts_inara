@@ -4,4 +4,10 @@
         <a state = "/NoMatch"></a>
         
     </test-case>
+    <test-case id="Узнать номер ЛС">
+        <q>откуда у меня долги в квитанции</q>
+        <a state = "/NoMatch"></a>
+        
+    </test-case>
+
 </test>
