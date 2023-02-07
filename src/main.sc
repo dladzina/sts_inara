@@ -385,7 +385,7 @@ theme: /SupplierContacts
                 noAccountState = SupplierContactsError
             
         state: SupplierContactsError
-            a: нет лицевого - нет контактов
+            a: без лицевого счета не могу дать вам телефон поставщика
         
         state: SupplierContactsByAccountServ
             a: ЛС {{AccountTalkNumber($session.Account.Number)}}, услуга [{{$session.Serv}}]
