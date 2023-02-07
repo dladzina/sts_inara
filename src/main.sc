@@ -388,7 +388,7 @@ theme: /SupplierContacts
             a: без лицевого счета не могу дать вам телефон поставщика
         
         state: SupplierContactsByAccountServ
-            a: ЛС {{AccountTalkNumber($session.Account.Number)}}, услуга [{{$session.Serv}}]
+            a: Запрос еще в работе. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{$session.Serv}}]
     
         
         
