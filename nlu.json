@@ -13,7 +13,8 @@
       "patternsEnabled" : true,
       "tokenizerEngine" : "mystem",
       "allowedPatterns" : [ ],
-      "useShared" : false
+      "useShared" : false,
+      "synonymMatch": 0.4
     },
     "shared" : false
   },
