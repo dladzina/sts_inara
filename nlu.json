@@ -13,8 +13,7 @@
       "patternsEnabled" : true,
       "tokenizerEngine" : "mystem",
       "allowedPatterns" : [ ],
-      "useShared" : false,
-      "synonymMatch": 0.4
+      "useShared" : false
     },
     "shared" : false
   },
@@ -247,7 +246,8 @@
       "name" : "Сущность_Онлайн",
       "entity" : "Сущность_Онлайн",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
@@ -835,6 +835,8 @@
       "text" : "можешь повторить помедленнее"
     }, {
       "text" : "можешь повторить я записываю"
+    }, {
+      "text" : "повторите пожалуйста а то я не успел записать"
     } ],
     "classificationRules" : {
       "refs" : [ ]

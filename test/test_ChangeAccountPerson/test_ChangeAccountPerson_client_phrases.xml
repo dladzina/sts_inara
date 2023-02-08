@@ -130,6 +130,33 @@
         <q>а если я не могу онлайн подать а вот в офис приехать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info"/>
+    </test-case>   
+    
+    <test-case id = "ChangeAccountPerson_20">
+        <q>сменить собственника онлайн</q>
+        <a class="/ChangeAccountPerson/ChangeAccountPerson"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou"/>
+        <q>да можешь повторить помедленнее</q>
+        <a state="/repeat"/>
+    </test-case>    
+
+    <test-case id = "ChangeAccountPerson_21">
+        <q>сменить собственника онлайн</q>
+        <a class="/ChangeAccountPerson/ChangeAccountPerson"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou"/>
+        <q>повтори информацию о смене количества проживающих помедленнее пожалуйста</q>
+        <a state="/repeat"/>
+    </test-case>    
+
+    <test-case id = "ChangeAccountPerson_22">
+        <q>сменить собственника онлайн</q>
+        <a class="/ChangeAccountPerson/ChangeAccountPerson"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou"/>
+        <q>да повторите пожалуйста а то я не успел записать</q>
+        <a state="/repeat"/>
     </test-case>    
 
 </test>

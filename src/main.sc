@@ -75,7 +75,7 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-        log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        # log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -89,6 +89,20 @@ init:
             
             return;
         }
+        // обработка фразы "да нужна повтори помедленней я записываю
+        if($context.nluResults.intents.length > 1){
+            if (($context.nluResults.intents[0].score < 0.35) && 
+                $context.nluResults.intents[0].clazz &&
+                ($context.nluResults.intents[0].clazz != "/NoMatch")&&
+                ($context.nluResults.intents[1].score > 0.55) && 
+                $context.nluResults.intents[1].clazz &&
+                ($context.nluResults.intents[1].clazz != "/NoMatch"))
+            $context.nluResults.selected = $context.nluResults.intents[1];
+                
+        }
+        
+        
+        
         // паттерн TotalPay должен иметь минимальный вес среди всех интентов
         if  ($context.nluResults.selected.clazz == "/PaymentTotal/PaymentQuestion" &&
             $context.nluResults.selected.ruleType == "pattern"){
