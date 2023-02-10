@@ -34,4 +34,24 @@
         <a state = "/NoMatch"></a>
     </test-case>
 
+    <test-case id="Характер-1">
+        <q>да я хотел бы с вами познакомиться</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="Характер-2">
+        <q>здравствуйте инара я тоже виртуальный на виртуальной я хочу с вами познакомиться можно</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-3">
+        <q>я хотел бы с вами познакомиться можно</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="Характер-4">
+        <q>зачем вам номер лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
 </test>
