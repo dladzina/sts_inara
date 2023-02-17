@@ -25,6 +25,17 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
     </test-case>  
     
+    <!--<test-case id="лс не хочу">-->
+    <!--    <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>-->
+    <!--    <q>да</q>-->
+    <!--    <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>-->
+    <!--    <a>Назовите номер вашего лицевого счета</a>-->
+        <!--<q>А можно по ИИН?</q>-->
+        <!--<a>Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?</a>-->
+    <!--    <q>Не хочу</q>-->
+    <!--    <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>-->
+    <!--    <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>-->
+    <!--</test-case>  -->
 <!--не знаю-->
 
     <test-case id="лс_не знаю">

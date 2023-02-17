@@ -18,6 +18,9 @@
 // возвращает список всех основных поставщиков  с их телефонами по ЛС
 // function GetAccountMainSupplNamesContracts(MainSuppList){
 
+// возвращает название поставщика и телефон
+// function GetMainSupplNamesContacts(MainSuppList, suppl_name){
+
 
 //*****************************************************************
 
@@ -64,6 +67,10 @@ function GetAccountMainSuppls(){
                     }
                     
                 }
+            }
+            else{
+                // произошла ошибка сервиса - надо залогировать
+                SendErrorMessage("onHttpResponseError", toPrettyString(response.error))
             }
         }
     }
@@ -131,7 +138,6 @@ function GetAccountMainSupplNamesContracts(MainSuppList){
 
 //-----------------------------------------------------------------
 // возвращает, есть ли на ЛС указанный поставщик
-
 function isAccountHasSuppl(name) {
     var $session = $jsapi.context().session;
     var res = false;
@@ -144,3 +150,13 @@ function isAccountHasSuppl(name) {
     
 }
 
+//-----------------------------------------------------------------
+// возвращает название поставщика и телефон
+function GetMainSupplNamesContact(MainSuppList, suppl_name){
+    var $session = $jsapi.context().session;
+    var return_str = MainSuppList[suppl_name].value.suppl_talk_name + " - " + MainSuppList[suppl_name].value.talk_phone ;
+
+    return return_str;
+
+     
+ }

@@ -41,6 +41,10 @@ function GetAccountPayShortInfo(){
 
                 }
             }
+            else{
+                // произошла ошибка сервиса - надо залогировать
+                SendErrorMessage("onHttpResponseError", toPrettyString(response.error))
+            }
         }
     }
 
