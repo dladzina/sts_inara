@@ -7,17 +7,33 @@ theme: /SupplierContacts
         intent!: /КонтактыПоставщика
         script: 
             SupplContactsClear();
+            $session.RepeatCnt = $session.RepeatCnt || {};
+            $session.RepeatCnt.ServRepeat = 0;
+            # log("SupplierContacts = " + toPrettyString($parseTree))
 
+            if ($parseTree._ОсновнойПоставщик){
+                if ($parseTree._ОсновнойПоставщик[0])
+                    SupplContactsSetSuppl($parseTree._ОсновнойПоставщик[0])
+                else 
+                    SupplContactsSetSuppl($parseTree._ОсновнойПоставщик)
+            }else if ($parseTree._Услуга){
             # если есть услуга, то выделяем ее 
-            if ($parseTree._Услуга){
-                SupplContactsSetServ($parseTree._Услуга[0].SERV_ID)
-                # $reactions.answer(toPrettyString($parseTree._Услуга));
-            }
-            else if ($parseTree._ОсновнойПоставщик){
-                SupplContactsSetSuppl($parseTree._ОсновнойПоставщик[0])
+                $temp.Service = $parseTree._Услуга;
+                # log("1. $temp.Service"+toPrettyString($temp.Service))
+                # log("2. $temp.Service"+toPrettyString($temp.Service))
+                if (typeof($temp.Service)=="string"){
+                    var  Names = $temp.Service;
+                    Names = Names.replaceAll( "\"","\'");
+                    Names = Names.replaceAll( "\'","\"");
+                    $temp.Service = JSON.parse(Names);
+                }
+                if ($temp.Service[0])
+                    $temp.Service = $temp.Service[0];
+                # log("3. $temp.Service"+toPrettyString($temp.Service))
+                SupplContactsSetServ($temp.Service.SERV_ID)
             }
 
-        a: даем контакты по услуге
+        # a: даем контакты по услуге
         if: SupplContactsIsSuppSet()
             go!: SupplierContactsSayContacts
             # a: Записывайте. {{GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())}}.
@@ -45,31 +61,56 @@ theme: /SupplierContacts
             
             state: SupplierContactsByAccountServGetServ
                 q: * @Услуга * 
-                a: {{toPrettyString($parseTree)}}
                 script:
+                    # log("SupplierContactsByAccountServGetServ = " + toPrettyString($parseTree))
                     if ($parseTree._Услуга){
-                        SupplContactsSetServ($parseTree._Услуга.SERV_ID)
+                        $temp.Service = $parseTree._Услуга;
+                        if (typeof($temp.Service)=="string"){
+                            var  Names = $temp.Service;
+                            Names = Names.replaceAll( "\"","\'");
+                            Names = Names.replaceAll( "\'","\"");
+                            $temp.Service = JSON.parse(Names);
+                        }
+                        SupplContactsSetServ($temp.Service.SERV_ID)
                     } 
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
+                    go!: /CallTheOperator
+            state: SupplierContactsByAccountServGetServNoMatch
+                event: noMatch
+                a: Я не нашла услугу. Перевожу Вас на оператора
+                go!: /CallTheOperator
                 
         
         state: SupplierContactsSayContacts
             script:
+                $session.RepeatCnt.ServRepeat += 1;
                 $temp.ss = {};
                 if (SupplContactsIsSuppSet())
                     $temp.ss.text = GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())
                 else 
-                    SupplContactsGetContactsByAccountServ($temp.ss);
+                    SupplContactsGetContactsByAccountServ($MainSuppl,$temp.ss);
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
-            a: Записывайте. {{$temp.ss.text}}. Повторить? 
+            if: ($temp.ss.text) && ($temp.ss.text.length)
+                a: Записывайте. 
+                a: {{$temp.ss.text}}.
+                if: $session.RepeatCnt.ServRepeat<3
+                    a: Повторить? 
+                else:
+                    go!:../CanIHelpYou
+                    
+            else
+                a: у меня нет нужного телефона. перевожу звонок на оператора. 
+                go!: /CallTheOperator
             intent: /Согласие || toState = "."
             intent: /Согласие_повторить || toState = "."
             intent: /Несогласие || toState = "../CanIHelpYou"
             intent: /Несогласие_повторить || toState = "../CanIHelpYou"
+            q: * @Услуга * || toState = ".."
+
         
         state: CanIHelpYou 
             # CommonAnswers

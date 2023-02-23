@@ -5,6 +5,7 @@ function SupplContactsClear(){
     $session.SupplContracts = {};
 }
 function  SupplContactsSetServ(_servId){
+    // log('Услуга' + toPrettyString(_servId));
     var $session = $jsapi.context().session;
     $session.SupplContracts = $session.SupplContracts || {};
     $session.SupplContracts.servId = _servId;
@@ -48,7 +49,7 @@ function SupplContactsGetServicesArray(){
     
 }
 
-function SupplContactsGetContactsByAccountServ(ret_contacts){
+function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts){
     // есть ЛС, есть коды услуг
     // надо обратиться к сервису и получить значения
     var $session = $jsapi.context().session;
@@ -72,6 +73,7 @@ function SupplContactsGetContactsByAccountServ(ret_contacts){
         catch(e){
             //$reactions.answer("Что-то сервер барахлит. ");
             log('--------------- произошла ошибка' );
+            SendErrorMessage("onHttpRequest", 'Функция: SupplContactsGetContactsByAccountServ')
             return false;
         };
 
@@ -80,10 +82,18 @@ function SupplContactsGetContactsByAccountServ(ret_contacts){
             if (response.data && response.data.services){
                 // $session.Account.MainSuppliers =  response.data.data[0].suppl_list;
                 response.data.services.forEach(function(elem){
-                    log(toPrettyString(elem))
+                    // log(toPrettyString(elem))
                     if (elem.supplierContacts.length > 0)
+                        var suppl_name = elem.supplierName;
+                        
+                    
+                        if (MainSuppList[elem.supplierCodeName])
+                            suppl_name  = MainSuppList[elem.supplierCodeName].value.suppl_talk_name
+                        //
                     // собираем строку из контактов
-                        ret_contacts.text = elem.supplierName + ' - ' + elem.supplierContacts
+                    // проверяем, если это основной поставщик, то даем его наименование 
+                    // если нет, то данные из сервиса 
+                        ret_contacts.text = suppl_name + ' - ' + elem.supplierContacts
                     
                 });
             }

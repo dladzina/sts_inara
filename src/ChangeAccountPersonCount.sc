@@ -8,7 +8,6 @@ theme: /ChangeAccountPersonCount
             #intent: /Offline
             intent: /Лично
             intent: /НеОнлайн
-            # q: * $Offline *
             q: $no 
             q: $disagree 
             intent: /Несогласие
@@ -106,7 +105,6 @@ theme: /ChangeAccountPersonCount
         state: Online
             #intent: /Online
             intent: /Онлайн
-            # q: * $Online *
             q: $yes
             q: $agree
             intent: /Согласие

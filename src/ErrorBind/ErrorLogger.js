@@ -71,7 +71,7 @@ function SendErrorMessage(place, message){
 bind("onScriptError",function($context){
     SetAnwserToUser($context);
     $analytics.setSessionData("Ошибка", "onScriptError: " +  $context.exception.message)
-    log( "onScriptError" + $context.exception.message);
+    log( "onScriptError: " + $context.exception.message);
     
     SendErrorMessage("onScriptError",  $context.exception.message);
 //    $mail.sendMessage("dladzina@alseco.kz", "Ошбика бота Телефоны сотрудников", "onScriptError: " +  $context.exception.message);
@@ -81,7 +81,7 @@ bind("onDialogError", function($context) {
 
     SetAnwserToUser($context);
     $analytics.setSessionData("Ошибка", "onDialogError: " + $context.exception.message)
-    log("onDialogError" + $context.exception.message);
+    log("onDialogError: " + $context.exception.message);
     SendErrorMessage("onDialogError",  $context.exception.message);
 //    $mail.sendMessage("dladzina@alseco.kz", "Ошбика бота Телефоны сотрудников", "onDialogError: " +  $context.exception.message);
 });
@@ -89,7 +89,7 @@ bind("onDialogError", function($context) {
 bind("onAnyError", function($context) {
     SetAnwserToUser($context);
     $analytics.setSessionData("Ошибка", "onAnyError: " + $context.exception.message)
-    log("onAnyError" + $context.exception.message);
+    log("onAnyError: " + $context.exception.message);
     SendErrorMessage("onAnyError",  $context.exception.message);
 //    $mail.sendMessage("dladzina@alseco.kz", "Ошбика бота Телефоны сотрудников", "onAnyError: " +  $context.exception.message);
 });

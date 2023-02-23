@@ -14,7 +14,6 @@ theme: /ChangeAccountPerson
         state: Offline
             intent: /Лично
             intent: /НеОнлайн
-            # q: * $Offline *
             q: $no 
             q: $disagree 
             intent: /Несогласие

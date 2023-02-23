@@ -37,10 +37,10 @@ require: CommonAnswers.yaml
     var = CommonAnswers
 
 patterns:
-    $Yes_for_contacts = (сейчас/*диктуй*/говори*/давай*)
-    $No_for_contacts = (самостоятельно/сам/посмотр* сам/найд* сам)
-    $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline/*офис*)
-    $Online = (онлайн/*интернет*/online/электрон*)
+    # $Yes_for_contacts = (сейчас/*диктуй*/говори*/давай*)
+    # $No_for_contacts = (самостоятельно/сам/посмотр* сам/найд* сам)
+    # $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline/*офис*)
+    # $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
     $mainSuppl = $entity<MainSuppl> || converter = mainSupplConverter
     $changeOwner = [приобрел* @Недвижимость] *мени* (собственника|хозяина|имя|фамилию)
@@ -68,9 +68,7 @@ init:
                 if (reply.type === "text") {
                     if (reply.text.match(/\[|\]/g) && reply.text.match(/\(|\)/g)) {
                         last_reply += formatLink(reply.text)
-                        # log("Bot: " + formatLink(reply.text));
                     } else {
-                        # log("Bot: " + reply.text);
                         last_reply += reply.text
                     }
                 }
