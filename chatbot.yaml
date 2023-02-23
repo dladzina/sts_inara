@@ -6,14 +6,14 @@ botEngine: v2
 language: ru
 
 tests:
-    include:
-    #     #- test_SupplierContacts/test_SupplierContacts_checkservices_in_dialog.xml
-        - test_SupplierContacts/test_SupplierContacts_all_dialog.xml
-        # - test_SupplierContacts/test_SupplierContacts_totalphrases.xml
-        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
+    # include:
+    #     - test_SupplierContacts/test_SupplierContacts_checkservices_in_dialog.xml
+    #     - test_SupplierContacts/test_SupplierContacts_all_dialog.xml
+    #     - test_SupplierContacts/test_SupplierContacts_totalphrases.xml
+    #     - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
     #     - test_AccountInput/test_AccountInput.xml
-    #      - test.xml
-    #      -  test_local_intents/test_soglasie_perechislit.xml
+    #     - test.xml
+    #     -  test_local_intents/test_soglasie_perechislit.xml
     #      -  test_local_intents/test_nesoglasie_perechislit.xml
     #      -  test_local_intents/test_soglasie_povtorit.xml
     #      -  test_local_intents/test_soglasie_pomoch.xml
@@ -26,7 +26,7 @@ tests:
     #      - test_ChangeAccountPerson/test_global_ntents.xml
     # exclude: 
     #     - test_main/test_main.xml
-       # - test_local_intents/test_soglasie_pomoch.xml
+    #     - test_local_intents/test_soglasie_pomoch.xml
     #      - test/test_Payment/*
     #      - test/test_AccountInput/*
     #      - test/test_ChangeAccountPerson/*
@@ -35,7 +35,7 @@ tests:
 
     #      - test_global_intents.xml
     #      - block_tests.xml
-        # - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
+    #     - test_ChangeAccountPerson/test_ChangeAccountPerson_client_phrases.xml
 
 
     # - test_PersonChange/test_PersonChange_offline_ls.xml
