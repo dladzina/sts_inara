@@ -31,6 +31,18 @@ theme: /SupplierContacts
                     $temp.Service = $temp.Service[0];
                 # log("3. $temp.Service"+toPrettyString($temp.Service))
                 SupplContactsSetServ($temp.Service.SERV_ID)
+            }else if($parseTree._УслугаСл){
+                $temp.Service = $parseTree._УслугаСл;
+                if (typeof($temp.Service)=="string"){
+                    var  Names = $temp.Service;
+                    Names = Names.replaceAll( "\"","\'");
+                    Names = Names.replaceAll( "\'","\"");
+                    $temp.Service = JSON.parse(Names);
+                }
+                if ($temp.Service[0])
+                    $temp.Service = $temp.Service[0];
+                # log("3. $temp.Service"+toPrettyString($temp.Service))
+                SupplContactsSetServ($temp.Service.SERV_ID)
             }
 
         # a: даем контакты по услуге
@@ -61,6 +73,7 @@ theme: /SupplierContacts
             
             state: SupplierContactsByAccountServGetServ
                 q: * @Услуга * 
+                q: * @УслугаСл * 
                 script:
                     # log("SupplierContactsByAccountServGetServ = " + toPrettyString($parseTree))
                     if ($parseTree._Услуга){
@@ -73,6 +86,18 @@ theme: /SupplierContacts
                         }
                         SupplContactsSetServ($temp.Service.SERV_ID)
                     } 
+                    else if($parseTree._УслугаСл){
+                        $temp.Service = $parseTree._УслугаСл;
+                        if (typeof($temp.Service)=="string"){
+                            var  Names = $temp.Service;
+                            Names = Names.replaceAll( "\"","\'");
+                            Names = Names.replaceAll( "\'","\"");
+                            $temp.Service = JSON.parse(Names);
+                        }
+                        if ($temp.Service[0])
+                            $temp.Service = $temp.Service[0];
+                        SupplContactsSetServ($temp.Service.SERV_ID)
+                    }
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
@@ -110,6 +135,7 @@ theme: /SupplierContacts
             intent: /Несогласие || toState = "../CanIHelpYou"
             intent: /Несогласие_повторить || toState = "../CanIHelpYou"
             q: * @Услуга * || toState = ".."
+            q: * @УслугаСл * || toState = ".."
 
         
         state: CanIHelpYou 

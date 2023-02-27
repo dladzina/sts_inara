@@ -811,6 +811,11 @@
       "required" : false,
       "prompts" : [ ],
       "array" : true
+    }, {
+      "name" : "УслугаСл",
+      "entity" : "УслугаСл",
+      "required" : false,
+      "prompts" : [ ]
     } ],
     "priority" : 0
   }, {
@@ -1065,7 +1070,7 @@
       "value" : " {\"SERV_ID\": [345,113,54,37,30]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "внутридомовое газовое обслуживание", "обслуживание газа", "ВДГО" ],
+      "rule" : [ "внутридомовой газовый обслуживание", "обслуживание газ", "ВДГО" ],
       "value" : " {\"SERV_ID\": [450,38,22]}"
     }, {
       "type" : "synonyms",
@@ -1085,11 +1090,11 @@
       "value" : " {\"SERV_ID\": [341,190]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Накопление на капитальный ремонт" ],
-      "value" : " {\"SERV_ID\": [203]}"
+      "rule" : [ "Накопление капитальный ремонт", "капитальный ремонт", "кап ремонт" ],
+      "value" : "{\n  \"SERV_ID\": [\n    203,\n    195, 207\n  ]\n}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Интернет" ],
+      "rule" : [ "Интернет", "Интернет алма ти ви" ],
       "value" : " {\"SERV_ID\": [290,264,146]}"
     }, {
       "type" : "synonyms",
@@ -1115,6 +1120,18 @@
       "type" : "synonyms",
       "rule" : [ "замена лифт", "заменить лифт", "поменять лифт" ],
       "value" : "{\"SERV_ID\": [281]}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "радио" ],
+      "value" : "{\n  \"SERV_ID\": [\n    4\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Охрана" ],
+      "value" : "{\"SERV_ID\": [350,302,286,249,157,103] }"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Паркинг", "содержание паркинг" ],
+      "value" : "{\"SERV_ID\": [393,367,305,276,158,149,111]}"
     } ]
   }, {
     "entity" : {
@@ -1150,6 +1167,29 @@
       "type" : "synonyms",
       "rule" : [ "АлматыСу", "алматысу" ],
       "value" : "{\"code\":\"almaty_su\"}"
+    } ]
+  }, {
+    "entity" : {
+      "name" : "УслугаСл",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : true,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "установка общедомовой счетчик", "покупка общий прибор", "приобретение датчика тепловой энергия", "установка прибор учета тепловой энергия", "установка общедомовой прибор", "установка общедомовой датчик", "покупка общий прибор", "покупка общий счетчик" ],
+      "value" : "{\n  \"SERV_ID\": [\n    176\n  ]\n}\n"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "расход дом", "расход содержание жилья", "обслуживание жилища" ],
+      "value" : "{\n  \"SERV_ID\": [\n    1\n  ]\n}"
     } ]
   } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
