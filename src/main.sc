@@ -94,6 +94,7 @@ init:
             return;
         }
         // обработка фразы "да нужна повтори помедленней я записываю
+        log("$context.nluResults "  + toPrettyString( $context.nluResults) );
         if($context.nluResults.intents.length > 1){
             if (($context.nluResults.intents[0].score < 0.35) && 
                 $context.nluResults.intents[0].clazz &&
@@ -102,6 +103,19 @@ init:
                 $context.nluResults.intents[1].clazz &&
                 ($context.nluResults.intents[1].clazz != "/NoMatch"))
             $context.nluResults.selected = $context.nluResults.intents[1];
+            return;
+                
+        }
+        log("$context.nluResults "  + toPrettyString( $context.nluResults) );
+        if($context.nluResults.intents.length > 2){
+            if (($context.nluResults.intents[0].score < 0.35) && 
+                $context.nluResults.intents[0].clazz &&
+                ($context.nluResults.intents[0].clazz != "/NoMatch")&&
+                ($context.nluResults.intents[2].score > 0.55) && 
+                $context.nluResults.intents[2].clazz &&
+                ($context.nluResults.intents[2].clazz != "/NoMatch"))
+            $context.nluResults.selected = $context.nluResults.intents[2];
+            return;
                 
         }
         

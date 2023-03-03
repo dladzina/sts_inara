@@ -89,7 +89,13 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts){
                     
                         if (MainSuppList[elem.supplierCodeName])
                             suppl_name  = MainSuppList[elem.supplierCodeName].value.suppl_talk_name
-                        //
+                        //если в строке есть ОСИ, надо заменить ее
+                        //suppl_name = suppl_name.replace('ОСИ','');
+                        var first_index = suppl_name.indexOf('"');
+                        var last_index = suppl_name.lastIndexOf('"'); 
+                        if ((first_index>0)&& (last_index>first_index))
+                            suppl_name = suppl_name.substring(first_index,last_index)
+
                     // собираем строку из контактов
                     // проверяем, если это основной поставщик, то даем его наименование 
                     // если нет, то данные из сервиса 
