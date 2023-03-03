@@ -79,7 +79,7 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-        # log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -87,14 +87,18 @@ init:
                 $context.nluResults.intents[0].clazz &&
                 ($context.nluResults.intents[0].clazz != "/NoMatch")
             ) {
-            $context.nluResults.selected = $context.nluResults.intents[0];
+                // если правило - паттерн и приводит к интенту /SupplierContacts/SupplierContacts, то не меняем
+            if (!($context.nluResults.selected.clazz && 
+                ($context.nluResults.selected.clazz == "/SupplierContacts/SupplierContacts"))){
+               $context.nluResults.selected = $context.nluResults.intents[0];
+            }
             
             # log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
             
             return;
         }
         // обработка фразы "да нужна повтори помедленней я записываю
-        log("$context.nluResults "  + toPrettyString( $context.nluResults) );
+        # log("$context.nluResults "  + toPrettyString( $context) );
         if($context.nluResults.intents.length > 1){
             if (($context.nluResults.intents[0].score < 0.35) && 
                 $context.nluResults.intents[0].clazz &&
