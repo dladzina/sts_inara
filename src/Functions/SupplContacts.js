@@ -92,6 +92,8 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts){
                         //если в строке есть ОСИ, надо заменить ее
                         suppl_name = suppl_name.replace('ОСИ','ОС+И');
                         suppl_name = suppl_name.replace('ПТ ','П Т ');
+                        suppl_name = suppl_name.replace('ПКСК','пэ ка эс ка');
+                        suppl_name = suppl_name.replace('КСК','ка эс ка');
                         // var first_index = suppl_name.indexOf('"');
                         // var last_index = suppl_name.lastIndexOf('"'); 
                         // if ((first_index>0)&& (last_index>first_index))
