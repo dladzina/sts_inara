@@ -79,7 +79,7 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-        log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        // log("$context.nluResults"  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -89,7 +89,7 @@ init:
             ) {
                 // если правило - паттерн и приводит к интенту /SupplierContacts/SupplierContacts, то не меняем
             if (!($context.nluResults.selected.clazz && 
-                ($context.nluResults.selected.clazz == "/SupplierContacts/SupplierContacts"))){
+                ($context.nluResults.selected.clazz.startsWith("/SupplierContacts/SupplierContacts")))){
                $context.nluResults.selected = $context.nluResults.intents[0];
             }
             
