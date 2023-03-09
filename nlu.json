@@ -421,6 +421,9 @@
       "refs" : [ {
         "entityName" : "Услуга",
         "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "УслугаСл",
+        "predicate" : "CONTAINS_NOT"
       } ]
     },
     "patterns" : [ ],
@@ -800,7 +803,7 @@
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "телефон [по|за] (@Услуга|@УслугаСл)" ],
     "slots" : [ {
       "name" : "Услуга",
       "entity" : "Услуга",
@@ -1104,11 +1107,11 @@
       "value" : " {\"SERV_ID\": [291,256,145,144]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Налог на имущество", "налог" ],
+      "rule" : [ "Налог на имущество" ],
       "value" : " {\"SERV_ID\": [133]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Налог на землю", "земельный налог", "налог" ],
+      "rule" : [ "Налог на землю", "земельный налог" ],
       "value" : " {\"SERV_ID\": [134]}"
     }, {
       "type" : "synonyms",
@@ -1138,6 +1141,10 @@
       "type" : "synonyms",
       "rule" : [ "Аварийка", "аварийно технический служба", "аварийный" ],
       "value" : " {\"SERV_ID\": [403,273]}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "Налог на транспортные средства", "Налог на транспорт", "налог транспорт", "налог за транспорт", "транспортный налог" ],
+      "value" : "{\n  \"SERV_ID\": [\n    171,\n172,\n173,\n174,\n225\n  ]\n}"
     } ]
   }, {
     "entity" : {
@@ -1196,6 +1203,10 @@
       "type" : "synonyms",
       "rule" : [ "расход дом", "расход содержание жилья", "обслуживание жилища", "обслужить дом" ],
       "value" : "{\n  \"SERV_ID\": [\n    1,169\n  ]\n}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "налог" ],
+      "value" : "{\n  \"SERV_ID\": [\n133\t,\n134\t,\n171\t,\n172\t,\n173\t,\n174\t,\n225\t\n  ]\n}"
     } ]
   } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],

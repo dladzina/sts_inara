@@ -324,7 +324,7 @@ theme: /
         intent: /greeting
         random: 
             a: Пожалуйста || htmlEnabled = false, html = "Пожалуйста"
-            a: Не за что || htmlEnabled = false, html = "Не за что"
+            a: Это моя работа || htmlEnabled = false, html = "Это моя работа"
             a: Я старалась || htmlEnabled = false, html = "Я старалась"
             
     state: looser

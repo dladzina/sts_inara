@@ -7,6 +7,7 @@ language: ru
 
 tests:
     # include:
+    #     - test_SupplierContacts/test_SupplierContacts_checkservices_at_start.xml
         #   - test_SupplierContacts/test_SupplierContacts_checkservices_in_begginning.xml
     #     - test_SupplierContacts/test_SupplierContacts_checkservices_in_dialog.xml
     #     - test_SupplierContacts/test_SupplierContacts_all_dialog.xml

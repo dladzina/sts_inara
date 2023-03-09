@@ -203,21 +203,23 @@ theme: /BlockAccountNumInput
                 script: 
                     TrySetNumber(GetTempAccountNumber());
 
-                    FindAccountAddress().then(function(res){
+                    FindAccountAddress().then(function(res) {
                         //log(toPrettyString(res));
-                        if (res && res.accountId){
+                        if (res && res.accountId) {
                             //log(res.data[0].address_full_name);
                             $session.Account.Address = res.fullAddressName;
                             // $session.Account.Address = res.data[0].address_full_name;
                             $reactions.transition('../AccountAddressConfirm')
                             $session.Account.AddressRepeatCount = 0;
-                        }else {
+                        } else {
                             $session.Account.Address = "";
                             $reactions.transition('../AccountNotFound');
                         }
-                    }).catch(function err() {
+                    }).catch(function(e) {
                         $reactions.answer("Что-то сервер барахлит. ");
                         $reactions.transition('../AccountNotFound')
+                        SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ' + toPrettyString(e))
+
                     });
                         
 
