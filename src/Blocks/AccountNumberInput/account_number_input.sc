@@ -75,8 +75,11 @@ theme: /BlockAccountNumInput
             $session.Account.MaxRetryCount = $injector.AccountInputSettings.MaxRetryCount || 3;
             $session.Account.RetryAccount = $session.Account.RetryAccount || 0;
             $session.Account.RetryAccount++;
+            $temp.SayAccount = "Назовите номер вашего лицевого счета"
+            if ($session.Account.RetryAccount>1)
+                $temp.SayAccount += " по цифрам"
         if: $session.Account.RetryAccount <= $session.Account.MaxRetryCount
-            a: Назовите номер вашего лицевого счета
+            a: {{$temp.SayAccount}}
         else: 
             #  уже запрашивали номер ЛС больше 2-х раз. Зафиксировать результат - не смогла Вас понять и вернуть управление в исходный стейт со всеми данными
             script: FindAccountNumberSetResult("DontUnderstand");
