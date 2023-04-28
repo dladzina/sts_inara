@@ -264,12 +264,13 @@ theme: /
             
             # если звонок передается внутри АТС, т все ок )            
             var switchReply = {type:"switch"};
-            switchReply.phoneNumber = "5015"; // номер, на который переключаем
+            # switchReply.phoneNumber = "5015"; // номер, на который переключаем
+            switchReply.phoneNumber = "2222"; // номер, на который переключаем
             //switchReply.phoneNumber = "5020"; // номер, на который переключаем
             # switchReply.phoneNumber = "5000"; // номер, на который переключаем
             
-            var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@10.40.89.112>"; // последнеее - внутренний IP
-            //var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.211>"; // последнеее - внутренний IP 
+            //var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@10.40.89.112>"; // последнеее - внутренний IP
+            var callerIdHeader = "\""+ $dialer.getCaller() +"\""+" <sip:"+$dialer.getCaller()+"@92.46.54.211>"; // последнеее - внутренний IP 
             //
             switchReply.headers = { "P-Asserted-Identity":  callerIdHeader, testheader: "header"};
             
