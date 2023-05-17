@@ -191,7 +191,7 @@ theme: /BlockAccountNumInput
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
                     bargeInTrigger: "interim",
-                    noInterruptTime: 1500});
+                    noInterruptTime: 0});
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
                 script:
@@ -204,7 +204,7 @@ theme: /BlockAccountNumInput
                         $dialer.bargeInInterrupt(true);
                     }
                     var res = $nlp.match(text,"/")
-                    if (res) {
+                    if (res && (res.targetState == "/BlockAccountNumInput/AccountInput")) {
                         $dialer.bargeInInterrupt(true);
                     }
             
