@@ -180,13 +180,12 @@ theme: /BlockAccountNumInput
             q: * $numbers *
             q: * @duckling.number *
             script: 
-                $temp.AccNum = "";
+                $temp.AccNum = "0";
                 log("блок ЛС цифры")
                 log($temp.AccountNumberContinue);
                 if ($temp.AccountNumberContinue)
                     $temp.AccNum = GetTempAccountNumber();
-                log("ЛС временный")
-                log($temp.AccNum)
+                log("ЛС временный = "+ toPrettyString($temp.AccNum))
                 TrySetNumber($temp.AccNum + words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
