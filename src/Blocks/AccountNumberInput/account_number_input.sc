@@ -203,7 +203,7 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
-                    var res = $nlp.matchPatterns(text,["duckling.number"])
+                    var res = $nlp.matchPatterns(text,["$Number"])
         
                     if (res) {
                         $dialer.bargeInInterrupt(true);
