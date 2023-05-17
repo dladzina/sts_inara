@@ -78,6 +78,7 @@ theme: /BlockAccountNumInput
             $temp.SayAccount = "Назовите номер вашего лицевого счета"
             if ($session.Account.RetryAccount>1)
                 $temp.SayAccount += " по цифрам"
+            $temp.AccountNumberContinue = false;
         if: $session.Account.RetryAccount <= $session.Account.MaxRetryCount
             a: {{$temp.SayAccount}}
         else: 
