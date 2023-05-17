@@ -203,6 +203,11 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
+                    var res = $nlp.matchPatterns(text,["duckling.number", "$duckling.number"])
+        
+                    if (res) {
+                        $dialer.bargeInInterrupt(true);
+                    }
                     var res = $nlp.match(text,".")
                     log("Прерывание Инары в блоке ЛС");
                     log(text);
