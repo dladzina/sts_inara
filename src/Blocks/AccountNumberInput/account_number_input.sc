@@ -181,8 +181,12 @@ theme: /BlockAccountNumInput
             q: * @duckling.number *
             script: 
                 $temp.AccNum = "";
+                log("блок ЛС цифры")
+                log($temp.AccountNumberContinue);
                 if ($temp.AccountNumberContinue)
                     $temp.AccNum = GetTempAccountNumber();
+                log("ЛС временный")
+                log($temp.AccNum)
                 TrySetNumber($temp.AccNum + words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
@@ -209,8 +213,8 @@ theme: /BlockAccountNumInput
                     var res = $nlp.matchPatterns(text,["$Number"])
         
                     if (res) {
-                        $dialer.bargeInInterrupt(true);
                         $temp.AccountNumberContinue = true;
+                        $dialer.bargeInInterrupt(true);
                     }
 
             state: AccountInputNumberYes
