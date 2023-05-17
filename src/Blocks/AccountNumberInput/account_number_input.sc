@@ -203,7 +203,7 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
-                    var res = $nlp.match(text,"..")
+                    var res = $nlp.match(text,".")
                     log("Прерывание Инары в блоке ЛС");
                     log(text);
                     
