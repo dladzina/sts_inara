@@ -314,8 +314,8 @@ theme: /BlockAccountNumInput
             go!: ..
 
         state: AccountInputToOperator
-            q!: $switchToOperator
-            intent!: /CallTheOperator
+            q: $switchToOperator
+            intent: /CallTheOperator
             a: Переключаю на оператора
             go!: /CallTheOperator
             
