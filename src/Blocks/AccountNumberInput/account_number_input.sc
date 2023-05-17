@@ -203,6 +203,10 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
+                    var res = $nlp.matchPatterns(text,["$numbers"])
+                    if (res) {
+                        $dialer.bargeInInterrupt(true);
+                    }
             
             state: AccountInputNumberYes
                 q: $yes
