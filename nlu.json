@@ -360,7 +360,10 @@
       "text" : "заскочу"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "classRule_1728",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -1226,6 +1229,25 @@
       "type" : "synonyms",
       "rule" : [ "налог" ],
       "value" : "{\n  \"SERV_ID\": [\n133\t,\n134\t,\n171\t,\n172\t,\n173\t,\n174\t,\n225\t\n  ]\n}"
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_1728",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "самостоятельно" ],
+      "value" : ""
     } ]
   } ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
