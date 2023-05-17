@@ -204,6 +204,9 @@ theme: /BlockAccountNumInput
                         $dialer.bargeInInterrupt(true);
                     }
                     var res = $nlp.match(text,"/")
+                    if(res){
+                        log(toPrettyString(res))    
+                    }
                     if (res && (res.targetState == "/BlockAccountNumInput/AccountInput")) {
                         $dialer.bargeInInterrupt(true);
                     }
