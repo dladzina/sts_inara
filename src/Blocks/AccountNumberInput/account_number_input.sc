@@ -208,9 +208,9 @@ theme: /BlockAccountNumInput
                     log(text);
                     
                     if(res){
-                        log(toPrettyString(res))    
+                        log("res = " + toPrettyString(res))    
                     }
-                    if (res && (res.targetState == "/BlockAccountNumInput/AccountInput")) {
+                    if (res && (res.targetState == "/BlockAccountNumInput/AccountInput/AccountInputNumber")) {
                         $dialer.bargeInInterrupt(true);
                     }
             
