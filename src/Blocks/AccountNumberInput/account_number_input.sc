@@ -94,6 +94,29 @@ theme: /BlockAccountNumInput
             script:
                $dialer.setNoInputTimeout(20000); // 20 сек
 
+        state: speechNotRecognizedGlobal
+            event: speechNotRecognized
+            script:
+                $session.speechNotRecognized = $session.speechNotRecognized || {};
+                //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+                if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
+                    $session.speechNotRecognized.repetition = 0;
+                } else{
+                    $session.speechNotRecognized.repetition = $session.speechNotRecognized.repetition || 0;
+                }
+                $session.speechNotRecognized.repetition += 1;
+                
+            if: $session.speechNotRecognized.repetition >= 3
+                a: Кажется, проблемы со связью.
+                script:
+                    $dialer.hangUp();
+            else:
+                random: 
+                    a: Извините, я не расслышала. Повторите, пожалуйста.
+                    a: Не совсем поняла. Можете повторить, пожалуйста?
+                    a: Повторите, пожалуйста. Вас не слышно.
+                    a: Алло? Вы здесь?
+
         state: looser
             q: * $looser *
             q: * $obsceneWord  *

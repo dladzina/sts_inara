@@ -1,8 +1,8 @@
 {
   "project" : {
-    "id" : "inara_dlya_sts-1000039011-rMg",
-    "name" : "inara_dlya_sts-1000039011-rMg",
-    "folder" : "/jaicp"
+    "id" : "inara_bot_229-1000039011-imZ",
+    "name" : "inara_bot_229-1000039011-imZ",
+    "folder" : "/platform"
   },
   "settings" : {
     "language" : "ru",
@@ -15,7 +15,13 @@
       "allowedPatterns" : [ ],
       "useShared" : false
     },
-    "shared" : false
+    "shared" : false,
+    "validation" : {
+      "phraseValidationEnabled" : false,
+      "answerValidationEnabled" : false,
+      "phraseValidationThreshold" : 0.5,
+      "answerValidationThreshold" : 0.8
+    }
   },
   "intents" : [ {
     "path" : "/Несогласие_подожду",
@@ -832,7 +838,8 @@
       "name" : "УслугаСл",
       "entity" : "УслугаСл",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
