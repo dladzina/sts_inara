@@ -78,7 +78,7 @@ theme: /BlockAccountNumInput
             $temp.SayAccount = "Назовите номер вашего лицевого счета"
             if ($session.Account.RetryAccount>1)
                 $temp.SayAccount += " по цифрам"
-            $temp.AccountNumberContinue = false;
+            $session.AccountNumberContinue = false;
         if: $session.Account.RetryAccount <= $session.Account.MaxRetryCount
             a: {{$temp.SayAccount}}
         else: 
@@ -183,8 +183,8 @@ theme: /BlockAccountNumInput
             script: 
                 $temp.AccNum = "0";
                 log("блок ЛС цифры")
-                log($temp.AccountNumberContinue);
-                if ($temp.AccountNumberContinue)
+                log($session.AccountNumberContinue);
+                if ($session.AccountNumberContinue)
                     $temp.AccNum = GetTempAccountNumber();
                 log("ЛС временный = "+ toPrettyString($temp.AccNum))
                 TrySetNumber($temp.AccNum + words_to_number($entities));
@@ -213,7 +213,7 @@ theme: /BlockAccountNumInput
                     var res = $nlp.matchPatterns(text,["$Number"])
         
                     if (res) {
-                        $temp.AccountNumberContinue = true;
+                        $session.AccountNumberContinue = true;
                         $dialer.bargeInInterrupt(true);
                     }
 
