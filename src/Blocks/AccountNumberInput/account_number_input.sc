@@ -180,7 +180,10 @@ theme: /BlockAccountNumInput
             q: * $numbers *
             q: * @duckling.number *
             script: 
-                TrySetNumber(words_to_number($entities));
+                $temp.AccNum = "";
+                if ($temp.AccountNumberContinue)
+                    $temp.AccNum = GetTempAccountNumber();
+                TrySetNumber($temp.AccNum + words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
             a: Подождёте?
@@ -207,20 +210,9 @@ theme: /BlockAccountNumInput
         
                     if (res) {
                         $dialer.bargeInInterrupt(true);
+                        $temp.AccountNumberContinue = true;
                     }
-                    var res = $nlp.match(text,".")
-                    log("Прерывание Инары в блоке ЛС");
-                    log(text);
-                    
-                    if(res){
-                        log("----------------------------")
-                        log("res = " + toPrettyString(res))    
-                    }
-                    else log("res is empty")
-                    if (res && (res.targetState == "/BlockAccountNumInput/AccountInput/AccountInputNumber")) {
-                        $dialer.bargeInInterrupt(true);
-                    }
-            
+
             state: AccountInputNumberYes
                 q: $yes
                 q: $agree
