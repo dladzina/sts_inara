@@ -197,7 +197,8 @@ theme: /BlockAccountNumInput
                 $dialer.bargeInResponse({
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
-                    bargeInTrigger: "interim",
+                    //bargeInTrigger: "interim",
+                    bargeInTrigger: "final",
                     noInterruptTime: 0});
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
