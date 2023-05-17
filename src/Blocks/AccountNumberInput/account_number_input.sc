@@ -197,9 +197,9 @@ theme: /BlockAccountNumInput
                 $dialer.bargeInResponse({
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
-                    //bargeInTrigger: "interim",
-                    bargeInTrigger: "final",
-                    noInterruptTime: 0});
+                    bargeInTrigger: "interim",
+                    //bargeInTrigger: "final",
+                    noInterruptTime: 1500});
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
                 script:
@@ -211,12 +211,12 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
-                    var res = $nlp.matchPatterns(text,["$Number"])
+                    # var res = $nlp.matchPatterns(text,["$Number"])
         
-                    if (res) {
-                        $session.AccountNumberContinue = true;
-                        $dialer.bargeInInterrupt(true);
-                    }
+                    # if (res) {
+                    #     $session.AccountNumberContinue = true;
+                    #     $dialer.bargeInInterrupt(true);
+                    # }
 
             state: AccountInputNumberYes
                 q: $yes
