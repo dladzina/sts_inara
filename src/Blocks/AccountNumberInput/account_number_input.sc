@@ -208,8 +208,10 @@ theme: /BlockAccountNumInput
                     log(text);
                     
                     if(res){
+                        log("----------------------------")
                         log("res = " + toPrettyString(res))    
                     }
+                    else log("res is empty")
                     if (res && (res.targetState == "/BlockAccountNumInput/AccountInput/AccountInputNumber")) {
                         $dialer.bargeInInterrupt(true);
                     }
