@@ -181,7 +181,7 @@ theme: /BlockAccountNumInput
             q: * $numbers *
             q: * @duckling.number *
             script: 
-                $temp.AccNum = "0";
+                $temp.AccNum = "";
                 log("блок ЛС цифры")
                 log($session.AccountNumberContinue);
                 if ($session.AccountNumberContinue)
