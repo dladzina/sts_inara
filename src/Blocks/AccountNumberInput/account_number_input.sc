@@ -204,6 +204,9 @@ theme: /BlockAccountNumInput
                         $dialer.bargeInInterrupt(true);
                     }
                     var res = $nlp.match(text,"/")
+                    log("Прерывание Инары в блоке ЛС");
+                    log(text);
+                    
                     if(res){
                         log(toPrettyString(res))    
                     }
