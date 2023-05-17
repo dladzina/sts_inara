@@ -312,6 +312,14 @@ theme: /BlockAccountNumInput
             event: noMatch || noContext = true
             a: Это не похоже на номер лицевого счета.
             go!: ..
+
+        state: AccountInputToOperator
+            q!: $switchToOperator
+            intent!: /CallTheOperator
+            a: Переключаю на оператора
+            go!: /CallTheOperator
+            
+            
     
     state: DontKnow
         intent: /DontKnow || fromState = "/BlockAccountNumInput/AccountInput"
