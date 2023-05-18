@@ -99,6 +99,7 @@ theme: /BlockAccountNumInput
             event: speechNotRecognized
             script:
                 $session.speechNotRecognized = $session.speechNotRecognized || {};
+                log($session.lastState);
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
                 if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
                     $session.speechNotRecognized.repetition = 0;
@@ -182,12 +183,13 @@ theme: /BlockAccountNumInput
             q: * @duckling.number *
             script: 
                 $temp.AccNum = "";
-                log("блок ЛС цифры")
-                log($session.AccountNumberContinue);
-                if ($session.AccountNumberContinue)
-                    $temp.AccNum = GetTempAccountNumber();
-                log("ЛС временный = "+ toPrettyString($temp.AccNum))
-                TrySetNumber($temp.AccNum + words_to_number($entities));
+                # log("блок ЛС цифры")
+                # log($session.AccountNumberContinue);
+                # if ($session.AccountNumberContinue)
+                #     $temp.AccNum = GetTempAccountNumber();
+                # log("ЛС временный = "+ toPrettyString($temp.AccNum))
+                # TrySetNumber($temp.AccNum + words_to_number($entities));
+                TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
             a: Подождёте?
