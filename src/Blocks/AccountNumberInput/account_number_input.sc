@@ -78,6 +78,7 @@ theme: /BlockAccountNumInput
             $temp.SayAccount = "Назовите номер вашего лицевого счета"
             if ($session.Account.RetryAccount>1)
                 $temp.SayAccount += " по цифрам"
+            $session.AccountNumberContinue = false;
         if: $session.Account.RetryAccount <= $session.Account.MaxRetryCount
             a: {{$temp.SayAccount}}
         else: 
@@ -93,6 +94,30 @@ theme: /BlockAccountNumInput
             a: да, жду Вас
             script:
                $dialer.setNoInputTimeout(20000); // 20 сек
+
+        state: speechNotRecognized1
+            event: speechNotRecognized
+            script:
+                $session.speechNotRecognized = $session.speechNotRecognized || {};
+                log($session.lastState);
+                //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+                if ($session.lastState && !$session.lastState.startsWith("/BlockAccountNumInput/AccountInput/speechNotRecognized")) {
+                    $session.speechNotRecognized.repetition = 0;
+                } else{
+                    $session.speechNotRecognized.repetition = $session.speechNotRecognized.repetition || 0;
+                }
+                $session.speechNotRecognized.repetition += 1;
+                
+            if: $session.speechNotRecognized.repetition >= 3
+                a: Кажется, проблемы со связью.
+                script:
+                    $dialer.hangUp();
+            else:
+                random: 
+                    a: Извините, я не расслышала. Повторите, пожалуйста.
+                    a: Не совсем поняла. Можете повторить, пожалуйста?
+                    a: Повторите, пожалуйста. Вас не слышно.
+                    a: Алло? Вы здесь?
 
         state: looser
             q: * $looser *
@@ -157,6 +182,13 @@ theme: /BlockAccountNumInput
             q: * $numbers *
             q: * @duckling.number *
             script: 
+                $temp.AccNum = "";
+                # log("блок ЛС цифры")
+                # log($session.AccountNumberContinue);
+                # if ($session.AccountNumberContinue)
+                #     $temp.AccNum = GetTempAccountNumber();
+                # log("ЛС временный = "+ toPrettyString($temp.AccNum))
+                # TrySetNumber($temp.AccNum + words_to_number($entities));
                 TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
@@ -168,6 +200,7 @@ theme: /BlockAccountNumInput
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
                     bargeInTrigger: "interim",
+                    //bargeInTrigger: "final",
                     noInterruptTime: 1500});
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
@@ -180,7 +213,13 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
-            
+                    # var res = $nlp.matchPatterns(text,["$Number"])
+        
+                    # if (res) {
+                    #     $session.AccountNumberContinue = true;
+                    #     $dialer.bargeInInterrupt(true);
+                    # }
+
             state: AccountInputNumberYes
                 q: $yes
                 q: $agree
@@ -275,6 +314,14 @@ theme: /BlockAccountNumInput
             event: noMatch || noContext = true
             a: Это не похоже на номер лицевого счета.
             go!: ..
+
+        state: AccountInputToOperator
+            q: $switchToOperator
+            intent: /CallTheOperator
+            a: Переключаю на оператора
+            go!: /CallTheOperator
+            
+            
     
     state: DontKnow
         intent: /DontKnow || fromState = "/BlockAccountNumInput/AccountInput"

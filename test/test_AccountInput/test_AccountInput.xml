@@ -148,8 +148,86 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
     </test-case>   
+
+    <test-case id="лс_speechNotRecognized_1">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <random>2,1,0,2,1,0</random>
+        <event>speechNotRecognized</event>
+        <a>Повторите, пожалуйста. Вас не слышно.</a>
+        <event>speechNotRecognized</event>
+        <a>Не совсем поняла. Можете повторить, пожалуйста?</a>
+        <q>переведи на оператора</q>
+        <a>Переключаю на оператора</a>
+    </test-case>      
+
+    <test-case id="лс_speechNotRecognized_2">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <random>3,1,0,2,1,0</random>
+        <event>speechNotRecognized</event>
+        <a>Алло? Вы здесь?</a>
+        <event>speechNotRecognized</event>
+        <a>Не совсем поняла. Можете повторить, пожалуйста?</a>
+        <q>переведи на оператора</q>
+        <a>Переключаю на оператора</a>
+    </test-case>      
+
+    <test-case id="лс_speechNotRecognized_3">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <random>2,1,0,2,1,0</random>
+        <event>speechNotRecognized</event>
+        <a>Повторите, пожалуйста. Вас не слышно.</a>
+        <event>speechNotRecognized</event>
+        <a>Не совсем поняла. Можете повторить, пожалуйста?</a>
+        <event>speechNotRecognized</event>
+        <!--здесь должны поввесить трубку-->
+        <a>Кажется, проблемы со связью.</a>
+    </test-case>   
     
-no_match
+    <test-case id="лс_speechNotRecognized_4">
+        <q>можно контакты поставщика услуг</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <random>3,1,0,2,1,0</random>
+        <event>speechNotRecognized</event>
+        <a>Алло? Вы здесь?</a>
+        <event>speechNotRecognized</event>
+        <a>Не совсем поняла. Можете повторить, пожалуйста?</a>
+        <q>четыреста тридцать шесть</q>
+        <a>Номер Вашего лицевого счёта 4- - 36. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <timeoutReply interval="1"/>
+    </test-case>      
+    
+    <test-case  id="лс_где_взять_1">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <q>я лицевой счет вам точно сейчас не скажу</q>
+        <a>Номер отображается в счёте Алсеко сразу **над таблицей**. Вы можете посмотреть счёт и назвать номер **сейчас**?</a>
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters><filterValue>5888490</filterValue></parameters>
+          <response></response>
+        </mockData>        
+        <q>58 88 490</q>
+        <a>Номер Вашего лицевого счёта 5- - 88- - 84- - 90. Поиск займет время.</a>
+        <a>Подождёте?</a>
+        <timeoutReply interval="1"/>
+        <q>да</q>
+        <a>Извините, я не нашла Ваш лицевой счёт.</a>
+        <a>Давайте еще раз проверим</a>
+        <a>Назовите номер вашего лицевого счета по цифрам</a>
+    </test-case>  
 
     <test-case id="лс_no_match_2_раза">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
@@ -566,5 +644,7 @@ no_match
         <a>Извините, я не нашла Ваш лицевой счёт.</a>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/SupplierContactsFull"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
-    </test-case>      
+    </test-case>    
+
+    
 </test>  
