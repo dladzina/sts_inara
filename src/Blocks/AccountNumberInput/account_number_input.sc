@@ -95,13 +95,13 @@ theme: /BlockAccountNumInput
             script:
                $dialer.setNoInputTimeout(20000); // 20 сек
 
-        state: speechNotRecognizedGlobal
+        state: speechNotRecognized1
             event: speechNotRecognized
             script:
                 $session.speechNotRecognized = $session.speechNotRecognized || {};
                 log($session.lastState);
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
-                if ($session.lastState && !$session.lastState.startsWith("/speechNotRecognizedGlobal")) {
+                if ($session.lastState && !$session.lastState.startsWith("/BlockAccountNumInput/AccountInput/speechNotRecognized")) {
                     $session.speechNotRecognized.repetition = 0;
                 } else{
                     $session.speechNotRecognized.repetition = $session.speechNotRecognized.repetition || 0;
