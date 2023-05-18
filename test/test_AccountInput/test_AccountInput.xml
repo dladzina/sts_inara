@@ -163,7 +163,7 @@
         <a>Переключаю на оператора</a>
     </test-case>      
 
-    <test-case id="лс_speechNotRecognized_1">
+    <test-case id="лс_speechNotRecognized_2">
         <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
         <q>да</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
@@ -177,7 +177,22 @@
         <a>Переключаю на оператора</a>
     </test-case>      
 
-    <test-case id="лс_speechNotRecognized_2">
+    <test-case id="лс_speechNotRecognized_3">
+        <state>ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info</state>
+        <q>да</q>
+        <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
+        <a>Назовите номер вашего лицевого счета</a>
+        <random>2,1,0,2,1,0</random>
+        <event>speechNotRecognized</event>
+        <a>Повторите, пожалуйста. Вас не слышно.</a>
+        <event>speechNotRecognized</event>
+        <a>Не совсем поняла. Можете повторить, пожалуйста?</a>
+        <event>speechNotRecognized</event>
+        <!--здесь должны поввесить трубку-->
+        <a>Кажется, проблемы со связью.</a>
+    </test-case>   
+    
+    <test-case id="лс_speechNotRecognized_4">
         <q>можно контакты поставщика услуг</q>
         <a>Чтобы я дала контакты нужных Вам поставщиков, нужен Ваш лицевой счёт</a>
         <a>Назовите номер вашего лицевого счета</a>
