@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_bot_229-1000039011-imZ",
-    "name" : "inara_bot_229-1000039011-imZ",
+    "id" : "inara_dlya_sts-1000039011-rMg",
+    "name" : "inara_dlya_sts-1000039011-rMg",
     "folder" : "/platform"
   },
   "settings" : {
@@ -111,6 +111,8 @@
       "text" : "где я его возьму"
     }, {
       "text" : "вам точно сейчас не скажу"
+    }, {
+      "text" : "сверху пишется да"
     } ],
     "classificationRules" : {
       "refs" : [ ]
