@@ -83,5 +83,17 @@
         <q>я юридическое лицо не пришли квитанции</q>
 		<a state="/NoMatch"></a>
     </test-case>       
-
+    <test-case>
+        <q>я хочу узнать почему не приносят бумажный носитель квитанции</q>
+		<a state="/NoMatch"></a>
+    </test-case>   
+    <test-case>
+        <q>да почему не приносят квитанцию в бумажном носителе</q>
+		<a state="/NoMatch"></a>
+    </test-case>       
+    
+    <test-case>
+        <q>почему не приносят в бумажном носителе квитанцию</q>
+		<a state="/NoMatch"></a>
+    </test-case>       
 </test>

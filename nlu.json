@@ -35,6 +35,8 @@
       "text" : "а я говорю алло ответьте мне это"
     }, {
       "text" : "алло"
+    }, {
+      "text" : "мне не надо менять"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -747,7 +749,10 @@
       "text" : "пока пока"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "classRule_9449",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ "прощай*", "не поминай* лихом", "[(ладно|все|давай|ну)] (пока [пока]|(до|да) (свидан*|встречи|завтра|скорого [свидания]|скорой встречи))" ],
     "priority" : 0
@@ -915,8 +920,6 @@
     }, {
       "text" : "я деньги закинул не туда как мне их перевести"
     }, {
-      "text" : "мне не пришла квитанция"
-    }, {
       "text" : "в квитанции неправильно указали объем квадратуру"
     }, {
       "text" : "юридическое лицо"
@@ -971,11 +974,41 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
+    "path" : "/Квитанция_Доставка",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "почему не приносят бумажный носитель квитанции"
+    }, {
+      "text" : "не принесли квитанцию"
+    }, {
+      "text" : "мне не пришла квитанция"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/Квитанция_Дубликат",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
       "text" : "получить дубликат квитанции"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Платеж_УточнитьСумму",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "сколько оплачено"
+    }, {
+      "text" : "какая сумма"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1376,6 +1409,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "медленно" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_9449",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "сумма", "ок" ],
       "value" : ""
     } ]
   } ],

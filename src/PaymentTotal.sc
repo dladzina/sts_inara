@@ -30,14 +30,20 @@ theme: /PaymentTotal
                 q: $agree
                 intent: /Согласие
                 intent: /Согласие_помочь
-                go!: /WhatDoYouWant
+                # go!: /WhatDoYouWant
+                go!: /WhatDoYouWantNoContext
                 
             state: CanIHelpYouDisagree
                 q: $no
                 q: $disagree
                 intent: /Несогласие
                 intent: /Несогласие_помочь
-                go!: /bye        
+                go!: /bye  
+
+        state: GetDateLastPay_NeedSum
+            intent: /Платеж_УточнитьСумму
+            a: Для решения вашего вопроса перевожу Вас на оператора.
+            go!: /CallTheOperator            
     
 
     state: PaymentQuestion

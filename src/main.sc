@@ -221,9 +221,15 @@ theme: /
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
+    state: WhatDoYouWantNoContext || noContext = true
+        script:
+            $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+        a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}        
+
     state: OtherTheme
         intent!: /РазноеНаОператора
         intent!:/Квитанция_Дубликат
+        intent!:/Квитанция_Доставка
         go!: /NoMatch
 
     state: NoMatch || noContext = true
@@ -337,12 +343,17 @@ theme: /
     state: bye
         q!: $bye
         intent!: /Прощание
-        a: Благодарим за обращение!
-        random: 
-            a: До свидания!
-            a: Надеюсь, я смогла вам помочь. Удачи!
-        script:
-            $dialer.hangUp();
+        if: $context.session.AnswerCnt == 1
+            script:
+                $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+            a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
+        else:        
+            a: Благодарим за обращение!
+            random: 
+                a: До свидания!
+                a: Надеюсь, я смогла вам помочь. Удачи!
+            script:
+                $dialer.hangUp();
             
     state: greeting
         intent: /greeting

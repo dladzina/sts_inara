@@ -196,7 +196,7 @@
         <a>Нужна ли моя помощь дальше?</a>
     </test-case>
 
-    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_3_12">
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum">
         <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
 		<mockData>
           <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
@@ -206,7 +206,78 @@
         <q>когда в последний раз платили по моему счету</q>
         <a>Последняя оплата - 12 декабря</a>
         <a>Нужна ли моя помощь дальше?</a>
+        <q>сколько оплачено</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
     </test-case>
+    
+<!--*******************************************************************-->
+<!--БЛОК ТЕСТОВ - уточняем сумму оплаты-->
+    
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_1">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <q>сумма</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case> 
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_2">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <random>2</random>
+        <q>да</q>
+        <a>Задайте Ваш вопрос</a>
+        <q>сумма</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case>    
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_3">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <random>2</random>
+        <q>да</q>
+        <a>Задайте Ваш вопрос</a>
+        <q>сколько оплачено и сколько осталось</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case>    
+
+    <test-case id="test_Payment_DateLast_Pay_AccountCheckPay_Sum_3">
+        <context var="session">{"Account":{"Number":5888492,"Address":" Микрорайон \"Алмагуль\" Дом 15 Квартира 20"}}</context>
+		<mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/lastPay</query>
+          <parameters><filterValue>5888492</filterValue></parameters>
+          <response>{"accountId": 5888492,"payDate": "2022-12-12","registrationDate": "1982-07-01"}</response>
+        </mockData>         
+        <q>когда в последний раз платили по моему счету</q>
+        <a>Последняя оплата - 12 декабря</a>
+        <a>Нужна ли моя помощь дальше?</a>
+        <random>2</random>
+        <q>да</q>
+        <a>Задайте Ваш вопрос</a>
+        <q>сумма какая</q>
+        <a>Для решения вашего вопроса перевожу Вас на оператора.</a>
+    </test-case>       
+        
 
 
 
