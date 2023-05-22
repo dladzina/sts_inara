@@ -1,0 +1,87 @@
+<test>
+    <test-case>
+		<random>0</random>
+		<q>/start</q>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<q>девушка вас беспокоит</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+    <test-case>
+		<random>0</random>
+		<q>/start</q>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<q>где я могу исправить буковку название улицы</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+    <test-case>
+		<random>0</random>
+		<q>/start</q>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<q>скажите где находится и в</q>
+		<a state="/NoMatch"></a>
+    </test-case>    
+    <test-case>
+        <q>а скажите пожалуйста где ваш адрес находится</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+    <test-case>
+		<random>0</random>
+		<q>/start</q>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<q>девушка вас беспокоит</q>
+		<a state="/NoMatch"></a>
+    </test-case>  
+    <test-case>
+		<random>0</random>
+		<q>/start</q>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<q>еще раз скажите где я могу исправить буковку название улицы</q>
+		<a state="/NoMatch"></a>
+		<q>где я могу исправить название улицы</q>
+		<a state="/NoMatch"></a>
+    </test-case>     
+    <test-case>
+        <q>скажите пожалуйста я вот деньги закинул не туда как мне их перевести</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+    <test-case>
+        <q>скажите пожалуйста почему мне не пришла квитанция за май месяц</q>
+		<a state="/NoMatch"></a>
+    </test-case>
+
+    <test-case>
+        <q>у меня такой вопрос пришла квитанция</q>
+		<a state="/NoMatch"></a>
+    </test-case>    
+    <test-case>
+        <q>как можно как можно получить дубликат квитанции</q>
+		<a state="/NoMatch"></a>
+    </test-case>    
+    <test-case>
+        <q>не приходит квитанция</q>
+		<a state="/NoMatch"></a>
+    </test-case>        
+    <test-case>
+        <q>подскажите пожалуйста там в квитанции неправильно указали объем квадратуру домов как можно это изменить</q>
+		<a state="/NoMatch"></a>
+    </test-case>       
+    <test-case>
+        <q>как можно как можно получить дубликат квитанции</q>
+		<a state="/NoMatch"></a>
+    </test-case>       
+    <test-case>
+        <q>я юридическое лицо не пришли квитанции</q>
+		<a state="/NoMatch"></a>
+    </test-case>       
+
+</test>

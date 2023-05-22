@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_dlya_sts-1000039011-rMg",
-    "name" : "inara_dlya_sts-1000039011-rMg",
+    "id" : "inara_bot_337-1000039011-MkT",
+    "name" : "inara_bot_337-1000039011-MkT",
     "folder" : "/platform"
   },
   "settings" : {
@@ -24,6 +24,24 @@
     }
   },
   "intents" : [ {
+    "path" : "/НачалоРазговора",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "алло я уже говорить могу"
+    }, {
+      "text" : "вас слышно хорошо"
+    }, {
+      "text" : "а я говорю алло ответьте мне это"
+    }, {
+      "text" : "алло"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/Несогласие_подожду",
     "enabled" : true,
     "shared" : false,
@@ -223,6 +241,24 @@
       "text" : "задать вопрос живому"
     }, {
       "text" : "спросить у оператора"
+    }, {
+      "text" : "дайте нормального оператора"
+    }, {
+      "text" : "соединить с @Оператор"
+    }, {
+      "text" : "нужен обычный @Оператор"
+    }, {
+      "text" : "можете дать нормально @Оператор"
+    }, {
+      "text" : "не нужен помощник"
+    }, {
+      "text" : "ответить @Оператор"
+    }, {
+      "text" : "списать @Оператор"
+    }, {
+      "text" : "@Оператор говорю можно"
+    }, {
+      "text" : "хочу оставить обращение"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -263,6 +299,8 @@
       "text" : "чтобы моя фамилия печаталась что мне нужно сделать"
     }, {
       "text" : "подскажите как мне оформить квитанцию но себя я @Недвижимость недавно купила вот теперь не знаю что делать"
+    }, {
+      "text" : "где я могу исправить фамилию"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -366,6 +404,9 @@
     "classificationRules" : {
       "refs" : [ {
         "entityName" : "classRule_1728",
+        "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "classRule_766",
         "predicate" : "CONTAINS_NOT"
       } ]
     },
@@ -824,6 +865,8 @@
       "text" : "кто убирает подъезд"
     }, {
       "text" : "кто @УслугаСл"
+    }, {
+      "text" : "скажите поставщика услуг @Услуга"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -865,6 +908,18 @@
       "text" : " расскажите как можно уменьшить счет за коммуналку"
     }, {
       "text" : "я хотел бы с вами познакомиться"
+    }, {
+      "text" : "вас беспокоит"
+    }, {
+      "text" : "где я могу исправить название улицы"
+    }, {
+      "text" : "я деньги закинул не туда как мне их перевести"
+    }, {
+      "text" : "мне не пришла квитанция"
+    }, {
+      "text" : "в квитанции неправильно указали объем квадратуру"
+    }, {
+      "text" : "юридическое лицо"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -884,7 +939,7 @@
     }, {
       "text" : "я не расслышала что ты сказала"
     }, {
-      "text" : "повторить еще раз"
+      "text" : "повторить еще "
     }, {
       "text" : "можешь повторить помедленнее"
     }, {
@@ -893,6 +948,34 @@
       "text" : "повторите пожалуйста а то я не успел записать"
     }, {
       "text" : "да повтори пожалуйста а то не успеваю"
+    }, {
+      "text" : "так быстро говорили я не успел записать"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/АдресАлсеко",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "адрес скажите"
+    }, {
+      "text" : "скажите где находится"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Квитанция_Дубликат",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "получить дубликат квитанции"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1251,6 +1334,48 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "самостоятельно" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Оператор",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "оператор", "менеджер", "консультант", "диспетчер", "специалист" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "человек" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_766",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "медленно" ],
       "value" : ""
     } ]
   } ],

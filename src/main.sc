@@ -24,7 +24,8 @@ require: ChangeAccountPersonCount.sc
 require: PaymentTotal.sc
 # контакты поставщика
 require: SupplierContacts.sc
-
+# общие вопросы по алсеко
+require: AlsecoCommon.sc
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv
@@ -51,12 +52,22 @@ init:
         $context.session._lastState = $context.currentState;
         //$context.session._lastState = $context.contextPath ;
     });
+    bind("preMatch", function($context) {
+        if($context.request.query){
+            $context.request.query = $context.request.query.replaceAll("два нуля","ноль ноль")
+            $context.request.query = $context.request.query.replaceAll("два ноля","ноль ноль")
+        }
+        //$context.request.query += " (клиент авторизован)";
+    });
+    
     bind("postProcess", function($context) {
         $context.session.lastState = $context.currentState;
         //$context.session._lastState = $context.currentState;
         // log("**********" + toPrettyString($context.currentState));
         $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
-        if (!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
+        if ((!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
+            && (!$context.session.lastState.startsWith("/Start/DialogMakeQuestion"))
+           )
             $context.session.AnswerCnt += 1;
         
         //$context.session._lastState = $context.contextPath ;
@@ -191,12 +202,19 @@ theme: /
                 bargeInTrigger: "final",
                 noInterruptTime: 0});
              FindAccountNumberClear();
+        
+        state: DialogMakeQuestion
+            intent: /НачалоРазговора
+            script:
+                $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+            a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
     state: Hello
         intent!: /привет
         random:
             a: Здравствуйте!
             a: Алло, я Вас слушаю
+        
     
     state: WhatDoYouWant
         script:
@@ -205,6 +223,7 @@ theme: /
 
     state: OtherTheme
         intent!: /РазноеНаОператора
+        intent!:/Квитанция_Дубликат
         go!: /NoMatch
 
     state: NoMatch || noContext = true
