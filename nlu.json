@@ -261,6 +261,10 @@
       "text" : "@Оператор говорю можно"
     }, {
       "text" : "хочу оставить обращение"
+    }, {
+      "text" : "@Оператор вообще не отвечает"
+    }, {
+      "text" : "вчера уже смотрел @Оператор"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -989,6 +993,22 @@
       "text" : "не принесли квитанцию"
     }, {
       "text" : "мне не пришла квитанция"
+    }, {
+      "text" : "мне нужно оплатить квитанцию до сих пор нет"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/greeting",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "благодарю"
+    }, {
+      "text" : "спасибо"
     } ],
     "classificationRules" : {
       "refs" : [ ]

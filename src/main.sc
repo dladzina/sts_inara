@@ -356,7 +356,7 @@ theme: /
                 $dialer.hangUp();
             
     state: greeting
-        intent: /greeting
+        intent!: /greeting
         random: 
             a: Пожалуйста || htmlEnabled = false, html = "Пожалуйста"
             a: Это моя работа || htmlEnabled = false, html = "Это моя работа"

@@ -153,4 +153,5 @@ theme: /ChangeAccountPersonCount
                 q: $disagree
                 intent: /Несогласие
                 intent: /Несогласие_помочь
+                intent: /greeting
                 go!: /bye        
