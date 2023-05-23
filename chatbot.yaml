@@ -7,6 +7,7 @@ language: ru
 
 tests:
     # include:
+    #    - test_i/test_irina.xml
     #     - test_AccountInput/test_AccountInput_NumbersCheck.xml
     #     - test_SupplierContacts/test_SupplierContacts_checkservices_at_start.xml
         #   - test_SupplierContacts/test_SupplierContacts_checkservices_in_begginning.xml
@@ -27,8 +28,8 @@ tests:
     #   - test_ChangeAccountPerson/test_ChangeAccountPerson_online.xml
     #      - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
     #      - test_ChangeAccountPerson/test_global_ntents.xml
-    exclude: 
-        - test_AccountInput/test_AccountInput_NumbersCheck.xml
+     exclude: 
+         - test_AccountInput/test_AccountInput_NumbersCheck.xml
     #     - test_main/test_main.xml
     #     - test_local_intents/test_soglasie_pomoch.xml
     #      - test/test_Payment/*

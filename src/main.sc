@@ -90,7 +90,8 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-        // log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        
+        //log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -104,33 +105,38 @@ init:
                $context.nluResults.selected = $context.nluResults.intents[0];
             }
             
-            # log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
+            //log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
             
             return;
         }
         // обработка фразы "да нужна повтори помедленней я записываю
-        # log("$context.nluResults "  + toPrettyString( $context) );
+        //log("$context.nluResults 2 = "  + toPrettyString( $context) );
         if($context.nluResults.intents.length > 1){
             if (($context.nluResults.intents[0].score < 0.35) && 
                 $context.nluResults.intents[0].clazz &&
                 ($context.nluResults.intents[0].clazz != "/NoMatch")&&
                 ($context.nluResults.intents[1].score > 0.55) && 
                 $context.nluResults.intents[1].clazz &&
-                ($context.nluResults.intents[1].clazz != "/NoMatch"))
-            $context.nluResults.selected = $context.nluResults.intents[1];
-            return;
+                ($context.nluResults.intents[1].clazz != "/NoMatch")){
+                // log("Изменение 2");
+                $context.nluResults.selected = $context.nluResults.intents[1];
+            
+                return;
+            }
                 
         }
-        log("$context.nluResults "  + toPrettyString( $context.nluResults) );
+        //log("$context.nluResults 3 = "  + toPrettyString( $context.nluResults) );
         if($context.nluResults.intents.length > 2){
             if (($context.nluResults.intents[0].score < 0.35) && 
                 $context.nluResults.intents[0].clazz &&
                 ($context.nluResults.intents[0].clazz != "/NoMatch")&&
                 ($context.nluResults.intents[2].score > 0.55) && 
                 $context.nluResults.intents[2].clazz &&
-                ($context.nluResults.intents[2].clazz != "/NoMatch"))
-            $context.nluResults.selected = $context.nluResults.intents[2];
-            return;
+                ($context.nluResults.intents[2].clazz != "/NoMatch")){
+                    $context.nluResults.selected = $context.nluResults.intents[2];
+                    //log("Изменение 3");
+                    return;
+                }
                 
         }
         

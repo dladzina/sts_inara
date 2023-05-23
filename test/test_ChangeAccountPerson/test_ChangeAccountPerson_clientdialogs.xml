@@ -11,6 +11,15 @@
         <q>так быстро говорили я не успел записать то что я должен сделать с мат зайти</q>
         <a state="/repeat"></a>
     </test-case>
-
+	<test-case>
+		<q>/start</q>
+		<a></a>
+		<a></a>
+		<a></a>
+		<q>сменить фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"></a>
+	    <q>господи да ничего я не хочу никаких онлайн можно по человечески взять и ответить</q>
+		<a state = "/SwitchToOperator"></a>
+	</test-case>
 
 </test>

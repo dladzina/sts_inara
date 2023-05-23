@@ -8,6 +8,7 @@
 		<q>девушка вас беспокоит</q>
 		<a state="/NoMatch"></a>
     </test-case>
+    
     <test-case>
 		<random>0</random>
 		<q>/start</q>
@@ -141,4 +142,20 @@
         <q>мы поменяли компанию клининговую</q>
 		<a state="/NoMatch"></a>
     </test-case>
+    
+
+    <test-case id ="Возврат платежа">
+        <q>я хотела вообще то сделать возврат и заново заполнить</q>
+		<a state="/NoMatch"></a>
+		<q>мне нужно сделать возврат</q>
+		<a state="/NoMatch"></a>
+    </test-case>    
+    
+    <test-case id ="Счетчик">
+        <q>необходимо заменить счетчик приходил ваш сотрудник и сказал менять счетчик</q>
+		<a state="/NoMatch"></a>
+		<q>необходимо заменить счетчик</q>
+		<a state="/NoMatch"></a>
+    </test-case>    
+    
 </test>
