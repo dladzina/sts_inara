@@ -207,7 +207,10 @@
       "text" : "доброго времени суток"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "classRule_8213",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ "~добрый (~утро/~день/~вечер/~ночь)", "(здравствуй*/здрасти/здрасьте)" ],
     "priority" : 0
@@ -1513,6 +1516,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "счетчик", "прибор", "датчик" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_8213",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "принял", "принять", "принято" ],
       "value" : ""
     } ]
   } ],
