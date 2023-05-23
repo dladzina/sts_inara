@@ -127,7 +127,15 @@
         <q>пропала строка из квитанции</q>
 		<a state="/NoMatch"></a>
     </test-case>
+    <test-case>
+        <q>нужно скажите пожалуйста почему мне прислали долг</q>
+		<a state="/NoMatch"></a>
+    </test-case>
     
+    <test-case>
+        <q>мне нужно сделать возврат</q>
+		<a state="/NoMatch"></a>
+    </test-case>
     
     <test-case id ="Договорной 1">
         <q>мы поменяли компанию клининговую</q>
