@@ -94,6 +94,12 @@ theme: /BlockAccountNumInput
             a: да, жду Вас
             script:
                $dialer.setNoInputTimeout(20000); // 20 сек
+               
+            state: AccountInputWaitConfirm
+                intent: /Согласие
+            state: AccountInputWaitWait
+                intent: /подождите
+                go!: ..
 
         state: speechNotRecognized1
             event: speechNotRecognized

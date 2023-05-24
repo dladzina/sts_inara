@@ -10,6 +10,11 @@ theme: /ChangeAccountPerson
             go!: Online 
         
         a: Сменить реквизиты можно в офисе или онлайн. Вы хотите подать заявку онлайн?
+
+        state: AnotherQuestion
+            intent: /AnotherQuestion
+            go!: /WhatDoYouWant
+            
             
         state: Offline
             intent: /Лично
@@ -203,4 +208,5 @@ theme: /ChangeAccountPerson
                 q: $disagree
                 intent: /Несогласие
                 intent: /Несогласие_помочь
+                intent: /greeting
                 go!: /bye        

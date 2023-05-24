@@ -158,5 +158,12 @@
         <q>да повторите пожалуйста а то я не успел записать</q>
         <a state="/repeat"/>
     </test-case>    
-
+    <test-case>
+        <q>мне надо исправить фамилию в счете</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"></a>
+    </test-case>
+    <test-case>
+        <q> где я могу исправить фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"></a>
+    </test-case>    
 </test>

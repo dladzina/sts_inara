@@ -1,0 +1,7 @@
+<test>
+    <test-case>
+        <q>скажите пожалуйста поставщика услуг электроэнергии</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+</test>

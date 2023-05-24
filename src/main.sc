@@ -24,7 +24,8 @@ require: ChangeAccountPersonCount.sc
 require: PaymentTotal.sc
 # контакты поставщика
 require: SupplierContacts.sc
-
+# общие вопросы по алсеко
+require: AlsecoCommon.sc
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv
@@ -51,12 +52,22 @@ init:
         $context.session._lastState = $context.currentState;
         //$context.session._lastState = $context.contextPath ;
     });
+    bind("preMatch", function($context) {
+        if($context.request.query){
+            $context.request.query = $context.request.query.replaceAll("два нуля","ноль ноль")
+            $context.request.query = $context.request.query.replaceAll("два ноля","ноль ноль")
+        }
+        //$context.request.query += " (клиент авторизован)";
+    });
+    
     bind("postProcess", function($context) {
         $context.session.lastState = $context.currentState;
         //$context.session._lastState = $context.currentState;
         // log("**********" + toPrettyString($context.currentState));
         $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
-        if (!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
+        if ((!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
+            && (!$context.session.lastState.startsWith("/Start/DialogMakeQuestion"))
+           )
             $context.session.AnswerCnt += 1;
         
         //$context.session._lastState = $context.contextPath ;
@@ -79,7 +90,8 @@ init:
     ///ChangeAccountPerson/ChangeAccountPerson
     bind("selectNLUResult", 
     function($context) {
-        // log("$context.nluResults"  + toPrettyString( $context.nluResults) );
+        
+        //log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -93,33 +105,38 @@ init:
                $context.nluResults.selected = $context.nluResults.intents[0];
             }
             
-            # log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
+            //log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
             
             return;
         }
         // обработка фразы "да нужна повтори помедленней я записываю
-        # log("$context.nluResults "  + toPrettyString( $context) );
+        //log("$context.nluResults 2 = "  + toPrettyString( $context) );
         if($context.nluResults.intents.length > 1){
             if (($context.nluResults.intents[0].score < 0.35) && 
                 $context.nluResults.intents[0].clazz &&
                 ($context.nluResults.intents[0].clazz != "/NoMatch")&&
                 ($context.nluResults.intents[1].score > 0.55) && 
                 $context.nluResults.intents[1].clazz &&
-                ($context.nluResults.intents[1].clazz != "/NoMatch"))
-            $context.nluResults.selected = $context.nluResults.intents[1];
-            return;
+                ($context.nluResults.intents[1].clazz != "/NoMatch")){
+                // log("Изменение 2");
+                $context.nluResults.selected = $context.nluResults.intents[1];
+            
+                return;
+            }
                 
         }
-        log("$context.nluResults "  + toPrettyString( $context.nluResults) );
+        //log("$context.nluResults 3 = "  + toPrettyString( $context.nluResults) );
         if($context.nluResults.intents.length > 2){
             if (($context.nluResults.intents[0].score < 0.35) && 
                 $context.nluResults.intents[0].clazz &&
                 ($context.nluResults.intents[0].clazz != "/NoMatch")&&
                 ($context.nluResults.intents[2].score > 0.55) && 
                 $context.nluResults.intents[2].clazz &&
-                ($context.nluResults.intents[2].clazz != "/NoMatch"))
-            $context.nluResults.selected = $context.nluResults.intents[2];
-            return;
+                ($context.nluResults.intents[2].clazz != "/NoMatch")){
+                    $context.nluResults.selected = $context.nluResults.intents[2];
+                    //log("Изменение 3");
+                    return;
+                }
                 
         }
         
@@ -191,20 +208,36 @@ theme: /
                 bargeInTrigger: "final",
                 noInterruptTime: 0});
              FindAccountNumberClear();
+        
+        state: DialogMakeQuestion
+            intent: /НачалоРазговора
+            script:
+                $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+            a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
     state: Hello
         intent!: /привет
         random:
             a: Здравствуйте!
             a: Алло, я Вас слушаю
+        
     
     state: WhatDoYouWant
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
+    state: WhatDoYouWantNoContext || noContext = true
+        script:
+            $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+        a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}        
+
     state: OtherTheme
         intent!: /РазноеНаОператора
+        intent!:/Квитанция_Дубликат
+        intent!:/Квитанция_Доставка
+        intent!:/Долги
+        intent!:/Договорной
         go!: /NoMatch
 
     state: NoMatch || noContext = true
@@ -318,15 +351,20 @@ theme: /
     state: bye
         q!: $bye
         intent!: /Прощание
-        a: Благодарим за обращение!
-        random: 
-            a: До свидания!
-            a: Надеюсь, я смогла вам помочь. Удачи!
-        script:
-            $dialer.hangUp();
+        if: $context.session.AnswerCnt == 1
+            script:
+                $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+            a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
+        else:        
+            a: Благодарим за обращение!
+            random: 
+                a: До свидания!
+                a: Надеюсь, я смогла вам помочь. Удачи!
+            script:
+                $dialer.hangUp();
             
     state: greeting
-        intent: /greeting
+        intent!: /greeting
         random: 
             a: Пожалуйста || htmlEnabled = false, html = "Пожалуйста"
             a: Это моя работа || htmlEnabled = false, html = "Это моя работа"

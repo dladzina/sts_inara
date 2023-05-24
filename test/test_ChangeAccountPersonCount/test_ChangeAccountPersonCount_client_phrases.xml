@@ -87,6 +87,30 @@
     <!--    <q>У в квартире по адресу Мамыр 7 прописано 2 человека, квартплата за 4 приходит Что нужно сделать</q>-->
     <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
     <!--</test-case>-->
+    <test-case>
+        <q>у меня изменилась количество</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+        <q>да</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Online"/>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Online"/>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou"/>
+        <q>все спасибо</q>
+        <a state="/bye"></a>
+        <a state="/bye"></a>
+        
+    </test-case>
+
+<!--id сессии 71c8f0ae-93b1-4836-80fb-20326b5c5673-->
+    <test-case>
+        <q>как поменять количество проживающих человек в квитанциях</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+        <q>да да</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Online"/>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/Online"/>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou"/>
+        <q>можете повторить пожалуйста</q>
+        <a state="/repeat"></a>
+    </test-case>
 
 
 </test>
