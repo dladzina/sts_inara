@@ -236,6 +236,8 @@ theme: /
         intent!: /РазноеНаОператора
         intent!:/Квитанция_Дубликат
         intent!:/Квитанция_Доставка
+        intent!:/Долги
+        intent!:/Договорной
         go!: /NoMatch
 
     state: NoMatch || noContext = true

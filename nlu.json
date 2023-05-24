@@ -41,7 +41,10 @@
       "text" : "мне нужно"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "Название_Долг",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -470,7 +473,7 @@
     }, {
       "text" : "оплатить счет"
     }, {
-      "text" : "вернуть платеж"
+      "text" : "хочу вернуть платеж"
     }, {
       "text" : "доплатить сумму"
     }, {
@@ -937,11 +940,7 @@
     }, {
       "text" : "за какой месяц пришла квитанция"
     }, {
-      "text" : "мы поменяли клининговую компанию "
-    }, {
       "text" : "пропала строка из квитанции"
-    }, {
-      "text" : "мне прислали долг"
     }, {
       "text" : "мне нужно сделать возврат"
     }, {
@@ -1078,6 +1077,36 @@
       "text" : "я совсем о другом"
     }, {
       "text" : "да мне не надо менять"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Долги",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "откуда у меня @Название_Долг"
+    }, {
+      "text" : "мне прислали @Название_Долг"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Договорной",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Мы решили перейти на нового поставщика услуг @Услуга"
+    }, {
+      "text" : "Заменить клининговую компанию"
+    }, {
+      "text" : "мы поменяли клининговую компанию "
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1496,7 +1525,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "сумма", "ок" ],
+      "rule" : [ "сумма", "ок", "оплачено" ],
       "value" : ""
     } ]
   }, {
@@ -1535,6 +1564,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "принял", "принять", "принято" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Название_Долг",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "долг", "задолженность" ],
       "value" : ""
     } ]
   } ],

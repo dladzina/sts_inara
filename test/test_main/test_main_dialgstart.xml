@@ -46,4 +46,26 @@
     	<a>Что вы хотите узнать?</a>
 	</test-case>
 	
+    #  BOT-245
+    
+    <test-case>
+        <random>0</random>
+        <q>/start</q>
+        <a state="/Start"></a>
+        <a state="/Start"></a>
+        <a state="/Start"></a>
+        <q>Ладно.</q>
+        <a state="/Start/DialogMakeQuestion"></a>
+    </test-case>
+    
+    <test-case>
+        <random>0</random>
+        <q>/start</q>
+        <a state="/Start"></a>
+        <a state="/Start"></a>
+        <a state="/Start"></a>
+        <q>Понял.</q>
+        <a state="/Start/DialogMakeQuestion"></a>
+    </test-case>
+	
 </test>
