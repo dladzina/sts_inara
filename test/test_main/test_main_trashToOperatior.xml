@@ -531,5 +531,16 @@
         <q>Мне пришла квитанция примерно пятого мая. Можете сказать, за какой месяц она была выставлена?</q>
         <a state="/NoMatch"></a>  
     </test-case>
-    
+
+    <!--BOT-334-->
+
+    <test-case>
+		<random>0</random>
+		<q>/start</q>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<a state="/Start"></a>
+		<q>на лицевой счет</q>
+		<a state="/NoMatch"></a>
+    </test-case>    
 </test>
