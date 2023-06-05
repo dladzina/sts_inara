@@ -198,7 +198,7 @@ theme: /BlockAccountNumInput
                 # TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             if: (GetTempAccountNumber().length)<4
-                a: дальше
+                a: Ага.
             else
                 a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
                 a: Подождёте?
@@ -241,11 +241,14 @@ theme: /BlockAccountNumInput
                     $temp.AccNum = GetTempAccountNumber();
                     # log("ЛС временный = "+ toPrettyString($temp.AccNum))
                     TrySetNumber($temp.AccNum + words_to_number($entities));
-                a: дальше {{GetTempAccountNumber()}}
+                random:
+                    a: дальше
+                    a: Так
+                    a: продолжайте
                 
                 state: AccountInputNumberComplete
                     q: все 
-                    a: Номер ашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. Подождите 
+                    a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. Подождите 
                     go!: ../../FindAccount
                 
 
