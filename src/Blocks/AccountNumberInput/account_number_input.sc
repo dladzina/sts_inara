@@ -248,7 +248,7 @@ theme: /BlockAccountNumInput
                 
                 state: AccountInputNumberComplete
                     q: все 
-                    a: Номер Вашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. Подождите 
+                    a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. Подождите 
                     go!: ../../FindAccount
                 
 
