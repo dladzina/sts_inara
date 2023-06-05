@@ -204,7 +204,7 @@ theme: /BlockAccountNumInput
                 a: Подождёте?
                 script:
                     $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
-                    $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                    $dialer.setNoInputTimeout(3000); // Бот ждёт ответ 1 секунду и начинает искать.
             script:
                 $dialer.bargeInResponse({
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
