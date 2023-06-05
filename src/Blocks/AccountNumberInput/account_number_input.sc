@@ -202,9 +202,10 @@ theme: /BlockAccountNumInput
             else
                 a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
                 a: Подождёте?
+                script:
+                    $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
+                    $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
             script:
-                $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
-                $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
                 $dialer.bargeInResponse({
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
@@ -247,36 +248,36 @@ theme: /BlockAccountNumInput
                     a: дальше
                     a: Так
                     a: продолжайте
-            script:
-                $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
-                $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
-                $dialer.bargeInResponse({
-                    //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
-                    bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
-                    bargeInTrigger: "interim",
-                    //bargeInTrigger: "final",
-                    // noInterruptTime: 1500
-                    noInterruptTime: 0
-                    });
-                    
-                    
-            state: BargeInIntent2 || noContext = true
-                event: bargeInIntent
                 script:
-                    var bargeInIntentStatus = $dialer.getBargeInIntentStatus();
-                    # log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
-                    var text = bargeInIntentStatus.text;
-                    # var res = $nlp.matchPatterns(text,["$no", "$disagree"])
-        
-                    # if (res) {
-                    #     $dialer.bargeInInterrupt(true);
-                    # }
-                    var res = $nlp.matchPatterns(text,["$Number"])
-        
-                    if (res) {
-                        $session.AccountNumberContinue = true;
-                        $dialer.bargeInInterrupt(true);
-                    }                    
+                    # $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
+                    # $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                    $dialer.bargeInResponse({
+                        //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
+                        bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
+                        bargeInTrigger: "interim",
+                        //bargeInTrigger: "final",
+                        // noInterruptTime: 1500
+                        noInterruptTime: 0
+                        });
+                    
+                    
+                state: BargeInIntent2 || noContext = true
+                    event: bargeInIntent
+                    script:
+                        var bargeInIntentStatus = $dialer.getBargeInIntentStatus();
+                        # log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
+                        var text = bargeInIntentStatus.text;
+                        # var res = $nlp.matchPatterns(text,["$no", "$disagree"])
+            
+                        # if (res) {
+                        #     $dialer.bargeInInterrupt(true);
+                        # }
+                        var res = $nlp.matchPatterns(text,["$Number"])
+            
+                        if (res) {
+                            $session.AccountNumberContinue = true;
+                            $dialer.bargeInInterrupt(true);
+                        }                    
                 
                 state: AccountInputNumberComplete
                     q: все 
