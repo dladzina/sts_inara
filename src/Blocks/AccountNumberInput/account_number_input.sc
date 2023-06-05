@@ -207,7 +207,9 @@ theme: /BlockAccountNumInput
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
                     bargeInTrigger: "interim",
                     //bargeInTrigger: "final",
-                    noInterruptTime: 1500});
+                    // noInterruptTime: 1500
+                    noInterruptTime: 0
+                    });
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
                 script:
