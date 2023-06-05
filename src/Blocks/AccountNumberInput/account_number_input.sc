@@ -197,19 +197,22 @@ theme: /BlockAccountNumInput
                 TrySetNumber($temp.AccNum + words_to_number($entities));
                 # TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
-            a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
-            a: Подождёте?
-            script:
-                $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
-                $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
-                $dialer.bargeInResponse({
-                    //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
-                    bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
-                    bargeInTrigger: "interim",
-                    //bargeInTrigger: "final",
-                    // noInterruptTime: 1500
-                    noInterruptTime: 0
-                    });
+            if: (GetTempAccountNumber().length)<4
+                a: дальше
+            else
+                a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
+                a: Подождёте?
+                script:
+                    $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
+                    $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                    $dialer.bargeInResponse({
+                        //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
+                        bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
+                        bargeInTrigger: "interim",
+                        //bargeInTrigger: "final",
+                        // noInterruptTime: 1500
+                        noInterruptTime: 0
+                        });
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
                 script:
@@ -227,6 +230,24 @@ theme: /BlockAccountNumInput
                         $session.AccountNumberContinue = true;
                         $dialer.bargeInInterrupt(true);
                     }
+            state: AccountInputNumberContinue
+                q: * $numbers *
+                q: * @duckling.number *
+                script:                
+                    $temp.AccNum = "";
+                    # log("блок ЛС цифры")
+                    # log($session.AccountNumberContinue);
+                    # if ($session.AccountNumberContinue)
+                    $temp.AccNum = GetTempAccountNumber();
+                    # log("ЛС временный = "+ toPrettyString($temp.AccNum))
+                    TrySetNumber($temp.AccNum + words_to_number($entities));
+                a: дальше {{GetTempAccountNumber()}}
+                
+                state: AccountInputNumberComplete
+                    q: все 
+                    a: Номер ашего лицевого счёта {{GetTempAccountNumber()}}. Поиск займет время. Подождите 
+                    go!: ../../FindAccount
+                
 
             state: AccountInputNumberYes
                 q: $yes
