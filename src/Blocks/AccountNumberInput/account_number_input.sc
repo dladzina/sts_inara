@@ -301,25 +301,35 @@ theme: /BlockAccountNumInput
             state: FindAccount
                 script: 
                     TrySetNumber(GetTempAccountNumber());
-
-                    FindAccountAddress().then(function(res) {
-                        //log(toPrettyString(res));
-                        if (res && res.accountId) {
-                            //log(res.data[0].address_full_name);
-                            $session.Account.Address = res.fullAddressName;
-                            // $session.Account.Address = res.data[0].address_full_name;
-                            $reactions.transition('../AccountAddressConfirm')
-                            $session.Account.AddressRepeatCount = 0;
-                        } else {
-                            $session.Account.Address = "";
+                    
+                    try{
+                        FindAccountAddress().then(function(res) {
+                            //log(toPrettyString(res));
+                            if (res && res.accountId) {
+                                //log(res.data[0].address_full_name);
+                                $session.Account.Address = res.fullAddressName;
+                                // $session.Account.Address = res.data[0].address_full_name;
+                                $reactions.transition('../AccountAddressConfirm')
+                                $session.Account.AddressRepeatCount = 0;
+                            } else {
+                                $session.Account.Address = "";
+                                $reactions.transition('../AccountNotFound');
+                            }
+                        }).catch(function(e) {
+                            $reactions.answer("Что-то сервер барахлит. ");
                             $reactions.transition('../AccountNotFound');
-                        }
-                    }).catch(function(e) {
-                        $reactions.answer("Что-то сервер барахлит. ");
-                        $reactions.transition('../AccountNotFound')
-                        SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ')// + toPrettyString(e)
-
-                    });
+                            SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ')// + toPrettyString(e)
+    
+                        });
+                    }            
+                    catch(e){
+                        //$reactions.answer("Что-то сервер барахлит. ");
+                        $reactions.answer("Произошла ошибка");
+                        $reactions.transition('../AccountNotFound');
+                        SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress 2')// + toPrettyString(e)
+                        return false;
+                    };
+                    
                         
 
             state: AccountAddressConfirm
