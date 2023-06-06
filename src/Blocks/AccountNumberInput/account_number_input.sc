@@ -282,7 +282,7 @@ theme: /BlockAccountNumInput
                 q: $agree
                 intent: /Согласие
                 intent: /Согласие_подожду
-                event: speechNotRecognized
+                # event: speechNotRecognized
                 event: noMatch
                 go!: ../FindAccount
 
@@ -317,7 +317,7 @@ theme: /BlockAccountNumInput
                     }).catch(function(e) {
                         $reactions.answer("Что-то сервер барахлит. ");
                         $reactions.transition('../AccountNotFound')
-                        SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ' + toPrettyString(e))
+                        SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ')// + toPrettyString(e)
 
                     });
                         
