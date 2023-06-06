@@ -198,7 +198,7 @@ theme: /BlockAccountNumInput
                 # TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             if: (GetTempAccountNumber().length) <= 4
-                a: {{AccountTalkNumber(GetTempAccountNumber())}}. давайте **д+альше** || bargeInIf = AccountNumDecline 
+                a: {{AccountTalkNumber(GetTempAccountNumber())}}. **д+альше** || bargeInIf = AccountNumDecline 
             else
                 a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
                 a: Подождёте?
