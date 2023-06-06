@@ -259,25 +259,24 @@ theme: /BlockAccountNumInput
                         // noInterruptTime: 1500
                         noInterruptTime: 0
                         });
-                    
-                    
-                state: BargeInIntent2 || noContext = true
-                    event: bargeInIntent
-                    script:
-                        var bargeInIntentStatus = $dialer.getBargeInIntentStatus();
-                        # log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
-                        var text = bargeInIntentStatus.text;
-                        # var res = $nlp.matchPatterns(text,["$no", "$disagree"])
+
+                # state: BargeInIntent2 || noContext = true
+                #     event: bargeInIntent
+                #     script:
+                #         var bargeInIntentStatus = $dialer.getBargeInIntentStatus();
+                #         # log(bargeInIntentStatus.bargeInIf); // => "beforeHangup"
+                #         var text = bargeInIntentStatus.text;
+                #         # var res = $nlp.matchPatterns(text,["$no", "$disagree"])
             
-                        # if (res) {
-                        #     $dialer.bargeInInterrupt(true);
-                        # }
-                        var res = $nlp.matchPatterns(text,["$Number"])
+                #         # if (res) {
+                #         #     $dialer.bargeInInterrupt(true);
+                #         # }
+                #         var res = $nlp.matchPatterns(text,["$Number"])
             
-                        if (res) {
-                            $session.AccountNumberContinue = true;
-                            $dialer.bargeInInterrupt(true);
-                        }                    
+                #         if (res) {
+                #             $session.AccountNumberContinue = true;
+                #             $dialer.bargeInInterrupt(true);
+                #         }                    
                 
                 state: AccountInputNumberComplete
                     q: все 
