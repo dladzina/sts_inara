@@ -246,10 +246,10 @@ theme: /BlockAccountNumInput
                     # log("ЛС временный = "+ toPrettyString($temp.AccNum))
                     TrySetNumber($temp.AccNum + $temp.CurrentNum);
                 a:
-                    {{AccountTalkNumber($temp.CurrentNum)}}.
+                    {{AccountTalkNumber($temp.CurrentNum)}}
                 random:
                     a: дальше
-                    a: Так
+                    # a: Так
                     a: продолжайте
                 script:
                     # $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
