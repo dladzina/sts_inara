@@ -267,7 +267,8 @@ theme: /BlockAccountNumInput
                     q: $no
                     q: $disagree
                     intent: /Несогласие
-                    a: Дав+айте начнём снач+ала
+                    if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
+                        a: Дав+айте начнём снач+ала
                     go!: /BlockAccountNumInput/AccountInput
 
                 state: AccountInputNumberComplete
