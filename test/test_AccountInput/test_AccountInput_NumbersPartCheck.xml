@@ -1,0 +1,8 @@
+<test>
+        <test-case id=" test_AccountInput_NumbersPartCheck_1">
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+    </test-case>
+</test>

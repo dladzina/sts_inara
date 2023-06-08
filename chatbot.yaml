@@ -6,7 +6,11 @@ botEngine: v2
 language: ru
 
 tests:
-    # include:
+    include:
+        # - test_AccountInput/test_AccountInput_NumbersCheck1.xml
+         - test_AccountInput/*.xml
+        #  - test_AccountInput/test_AccountInput_NumbersPartCheck.xml
+        #  - test_AccountInput/test_AccountInput_client.xml
     #    - test_i/test_irina.xml
     #     - test_AccountInput/test_AccountInput_NumbersCheck.xml
     #     - test_SupplierContacts/test_SupplierContacts_checkservices_at_start.xml
@@ -28,9 +32,9 @@ tests:
     #   - test_ChangeAccountPerson/test_ChangeAccountPerson_online.xml
     #      - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
     #      - test_ChangeAccountPerson/test_global_ntents.xml
-     exclude: 
+    exclude: 
          - test_AccountInput/test_AccountInput_NumbersCheckFull.xml
-         - test_i/test_irina.xml
+        # - test_i/test_irina.xml
     #     - test_main/test_main.xml
     #     - test_local_intents/test_soglasie_pomoch.xml
     #      - test/test_Payment/*

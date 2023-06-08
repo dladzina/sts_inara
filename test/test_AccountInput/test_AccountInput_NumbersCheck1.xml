@@ -3,34 +3,26 @@
         <q>последний платеж</q>
         <a></a>
         <q>пять сорок четыре</q>
-        <a>Номер Вашего лицевого счёта 5- - 44. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>5- - 44. **д+альше**</a>
     </test-case>
     <test-case id=" test_AccountInput_NumbersCheck_2">
         <q>последний платеж</q>
         <a></a>
         <q>два ноля</q>
-        <a>Номер Вашего лицевого счёта 00. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>00. **д+альше**</a>
     </test-case>   
     <test-case id=" test_AccountInput_NumbersCheck_3">
         <q>последний платеж</q>
         <a></a>
         <q>минутку два ноля сорок</q>
-        <a>Номер Вашего лицевого счёта 00- - 40. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>00- - 40. **д+альше**</a>
     </test-case>
 
     <test-case id="test_AccountInput_NumbersCheck_4">
     	<q>последний платеж</q>
     	<a></a>
     	<q>один ноль ноль три</q>
-    	<a>Номер Вашего лицевого счёта 10- - 03. Поиск займет время.</a>
-    	<a>Подождёте?</a>
-    	<timeoutReply interval="1"/>
+    	<a>10- - 03. **д+альше**</a>
     </test-case>
     <test-case id="test_AccountInput_NumbersCheck_5">
     	<q>последний платеж</q>
@@ -44,17 +36,13 @@
     	<q>последний платеж</q>
     	<a></a>
     	<q>сорок один</q>
-    	<a>Номер Вашего лицевого счёта 41. Поиск займет время.</a>
-    	<a>Подождёте?</a>
-    	<timeoutReply interval="1"/>
+    	<a>41. **д+альше**</a>
     </test-case>
     <test-case id="test_AccountInput_NumbersCheck_7">
     	<q>последний платеж</q>
     	<a></a>
     	<q>сорок один ноль один</q>
-    	<a>Номер Вашего лицевого счёта 41- - 01. Поиск займет время.</a>
-    	<a>Подождёте?</a>
-    	<timeoutReply interval="1"/>
+    	<a>41- - 01. **д+альше**</a>
     </test-case>
     <test-case id="test_AccountInput_NumbersCheck_8">
     	<q>последний платеж</q>

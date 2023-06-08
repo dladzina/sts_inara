@@ -271,6 +271,11 @@ theme: /BlockAccountNumInput
                         a: Дав+айте начнём снач+ала
                     go!: /BlockAccountNumInput/AccountInput
 
+                state: AccountInputNumberContinueNoSpeech
+                    event: speechNotRecognized
+                    random:
+                        a: дальше
+                        a: продолжайте
                 state: AccountInputNumberComplete
                     q: все 
                     a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. Подождите 
@@ -282,7 +287,7 @@ theme: /BlockAccountNumInput
                 q: $agree
                 intent: /Согласие
                 intent: /Согласие_подожду
-                # event: speechNotRecognized
+                event: speechNotRecognized
                 event: noMatch
                 go!: ../FindAccount
 
