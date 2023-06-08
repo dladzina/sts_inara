@@ -290,10 +290,11 @@ theme: /BlockAccountNumInput
                 intent: /Согласие_подожду
                 event: noMatch
                 go!: ../FindAccount
+
             state: AccountInputNumberNoRecognize
                 event: speechNotRecognized
                 if: (GetTempAccountNumber().length) <= 4
-                    go!: AccountInputNumberContinue/AccountInputNumberContinueNoSpeech
+                    go!: ../AccountInputNumberContinue/AccountInputNumberContinueNoSpeech
                 else:
                     go!: ../FindAccount
 
