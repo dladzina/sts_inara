@@ -281,7 +281,7 @@ theme: /BlockAccountNumInput
                     q: все 
                     a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Подождите 
                     script:
-                        $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
+                        $reactions.timeout({interval: '1s', targetState: '../../FindAccount'});
                         $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
                     
                     # go!: ../../FindAccount
