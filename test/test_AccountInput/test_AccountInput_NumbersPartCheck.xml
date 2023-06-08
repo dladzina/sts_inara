@@ -1,8 +1,28 @@
 <test>
-        <test-case id=" test_AccountInput_NumbersPartCheck_1">
+    <test-case id=" test_AccountInput_NumbersPartCheck_1">
         <q>последний платеж</q>
         <a></a>
         <q>пять сорок четыре</q>
         <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <q>все</q>
+        <a>Номер Вашего лицевого счёта 5- - 44- - 71. Подождите</a>
+        <timeoutReply interval="1"/>
     </test-case>
+    <test-case id=" test_AccountInput_NumbersPartCheck_1">
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <q>семьдесят один</q>
+        <a>71</a>
+        <a>**д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <q>все</q>
+        <a>Номер Вашего лицевого счёта 5- - 44- - 71. Подождите</a>
+        <timeoutReply interval="1"/>
+    </test-case>    
 </test>
