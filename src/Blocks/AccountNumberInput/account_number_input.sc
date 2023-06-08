@@ -198,7 +198,8 @@ theme: /BlockAccountNumInput
                 # TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             if: (GetTempAccountNumber().length) <= 4
-                a: {{AccountTalkNumber(GetTempAccountNumber())}}. **д+альше** || bargeInIf = AccountNumDecline 
+                # a: {{AccountTalkNumber(GetTempAccountNumber())}}. **д+альше** || bargeInIf = AccountNumDecline
+                go!: AccountInputNumberContinue
             else
                 a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
                 a: Подождёте?
@@ -248,9 +249,9 @@ theme: /BlockAccountNumInput
                 a:
                     {{AccountTalkNumber($temp.CurrentNum)}}
                 random:
-                    a: дальше
+                    a: **д+альше**
                     # a: Так
-                    a: продолжайте
+                    a: **продолж+айте**
                 script:
                     # $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
                     # $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
@@ -274,8 +275,8 @@ theme: /BlockAccountNumInput
                 state: AccountInputNumberContinueNoSpeech
                     event: speechNotRecognized
                     random:
-                        a: дальше
-                        a: продолжайте
+                        a: алл+о? говор+ите д+альше
+                        a: алл+о? продолж+айте
                 state: AccountInputNumberComplete
                     q: все 
                     a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. Подождите 
@@ -287,9 +288,14 @@ theme: /BlockAccountNumInput
                 q: $agree
                 intent: /Согласие
                 intent: /Согласие_подожду
-                event: speechNotRecognized
                 event: noMatch
                 go!: ../FindAccount
+            state: AccountInputNumberNoRecognize
+                event: speechNotRecognized
+                if: (GetTempAccountNumber().length) <= 4
+                else:
+                    go!: ../FindAccount
+
 
             state: AccountInputNumberNo
                 q: $no
