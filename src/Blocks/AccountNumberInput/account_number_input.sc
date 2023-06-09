@@ -279,6 +279,7 @@ theme: /BlockAccountNumInput
                         a: алл+о? продолж+айте
                 state: AccountInputNumberComplete
                     q: все 
+                    intent: /ЛС_цифры_закончились
                     a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Подождите 
                     script:
                         $reactions.timeout({interval: '1s', targetState: '../../FindAccount'});
