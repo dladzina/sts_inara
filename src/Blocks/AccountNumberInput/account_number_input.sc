@@ -197,7 +197,7 @@ theme: /BlockAccountNumInput
                 TrySetNumber($temp.AccNum + words_to_number($entities));
                 # TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
-            if: (GetTempAccountNumber().length) <= 4
+            if: (GetTempAccountNumber().length) <= 5
                 a: {{AccountTalkNumber(GetTempAccountNumber())}}. **д+альше** || bargeInIf = AccountNumDecline
                 # go!: AccountInputNumberContinue
             else
@@ -226,12 +226,12 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
-                    # var res = $nlp.matchPatterns(text,["$Number"])
+                    var res = $nlp.matchPatterns(text,["$Number"])
         
-                    # if (res) {
-                    #     $session.AccountNumberContinue = true;
-                    #     $dialer.bargeInInterrupt(true);
-                    # }
+                    if (res) {
+                        $session.AccountNumberContinue = true;
+                        $dialer.bargeInInterrupt(true);
+                    }
                     
                     
             state: AccountInputNumberContinue
