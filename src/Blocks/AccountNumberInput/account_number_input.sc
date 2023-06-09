@@ -226,12 +226,12 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
-                    var res = $nlp.matchPatterns(text,["$Number"])
+                    # var res = $nlp.matchPatterns(text,["$Number"])
         
-                    if (res) {
-                        $session.AccountNumberContinue = true;
-                        $dialer.bargeInInterrupt(true);
-                    }
+                    # if (res) {
+                    #     $session.AccountNumberContinue = true;
+                    #     $dialer.bargeInInterrupt(true);
+                    # }
                     
                     
             state: AccountInputNumberContinue
