@@ -30,7 +30,7 @@ tests:
     #      - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
     #      - test_ChangeAccountPerson/test_global_ntents.xml
     exclude: 
-        - test_AccountInput/test_AccountInput_NumbersCheckFull.xml
+        # - test_AccountInput/test_AccountInput_NumbersCheckFull.xml
         #- test_i/test_irina.xml
     #     - test_main/test_main.xml
     #     - test_local_intents/test_soglasie_pomoch.xml
