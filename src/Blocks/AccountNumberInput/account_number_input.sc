@@ -191,11 +191,11 @@ theme: /BlockAccountNumInput
                 $temp.AccNum = "";
                 # log("блок ЛС цифры")
                 # log($session.AccountNumberContinue);
-                if ($session.AccountNumberContinue)
-                    $temp.AccNum = GetTempAccountNumber();
+                # if ($session.AccountNumberContinue)
+                #     $temp.AccNum = GetTempAccountNumber();
                 # log("ЛС временный = "+ toPrettyString($temp.AccNum))
-                TrySetNumber($temp.AccNum + words_to_number($entities));
-                # TrySetNumber(words_to_number($entities));
+                # TrySetNumber($temp.AccNum + words_to_number($entities));
+                TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
             a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
             a: Подождёте?
@@ -207,8 +207,8 @@ theme: /BlockAccountNumInput
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
                     bargeInTrigger: "interim",
                     //bargeInTrigger: "final",
-                    // noInterruptTime: 1500
-                    noInterruptTime: 0
+                    noInterruptTime: 1500
+                    # noInterruptTime: 0
                     });
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
@@ -218,15 +218,15 @@ theme: /BlockAccountNumInput
                     var text = bargeInIntentStatus.text;
                     var res = $nlp.matchPatterns(text,["$no", "$disagree"])
         
-                    if (res) {
-                        $dialer.bargeInInterrupt(true);
-                    }
-                    var res = $nlp.matchPatterns(text,["$Number"])
+                    # if (res) {
+                    #     $dialer.bargeInInterrupt(true);
+                    # }
+                    # var res = $nlp.matchPatterns(text,["$Number"])
         
-                    if (res) {
-                        $session.AccountNumberContinue = true;
-                        $dialer.bargeInInterrupt(true);
-                    }
+                    # if (res) {
+                    #     $session.AccountNumberContinue = true;
+                    #     $dialer.bargeInInterrupt(true);
+                    # }
 
             state: AccountInputNumberYes
                 q: $yes

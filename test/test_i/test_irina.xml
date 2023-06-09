@@ -1,5 +1,367 @@
 <test>
 
-
+    # BOT-322
     
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно повторно отправить квитанцию</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-285
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>я хочу чтобы квитанция мне приходила на электронную почту</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-291
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>написано долг сто тридцать одна ну там сто тридцать одна девяносто четыре копейки но у меня никак не может быть</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-267
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>у меня большая задолженность я хотел узнать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-294
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно узнать номер телефона по оплате холодной воды жетысуйский район</q>
+        <a state="/SupplierContacts/SupplierContacts"/>
+        <a state="/BlockAccountNumInput/AccountInput"/>
+    </test-case>
+    
+    # BOT-263
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>ошибка в счете асека</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-273
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>готовность отчета</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-379
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>подскажите телефон алеко</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-379
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хочу перезаключить договор</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-379
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хочу проверить задолженность</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-236
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>где можно дубликат квитанции получить</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-236
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне надо мне надо получить дубликат квитанцию</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-272
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>нам надо в квитанцию добавить строчку</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-321
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>по вопросу вывоза тбо с квитанции надо убрать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-317
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>у меня произошла ошибка в квитанции</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-249
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>исчез счетчик холодной воды из квитанции</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-277
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>вам надо было поменять счетчик</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-258
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
+    # BOT-307
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>здравствуйте можно вам передать показания счетчиков</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-295
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хочу узнать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-378
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>трубку поднимите</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-380
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>давайте на двадцать семь</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-380
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>долги алека сколько</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-289
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хотел узнать вот я оформил на себя квартиру</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-303
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно чтоб казахтелеком вошел в квитанцию алсеко</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно узнать номер лицевого счета</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно узнать о начислении</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>необходимо изменить адрес</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    # BOT-374 +
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>как поменять фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>вы знаете я платила два раза за один месяц</q>
+        <a state="/PaymentTotal/PaymentQuestion"/>
+        <a></a>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно подключить домофон</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>помощники вообще мне нужно подключить домофон</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно переоформить квартиру</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
 </test>

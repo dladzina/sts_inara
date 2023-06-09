@@ -91,7 +91,7 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
-        //log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -236,8 +236,13 @@ theme: /
         intent!: /РазноеНаОператора
         intent!:/Квитанция_Дубликат
         intent!:/Квитанция_Доставка
+        intent!:/Квитанция_электронка
+        intent!:/Квитанция_ошибка
+        intent!:/Квитанция_общее
         intent!:/Долги
         intent!:/Договорной
+        intent!:/контактыАлсеко
+        intent!:/Счетчики_общее
         go!: /NoMatch
 
     state: NoMatch || noContext = true
