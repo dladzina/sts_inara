@@ -112,9 +112,9 @@
         <event>speechNotRecognized</event>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
     </test-case>     
+
 <!--**********************************************************************-->
 <!--проверяем фразы, которыми говорим цифры-->
-
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_1">
         <mockData>
           <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
@@ -476,6 +476,8 @@
         <event>speechNotRecognized</event>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
     </test-case>    
+<!--КОНЕЦ - проверяем фразы, которыми говорим цифры-->
+<!--**********************************************************************-->
    
     
 </test>

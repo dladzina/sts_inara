@@ -56,6 +56,8 @@ init:
         if($context.request.query){
             $context.request.query = $context.request.query.replaceAll("два нуля","ноль ноль")
             $context.request.query = $context.request.query.replaceAll("два ноля","ноль ноль")
+            $context.request.query = $context.request.query.replaceAll("три ноля","ноль ноль ноль")
+            $context.request.query = $context.request.query.replaceAll("три нуля","ноль ноль ноль")
         }
         //$context.request.query += " (клиент авторизован)";
     });
