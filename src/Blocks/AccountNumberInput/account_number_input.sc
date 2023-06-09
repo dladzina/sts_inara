@@ -267,6 +267,7 @@ theme: /BlockAccountNumInput
                 state: AccountInputNumberContinueNo
                     q: $no
                     q: $disagree
+                    q: * ($no/$disagree) * @duckling.number *
                     intent: /Несогласие
                     if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                         a: Дав+айте начнём снач+ала
@@ -291,6 +292,11 @@ theme: /BlockAccountNumInput
                         go!: ../../../FindAccount
 
 
+            state: AccountInputNumberNumComplete
+                intent: /ЛС_цифры_закончились
+                go!: ../AccountInputNumberContinue/AccountInputNumberComplete
+                
+                
             state: AccountInputNumberYes
                 q: $yes
                 q: $agree

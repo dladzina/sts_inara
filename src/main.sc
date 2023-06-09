@@ -93,7 +93,7 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
-        //log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -197,8 +197,8 @@ theme: /
         script:
             $context.session.AnswerCnt = 0;
         # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
-        # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
-        # a: подсказать дату последней оплаты или контакты поставщика услуг
+        a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
+        a: подсказать дату последней оплаты или контакты поставщика услуг
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}

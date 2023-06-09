@@ -23,6 +23,27 @@
         <timeout/>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
     </test-case>
+
+    <test-case id="test_AccountInput_NumbersPartCheck_1_01">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>10510</filterValue>
+          </parameters>
+          <response>
+          {"accountId":10510,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>сто пять десять мой лицевой счет</q>
+        <a>1- - 05- - 10. **д+альше**</a>
+        <q>это все</q>
+        <a>Номер Вашего лицевого счёта 1- - 05- - 10. Подождите</a>
+        <timeoutReply interval="1"/>
+        <timeout/>
+        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
+    </test-case>    
     
     <test-case id="test_AccountInput_NumbersPartCheck_2">
         <mockData>
