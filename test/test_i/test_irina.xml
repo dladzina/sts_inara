@@ -3,10 +3,7 @@
     # BOT-322
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно повторно отправить квитанцию</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -14,10 +11,7 @@
     # BOT-285
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>я хочу чтобы квитанция мне приходила на электронную почту</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -25,10 +19,7 @@
     # BOT-291
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>написано долг сто тридцать одна ну там сто тридцать одна девяносто четыре копейки но у меня никак не может быть</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -36,10 +27,7 @@
     # BOT-267
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>у меня большая задолженность я хотел узнать</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -47,10 +35,7 @@
     # BOT-294
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно узнать номер телефона по оплате холодной воды жетысуйский район</q>
         <a state="/SupplierContacts/SupplierContacts"/>
         <a state="/BlockAccountNumInput/AccountInput"/>
@@ -59,10 +44,7 @@
     # BOT-263
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>ошибка в счете асека</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -70,10 +52,7 @@
     # BOT-273
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>готовность отчета</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -81,10 +60,7 @@
     # BOT-379
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>подскажите телефон алеко</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -92,10 +68,7 @@
     # BOT-379
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>хочу перезаключить договор</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -103,10 +76,7 @@
     # BOT-379
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>хочу проверить задолженность</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -114,10 +84,7 @@
     # BOT-236
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>где можно дубликат квитанции получить</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -125,10 +92,7 @@
     # BOT-236
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне надо мне надо получить дубликат квитанцию</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -136,10 +100,7 @@
     # BOT-272
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>нам надо в квитанцию добавить строчку</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -147,10 +108,7 @@
     # BOT-321
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>по вопросу вывоза тбо с квитанции надо убрать</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -158,10 +116,7 @@
     # BOT-317
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>у меня произошла ошибка в квитанции</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -169,10 +124,7 @@
     # BOT-249
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>исчез счетчик холодной воды из квитанции</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -180,10 +132,7 @@
     # BOT-277
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>вам надо было поменять счетчик</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -191,10 +140,7 @@
     # BOT-258
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно</q>
         <a state="/Start/DialogMakeQuestion"/>
     </test-case>
@@ -202,10 +148,7 @@
     # BOT-307
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>здравствуйте можно вам передать показания счетчиков</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -363,5 +306,33 @@
         <a></a>
         <q>мне нужно переоформить квартиру</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я хотела спросить что мы поменяли адрес но мне приходит</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+
+    # BOT-246
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>все на оплату а то есть коммунальные курсу можете выслать на ватсап</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    # BOT-248
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>переплата за горячую воду а оплата выставили три пятьсот почему</q>
+        <a state="/NoMatch"/>
     </test-case>
 </test>

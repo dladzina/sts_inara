@@ -62,6 +62,9 @@
       }, {
         "entityName" : "Начисление",
         "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "квитанция",
+        "predicate" : "CONTAINS_NOT"
       } ]
     },
     "patterns" : [ ],
@@ -231,6 +234,15 @@
       "refs" : [ {
         "entityName" : "classRule_8213",
         "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "Услуга",
+        "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "Название_Долг",
+        "predicate" : "CONTAINS_NOT"
+      }, {
+        "entityName" : "classRule_7443",
+        "predicate" : "CONTAINS_NOT"
       } ]
     },
     "patterns" : [ "~добрый (~утро/~день/~вечер/~ночь)", "(здравствуй*/здрасти/здрасьте)" ],
@@ -367,6 +379,8 @@
       "text" : " нужно переоформить квартиру"
     }, {
       "text" : "необходимо изменить адрес"
+    }, {
+      "text" : "мы поменяли адрес но мне приходит"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -952,6 +966,8 @@
       "text" : "скажите поставщика услуг @Услуга"
     }, {
       "text" : "мне нужен номер телефона (@Услуга|@УслугаСл) района"
+    }, {
+      "text" : "нужен контакт отдела продаж"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1022,7 +1038,7 @@
     }, {
       "text" : "хочу узнать по льготам"
     }, {
-      "text" : "нужно подключить домофон"
+      "text" : "нужно подключить @Услуга"
     }, {
       "text" : "мне нужно поменять букву"
     }, {
@@ -1066,9 +1082,37 @@
     }, {
       "text" : "мне нужно узнать номер лицевого счета"
     }, {
-      "text" : "мне нужно подключить домофон"
+      "text" : "мне нужно подключить @Услуга"
     }, {
       "text" : "узнать о начислении"
+    }, {
+      "text" : "отключили свет"
+    }, {
+      "text" : "нет воды"
+    }, {
+      "text" : "отключили @Услуга"
+    }, {
+      "text" : "когда будет @Услуга"
+    }, {
+      "text" : "хочу видеонаблюдение"
+    }, {
+      "text" : "@Услуга нет уже долго"
+    }, {
+      "text" : "когда появится свет"
+    }, {
+      "text" : "когда дадут свет"
+    }, {
+      "text" : "до какого не будет воды"
+    }, {
+      "text" : "можете выслать на ватсап"
+    }, {
+      "text" : "переплата за @Услуга почему"
+    }, {
+      "text" : "переплата за @Услуга почему оплата выставлена"
+    }, {
+      "text" : "мне нужно узаконить точку"
+    }, {
+      "text" : "точку подключить еще одну"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1103,7 +1147,10 @@
       "text" : "можете повторить пожалуйста"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "classRule_6488",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -1145,6 +1192,10 @@
       "text" : "надо узнать как мне оплачивать квитанция не приходит по адресу"
     }, {
       "text" : " квитанция не приходит по адресу"
+    }, {
+      "text" : "не приходит счет "
+    }, {
+      "text" : "когда придет счет"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1499,6 +1550,8 @@
       "text" : "в квитанции неправильно указали объем квадратуру"
     }, {
       "text" : "пропала строка из квитанции"
+    }, {
+      "text" : "в @квитанция не указана оплата за @Услуга"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1574,7 +1627,7 @@
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
-      "text" : "хочу установить @Счетчик"
+      "text" : "установить @Счетчик"
     }, {
       "text" : "исчез @Счетчик в квитанции"
     }, {
@@ -2197,6 +2250,44 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "Начисление" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_7443",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "pattern",
+      "rule" : [ "(~вода/*телефон*)" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "classRule_6488",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : false,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : true
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "ладно" ],
       "value" : ""
     } ]
   } ],
