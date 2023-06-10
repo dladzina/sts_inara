@@ -94,7 +94,7 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
-        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        # log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -115,7 +115,7 @@ init:
             # return;
         }
         
-        log("step2");
+        # log("step2");
 
         // обработка фразы "да нужна повтори помедленней я записываю
         //log("$context.nluResults 2 = "  + toPrettyString( $context) );
@@ -133,7 +133,7 @@ init:
             }
                 
         }
-        log("step 3");
+        # log("step 3");
         //log("$context.nluResults 3 = "  + toPrettyString( $context.nluResults) );
         if($context.nluResults.intents.length > 2){
             if (($context.nluResults.intents[0].score < 0.35) && 
@@ -151,7 +151,7 @@ init:
         
         
         
-        log("step 4");
+        # log("step 4");
         // паттерн TotalPay должен иметь минимальный вес среди всех интентов
         if  ($context.nluResults.selected.clazz == "/PaymentTotal/PaymentQuestion" &&
             $context.nluResults.selected.ruleType == "pattern"){
@@ -167,12 +167,12 @@ init:
                 return;
             }
         }
-        log("step 5");
+        # log("step 5");
       // начало разговора - понижаем приоритет ее
         if  ($context.nluResults.selected.clazz == "/Start/DialogMakeQuestion" &&
             $context.nluResults.selected.score <0.65){
-                log("смотрим интент /Start/DialogMakeQuestion")
-                log("$context.nluResults DialogMakeQuestion = "  + toPrettyString( $context.nluResults) );
+                # log("смотрим интент /Start/DialogMakeQuestion")
+                # log("$context.nluResults DialogMakeQuestion = "  + toPrettyString( $context.nluResults) );
             if (
                     ($context.nluResults.intents.length > 0) && 
                     ($context.nluResults.intents[0].score > 0.35) && 
@@ -252,7 +252,6 @@ theme: /
             intent: /НачалоРазговора 
             script:
                 $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
-                log("last state = " + toPrettyString($session.lastState));
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
                 if ($session.lastState && !$session.lastState.startsWith("/Start")) {
                     $session.DialogMakeQuestion.repetition = 0;
@@ -260,8 +259,7 @@ theme: /
                     $session.DialogMakeQuestion.repetition = $session.DialogMakeQuestion.repetition || 0;
                 }
                 $session.DialogMakeQuestion.repetition += 1;
-                log("$session.DialogMakeQuestion.repetition = " + $session.DialogMakeQuestion.repetition)
-            if: $session.DialogMakeQuestion.repetition > 2
+            if: $session.DialogMakeQuestion.repetition >= 2
                 go!: /WhatDoYouWant
             else:
                 script:
