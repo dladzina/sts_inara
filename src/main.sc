@@ -107,10 +107,11 @@ init:
                 (($context.nluResults.selected.clazz.startsWith("/SupplierContacts/SupplierContacts"))
                 )
                 )){
-               $context.nluResults.selected = $context.nluResults.intents[0];
+                    log("ChangeToIntent1");
+                    $context.nluResults.selected = $context.nluResults.intents[0];
             }
             
-            //log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
+            # log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
             
             # return;
         }

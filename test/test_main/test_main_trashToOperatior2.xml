@@ -1,0 +1,49 @@
+<test>
+    <test-case id="double_bill_1">
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я недавно оплатила ком услуги почему мне опять выставили квитанцию</q>        
+        <a state="/NoMatch"></a>
+    </test-case>
+    <test-case id='double_bill_2'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Я только что заплатила за коммунальные услуги, почему я снова получаю счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_3'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Я недавно оплатила коммунальные услуги, почему мне снова пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_4'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>почему квитанция выставлена второй раз я только вчера платила</q>
+        <!--<a state='/NoMatch'></a>-->
+        <a state= "/PaymentTotal/PaymentQuestion"></a>
+        <a></a>
+    </test-case>
+    <test-case id='double_bill_5'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Я только что расплатилась за коммунальные услуги, почему мне снова выставили счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_6'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Я недавно заплатила за коммунальные услуги, почему мне снова отправили квитанцию</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_7'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Я только что оплатила коммунальные услуги, почему мне опять прислали счет</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_8'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Я недавно расплатилась за коммунальные услуги, почему мне опять пришла квитанция</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='double_bill_9'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Я недавно оплатила квитанцию, почему мне снова еще раз </q>
+        <a state='/NoMatch'></a>
+    </test-case>    
+</test>

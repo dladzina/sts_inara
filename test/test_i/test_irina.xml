@@ -211,10 +211,7 @@
     # BOT-303
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно чтоб казахтелеком вошел в квитанцию алсеко</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -222,10 +219,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно узнать номер лицевого счета</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -233,10 +227,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно узнать о начислении</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -244,10 +235,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>необходимо изменить адрес</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
@@ -255,10 +243,7 @@
     # BOT-374 +
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>как поменять фамилию</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
@@ -266,10 +251,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>вы знаете я платила два раза за один месяц</q>
         <a state="/PaymentTotal/PaymentQuestion"/>
         <a></a>
@@ -278,10 +260,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно подключить домофон</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -289,10 +268,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>помощники вообще мне нужно подключить домофон</q>
         <a state="/NoMatch"/>
     </test-case>
@@ -300,10 +276,7 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно переоформить квартиру</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
@@ -328,11 +301,34 @@
     # BOT-248
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>переплата за горячую воду а оплата выставили три пятьсот почему</q>
         <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-256
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я насчет коммунальных услуг у меня раньше было был прописан один человек я ее я его выписала уже два месяца а</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>
+    
+    # BOT-306
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>хочу узнать сроки оплаты китанции по какие числа и за какой месяц оплачивать</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+    </test-case>
+    
+    # BOT-306
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплата текущей квитанции это за какой месяц идет</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
     </test-case>
 </test>
