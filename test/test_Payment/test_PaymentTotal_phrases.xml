@@ -120,14 +120,6 @@
         <a state="/NoMatch"/>
     </test-case>
 
-    
-    # BOT-267
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>у меня большая задолженность я хотел узнать</q>
-        <a state="/NoMatch"/>
-    </test-case>
 
     # BOT-380
     

@@ -3,6 +3,10 @@
         <q>хочу узнать номер лицевого счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
+    <test-case id="NoMatch_Узнать_ЛС">
+        <q>мне надо узнать номер лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
 
     <test-case id="NoMatch_Долг">
         <q>откуда у меня долги в квитанции</q>
