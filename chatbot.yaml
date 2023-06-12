@@ -7,6 +7,7 @@ language: ru
 
 tests:
     include:
+        # - test_local_intents/*.xml
         # - test_SupplierContacts/test_SupplierContacts_all_dialog.xml
         # - test_main/test_main_trashToOperatior.xml
         # - test_main/test_main_bye_errors.xml
@@ -36,12 +37,12 @@ tests:
     #      - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
     #      - test_ChangeAccountPerson/test_global_ntents.xml
     exclude: 
-        - test_local_intents/test_soglasie_povtorit.xml
-        - test_local_intents/test_soglasie_prodictovat.xml
-        - test_local_intents/test_nesoglasie_prodictovat.xml
-        - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
-        - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount.xml 
-        - test_local_intents/test_nesoglasie_povtorit.xml
+        # - test_local_intents/test_soglasie_povtorit.xml
+        # - test_local_intents/test_soglasie_prodictovat.xml
+        # - test_local_intents/test_nesoglasie_prodictovat.xml
+        # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
+        # - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount.xml 
+        # - test_local_intents/test_nesoglasie_povtorit.xml
         # - test_AccountInput/test_AccountInput_NumbersCheckFull.xml
         - test_i/test_irina.xml
     #     - test_main/test_main.xml
