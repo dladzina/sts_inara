@@ -213,5 +213,20 @@
         <q>смена фамилии</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
-
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хотел узнать вот я оформил на себя квартиру</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>алло здравствуйте я хотел узнать вот я оформил на себя квартиру</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>    
 </test>
