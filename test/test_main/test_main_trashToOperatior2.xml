@@ -46,4 +46,16 @@
         <q>Я недавно оплатила квитанцию, почему мне снова еще раз </q>
         <a state='/NoMatch'></a>
     </test-case>    
+    
+    <test-case id='other_theme_1'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>не надо мне ничего менять</q>
+        <a state='/Start/DialogMakeQuestion'></a>
+        <q>мне нужно чтобы сделали изоляцию</q>
+        <a state='/NoMatch'></a>
+        <q>сделали мне проводку изоляцию не сделали вы что теперь думаете не та кого убьет и что</q>
+        <a state='/NoMatch'></a>
+        
+    </test-case>    
+    
 </test>
