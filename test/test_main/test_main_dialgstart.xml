@@ -38,10 +38,7 @@
 	</test-case>
 	<test-case>
     	<random>0</random>
-	    <q>/start</q>
-	    <a></a>
-	    <a></a>
-	    <a></a>
+	    <q>/start</q><a></a><a></a><a></a>
 	    <q>ну зачем мне это все рассказывать</q>
     	<a>Что вы хотите узнать?</a>
 	</test-case>
@@ -58,14 +55,37 @@
         <a state="/Start/DialogMakeQuestion"></a>
     </test-case>
     
+    # BOT-316
+    
     <test-case>
-        <random>0</random>
-        <q>/start</q>
-        <a state="/Start"></a>
-        <a state="/Start"></a>
-        <a state="/Start"></a>
-        <q>Понял.</q>
-        <a state="/Start/DialogMakeQuestion"></a>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>здравствуйте я хотела бы чтобы наш</q>
+        <a state="/Start/DialogMakeQuestion"/>
     </test-case>
+
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>вы</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>добрый день можно к вам такой вопрос</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+
+    # BOT-258
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
 	
 </test>

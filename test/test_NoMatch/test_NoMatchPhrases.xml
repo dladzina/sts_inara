@@ -3,6 +3,10 @@
         <q>хочу узнать номер лицевого счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
+    <test-case id="NoMatch_Узнать_ЛС">
+        <q>мне надо узнать номер лицевого счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
 
     <test-case id="NoMatch_Долг">
         <q>откуда у меня долги в квитанции</q>
@@ -11,6 +15,33 @@
     
     <test-case id="NoMatch_Дубликат">
         <q>получить дубликат счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id="NoMatch_Дубликат_01">
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>как получить дубликат счета</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="NoMatch_Дубликат_01">
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>мне нужно квитанцию</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+
+    <test-case id="NoMatch_Дубликат_01">
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>где можно получить квитанцию</q>
         <a state = "/NoMatch"></a>
     </test-case>
     
@@ -53,5 +84,39 @@
         <q>зачем вам номер лицевого счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
+    
+    # BOT-295
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хочу узнать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-378
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>трубку поднимите</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    # BOT-380
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>давайте на двадцать семь</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
 
 </test>

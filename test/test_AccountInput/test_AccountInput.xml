@@ -202,9 +202,7 @@
         <event>speechNotRecognized</event>
         <a>Не совсем поняла. Можете повторить, пожалуйста?</a>
         <q>четыреста тридцать шесть</q>
-        <a>Номер Вашего лицевого счёта 4- - 36. Поиск займет время.</a>
-        <a>Подождёте?</a>
-        <timeoutReply interval="1"/>
+        <a>4- - 36. **д+альше**</a>
     </test-case>      
     
     <test-case  id="лс_где_взять_1">
@@ -646,5 +644,12 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
     </test-case>    
 
+    # BOT-374
     
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно узнать номер лицевого счета</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
 </test>  

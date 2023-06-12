@@ -89,6 +89,7 @@ function GetAccountMainSupplNames(MainSuppList){
     }
     return return_str;
 }
+
 //-----------------------------------------------------------------
 // возвращает список всех основных поставщиков 
 function GetMainSupplNames(MainSuppList){
@@ -129,7 +130,7 @@ function GetAccountMainSupplNamesContracts(MainSuppList){
         $session.Account.MainSuppliers.forEach(function(elem, i){
             elem = elem.toLowerCase();
             var last = (i == ($session.Account.MainSuppliers.length-1)) && (i>1);
-            return_str = return_str + (return_str.length>0? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
+            return_str = return_str + (return_str.length > 0? ". ": " ") +(last? " или ": "")  + MainSuppList[elem].value.suppl_talk_name + " - " + MainSuppList[elem].value.talk_phone;
         });
         
     }

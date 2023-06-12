@@ -4,4 +4,10 @@
         <a state = "/SupplierContacts/SupplierContacts"></a>
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
+    
+    <test-case>
+        <q>скажите пожалуйста поставщика услуг электро</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
 </test>

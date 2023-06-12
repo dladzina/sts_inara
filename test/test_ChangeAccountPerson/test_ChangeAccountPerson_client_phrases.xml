@@ -1,55 +1,66 @@
 <test>
     <test-case id = "ChangeAccountPerson_1">
+        <q>/start</q><a></a><a></a><a></a>
         <q>поменять имя в лицевом счете</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
     
     <test-case id = "ChangeAccountPerson_2">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Мы приобрели квартиру и хотели бы получить лицевой счет на свое имя и расчеты согласно нынешней прописке</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
 
     <test-case id = "ChangeAccountPerson_3">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Я хотела поменять собственника в Алсеко</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
 
     <test-case id = "ChangeAccountPerson_4">
+        <q>/start</q><a></a><a></a><a></a>
         <q>я хотел узнать мы купили там квартиру теперь хотим лицевой счёт на себя переоформить как это лучше сделать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
 
     <test-case id = "ChangeAccountPerson_5">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Как можно поменять имя на квитанции</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
     
     <test-case id = "ChangeAccountPerson_6">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Как можно оформить счета с предыдущего владельца на своё имя</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
     
     <test-case id = "ChangeAccountPerson_7">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Счет приходит на старого хозяина, как поменять</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
 
     <test-case id = "ChangeAccountPerson_9">
+        <q>/start</q><a></a><a></a><a></a>
         <q>здравствуйте я приобрела квартиру и хотела бы изменить фамилию собственника как лучше мне это сделать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>    
     
     <test-case id = "ChangeAccountPerson_10">
+        <q>/start</q><a></a><a></a><a></a>
         <q>здравствуйте мне приходит квитанция на старого хозяина хочу чтобы на меня приходило</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>    
     
     <test-case id = "ChangeAccountPerson_11">
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>    
 
     <test-case id = "ChangeAccountPerson_12">
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>нет не онлайн</q>
@@ -61,6 +72,7 @@
     </test-case>    
 
     <test-case id = "ChangeAccountPerson_13">
+        <q>/start</q><a></a><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>да</q>
@@ -76,6 +88,7 @@
     </test-case>    
 
     <test-case id = "ChangeAccountPerson_14">
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне приходит квитанция на старого хозяина хочу чтобы приходило на меня как мне поменять фамилию</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>я хочу в офис приехать</q>
@@ -84,6 +97,7 @@
     </test-case>   
     
     <test-case id = "ChangeAccountPerson_15">
+        <q>/start</q><a></a><a></a><a></a>
         <q>алло девушка здравствуйте нам это нужно изменить вернее это фамилию это в этом в получателях</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
@@ -94,30 +108,36 @@
     <!--</test-case>   -->
     
     <test-case id = "ChangeAccountPerson_17">
+        <q>/start</q><a></a><a></a><a></a>
         <q>фамилию в квитанции поменять это что нужно сделать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
 
     <test-case id = "ChangeAccountPerson_18">
+        <q>/start</q><a></a><a></a><a></a>
         <q>подскажите как мне оформить квитанцию на себя я квартиру недавно купила вот теперь не знаю что делать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
 
     <test-case id = "ChangeAccountPerson_18">
+        <q>/start</q><a></a><a></a><a></a>
         <q>знаете я недавно купила квартиру хотела переоформить со старого владельца на себя как это лучше сделать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>   
     
     <test-case id = "ChangeAccountPerson_18">
+        <q>/start</q><a></a><a></a><a></a>
         <q>я купила новую квартиру мне нужно чтобы моя фамилия печаталась что мне нужно сделать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case> 
-        <test-case id = "ChangeAccountPerson_18">
+    <test-case id = "ChangeAccountPerson_18">
+        <q>/start</q><a></a><a></a><a></a>
         <q>подскажите как мне оформить квитанцию но себя я квартиру недавно купила вот теперь не знаю что делать</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case> 
 
     <test-case id = "ChangeAccountPerson_19">
+        <q>/start</q><a></a><a></a><a></a>
         <q>сменить собственника</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
         <q>через компьютер</q>
@@ -133,6 +153,7 @@
     </test-case>   
     
     <test-case id = "ChangeAccountPerson_20">
+        <q>/start</q><a></a><a></a><a></a>
         <q>сменить собственника онлайн</q>
         <a class="/ChangeAccountPerson/ChangeAccountPerson"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
@@ -142,6 +163,7 @@
     </test-case>    
 
     <test-case id = "ChangeAccountPerson_21">
+        <q>/start</q><a></a><a></a><a></a>
         <q>сменить собственника онлайн</q>
         <a class="/ChangeAccountPerson/ChangeAccountPerson"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
@@ -151,6 +173,7 @@
     </test-case>    
 
     <test-case id = "ChangeAccountPerson_22">
+        <q>/start</q><a></a><a></a><a></a>
         <q>сменить собственника онлайн</q>
         <a class="/ChangeAccountPerson/ChangeAccountPerson"/>
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Online"/>
@@ -159,11 +182,64 @@
         <a state="/repeat"/>
     </test-case>    
     <test-case>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне надо исправить фамилию в счете</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"></a>
     </test-case>
     <test-case>
+        <q>/start</q><a></a><a></a><a></a>
         <q> где я могу исправить фамилию</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"></a>
+    </test-case>    
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>необходимо изменить адрес</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+    # BOT-374 
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>как поменять фамилию</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно переоформить квартиру</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>изменение фамилии</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>смена фамилии</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хотел узнать вот я оформил на себя квартиру</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>алло здравствуйте я хотел узнать вот я оформил на себя квартиру</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>    
 </test>

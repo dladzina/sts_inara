@@ -75,7 +75,92 @@
         <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
+    
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>вы знаете я платила два раза за один месяц</q>
+        <a state="/PaymentTotal/PaymentQuestion"/>
+        <a></a>
+    </test-case>
 
+    # BOT-306
+    
+     <!--перенести в тест test_Payment / test_PaymentTotal_clientDialogs.xml-->
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплата текущей квитанции это за какой месяц идет</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>хочу узнать сроки оплаты китанции по какие числа и за какой месяц оплачивать</q>
+        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
+        <a>Назовите номер вашего лицевого счета</a>
+    </test-case>
+
+    # BOT-379
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>хочу проверить задолженность</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    
+    # BOT-291
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>написано долг сто тридцать одна ну там сто тридцать одна девяносто четыре копейки но у меня никак не может быть</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+
+    # BOT-380
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>долги алека сколько</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    
+    <test-case id='debt_info_1'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>коммунальные услуги как долги вот эти вот отрегулировать бог</q>
+        <a state='/NoMatch'></a>
+    </test-case>    
+        # BOT-380
+    
+    <test-case  id='debt_info_2'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>долги алека сколько</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    # BOT-267
+    
+    <test-case id='debt_info_3'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>у меня большая задолженность я хотел узнать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    # BOT-379
+    
+    <test-case id='debt_info_4'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>хочу проверить задолженность</q>
+        <a state="/NoMatch"/>
+    </test-case>    
 
 
 </test>

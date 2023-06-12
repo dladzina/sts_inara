@@ -56,6 +56,9 @@ init:
         if($context.request.query){
             $context.request.query = $context.request.query.replaceAll("два нуля","ноль ноль")
             $context.request.query = $context.request.query.replaceAll("два ноля","ноль ноль")
+            $context.request.query = $context.request.query.replaceAll("три ноля","ноль ноль ноль")
+            $context.request.query = $context.request.query.replaceAll("три нуля","ноль ноль ноль")
+            
         }
         //$context.request.query += " (клиент авторизован)";
     });
@@ -63,7 +66,7 @@ init:
     bind("postProcess", function($context) {
         $context.session.lastState = $context.currentState;
         //$context.session._lastState = $context.currentState;
-        // log("**********" + toPrettyString($context.currentState));
+        # log("**********" + toPrettyString($context.currentState));
         $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
         if ((!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
             && (!$context.session.lastState.startsWith("/Start/DialogMakeQuestion"))
@@ -91,7 +94,20 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
-        //log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        # log("$context 1 = "  + toPrettyString( $context ) );
+        # log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        
+        // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
+        // ошибка происходит, если говоришь - "четыре" (синоним хорошо) или "пять" (синоним отлично)
+        if (
+            $context.contextPath && 
+            $context.contextPath.startsWith("/BlockAccountNumInput/AccountInput/AccountInputNumber") &&
+            ($context.nluResults.selected.clazz == "/BlockAccountNumInput/AccountInput/AccountInputNumber/AccountInputNumberContinue")
+            )
+        {
+            return;
+        }
+        # log("step2");
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -101,14 +117,20 @@ init:
             ) {
                 // если правило - паттерн и приводит к интенту /SupplierContacts/SupplierContacts, то не меняем
             if (!($context.nluResults.selected.clazz && 
-                ($context.nluResults.selected.clazz.startsWith("/SupplierContacts/SupplierContacts")))){
-               $context.nluResults.selected = $context.nluResults.intents[0];
+                (($context.nluResults.selected.clazz.startsWith("/SupplierContacts/SupplierContacts"))
+                )
+                )){
+                    log("ChangeToIntent1");
+                    $context.nluResults.selected = $context.nluResults.intents[0];
             }
             
-            //log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
+            # log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
             
-            return;
+            # return;
         }
+        
+        # log("step2");
+
         // обработка фразы "да нужна повтори помедленней я записываю
         //log("$context.nluResults 2 = "  + toPrettyString( $context) );
         if($context.nluResults.intents.length > 1){
@@ -125,6 +147,7 @@ init:
             }
                 
         }
+        # log("step 3");
         //log("$context.nluResults 3 = "  + toPrettyString( $context.nluResults) );
         if($context.nluResults.intents.length > 2){
             if (($context.nluResults.intents[0].score < 0.35) && 
@@ -142,6 +165,7 @@ init:
         
         
         
+        # log("step 4");
         // паттерн TotalPay должен иметь минимальный вес среди всех интентов
         if  ($context.nluResults.selected.clazz == "/PaymentTotal/PaymentQuestion" &&
             $context.nluResults.selected.ruleType == "pattern"){
@@ -157,8 +181,37 @@ init:
                 return;
             }
         }
+        # log("step 5");
+      // начало разговора - понижаем приоритет ее
+        if  ($context.nluResults.selected.clazz == "/Start/DialogMakeQuestion" &&
+            $context.nluResults.selected.score <0.65){
+                # log("смотрим интент /Start/DialogMakeQuestion")
+                # log("$context.nluResults DialogMakeQuestion = "  + toPrettyString( $context.nluResults) );
+            if (
+                    ($context.nluResults.intents.length > 0) && 
+                    ($context.nluResults.intents[0].score > 0.35) && 
+                    $context.nluResults.intents[0].clazz &&
+                    // ($context.nluResults.intents[0].clazz != "/NoMatch"&&
+                    ($context.nluResults.intents[0].clazz != "/Start/DialogMakeQuestion")
+                )
+                {
+                $context.nluResults.selected = $context.nluResults.intents[0];
+                # log("$context.nluResults.selected TotalPayReplace = "  + toPrettyString( $context.nluResults.selected) );
+                
+                return;
+            }
+            else if (($context.nluResults.intents.length > 1) && 
+                    ($context.nluResults.intents[1].score > 0.35) && 
+                    $context.nluResults.intents[1].clazz &&
+                    // ($context.nluResults.intents[0].clazz != "/NoMatch"&&
+                    ($context.nluResults.intents[1].clazz != "/Start/DialogMakeQuestion")
+                )
+                {
+                    $context.nluResults.selected = $context.nluResults.intents[1];
+                }
+        }
+    }    
 
-    }
     );
     # bind("selectNLUResult", function($context) {
     #     // Получим все результаты от всех классификаторов в виде массива.
@@ -210,10 +263,22 @@ theme: /
              FindAccountNumberClear();
         
         state: DialogMakeQuestion
-            intent: /НачалоРазговора
+            intent: /НачалоРазговора 
             script:
-                $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
-            a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
+                $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
+                //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+                if ($session.lastState && !$session.lastState.startsWith("/Start")) {
+                    $session.DialogMakeQuestion.repetition = 0;
+                } else{
+                    $session.DialogMakeQuestion.repetition = $session.DialogMakeQuestion.repetition || 0;
+                }
+                $session.DialogMakeQuestion.repetition += 1;
+            if: $session.DialogMakeQuestion.repetition >= 2
+                go!: /WhatDoYouWant
+            else:
+                script:
+                    $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
+                a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
     state: Hello
         intent!: /привет
@@ -236,8 +301,13 @@ theme: /
         intent!: /РазноеНаОператора
         intent!:/Квитанция_Дубликат
         intent!:/Квитанция_Доставка
+        intent!:/Квитанция_электронка
+        intent!:/Квитанция_ошибка
+        intent!:/Квитанция_общее
         intent!:/Долги
         intent!:/Договорной
+        intent!:/контактыАлсеко
+        intent!:/Счетчики_общее
         go!: /NoMatch
 
     state: NoMatch || noContext = true

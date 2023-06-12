@@ -8,4 +8,13 @@
         <q>мне нужен адрес ваш</q>
         <a state = "/NoMatch"></a>
     </test-case>
+    
+    # BOT-379
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>подскажите телефон алеко</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
 </test>

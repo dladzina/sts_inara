@@ -415,5 +415,23 @@
               <a state = "/SupplierContacts/SupplierContacts/SupplierContactsSayContacts"></a>
               <a>Повторить?</a>
           </test-case>
+          
+        # BOT-294
+        
+        <test-case>
+            <q>/start</q><a></a><a></a><a></a>
+            <q>мне нужно узнать номер телефона по оплате холодной воды жетысуйский район</q>
+            <a state="/SupplierContacts/SupplierContacts"/>
+            <a state="/BlockAccountNumInput/AccountInput"/>
+        </test-case>
+
+        # BOT-316
+        
+        <test-case>
+            <q>/start</q><a></a><a></a><a></a>
+            <q>алло здравствуйте мне нужен контакт отдела продаж фика</q>
+            <a state="/NoMatch"/>
+        </test-case>
+
         
 </test>

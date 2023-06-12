@@ -191,23 +191,30 @@ theme: /BlockAccountNumInput
                 $temp.AccNum = "";
                 # log("блок ЛС цифры")
                 # log($session.AccountNumberContinue);
-                # if ($session.AccountNumberContinue)
-                #     $temp.AccNum = GetTempAccountNumber();
+                if ($session.AccountNumberContinue)
+                    $temp.AccNum = GetTempAccountNumber();
                 # log("ЛС временный = "+ toPrettyString($temp.AccNum))
-                # TrySetNumber($temp.AccNum + words_to_number($entities));
-                TrySetNumber(words_to_number($entities));
+                TrySetNumber($temp.AccNum + words_to_number($entities));
+                # TrySetNumber(words_to_number($entities));
                 # log(new Intl.NumberFormat('ru-RU', { style: 'decimal' }).format(GetTempAccountNumber()));
-            a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
-            a: Подождёте?
+            if: (GetTempAccountNumber().length) <= 5
+                a: {{AccountTalkNumber(GetTempAccountNumber())}}. **д+альше** || bargeInIf = AccountNumDecline
+                # go!: AccountInputNumberContinue
+            else
+                a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Поиск займет время. || bargeInIf = AccountNumDecline 
+                a: Подождёте?
+                script:
+                    $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
+                    $dialer.setNoInputTimeout(3000); // Бот ждёт ответ 1 секунду и начинает искать.
             script:
-                $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
-                $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
                 $dialer.bargeInResponse({
                     //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
                     bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
                     bargeInTrigger: "interim",
                     //bargeInTrigger: "final",
-                    noInterruptTime: 1500});
+                    // noInterruptTime: 1500
+                    noInterruptTime: 0
+                    });
             state: BargeInIntent || noContext = true
                 event: bargeInIntent
                 script:
@@ -219,21 +226,108 @@ theme: /BlockAccountNumInput
                     if (res) {
                         $dialer.bargeInInterrupt(true);
                     }
-                    # var res = $nlp.matchPatterns(text,["$Number"])
+                    var res = $nlp.matchPatterns(text,["$Number"])
         
-                    # if (res) {
-                    #     $session.AccountNumberContinue = true;
-                    #     $dialer.bargeInInterrupt(true);
-                    # }
+                    if (res) {
+                        $session.AccountNumberContinue = true;
+                        $dialer.bargeInInterrupt(true);
+                    }
+                    
+                    
+            state: AccountInputNumberContinue
+                q: * $numbers *
+                q: * @duckling.number *
+                script:                
+                    $temp.AccNum = "";
+                    # log("блок ЛС цифры")
+                    # log($session.AccountNumberContinue);
+                    # if ($session.AccountNumberContinue)
+                    $temp.AccNum = GetTempAccountNumber();
+                    $temp.CurrentNum = words_to_number($entities);
+                    # log("ЛС временный = "+ toPrettyString($temp.AccNum))
+                    TrySetNumber($temp.AccNum + $temp.CurrentNum);
+                a:
+                    {{AccountTalkNumber($temp.CurrentNum)}}
+                random:
+                    a: **д+альше**
+                    # a: Так
+                    a: **продолж+айте**
+                script:
+                    # $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
+                    # $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                    $dialer.bargeInResponse({
+                        //bargeIn: "phrase", // при перебивании бот договаривает текущую фразу до конца, а затем прерывается.
+                        bargeIn: "forced", // forced — при перебивании бот прерывается сразу, не договаривая текущую фразу до конца.
+                        bargeInTrigger: "interim",
+                        //bargeInTrigger: "final",
+                        // noInterruptTime: 1500
+                        noInterruptTime: 0
+                        });
 
+                state: AccountInputNumberContinueNo
+                    q: $no
+                    q: $disagree
+                    q: * ($no/$disagree) * @duckling.number *
+                    intent: /Несогласие
+                    if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
+                        a: Дав+айте начнём снач+ала
+                    go!: /BlockAccountNumInput/AccountInput
+
+                state: AccountInputNumberContinueNoSpeech
+                    event: speechNotRecognized
+                    script:
+                        $session.speechNotRecognized = $session.speechNotRecognized || {};
+                        # log($session.lastState);
+                        //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+                        if ($session.lastState && !$session.lastState.startsWith("/BlockAccountNumInput/AccountInput/AccountInputNumber/AccountInputNumberContinue/AccountInputNumberContinueNoSpeech")) {
+                            $session.speechNotRecognized.repetitionNumCont = 0;
+                        } else{
+                            $session.speechNotRecognized.repetitionNumCont = $session.speechNotRecognized.repetitionNumCont || 0;
+                        }
+                        $session.speechNotRecognized.repetitionNumCont += 1;
+                    if: $session.speechNotRecognized.repetitionNumCont > 3
+                        a: К+ажется, пробл+емы со св+язью. Перезвон+ите поздн+ей
+                        script:
+                            $dialer.hangUp();
+                    else:
+                        random:
+                            a: алл+о? говор+ите д+альше
+                            a: алл+о? продолж+айте
+                            
+                state: AccountInputNumberComplete
+                    q: все 
+                    intent: /ЛС_цифры_закончились
+                    a: Номер Вашего лицевого счёта {{AccountTalkNumber(GetTempAccountNumber())}}. Подождите 
+                    script:
+                        $reactions.timeout({interval: '1s', targetState: '../../FindAccount'});
+                        $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+                    
+                    # go!: ../../FindAccount
+                    state: AccountInputNumberCompleteNoSpeech
+                        event: speechNotRecognized
+                        go!: ../../../FindAccount
+
+
+            state: AccountInputNumberNumComplete
+                intent: /ЛС_цифры_закончились
+                go!: ../AccountInputNumberContinue/AccountInputNumberComplete
+                
+                
             state: AccountInputNumberYes
                 q: $yes
                 q: $agree
                 intent: /Согласие
                 intent: /Согласие_подожду
-                event: speechNotRecognized
                 event: noMatch
                 go!: ../FindAccount
+
+            state: AccountInputNumberNoRecognize
+                event: speechNotRecognized
+                if: (GetTempAccountNumber().length) <= 4
+                    go!: ../AccountInputNumberContinue/AccountInputNumberContinueNoSpeech
+                else:
+                    go!: ../FindAccount
+
 
             state: AccountInputNumberNo
                 q: $no
@@ -250,25 +344,35 @@ theme: /BlockAccountNumInput
             state: FindAccount
                 script: 
                     TrySetNumber(GetTempAccountNumber());
-
-                    FindAccountAddress().then(function(res) {
-                        //log(toPrettyString(res));
-                        if (res && res.accountId) {
-                            //log(res.data[0].address_full_name);
-                            $session.Account.Address = res.fullAddressName;
-                            // $session.Account.Address = res.data[0].address_full_name;
-                            $reactions.transition('../AccountAddressConfirm')
-                            $session.Account.AddressRepeatCount = 0;
-                        } else {
-                            $session.Account.Address = "";
+                    
+                    try{
+                        FindAccountAddress().then(function(res) {
+                            //log(toPrettyString(res));
+                            if (res && res.accountId) {
+                                //log(res.data[0].address_full_name);
+                                $session.Account.Address = res.fullAddressName;
+                                // $session.Account.Address = res.data[0].address_full_name;
+                                $reactions.transition('../AccountAddressConfirm')
+                                $session.Account.AddressRepeatCount = 0;
+                            } else {
+                                $session.Account.Address = "";
+                                $reactions.transition('../AccountNotFound');
+                            }
+                        }).catch(function(e) {
+                            $reactions.answer("Что-то сервер барахлит. ");
                             $reactions.transition('../AccountNotFound');
-                        }
-                    }).catch(function(e) {
-                        $reactions.answer("Что-то сервер барахлит. ");
-                        $reactions.transition('../AccountNotFound')
-                        SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ' + toPrettyString(e))
-
-                    });
+                            SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ')// + toPrettyString(e)
+    
+                        });
+                    }            
+                    catch(e){
+                        //$reactions.answer("Что-то сервер барахлит. ");
+                        $reactions.answer("Произошла ошибка");
+                        $reactions.transition('../AccountNotFound');
+                        SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress 2')// + toPrettyString(e)
+                        return false;
+                    };
+                    
                         
 
             state: AccountAddressConfirm
