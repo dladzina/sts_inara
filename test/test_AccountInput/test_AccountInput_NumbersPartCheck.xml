@@ -130,7 +130,7 @@
         <event>speechNotRecognized</event>
         <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
     </test-case>      
-    <test-case id="test_AccountInput_NumbersPartCheck_2_02">
+    <test-case id="test_AccountInput_NumbersPartCheck_speechNotRecognized_01">
         <mockData>
           <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
           <parameters>
@@ -151,6 +151,27 @@
         <event>speechNotRecognized</event>
         <a>алл+о? говор+ите д+альше</a>
         <event>speechNotRecognized</event>
+        <a>К+ажется, пробл+емы со св+язью. Перезвон+ите поздн+ей</a>
+    </test-case>     
+    <test-case id="test_AccountInput_NumbersPartCheck_speechNotRecognized_02">
+        <mockData>
+          <query method="get">https://inara.alseco.kz/api/accounts/${filterValue}/address</query>
+          <parameters>
+            <filterValue>54471</filterValue>
+          </parameters>
+          <response>
+          {"accountId":54471,"regionName":"город Алматы","townName":"","districtName":"микрорайон \"Алмагуль\"","streetName":"","houseName":"дом 15","flatName":"квартира 20","fullAddressName":"микрорайон \"Алмагуль\", дом 15, квартира 21"}
+          </response>
+        </mockData>        
+        <q>последний платеж</q>
+        <a></a>
+        <q>пять сорок четыре</q>
+        <a>5- - 44. **д+альше**</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
         <a>алл+о? говор+ите д+альше</a>
         <q>семьдесят один</q>
         <a>71</a>
@@ -159,13 +180,16 @@
         <a>алл+о? говор+ите д+альше</a>
         <event>speechNotRecognized</event>
         <a>алл+о? говор+ите д+альше</a>
-        <q>все</q>
-        <a>Номер Вашего лицевого счёта 5- - 44- - 71. Подождите</a>
-        <timeoutReply interval="1"/>
         <event>speechNotRecognized</event>
-        <a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>
-    </test-case>     
-
+        <a>алл+о? говор+ите д+альше</a>
+        <event>speechNotRecognized</event>
+        <a>К+ажется, пробл+емы со св+язью. Перезвон+ите поздн+ей</a>
+        <!--<q>все</q>-->
+        <!--<a>Номер Вашего лицевого счёта 5- - 44- - 71. Подождите</a>-->
+        <!--<timeoutReply interval="1"/>-->
+        <!--<event>speechNotRecognized</event>-->
+        <!--<a>Ваш адрес микрорайон "Алмагуль", дом 15, квартира 21. Верно?</a>-->
+    </test-case>
 <!--**********************************************************************-->
 <!--проверяем фразы, которыми говорим цифры-->
     <test-case id="test_AccountInput_NumbersPartCheck_phrases_1">

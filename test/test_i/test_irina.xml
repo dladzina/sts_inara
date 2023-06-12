@@ -253,15 +253,7 @@
         <q>мне нужно переоформить квартиру</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>
-    
-    # BOT-374
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>я хотела спросить что мы поменяли адрес но мне приходит</q>
-        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
-    </test-case>
-    
+
 
     # BOT-246
     

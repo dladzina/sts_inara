@@ -275,9 +275,25 @@ theme: /BlockAccountNumInput
 
                 state: AccountInputNumberContinueNoSpeech
                     event: speechNotRecognized
-                    random:
-                        a: алл+о? говор+ите д+альше
-                        a: алл+о? продолж+айте
+                    script:
+                        $session.speechNotRecognized = $session.speechNotRecognized || {};
+                        # log($session.lastState);
+                        //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
+                        if ($session.lastState && !$session.lastState.startsWith("/BlockAccountNumInput/AccountInput/AccountInputNumber/AccountInputNumberContinue/AccountInputNumberContinueNoSpeech")) {
+                            $session.speechNotRecognized.repetitionNumCont = 0;
+                        } else{
+                            $session.speechNotRecognized.repetitionNumCont = $session.speechNotRecognized.repetitionNumCont || 0;
+                        }
+                        $session.speechNotRecognized.repetitionNumCont += 1;
+                    if: $session.speechNotRecognized.repetitionNumCont > 3
+                        a: К+ажется, пробл+емы со св+язью. Перезвон+ите поздн+ей
+                        script:
+                            $dialer.hangUp();
+                    else:
+                        random:
+                            a: алл+о? говор+ите д+альше
+                            a: алл+о? продолж+айте
+                            
                 state: AccountInputNumberComplete
                     q: все 
                     intent: /ЛС_цифры_закончились
