@@ -23,6 +23,12 @@
         <a state="/NoMatch"/>
     </test-case> 
 
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>приходит счет за квитанцию в квартиру в которой</q>
+        <a state="/NoMatch"/>
+    </test-case> 
     # BOT-236
     
     <test-case>

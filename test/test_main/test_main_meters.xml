@@ -192,9 +192,9 @@
     <test-case id='meter_from_customers_34'>
         <q>/start</q><a></a><a></a><a></a>
         <q>нужно запломбировать счетчики</q>
-        <!--<a state='/NoMatch'></a>-->
-        <a state="/SupplierContacts/SupplierContacts"/>
-        <a state="/BlockAccountNumInput/AccountInput"/>
+        <a state='/NoMatch'></a>
+        <!--<a state="/SupplierContacts/SupplierContacts"/>-->
+        <!--<a state="/BlockAccountNumInput/AccountInput"/>-->
     </test-case>
     <test-case id='meter_from_customers_35'>
         <q>/start</q><a></a><a></a><a></a>
@@ -246,8 +246,9 @@
     <test-case id='meter_from_customers_44'>
         <q>/start</q><a></a><a></a><a></a>
         <q>здравствуйте мне надо знать показания счетчика когда мы последний раз платили</q>
-        <a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>
-        <a>Назовите номер вашего лицевого счета</a>
+        <a state='/NoMatch'></a>
+        <!--<a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>-->
+        <!--<a>Назовите номер вашего лицевого счета</a>-->
     </test-case>
     <test-case id='meter_from_customers_45'>
         <q>/start</q><a></a><a></a><a></a>
