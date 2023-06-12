@@ -84,5 +84,42 @@
         <q>информация квитанции</q>
         <a state="/NoMatch"/>
     </test-case>
+    
+    <!--информация по льготам-->
+    <test-case id='service_discount_1'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я хочу узнать по льготам по инвалидности</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_2'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>ну я имею ввиду если это там ранение стяжки телесные повреждения если например это ну как там там примерки то там это льготы</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_3'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я обращаюсь по вопросу я пенсионер мне нужна адресную справку вам отправить чтобы мне как пенсионеру там льготы на мусор и</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_4'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>положены ли льготы инвалиды третьей группы по снижению коммунальных услуг</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_5'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>имеются ли льготы для инвалидов третьей группы по снижению оплаты за коммунальные услуги</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_6'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я хотела бы узнать льготы для инвалидов первой группы</q>
+        <a state='/NoMatch'></a>
+    </test-case>
+    <test-case id='service_discount_7'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно узнать какие льготы предоставляются для инвалидов первой группы</q>
+        <a state='/NoMatch'></a>
+    </test-case>
 
 </test>
