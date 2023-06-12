@@ -58,4 +58,21 @@
         
     </test-case>    
     
+    # BOT-273
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>готовность отчета</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-379
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>хочу перезаключить договор</q>
+        <a state="/NoMatch"/>
+    </test-case>
+            
+
 </test>

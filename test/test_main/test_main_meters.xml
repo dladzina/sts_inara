@@ -264,4 +264,20 @@
         <q>мне нужно перенести счетчик</q>
         <a state='/NoMatch'></a>
     </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>здравствуйте можно вам передать показания счетчиков</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    
+    # BOT-277
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>вам надо было поменять счетчик</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
 </test>

@@ -111,6 +111,20 @@
         <q>можете повторить пожалуйста</q>
         <a state="/repeat"></a>
     </test-case>
-
+    # BOT-256
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я насчет коммунальных услуг у меня раньше было был прописан один человек я ее я его выписала уже два месяца а</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>
+    
+    # BOT-256
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я насчет коммунальных услуг у меня раньше было был прописан один человек я ее я его выписала уже два месяца а почему то у меня в коммунальные услуги когда квитанцию я получаю написано количество людей два хотя я одна живу и плачу за</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>
 
 </test>

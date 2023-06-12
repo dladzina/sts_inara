@@ -24,13 +24,7 @@
         <a state="/NoMatch"/>
     </test-case>
     
-    # BOT-267
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>у меня большая задолженность я хотел узнать</q>
-        <a state="/NoMatch"/>
-    </test-case>
+
     
     # BOT-294
     
@@ -73,13 +67,7 @@
         <a state="/NoMatch"/>
     </test-case>
     
-    # BOT-379
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>хочу проверить задолженность</q>
-        <a state="/NoMatch"/>
-    </test-case>
+
     
     # BOT-236
     
@@ -180,16 +168,7 @@
         <a state="/NoMatch"/>
     </test-case>
     
-    # BOT-380
-    
-    <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
-        <q>долги алека сколько</q>
-        <a state="/NoMatch"/>
-    </test-case>
+
     
     # BOT-289
     
@@ -300,27 +279,70 @@
         <a state="/NoMatch"/>
     </test-case>
     
-    # BOT-256
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>я насчет коммунальных услуг у меня раньше было был прописан один человек я ее я его выписала уже два месяца а</q>
-        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
-    </test-case>
-    
-    # BOT-256
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>я насчет коммунальных услуг у меня раньше было был прописан один человек я ее я его выписала уже два месяца а почему то у меня в коммунальные услуги когда квитанцию я получаю написано количество людей два хотя я одна живу и плачу за</q>
-        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
-    </test-case>
+
     
     # BOT-282
     
     <test-case>
         <q>/start</q><a></a><a></a><a></a>
         <q>канализация горячей воды квитанции сильно подорожала то было двадцать пять восемь семь а сейчас двести девяносто восемь восемьдесят два может быть отпечаток</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>вы</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>алло здравствуйте мне нужен контакт отдела продаж фика</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>добрый день можно к вам такой вопрос</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>здравствуйте вот не приходит счет все када вот</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>здравствуйте я хотела бы чтобы наш</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>отключили свет</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>света нет</q>
         <a state="/NoMatch"/>
     </test-case>
     

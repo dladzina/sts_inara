@@ -80,5 +80,39 @@
         <q>зачем вам номер лицевого счета</q>
         <a state = "/NoMatch"></a>
     </test-case>
+    
+    # BOT-295
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хочу узнать</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-378
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>трубку поднимите</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
+    # BOT-380
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>давайте на двадцать семь</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
 
 </test>

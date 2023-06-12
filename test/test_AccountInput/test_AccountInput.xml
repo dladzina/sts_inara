@@ -644,5 +644,12 @@
         <a state="/ChangeAccountPerson/ChangeAccountPerson/Offline/Suppliers_List_Info/Yes_Suppliers_List/Contacts"/>
     </test-case>    
 
+    # BOT-374
     
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно узнать номер лицевого счета</q>
+        <a state="/NoMatch"/>
+    </test-case>
+
 </test>  

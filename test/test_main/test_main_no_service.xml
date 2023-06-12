@@ -167,9 +167,43 @@
     </test-case>
     
     # BOT-249
-    <test-case>
+    <test-case id='no_service_hello_34'>
         <q>/start</q><a></a><a></a><a></a>
         <q>исчез счетчик холодной воды из квитанции</q>
         <a state="/NoMatch"/>
     </test-case>    
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно подключить домофон</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-374
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>помощники вообще мне нужно подключить домофон</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>отключили свет</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>света нет</q>
+        <a state="/NoMatch"/>
+    </test-case>    
+
+
 </test>

@@ -66,7 +66,7 @@ init:
     bind("postProcess", function($context) {
         $context.session.lastState = $context.currentState;
         //$context.session._lastState = $context.currentState;
-        // log("**********" + toPrettyString($context.currentState));
+        # log("**********" + toPrettyString($context.currentState));
         $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
         if ((!$context.session.lastState.startsWith("/speechNotRecognizedGlobal"))
             && (!$context.session.lastState.startsWith("/Start/DialogMakeQuestion"))
@@ -94,7 +94,20 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
+        # log("$context 1 = "  + toPrettyString( $context ) );
         # log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        
+        // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
+        // ошибка происходит, если говоришь - "четыре" (синоним хорошо) или "пять" (синоним отлично)
+        if (
+            $context.contextPath && 
+            $context.contextPath.startsWith("/BlockAccountNumInput/AccountInput/AccountInputNumber") &&
+            ($context.nluResults.selected.clazz == "/BlockAccountNumInput/AccountInput/AccountInputNumber/AccountInputNumberContinue")
+            )
+        {
+            return;
+        }
+        # log("step2");
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 

@@ -7,6 +7,7 @@ language: ru
 
 tests:
     include:
+        # - test_main/test_main_bye_errors.xml
         # - test_main/test_main_meters.xml
         # - test_main/test_main_no_service.xml
         # - test_i/test_irina.xml
@@ -39,7 +40,7 @@ tests:
         - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount.xml 
         - test_local_intents/test_nesoglasie_povtorit.xml
         # - test_AccountInput/test_AccountInput_NumbersCheckFull.xml
-        #- test_i/test_irina.xml
+        - test_i/test_irina.xml
     #     - test_main/test_main.xml
     #     - test_local_intents/test_soglasie_pomoch.xml
     #      - test/test_Payment/*

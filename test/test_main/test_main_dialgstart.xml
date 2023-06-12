@@ -55,5 +55,37 @@
         <a state="/Start/DialogMakeQuestion"></a>
     </test-case>
     
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>здравствуйте я хотела бы чтобы наш</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>вы</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+
+    # BOT-316
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>добрый день можно к вам такой вопрос</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+
+    # BOT-258
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>
+    
 	
 </test>
