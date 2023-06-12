@@ -7,6 +7,7 @@ language: ru
 
 tests:
     include:
+        # - test_SupplierContacts/test_SupplierContacts_all_dialog.xml
         # - test_main/test_main_trashToOperatior.xml
         # - test_main/test_main_bye_errors.xml
         # - test_main/test_main_meters.xml
