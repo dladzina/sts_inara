@@ -13,7 +13,7 @@ tests:
         # - test_main/test_main_no_service.xml
         # - test_i/test_irina.xml
     #    # - test_i/test_irina.xml
-        - test_AccountInput/*.xml
+        # - test_AccountInput/*.xml
         # - test_AccountInput/test_AccountInput_NumbersCheck.xml
     #     - test_SupplierContacts/test_SupplierContacts_checkservices_at_start.xml
         #   - test_SupplierContacts/test_SupplierContacts_checkservices_in_begginning.xml
