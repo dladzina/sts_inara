@@ -1,5 +1,6 @@
 <test>
     <test-case id = "ChangeAccountPersonCount_1">
+        <q>/start</q><a></a><a></a><a></a>
         <q>хочу уменьшить количество людей в квитанции до 3-х человек. папа недавно выехал</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
         <q>нет не онлайн</q>
@@ -9,31 +10,37 @@
     </test-case>    
 
     <test-case id = "ChangeAccountPersonCount_2">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Как изменить число проживающих в квартире</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>    
     
     <test-case id = "ChangeAccountPersonCount_3">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Мне нужно исключить из квитанции двух человек. как это сделать?</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>    
 
     <test-case id = "ChangeAccountPersonCount_4">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Мне надо уменьшить количество людей в квитанции</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>    
 
     <test-case id = "ChangeAccountPersonCount_5">
+        <q>/start</q><a></a><a></a><a></a>
         <q>у меня количество людей изменилось. Куда можно обратиться чтобы мне поменять количество людей </q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>    
 
     <test-case id = "ChangeAccountPersonCount_5">
+        <q>/start</q><a></a><a></a><a></a>
         <q>Как можно убрать из квитанции человека, который выписался давно</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>    
 
     <test-case id = "ChangeAccountPersonCount_5">
+        <q>/start</q><a></a><a></a><a></a>
         <q>теперь надо вот убрать меня да одного человека нужно исключить чтобы этот квартплата приходила на троих</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>    
@@ -44,6 +51,7 @@
     <!--</test-case>    -->
 
     <test-case id = "ChangeAccountPersonCount_6">
+        <q>/start</q><a></a><a></a><a></a>
         <q>хочу увеличить количество человек в квитанции. платить надо поменьше</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
         <q>да</q>
@@ -57,6 +65,7 @@
     </test-case>   
 
     <test-case id = "ChangeAccountPersonCount_7">
+        <q>/start</q><a></a><a></a><a></a>
         <q>хочу увеличить количество человек в квитанции. платить надо поменьше</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
         <q>я хочу в офис приехать</q>
@@ -88,6 +97,7 @@
     <!--    <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>-->
     <!--</test-case>-->
     <test-case>
+        <q>/start</q><a></a><a></a><a></a>
         <q>у меня изменилась количество</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
         <q>да</q>
@@ -102,6 +112,7 @@
 
 <!--id сессии 71c8f0ae-93b1-4836-80fb-20326b5c5673-->
     <test-case>
+        <q>/start</q><a></a><a></a><a></a>
         <q>как поменять количество проживающих человек в квитанциях</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
         <q>да да</q>

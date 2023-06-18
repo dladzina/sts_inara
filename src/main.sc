@@ -95,7 +95,7 @@ init:
     function($context) {
         
         # log("$context 1 = "  + toPrettyString( $context ) );
-        # log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         
         // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
         // ошибка происходит, если говоришь - "четыре" (синоним хорошо) или "пять" (синоним отлично)
@@ -107,7 +107,19 @@ init:
         {
             return;
         }
-        # log("step2");
+        // для начала диалога 
+        // если что-то прописано в паттерне, то оставляем приоритет за ним 
+        // требования к паттернам - только нужные слова, без всяких звездочек и т.п. 
+        if (
+            $context.contextPath && 
+            $context.contextPath.startsWith("/Start") &&
+            ($context.nluResults.selected.ruleType == "pattern") &&
+            ($context.nluResults.selected.clazz == "/Start/DialogMakeQuestion")
+            )
+        {
+            return;
+        }
+        log("step2");
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -117,10 +129,10 @@ init:
             ) {
                 // если правило - паттерн и приводит к интенту /SupplierContacts/SupplierContacts, то не меняем
             if (!($context.nluResults.selected.clazz && 
-                (($context.nluResults.selected.clazz.startsWith("/SupplierContacts/SupplierContacts"))
+                (($context.nluResults.selected.clazz.startsWith( "/SupplierContacts/SupplierContacts"))
                 )
                 )){
-                    log("ChangeToIntent1");
+                    # log("ChangeToIntent1");
                     $context.nluResults.selected = $context.nluResults.intents[0];
             }
             
@@ -264,6 +276,8 @@ theme: /
         
         state: DialogMakeQuestion
             intent: /НачалоРазговора 
+        # // требования к паттернам - только нужные слова, без всяких звездочек и т.п. 
+            q: девушка
             script:
                 $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.

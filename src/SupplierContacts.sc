@@ -131,14 +131,17 @@ theme: /SupplierContacts
                 a: у меня нет нужного телефона. перевожу звонок на оператора. 
                 go!: /CallTheOperator
             intent: /Согласие || toState = "."
+            intent: /Согласие_продиктовать_список_поставщиков || toState = "."
             intent: /Согласие_повторить || toState = "."
+            intent: /Повторить || toState = "."
             intent: /Несогласие || toState = "../CanIHelpYou"
             intent: /Несогласие_повторить || toState = "../CanIHelpYou"
+            q: * @duckling.number * || toState = "."
             q: * @Услуга * || toState = ".."
             q: * @УслугаСл * || toState = ".."
 
         
-        state: CanIHelpYou 
+        state: CanIHelpYou ||noContext = true
             # CommonAnswers
             script:
                 $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
@@ -151,6 +154,12 @@ theme: /SupplierContacts
                 intent: /Согласие
                 intent: /Согласие_помочь
                 go!: /WhatDoYouWant
+            
+            state: Repeat
+                intent: /Согласие_продиктовать_список_поставщиков
+                intent: /Согласие_повторить
+                intent: /Повторить
+                go!: ../../SupplierContactsSayContacts
                 
             state: CanIHelpYouDisagree
                 q: $no

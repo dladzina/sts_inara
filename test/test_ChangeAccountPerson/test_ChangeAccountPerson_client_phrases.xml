@@ -242,4 +242,10 @@
         <q>алло здравствуйте я хотел узнать вот я оформил на себя квартиру</q>
         <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
     </test-case>    
+    <test-case id='change_person_70'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>по поводу поставки постановки на учет договора лицевого счета получить лицевой счет на квартиру</q>
+        <a state='/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
+    
 </test>
