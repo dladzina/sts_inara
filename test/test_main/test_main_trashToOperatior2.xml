@@ -135,6 +135,11 @@
     </test-case>
 
 
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+		<q>девушка мне надо насчет квитанции узнать</q>
+		<a state="/NoMatch"></a>
+    </test-case>
     
 
 </test>
