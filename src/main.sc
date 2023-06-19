@@ -94,7 +94,7 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
-        # log("$context 1 = "  + toPrettyString( $context ) );
+        log("$context 1 = "  + toPrettyString( $context ) );
         log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         
         // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
@@ -322,6 +322,7 @@ theme: /
         intent!:/Договорной
         intent!:/контактыАлсеко
         intent!:/Счетчики_общее
+        intent!:/Начисления_общее
         go!: /NoMatch
 
     state: NoMatch || noContext = true

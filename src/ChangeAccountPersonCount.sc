@@ -1,5 +1,22 @@
 theme: /ChangeAccountPersonCount
     
+    state: ChangeAccountPersonCountToChange
+        q!: * прописано * @duckling.number * [~человек] *
+        a: В+ы хот+ите помен+ять кол+ичество челов+ек **в квит+анции**. Верно?
+        state: ChangeAccountPersonCountToChangeConfirm
+            q: $yes
+            q: $agree
+            intent: /Согласие
+            go!: /ChangeAccountPersonCount/ChangeAccountPersonCount
+            
+        state: ChangeAccountPersonCountToChangeDecline    
+            q: $no 
+            q: $disagree 
+            intent: /Несогласие
+            intent: /AnotherQuestion
+            a: Наверное, я неправильно Вас поняла. Можете задать свой вопрос по другому?
+            go!:/WhatDoYouWant
+        
     state: ChangeAccountPersonCount
         intent!: /ChangeAccountPersonCount
         a: Изменить количество проживающих можно в офисе или онлайн. Вы хотите подать заявку онлайн?
@@ -140,6 +157,10 @@ theme: /ChangeAccountPersonCount
             script:
                 $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
             a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
+            
+            state: CanIHelpYouRepeat
+                intent: /Повторить
+                go!: /repeat            
             
             state: CanIHelpYouAgree
                 q: $yes

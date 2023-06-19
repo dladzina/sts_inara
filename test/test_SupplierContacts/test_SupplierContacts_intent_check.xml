@@ -12,4 +12,32 @@
         <a state = "/SupplierContacts/SupplierContacts"></a>
         <a state = "/BlockAccountNumInput/AccountInput"></a>
     </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>подскажите пожалуйста телефон по горячей воде</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>контакты по воде</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>контакты то карасу по воде</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>холодная вода то карасу</q>
+        <a state = "/SupplierContacts/SupplierContacts"></a>
+        <a state = "/BlockAccountNumInput/AccountInput"></a>
+    </test-case>
 </test>

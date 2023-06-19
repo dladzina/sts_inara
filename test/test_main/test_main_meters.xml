@@ -239,9 +239,9 @@
     <test-case id='meter_from_customers_43'>
         <q>/start</q><a></a><a></a><a></a>
         <q>нам нужно посчитать этот счетчик короче у нас новый счетчик</q>
-        <!--<a state='/NoMatch'></a>-->
-        <a state="/SupplierContacts/SupplierContacts"/>
-        <a state="/BlockAccountNumInput/AccountInput"/>
+        <a state='/NoMatch'></a>
+        <!--<a state="/SupplierContacts/SupplierContacts"/>-->
+        <!--<a state="/BlockAccountNumInput/AccountInput"/>-->
     </test-case>
     <test-case id='meter_from_customers_44'>
         <q>/start</q><a></a><a></a><a></a>
@@ -266,7 +266,7 @@
         <a state='/NoMatch'></a>
     </test-case>
     
-    <test-case>
+    <test-case id='meter_from_customers_48'>
         <q>/start</q><a></a><a></a><a></a>
         <q>здравствуйте можно вам передать показания счетчиков</q>
         <a state="/NoMatch"/>
@@ -275,9 +275,25 @@
     
     # BOT-277
     
-    <test-case>
+    <test-case id='meter_from_customers_49'>
         <q>/start</q><a></a><a></a><a></a>
         <q>вам надо было поменять счетчик</q>
+        <a state="/NoMatch"/>
+    </test-case>
+<!--BOT-397-->
+    <test-case id='meter_from_customers_50'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я обращаюсь это у меня счетчик стоят я не знаю хозяева я недавно купил но ничего не оставили и это самое вот счетчик стоит не знаю пошечка платить или так платить</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case id='meter_from_customers_51'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>не мне счетчика надо чек меня сучки стоят я не знаю по шечек платить или так платить вот это</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case id='meter_from_customers_52'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>у меня дома счетчики стоят не номеров никаких паспортов нет мне хозяева так оставили</q>
         <a state="/NoMatch"/>
     </test-case>
 

@@ -47,8 +47,7 @@
     <test-case id='no_service_hello_10'>
         <q>/start</q><a></a><a></a><a></a>
         <q>света нет что то дома</q>
-        <a state='/SupplierContacts/SupplierContacts'></a>
-        <a></a>
+        <a state='/NoMatch'></a>
     </test-case>
     <test-case id='no_service_hello_11'>
         <q>/start</q><a></a><a></a><a></a>

@@ -247,5 +247,33 @@
         <q>по поводу поставки постановки на учет договора лицевого счета получить лицевой счет на квартиру</q>
         <a state='/ChangeAccountPerson/ChangeAccountPerson'></a>
     </test-case>
+
+
+    <test-case id='change_person_71'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>изменение фамилии по лицевому счету</q>
+        <a state='/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
+    <test-case id='change_person_72'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>изменения владельца по кадастро по лицевому счету</q>
+        <a state='/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
+
+    <test-case id='change_person_72'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>прописка людей</q>
+        <a state='/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
+    <test-case id='change_person_72'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>смена адреса</q>
+        <a state='/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
     
+    <test-case id='change_person_72'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я хотел поменять плательщика на основании кубки продажи договора</q>
+        <a state='/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
 </test>

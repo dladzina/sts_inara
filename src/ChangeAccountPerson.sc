@@ -187,6 +187,10 @@ theme: /ChangeAccountPerson
             a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
             # a: Нужна ли моя помощь дальше?
             
+            state: CanIHelpYouRepeat
+                intent: /Повторить
+                go!: /repeat
+
             state: CanIHelpYouOnline
                 intent: /Онлайн
                 go!: ../../Online
