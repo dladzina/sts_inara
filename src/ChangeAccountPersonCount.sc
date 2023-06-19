@@ -14,8 +14,11 @@ theme: /ChangeAccountPersonCount
             q: $disagree 
             intent: /Несогласие
             intent: /AnotherQuestion
-            a: Наверное, я неправильно Вас поняла. Можете задать свой вопрос по другому?
-            go!:/WhatDoYouWant
+            random::
+                a: Наверное, я неправильно Вас поняла. Можете задать свой вопрос по другому?
+                a: А что Вы хотите узнать?
+                a: А чем могу я вам помочь? 
+            go:/WhatDoYouWant
         
     state: ChangeAccountPersonCount
         intent!: /ChangeAccountPersonCount
