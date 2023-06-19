@@ -14,7 +14,7 @@ theme: /ChangeAccountPersonCount
             q: $disagree 
             intent: /Несогласие
             intent: /AnotherQuestion
-            random::
+            random:
                 a: Наверное, я неправильно Вас поняла. Можете задать свой вопрос по другому?
                 a: А что Вы хотите узнать?
                 a: А чем могу я вам помочь? 
