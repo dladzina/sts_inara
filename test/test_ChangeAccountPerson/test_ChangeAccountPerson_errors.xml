@@ -377,7 +377,7 @@
     <test-case id='change_person_error78'>
         <q>/start</q><a></a><a></a><a></a>
         <q>мне надо поменять</q>
-        <a state='/NoMatch'></a>
+        <a state='/Start/DialogMakeQuestion'></a>
     </test-case>
     <test-case id='change_person_error79'>
         <q>/start</q><a></a><a></a><a></a>
