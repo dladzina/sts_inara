@@ -137,5 +137,10 @@
         <q>я насчет коммунальных услуг у меня раньше было был прописан один человек я ее я его выписала уже два месяца а почему то у меня в коммунальные услуги когда квитанцию я получаю написано количество людей два хотя я одна живу и плачу за</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>
-
+    
+    <test-case id = "test_ChangeAccountPersonCount_client_phrases_1">
+        <q>/start</q><a></a><a></a><a></a>
+        <q>количество людей здравствуйте хотела кричать людей квитан</q>
+        <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
+    </test-case>
 </test>

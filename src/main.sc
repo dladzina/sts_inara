@@ -26,6 +26,8 @@ require: PaymentTotal.sc
 require: SupplierContacts.sc
 # общие вопросы по алсеко
 require: AlsecoCommon.sc
+# общие вопросы по Инаре
+require: AboutInara.sc
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv
@@ -278,7 +280,8 @@ theme: /
             intent: /НачалоРазговора 
         # // требования к паттернам - только нужные слова, без всяких звездочек и т.п. 
             q: девушка
-            q: мне [надо/нужно] поменять
+            q: * мне [надо/нужно] поменять
+            q: * [меня] интересует [такой] вопрос
             script:
                 $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.

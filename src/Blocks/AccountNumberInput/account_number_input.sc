@@ -71,6 +71,7 @@ theme: /BlockAccountNumInput
                 $session.AccountOkState = $request.data.args.okState;
                 $session.AccountErrorState = $request.data.args.errorState;
                 $session.AccountNoAccounState = $request.data.args.noAccountState;
+                $analytics.setSessionData("Блок ЛС", "Зашли в блок")
             }
             $session.Account.MaxRetryCount = $injector.AccountInputSettings.MaxRetryCount || 3;
             $session.Account.RetryAccount = $session.Account.RetryAccount || 0;
@@ -133,6 +134,8 @@ theme: /BlockAccountNumInput
                 a: Спасибо. Мне крайне важно ваше мнение
                 a: Вы очень любезны сегодня
                 a: Это комплимент или оскорбление?
+            script:
+                $analytics.setMessageLabel("Отрицательная")
             go!: {{$session.contextPath}}
                
         
@@ -361,6 +364,7 @@ theme: /BlockAccountNumInput
                         }).catch(function(e) {
                             $reactions.answer("Что-то сервер барахлит. ");
                             $reactions.transition('../AccountNotFound');
+                            $analytics.setSessionData("Блок ЛС", "ЛС не найден")
                             SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress ')// + toPrettyString(e)
     
                         });
@@ -368,6 +372,7 @@ theme: /BlockAccountNumInput
                     catch(e){
                         //$reactions.answer("Что-то сервер барахлит. ");
                         $reactions.answer("Произошла ошибка");
+                        $analytics.setSessionData("Блок ЛС", "ЛС не найден")
                         $reactions.transition('../AccountNotFound');
                         SendErrorMessage("onHttpRequest", 'Функция: FindAccountAddress 2')// + toPrettyString(e)
                         return false;
@@ -416,6 +421,8 @@ theme: /BlockAccountNumInput
 
             state: AccountNotFound
                 a: Извините, я не нашла Ваш лицевой счёт. 
+                script: 
+                    $analytics.setSessionData("Блок ЛС", "ЛС не найден")
                 if: $session.Account.RetryAccount < $session.Account.MaxRetryCount
                     a: Давайте еще раз проверим
                 go!: /BlockAccountNumInput/AccountInput
@@ -429,6 +436,8 @@ theme: /BlockAccountNumInput
             q: $switchToOperator
             intent: /CallTheOperator
             a: Переключаю на оператора
+            script:
+                $analytics.setSessionData("Блок ЛС", "Оператор")
             go!: /CallTheOperator
             
             
