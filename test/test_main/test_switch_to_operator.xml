@@ -235,11 +235,74 @@
     # BOT-378
     
     <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>трубку поднимите</q>
         <a state="/SwitchToOperator"/>
     </test-case>
+    
+<!--BOT-410-->
+
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно оператор</q>
+        <a state = "/SwitchToOperator"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>	мне нужно связаться с менеджером</q>
+        <a state = "/SwitchToOperator"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>не надо мне виртуального помощника</q>
+        <a state = "/SwitchToOperator"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оператора мне надо</q>
+        <a state = "/SwitchToOperator"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>	я хотел бы поговорить с оператором не виртуальным а реальным</q>
+        <a state = "/SwitchToOperator"></a>
+    </test-case>
+
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>	я уже разговаривала с вами вы можете соединить вы не смогли мне помочь соедините меня пожалуйста с оператором</q>
+        <a state = "/SwitchToOperator"></a>
+    </test-case>
+
+    <test-case id='errors_switch_check_12'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>я хотел бы поговорить с оператором не виртуальным а реальным</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>    
+
+    <test-case id='errors_switch_check_11'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>оператора мне надо</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>    
+
+    <test-case id='errors_switch_check_10'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>не надо мне виртуального помощника</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>
+    <test-case id='errors_switch_check_9'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно связаться с менеджером</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>    
+    <test-case id='errors_switch_check_8'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно оператор</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>    
 </test>

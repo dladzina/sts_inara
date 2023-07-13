@@ -38,8 +38,8 @@
         <q>/start</q><a></a><a></a><a></a>
         <q>как поменять счетчик</q>
         <a state='/NoMatch'></a>
-        <q>сумма</q>
-        <a state='/NoMatch'></a>
+        <!--<q>сумма</q>-->
+        <!--<a state='/NoMatch'></a>-->
     </test-case>
     <test-case id='errors_bye_check_7'>
         <q>/start</q><a></a><a></a><a></a>

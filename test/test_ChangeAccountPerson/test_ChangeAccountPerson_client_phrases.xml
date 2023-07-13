@@ -797,5 +797,11 @@
         <q>купили квартиру но покупатели и поменяли не фамилия не имя мне приходит пита</q>
         <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
     </test-case>
+    <!---->
+    <test-case id='ChangeAccountPerson_177'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>инара мы купили квартиру мне нужно переоформить</q>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
 
 </test>

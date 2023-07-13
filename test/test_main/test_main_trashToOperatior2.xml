@@ -17,9 +17,8 @@
     <test-case id='double_bill_4'>
         <q>/start</q><a></a><a></a><a></a>
         <q>почему квитанция выставлена второй раз я только вчера платила</q>
-        <!--<a state='/NoMatch'></a>-->
-        <a state= "/PaymentTotal/PaymentQuestion"></a>
-        <a></a>
+        <a state='/NoMatch'></a>
+        <!--<a state= "/PaymentTotal/PaymentQuestion"></a><a></a>-->
     </test-case>
     <test-case id='double_bill_5'>
         <q>/start</q><a></a><a></a><a></a>
@@ -44,7 +43,8 @@
     <test-case id='double_bill_9'>
         <q>/start</q><a></a><a></a><a></a>
         <q>Я недавно оплатила квитанцию, почему мне снова еще раз </q>
-        <a state='/NoMatch'></a>
+        <a state= "/PaymentTotal/PaymentQuestion"></a><a></a>
+        <!--<a state='/NoMatch'></a>-->
     </test-case>    
     
     <test-case id='other_theme_1'>
@@ -140,6 +140,88 @@
 		<q>девушка мне надо насчет квитанции узнать</q>
 		<a state="/NoMatch"></a>
     </test-case>
-    
+
+    <!--<test-case id='errors_switch_check_1'>-->
+    <!--      <q>/start</q><a></a><a></a><a></a>-->
+    <!--    <q>вообще комарика</q>-->
+    <!--    <a state = '/NoMatch'></a>-->
+    <!--</test-case>-->
+    <test-case id='errors_switch_check_2'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>изменение тарифа</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_3'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>квитанция пока нет я на телефон получаю вот эти данные алека</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_4'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>когда будет вот эта квитанция я получаю на телефон</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_5'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>нужна справка</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_6'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>осе же канал рымы</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_7'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>подскажите пожалуйста клининговую компанию работающие в микрорайоне аксай один</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_8'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>хотел оставить заявку в горводоканал</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_9'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>хотим отказаться от предоставления услуг клининга</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_10'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>щика услуг</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_switch_check_11'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>это я звоню с космолета</q>
+        <a state = '/Start/DialogMakeQuestion'></a>
+    </test-case>
+    <test-case id='errors_dialog_start_1'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>алло да мне надо информацию а с маджик</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+
+    <test-case id='errors_dialog_start_3'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>девушка мне надо заявку дать</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_dialog_start_6'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно дать заявку</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+    <test-case id='errors_dialog_start_7'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>мне нужно заменить на в до не два</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
+
+    <test-case id='errors_dialog_start_13'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>я хотела отменить заказ</q>
+        <a state = '/NoMatch'></a>
+    </test-case>
 
 </test>

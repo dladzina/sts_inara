@@ -143,4 +143,23 @@
         <q>количество людей здравствуйте хотела кричать людей квитан</q>
         <a state="/ChangeAccountPersonCount/ChangeAccountPersonCount"/>
     </test-case>
+    
+<!--BOT-420-->
+
+    <test-case id = "test_ChangeAccountPersonCount_client_phrases_2">
+        <q>/start</q><a></a><a></a><a></a>
+        <q>количество людей здравствуйте хотела кричать людей квитан</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount"></a>
+        <q>могу обратиться в офис да легче так наверное я так думаю в офис можно обратиться</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"></a>
+    </test-case>
+    
+    <test-case id = "test_ChangeAccountPersonCount_client_phrases_3">
+        <q>/start</q><a></a><a></a><a></a>
+        <q>здравствуйте я хотела количество людей поменять маты</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount"></a>
+        <q>ну чтобы мне там поменяли что потому что у меня нет компьютера и лучше заехать</q>
+        <a state = "/ChangeAccountPersonCount/ChangeAccountPersonCount/Offline"></a>
+    </test-case>
+    
 </test>

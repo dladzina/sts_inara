@@ -296,5 +296,24 @@
         <q>у меня дома счетчики стоят не номеров никаких паспортов нет мне хозяева так оставили</q>
         <a state="/NoMatch"/>
     </test-case>
+<!--BOT-419-->
+
+    <test-case  id='meter_from_customers_53'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>алло девушка хотела насчет пломбы что счетчики пломбы посадили</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id='meter_from_customers_54'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>алло дело такое что у нас заменили счетчик а теперь надо написать показания старого счетчика и нового как это сделать</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
+    
+    <test-case id='meter_from_customers_55'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>я хотел узнать по поводу счетчиков горячей воды кто ответственность несет</q>
+        <a state = "/NoMatch"></a>
+    </test-case>
 
 </test>
