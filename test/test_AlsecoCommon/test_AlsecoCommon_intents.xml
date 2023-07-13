@@ -23,5 +23,10 @@
         <q>алло здравствуйте мне нужен контакт отдела продаж фика</q>
         <a state="/NoMatch"/>
     </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне адрес дайте пожалуйста олежку</q>
+        <a state="/NoMatch"/>
+    </test-case>
 
 </test>

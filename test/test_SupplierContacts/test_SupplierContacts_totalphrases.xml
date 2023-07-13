@@ -327,19 +327,19 @@
         
 
 
-          <test-case>
-              <q>какой номер по Налог на имущество</q>
-              <a state = "/SupplierContacts/SupplierContacts"></a>
-              <a state = "/BlockAccountNumInput/AccountInput"></a>
-          </test-case>
+          <!--<test-case>-->
+          <!--    <q>какой номер по Налог на имущество</q>-->
+          <!--    <a state = "/SupplierContacts/SupplierContacts"></a>-->
+          <!--    <a state = "/BlockAccountNumInput/AccountInput"></a>-->
+          <!--</test-case>-->
         
 
 
-          <test-case>
-              <q>какой номер по Налог на землю</q>
-              <a state = "/SupplierContacts/SupplierContacts"></a>
-              <a state = "/BlockAccountNumInput/AccountInput"></a>
-          </test-case>
+          <!--<test-case>-->
+          <!--    <q>какой номер по Налог на землю</q>-->
+          <!--    <a state = "/SupplierContacts/SupplierContacts"></a>-->
+          <!--    <a state = "/BlockAccountNumInput/AccountInput"></a>-->
+          <!--</test-case>-->
         
 
 

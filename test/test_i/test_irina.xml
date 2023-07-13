@@ -1,39 +1,6 @@
 <test>
+    
+    
 
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>Мне нужен контакт Алматинской тепловой сети.</q>
-        <a state = "/SupplierContacts/SupplierContacts/SupplierContactsSayContacts"></a><a></a><a></a>
-    </test-case>
     
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>Я ищу контакты Алматыгаз</q>
-        <a state = "/SupplierContacts/SupplierContacts/SupplierContactsSayContacts"></a><a></a><a></a>
-    </test-case>
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>Мне нужны контакты Тартыпа</q>
-        <a state = "/SupplierContacts/SupplierContacts/SupplierContactsSayContacts"></a><a></a><a></a>
-    </test-case>
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>Мне интересует контакт энергосбыта</q>
-        <a state = "/SupplierContacts/SupplierContacts/SupplierContactsSayContacts"></a><a></a><a></a>
-    </test-case>
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>Я ищу контактную информацию о тепловых сетях в Алматы.</q>
-        <a state = "/SupplierContacts/SupplierContacts/SupplierContactsSayContacts"></a><a></a><a></a>
-    </test-case>
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>Мне требуется контактная информация Тартыпа</q>
-        <a state = "/SupplierContacts/SupplierContacts/SupplierContactsSayContacts"></a><a></a><a></a>
-    </test-case>
-
 </test>

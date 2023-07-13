@@ -141,13 +141,19 @@ theme: /SupplierContacts
             q: * @УслугаСл * || toState = ".."
 
         
-        state: CanIHelpYou ||noContext = true
+        state: CanIHelpYou ||noContext = false
             # CommonAnswers
             script:
                 $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
             a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
             # a: Нужна ли моя помощь дальше?
             
+            state: Repeat
+                intent: /Согласие_продиктовать_список_поставщиков
+                intent: /Согласие_повторить
+                intent: /Повторить
+                go!: ../../SupplierContactsSayContacts
+
             state: CanIHelpYouAgree
                 q: $yes
                 q: $agree
@@ -155,11 +161,6 @@ theme: /SupplierContacts
                 intent: /Согласие_помочь
                 go!: /WhatDoYouWant
             
-            state: Repeat
-                intent: /Согласие_продиктовать_список_поставщиков
-                intent: /Согласие_повторить
-                intent: /Повторить
-                go!: ../../SupplierContactsSayContacts
                 
             state: CanIHelpYouDisagree
                 q: $no

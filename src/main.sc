@@ -26,6 +26,10 @@ require: PaymentTotal.sc
 require: SupplierContacts.sc
 # общие вопросы по алсеко
 require: AlsecoCommon.sc
+# общие вопросы по Инаре
+require: AboutInara.sc
+# вопросы по налогам
+require: Tax.sc
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv
@@ -119,6 +123,14 @@ init:
         {
             return;
         }
+        if (
+            $context.contextPath && 
+            ($context.nluResults.selected.ruleType == "pattern") &&
+            ($context.nluResults.selected.clazz == "/Taxes/TaxQuestion")
+            )
+        {
+            return;
+        }        
         log("step2");
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
@@ -129,19 +141,21 @@ init:
             ) {
                 // если правило - паттерн и приводит к интенту /SupplierContacts/SupplierContacts, то не меняем
             if (!($context.nluResults.selected.clazz && 
-                (($context.nluResults.selected.clazz.startsWith( "/SupplierContacts/SupplierContacts"))
+                (
+                    ($context.nluResults.selected.clazz.startsWith("/SupplierContacts/SupplierContacts"))
+                    && !($context.nluResults.selected.clazz.startsWith("/SupplierContacts/SupplierContacts/CanIHelpYou"))
                 )
-                )){
-                    # log("ChangeToIntent1");
+                )
+                ){
+                    log("ChangeToIntent1");
                     $context.nluResults.selected = $context.nluResults.intents[0];
             }
             
-            # log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
+            log("$context.nluResults.selected"  + toPrettyString( $context.nluResults.selected) );
             
-            # return;
         }
         
-        # log("step2");
+        log("step2");
 
         // обработка фразы "да нужна повтори помедленней я записываю
         //log("$context.nluResults 2 = "  + toPrettyString( $context) );
@@ -159,7 +173,7 @@ init:
             }
                 
         }
-        # log("step 3");
+        log("step 3");
         //log("$context.nluResults 3 = "  + toPrettyString( $context.nluResults) );
         if($context.nluResults.intents.length > 2){
             if (($context.nluResults.intents[0].score < 0.35) && 
@@ -177,7 +191,7 @@ init:
         
         
         
-        # log("step 4");
+        log("step 4");
         // паттерн TotalPay должен иметь минимальный вес среди всех интентов
         if  ($context.nluResults.selected.clazz == "/PaymentTotal/PaymentQuestion" &&
             $context.nluResults.selected.ruleType == "pattern"){
@@ -193,7 +207,7 @@ init:
                 return;
             }
         }
-        # log("step 5");
+        log("step 5");
       // начало разговора - понижаем приоритет ее
         if  ($context.nluResults.selected.clazz == "/Start/DialogMakeQuestion" &&
             $context.nluResults.selected.score <0.65){
@@ -278,7 +292,8 @@ theme: /
             intent: /НачалоРазговора 
         # // требования к паттернам - только нужные слова, без всяких звездочек и т.п. 
             q: девушка
-            q: мне [надо/нужно] поменять
+            q: * мне [надо/нужно] поменять
+            q: * [меня] интересует [такой] вопрос
             script:
                 $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.
@@ -321,9 +336,9 @@ theme: /
         intent!:/Квитанция_общее
         intent!:/Долги
         intent!:/Договорной
-        intent!:/контактыАлсеко
         intent!:/Счетчики_общее
         intent!:/Начисления_общее
+        intent!:/Платеж_возврат
         go!: /NoMatch
 
     state: NoMatch || noContext = true
@@ -361,6 +376,8 @@ theme: /
         else:
             a: Переключаю Вас на оператора. Пожалуйста, подождите
             go!: /CallTheOperator
+            
+    
         
 
     # перевод на оператора.
