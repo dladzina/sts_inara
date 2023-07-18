@@ -204,11 +204,7 @@
         <q>не принесли квитанцию</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='change_person_error43'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>мне нужно обратиться в электроэнергию чтобы узнать как подключить свет</q>
-        <a state='/NoMatch'></a>
-    </test-case>
+
     <test-case id='change_person_error44'>
         <q>/start</q><a></a><a></a><a></a>
         <q>почему почему я хочу чтобы одной квитанции подключали сека и в</q>

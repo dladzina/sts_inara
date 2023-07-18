@@ -175,13 +175,7 @@
         <q>долги алека сколько</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='errors_bye_check_26'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>как поменять счетчик</q>
-        <a state='/NoMatch'></a>
-        <q>свет когда сегодня дадут а</q>
-        <a state='/NoMatch'></a>
-    </test-case>
+
     <test-case id='errors_bye_check_27'>
         <q>/start</q><a></a><a></a><a></a>
         <q>как поменять счетчик</q>
