@@ -203,8 +203,8 @@ theme: /NoElectricService
                 intent: /Повторить || toState = "."
                 q: * @duckling.number * || toState = "."
             # state: CallerNoElectricYesFinish
-                intent: /Несогласие || toState = "../CanIHelpYou"
-                intent: /Несогласие_повторить || toState = "../CanIHelpYou"
+                intent: /Несогласие || toState = "../../CanIHelpYou"
+                intent: /Несогласие_повторить || toState = "../../CanIHelpYou"
                 
                 
         
