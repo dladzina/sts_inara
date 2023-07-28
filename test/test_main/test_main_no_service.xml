@@ -1,9 +1,5 @@
 <test>
-    <test-case id="no_service_hello_1">
-        <q>/start</q><a></a><a></a><a></a>
-        <q>алло здравствуйте у меня нет света</q>
-        <a state="/NoMatch"></a>
-    </test-case>
+
 
     <test-case id="no_service_hello_2">
         <q>/start</q><a></a><a></a><a></a>
@@ -39,61 +35,36 @@
         <q>мне нужно узнать как поменять воду холодно горячую счетчики</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='no_service_hello_9'>
+    <test-case>
         <q>/start</q><a></a><a></a><a></a>
-        <q>освещение жалоба на освещение</q>
+        <q>по какой причине у нас отключают газ</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='no_service_hello_10'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>света нет что то дома</q>
-        <a state='/NoMatch'></a>
-    </test-case>
-    <test-case id='no_service_hello_11'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>причина отключения света</q>
-        <a state='/NoMatch'></a>
-    </test-case>
-    <test-case id='no_service_hello_12'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>свет когда сегодня дадут а</q>
-        <a state='/NoMatch'></a>
-    </test-case>
-    <test-case id='no_service_hello_13'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>свет электричество на сегодня когда подключат</q>
-        <a state='/NoMatch'></a>
-    </test-case>
+
+
+
     <test-case id='no_service_hello_14'>
         <q>/start</q><a></a><a></a><a></a>
         <q>у меня интернет не работает</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='no_service_hello_15'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>мне надо узнать почему отключили нам свет хотя нет задолженности</q>
-        <a state='/NoMatch'></a>
-    </test-case>
-    <test-case id='no_service_hello_16'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>когда включат свет калкамане втором</q>
-        <a state='/NoMatch'></a>
-    </test-case>
-    <test-case id='no_service_hello_17'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>нет света в калкамане два улица аспандиярова</q>
-        <a state='/NoMatch'></a>
-    </test-case>
-    <test-case id='no_service_hello_18'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>то чили свет с квартире</q>
-        <a state='/NoMatch'></a>
-    </test-case>
-    <test-case id='no_service_hello_19'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>отключили свет в квартире</q>
-        <a state='/NoMatch'></a>
-    </test-case>
+    <!--<test-case id='no_service_hello_15'>-->
+    <!--    <q>/start</q><a></a><a></a><a></a>-->
+    <!--    <q>мне надо узнать почему отключили нам свет хотя нет задолженности</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+    <!--<test-case id='no_service_hello_16'>-->
+    <!--    <q>/start</q><a></a><a></a><a></a>-->
+    <!--    <q>когда включат свет калкамане втором</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
+
+
+    <!--<test-case id='no_service_hello_19'>-->
+    <!--    <q>/start</q><a></a><a></a><a></a>-->
+    <!--    <q>отключили свет в квартире</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
     <test-case id='no_service_hello_20'>
         <q>/start</q><a></a><a></a><a></a>
         <q>по какой причине у нас отключают газ</q>
@@ -114,11 +85,7 @@
         <q>в квитации не указана оплата за телефон</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='no_service_hello_24'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>света нет</q>
-        <a state='/NoMatch'></a>
-    </test-case>
+
     <test-case id='no_service_hello_25'>
         <q>/start</q><a></a><a></a><a></a>
         <q>инара здравствуйте я у меня свет погас имена в моем квартире</q>
@@ -149,11 +116,11 @@
         <q>мне нужно узаконить документ</q>
         <a state='/NoMatch'></a>
     </test-case>
-    <test-case id='no_service_hello_31'>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>я хочу подключить свет</q>
-        <a state='/NoMatch'></a>
-    </test-case>
+    <!--<test-case id='no_service_hello_31'>-->
+    <!--    <q>/start</q><a></a><a></a><a></a>-->
+    <!--    <q>я хочу подключить свет</q>-->
+    <!--    <a state='/NoMatch'></a>-->
+    <!--</test-case>-->
     <test-case id='no_service_hello_32'>
         <q>/start</q><a></a><a></a><a></a>
         <q>я хотела узнать про уборку подъезда я каждый месяц плачу за уборку подъезда а у нас не убирают вот хотела по поводу этого узнать информацию</q>
@@ -188,21 +155,6 @@
         <a state="/NoMatch"/>
     </test-case>
     
-    # BOT-316
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>отключили свет</q>
-        <a state="/NoMatch"/>
-    </test-case>
-    
-    # BOT-316
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>света нет</q>
-        <a state="/NoMatch"/>
-    </test-case>    
 
 
 </test>

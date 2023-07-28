@@ -47,6 +47,7 @@ patterns:
     # $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline/*офис*)
     # $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
+    $numbersByWords = * @duckling.number * 
     $mainSuppl = $entity<MainSuppl> || converter = mainSupplConverter
     $changeOwner = [приобрел* @Недвижимость] *мени* (собственника|хозяина|имя|фамилию)
     
@@ -98,8 +99,8 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
-        log("$context 1 = "  + toPrettyString( $context ) );
-        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        # log("$context 1 = "  + toPrettyString( $context ) );
+        # log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         
         // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
         // ошибка происходит, если говоришь - "четыре" (синоним хорошо) или "пять" (синоним отлично)
@@ -126,12 +127,21 @@ init:
         if (
             $context.contextPath && 
             ($context.nluResults.selected.ruleType == "pattern") &&
+            ($context.nluResults.selected.pattern == "$numbersByWords")
+            )
+        {
+            return;
+        }        
+        
+        if (
+            $context.contextPath && 
+            ($context.nluResults.selected.ruleType == "pattern") &&
             ($context.nluResults.selected.clazz == "/Taxes/TaxQuestion")
             )
         {
             return;
         }        
-        log("step2");
+        # log("step2");
         // если состояние по "clazz":"/NoMatch" - то оставляем приоритет 
         if (
                 ($context.nluResults.intents.length > 0) && 
@@ -155,7 +165,7 @@ init:
             
         }
         
-        log("step2");
+        # log("step2");
 
         // обработка фразы "да нужна повтори помедленней я записываю
         //log("$context.nluResults 2 = "  + toPrettyString( $context) );
@@ -173,7 +183,7 @@ init:
             }
                 
         }
-        log("step 3");
+        # log("step 3");
         //log("$context.nluResults 3 = "  + toPrettyString( $context.nluResults) );
         if($context.nluResults.intents.length > 2){
             if (($context.nluResults.intents[0].score < 0.35) && 
@@ -191,7 +201,7 @@ init:
         
         
         
-        log("step 4");
+        # log("step 4");
         // паттерн TotalPay должен иметь минимальный вес среди всех интентов
         if  ($context.nluResults.selected.clazz == "/PaymentTotal/PaymentQuestion" &&
             $context.nluResults.selected.ruleType == "pattern"){
@@ -207,7 +217,7 @@ init:
                 return;
             }
         }
-        log("step 5");
+        # log("step 5");
       // начало разговора - понижаем приоритет ее
         if  ($context.nluResults.selected.clazz == "/Start/DialogMakeQuestion" &&
             $context.nluResults.selected.score <0.65){

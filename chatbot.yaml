@@ -7,6 +7,9 @@ language: ru
 
 tests:
     include:
+        # - test_SupplierContacts/test_NoElectricService_intentcheck.xml
+        # - test_SupplierContacts/test_NoElectricService_check.xml
+        # - test_main/test_main_no_service.xml
         # - test_Taxes/test_Taxes_phrases.xml
         # - test/test_main/test_main_repeat_errors.xml
         #  - test_i/test_irina.xml

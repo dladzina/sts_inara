@@ -172,4 +172,73 @@ theme: /SupplierContacts
             
             # state: SupplierContactsSayContactsYes
             
+    
+theme: /NoElectricService
+    state: CallerNoElectric
+        intent!: /Услуга_НетСвета
+        script:
+            $session.RepeatCnt = $session.RepeatCnt || {};
+            $session.RepeatCnt.ServRepeat = 0;
+        random:
+            a: У Вас нет электричества, правильно? 
+            a: Так, у Вас отключили свет?
+            
+        state: CallerNoElectricYes
+            intent: /Согласие
+            intent: /Услуга_НетСвета
+            go!: CallerNoElectricSayAES
 
+            state: CallerNoElectricSayAES
+                script: $session.RepeatCnt.ServRepeat += 1
+                a: Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.
+                if: $session.RepeatCnt.ServRepeat<3
+                    a: Повторить? 
+                else:
+                    go!:../../CanIHelpYou
+            
+            # state: CallerNoElectricYesRepeat
+                intent: /Согласие || toState = "."
+                intent: /Согласие_продиктовать_список_поставщиков || toState = "."
+                intent: /Согласие_повторить || toState = "."
+                intent: /Повторить || toState = "."
+                q: $numbersByWords || toState = "."
+            # state: CallerNoElectricYesFinish
+                intent: /Несогласие || toState = "../../CanIHelpYou"
+                intent: /Несогласие_повторить || toState = "../../CanIHelpYou"
+                
+                
+        
+        state: CallerNoElectricNo
+            intent: /Несогласие
+            intent: /AnotherQuestion
+            go!: /WhatDoYouWant
+
+        state: CanIHelpYou ||noContext = false
+            # CommonAnswers
+            script:
+                $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);
+            a: {{CommonAnswers.CanIHelpYou[$temp.index]}}
+
+            state: Repeat
+                intent: /Согласие_продиктовать_список_поставщиков
+                intent: /Согласие_повторить
+                intent: /Повторить
+                q: $numbersByWords 
+                go!: ../../CallerNoElectricYes
+                
+            state: CanIHelpYouAgree
+                q: $yes
+                q: $agree
+                intent: /Согласие
+                intent: /Согласие_помочь
+                go!: /WhatDoYouWant
+            
+                
+            state: CanIHelpYouDisagree
+                q: $no
+                q: $disagree
+                intent: /Несогласие
+                intent: /Несогласие_помочь
+                go!: /bye
+                
+                
