@@ -47,6 +47,7 @@ patterns:
     # $Offline = (оффлайн/лично/офлайн/*жив*/offline/ofline/*офис*)
     # $Online = (онлайн/*интернет*/online/электрон*)
     $numbers = $regexp<(\d+(-|\/)*)+>
+    $numbersByWords = * @duckling.number * 
     $mainSuppl = $entity<MainSuppl> || converter = mainSupplConverter
     $changeOwner = [приобрел* @Недвижимость] *мени* (собственника|хозяина|имя|фамилию)
     
@@ -99,7 +100,7 @@ init:
     function($context) {
         
         # log("$context 1 = "  + toPrettyString( $context ) );
-        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        # log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         
         // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
         // ошибка происходит, если говоришь - "четыре" (синоним хорошо) или "пять" (синоним отлично)
@@ -123,6 +124,15 @@ init:
         {
             return;
         }
+        if (
+            $context.contextPath && 
+            ($context.nluResults.selected.ruleType == "pattern") &&
+            ($context.nluResults.selected.pattern == "$numbersByWords")
+            )
+        {
+            return;
+        }        
+        
         if (
             $context.contextPath && 
             ($context.nluResults.selected.ruleType == "pattern") &&

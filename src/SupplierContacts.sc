@@ -201,7 +201,7 @@ theme: /NoElectricService
                 intent: /Согласие_продиктовать_список_поставщиков || toState = "."
                 intent: /Согласие_повторить || toState = "."
                 intent: /Повторить || toState = "."
-                q: * @duckling.number * || toState = "."
+                q: $numbersByWords || toState = "."
             # state: CallerNoElectricYesFinish
                 intent: /Несогласие || toState = "../../CanIHelpYou"
                 intent: /Несогласие_повторить || toState = "../../CanIHelpYou"
@@ -223,6 +223,7 @@ theme: /NoElectricService
                 intent: /Согласие_продиктовать_список_поставщиков
                 intent: /Согласие_повторить
                 intent: /Повторить
+                q: $numbersByWords 
                 go!: ../../CallerNoElectricYes
                 
             state: CanIHelpYouAgree
