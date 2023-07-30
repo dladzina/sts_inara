@@ -185,6 +185,7 @@ theme: /NoElectricService
             
         state: CallerNoElectricYes
             intent: /Согласие
+            intent: /Согласие_адрес_определен_верно
             intent: /Услуга_НетСвета
             go!: CallerNoElectricSayAES
 
