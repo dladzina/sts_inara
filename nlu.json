@@ -27,6 +27,22 @@
     }
   },
   "intents" : [ {
+    "path" : "/CantDoThis",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не умею"
+    }, {
+      "text" : "не могу"
+    }, {
+      "text" : "сложно"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
     "path" : "/Инара_ВыРобот",
     "enabled" : true,
     "shared" : false,
@@ -470,7 +486,9 @@
     }, {
       "text" : "в квитанции не я как поправить"
     }, {
-      "text" : "как поменять фамилия и количество проживающих в @Квитанция"
+      "text" : "как поменять фамилия и количество проживающих в @квитанция"
+    }, {
+      "text" : "переименовать @квитанция"
     } ],
     "classificationRules" : {
       "refs" : [ ]
