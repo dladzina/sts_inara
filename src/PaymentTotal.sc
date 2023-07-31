@@ -13,11 +13,14 @@ theme: /PaymentTotal
 
         # запрашивает информацию с БД по дате последней оплаты 
         # если ЛС нет, то отрабатывает тоже: запрашивает ЛС. 
+        # если не определили номер ЛС, то переводим на оператора
         AccountPayDateMessage:
             needCleanEmptyAccount = true
             okState = /PaymentTotal/GetDateLastPay/CanIHelpYou
-            errorState = /PaymentTotal/GetDateLastPay/CanIHelpYou 
-            noAccountState = /PaymentTotal/GetDateLastPay/CanIHelpYou
+            errorState = SendToOperator
+            noAccountState = SendToOperator
+            # errorState = /PaymentTotal/GetDateLastPay/CanIHelpYou 
+            # noAccountState = /PaymentTotal/GetDateLastPay/CanIHelpYou
         
         state: CanIHelpYou
             # a: Нужна ли моя помощь дальше?
@@ -45,6 +48,9 @@ theme: /PaymentTotal
             a: Для решения вашего вопроса перевожу Вас на оператора.
             go!: /CallTheOperator            
     
+        state: SendToOperator
+            a: Для реш+ения в+ашего вопр+оса перевож+у Вас на опер+атора.
+            go!: /CallTheOperator
 
     state: PaymentQuestion
         intent!: /Платеж

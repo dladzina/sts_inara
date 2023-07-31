@@ -803,5 +803,10 @@
         <q>инара мы купили квартиру мне нужно переоформить</q>
         <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
     </test-case>
+    <test-case id='ChangeAccountPerson_178'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>переименовать квитанцию</q>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>
 
 </test>

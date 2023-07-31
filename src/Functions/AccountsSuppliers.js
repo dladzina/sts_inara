@@ -51,6 +51,7 @@ function GetAccountMainSuppls(){
             catch(e){
                 //$reactions.answer("Что-то сервер барахлит. ");
                 log('--------------- произошла ошибка' );
+                SendErrorMessage("onHttpRequest", 'Функция: GetAccountMainSuppls')
                 return false;
             };
 

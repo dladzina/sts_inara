@@ -7,6 +7,9 @@ language: ru
 
 tests:
     include:
+        # - test_AccountInput/test_AccountInput_NumbersPartCheck2.xml
+        # - test_ChangeAccountPerson/test_ChangeAccountPerson_online.xml
+        # - test_Payment/test_Payment_DateLastPay.xml
         # - test_SupplierContacts/test_NoElectricService_intentcheck.xml
         # - test_SupplierContacts/test_NoElectricService_check.xml
         # - test_main/test_main_no_service.xml

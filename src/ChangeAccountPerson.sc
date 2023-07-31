@@ -21,6 +21,8 @@ theme: /ChangeAccountPerson
             intent: /НеОнлайн
             q: $no 
             q: $disagree 
+            q: [я] не (умею/могу/знаю) *
+            intent: /CantDoThis
             intent: /Несогласие
             event: speechNotRecognized
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
@@ -130,6 +132,7 @@ theme: /ChangeAccountPerson
                                 go!: ../../Yes_Contacts
         state: Online
             intent: /Онлайн
+            intent: /HowCanIDoThis
             q: $yes
             q: $agree
             intent: /Согласие

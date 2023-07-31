@@ -25,6 +25,9 @@ function GetAccountPayShortInfo(){
             catch(e){
                 //$reactions.answer("Что-то сервер барахлит. ");
                 log('--------------- произошла ошибка GetAccountPayShortInfo' );
+                SendErrorMessage("onHttpRequest", 'Функция: GetAccountPayShortInfo')
+
+                
                 return false;
             };
 
