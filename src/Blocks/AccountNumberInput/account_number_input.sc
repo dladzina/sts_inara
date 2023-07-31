@@ -128,8 +128,8 @@ theme: /BlockAccountNumInput
 
         state: looser
             q: * $looser *
-            q: * $obsceneWord  *
-            q: * $stupid  * 
+            q: * $obsceneWord *
+            q: * $stupid * 
             random: 
                 a: Спасибо. Мне крайне важно ваше мнение
                 a: Вы очень любезны сегодня
@@ -138,7 +138,6 @@ theme: /BlockAccountNumInput
                 $analytics.setMessageLabel("Отрицательная")
             go!: {{$session.contextPath}}
                
-        
         state: AccountInputNotNumbersWay
             intent: /ЛС_ИнойТипВвода
             a: Сейчас я умею понимать только цифры. Вы можете назвать номер счета сейчас?
@@ -249,12 +248,16 @@ theme: /BlockAccountNumInput
                     $temp.CurrentNum = words_to_number($entities);
                     # log("ЛС временный = "+ toPrettyString($temp.AccNum))
                     TrySetNumber($temp.AccNum + $temp.CurrentNum);
-                a:
-                    {{AccountTalkNumber($temp.CurrentNum)}}
-                random:
-                    a: **д+альше**
-                    # a: Так
-                    a: **продолж+айте**
+                if: (GetTempAccountNumber().length) < 9
+                    a:
+                        {{AccountTalkNumber($temp.CurrentNum)}}
+                    random:
+                        a: **д+альше**
+                        # a: Так
+                        a: **продолж+айте**
+                else:
+                    go!: AccountInputNumberComplete
+                        
                 script:
                     # $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
                     # $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
