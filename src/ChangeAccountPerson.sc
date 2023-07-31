@@ -132,6 +132,7 @@ theme: /ChangeAccountPerson
                                 go!: ../../Yes_Contacts
         state: Online
             intent: /Онлайн
+            intent: /HowCanIDoThis
             q: $yes
             q: $agree
             intent: /Согласие

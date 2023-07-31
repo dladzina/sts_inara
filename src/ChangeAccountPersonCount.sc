@@ -126,6 +126,7 @@ theme: /ChangeAccountPersonCount
         state: Online
             #intent: /Online
             intent: /Онлайн
+            intent: /HowCanIDoThis
             q: $yes
             q: $agree
             intent: /Согласие
