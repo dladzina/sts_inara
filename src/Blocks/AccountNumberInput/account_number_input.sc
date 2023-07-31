@@ -248,15 +248,21 @@ theme: /BlockAccountNumInput
                     $temp.CurrentNum = words_to_number($entities);
                     # log("ЛС временный = "+ toPrettyString($temp.AccNum))
                     TrySetNumber($temp.AccNum + $temp.CurrentNum);
-                if: (GetTempAccountNumber().length) < 9
+                    $temp.AccNumLen = GetTempAccountNumber().length;
+                if: ($temp.AccNumLen) < 9
                     a:
                         {{AccountTalkNumber($temp.CurrentNum)}}
                     random:
                         a: **д+альше**
                         # a: Так
                         a: **продолж+айте**
-                else:
+                elseif: (($temp.AccNumLen ==  9)||($temp.AccNumLen ==  10))
                     go!: AccountInputNumberComplete
+                else:
+                    random:
+                        a: Это слишком длинный номер. В базе такого нет. 
+                        a: Вы назвали слишком длинный номер, у нас такого нет.
+                    go!: /BlockAccountNumInput/AccountInput
                         
                 script:
                     # $reactions.timeout({interval: '1s', targetState: 'FindAccount'});
