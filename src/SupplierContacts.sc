@@ -116,7 +116,7 @@ theme: /SupplierContacts
                 if (SupplContactsIsSuppSet())
                     $temp.ss.text = GetMainSupplNamesContact($MainSuppl,SupplContactsGetSupplCode())
                 else 
-                    SupplContactsGetContactsByAccountServ($MainSuppl,$temp.ss);
+                    SupplContactsGetContactsByAccountServ($MainSuppl,$temp.ss, ($session.RepeatCnt.ServRepeat==1));
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: ($temp.ss.text) && ($temp.ss.text.length)
