@@ -118,7 +118,7 @@ theme: /SupplierContacts
                 else 
                     SupplContactsGetContactsByAccountServ($MainSuppl,$temp.ss, ($session.RepeatCnt.ServRepeat==1));
                 if ($session.RepeatCnt.ServRepeat > 1)
-                    $dialer.setTtsConfig({speed: 3});
+                    $dialer.setTtsConfig({speed: 0.9});
             # a: Сообщаем контакы
             # a: Запрос еще в работе {{$temp.ss.text}}. лицевой счет {{AccountTalkNumber($session.Account.Number)}}, услуга [{{toPrettyString(SupplContactsGetServices())}}]
             if: ($temp.ss.text) && ($temp.ss.text.length)
