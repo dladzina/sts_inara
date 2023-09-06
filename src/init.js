@@ -20,7 +20,7 @@ init:
     
     bind("postProcess", function($context) {
         $context.session.lastState = $context.currentState;
-        $analytics.setComment($dialer.getTtsConfig().speed)
+        $analytics.setComment(toPrettyString($dialer.getTtsConfig()))
         //$context.session._lastState = $context.currentState;
         // log("**********" + toPrettyString($context.currentState));
         $context.session.AnswerCnt = $context.session.AnswerCnt || 0;
