@@ -32,7 +32,7 @@ theme: /ChangeAccountPersonCount
             q: $disagree 
             intent: /Несогласие
             intent: /CantDoThis
-            event: speechNotRecognized
+            # event: speechNotRecognized
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату, или в Алсеко по адресу Карасай Батыра, 155. Хотите узнать, к каким поставщикам можно обратиться?
             # script:
             # # встраиваем перебивание в длинный ответ 
