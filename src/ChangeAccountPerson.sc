@@ -39,8 +39,10 @@ theme: /ChangeAccountPerson
                 # script:
                 #     if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
                 state: AlsecoAddressConfirm
-                    q: * сто пятьдесят * 
+                    # q: * сто пятьдесят * 
+                    intent: /AlsecoAdressConfirm
                     a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
+                    go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
     
                 state: No_Suppliers_List
                     q: $no

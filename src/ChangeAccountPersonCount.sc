@@ -41,6 +41,11 @@ theme: /ChangeAccountPersonCount
             #         bargeInTrigger: "interim",
             #         noInterruptTime: 2});
 
+            state: AlsecoAddressConfirm
+                intent: /AlsecoAdressConfirm
+                a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
+                go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
+
             state: No_Suppliers_List
                 q: $no
                 q: $disagree

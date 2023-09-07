@@ -2387,6 +2387,16 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/AlsecoAdressConfirm",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ "* сто пятьдесят [пять] *" ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
