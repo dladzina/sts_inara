@@ -38,7 +38,9 @@ theme: /ChangeAccountPerson
                 a: Хотите узнать, к каким поставщикам можно обратиться?
                 # script:
                 #     if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
-                
+                state: AlsecoAddressConfirm
+                    q: * сто пятьдесят * 
+                    a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
     
                 state: No_Suppliers_List
                     q: $no
