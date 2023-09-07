@@ -1407,7 +1407,7 @@
     }, {
       "text" : " мне нужен контакт отдела продаж "
     }, {
-      "text" : "мне нужна бухгалтерия ваша"
+      "text" : "мне бухгалтерия ваша"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2137,6 +2137,256 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/Какой у вас номер телефона?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "как вам позвонить"
+    }, {
+      "text" : "номер телефона"
+    }, {
+      "text" : "какой телефон"
+    }, {
+      "text" : "по какому номеру могу связаться?"
+    }, {
+      "text" : "нужен контактный номер телефона"
+    }, {
+      "text" : "скажите ваши контакты"
+    }, {
+      "text" : "Какой у вас номер телефона?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/Где вы находитесь?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "какой у вас адрес"
+    }, {
+      "text" : "по какому адресу вы расположены"
+    }, {
+      "text" : "Где вы находитесь?"
+    }, {
+      "text" : "как к вам подъехать"
+    }, {
+      "text" : "какой адрес главного офиса"
+    }, {
+      "text" : "где головное отделение"
+    }, {
+      "text" : "узнать месторасположение"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/В каких городах есть офисы?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "В каких городах есть офисы?"
+    }, {
+      "text" : "в каких регионах у вас есть филиалы"
+    }, {
+      "text" : " вы открыты в разных городах"
+    }, {
+      "text" : "в каких городах можно вас найти"
+    }, {
+      "text" : "в каких регионах вы представлены"
+    }, {
+      "text" : "вы есть не в Москве?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/Как связаться со службой поддержки?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "номер службы поддержки"
+    }, {
+      "text" : "позвонить в службу заботы о клиентах"
+    }, {
+      "text" : "телефон горячей линии"
+    }, {
+      "text" : "куда звонить чтобы оставить жалобу"
+    }, {
+      "text" : "скажите телефон службы поддержки"
+    }, {
+      "text" : "Контакты горячей линии"
+    }, {
+      "text" : "Как связаться со службой поддержки?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/По каким дням вы работаете?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "По каким дням вы работаете?"
+    }, {
+      "text" : "дни работы офисов"
+    }, {
+      "text" : "рабочие дни"
+    }, {
+      "text" : "к вам можно подъехать на выходных"
+    }, {
+      "text" : "по каким дням недели вы открыты"
+    }, {
+      "text" : "график работы"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/Как вас найти в интернете?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Как вас найти в интернете?"
+    }, {
+      "text" : "вы есть в соцсетях"
+    }, {
+      "text" : "инстаграм компании"
+    }, {
+      "text" : "телеграм канал компании"
+    }, {
+      "text" : "дайте ссылку на аккаунт"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/Есть ли у вас мобильное приложение?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "скачать мобильное приложение"
+    }, {
+      "text" : "вы есть в google play"
+    }, {
+      "text" : "вас можно найти в app store"
+    }, {
+      "text" : "в формате приложения"
+    }, {
+      "text" : "удобнее через приложение"
+    }, {
+      "text" : "Есть ли приложение на телефон?"
+    }, {
+      "text" : "Есть ли у вас мобильное приложение?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/Какая у вас электронная почта?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "адрес электронной почты"
+    }, {
+      "text" : "как написать вам на почту"
+    }, {
+      "text" : "какая у вас почта"
+    }, {
+      "text" : "подскажите емейл"
+    }, {
+      "text" : "Какая у вас электронная почта?"
+    }, {
+      "text" : "отправить письмо на электронку"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/Хочу сотрудничать",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "куда обращаться по вопросам сотрудничества"
+    }, {
+      "text" : "Есть бизнес предложение"
+    }, {
+      "text" : "предлагаем совместный проект"
+    }, {
+      "text" : "контакты для возможных партнеров"
+    }, {
+      "text" : "есть возможность партнерства"
+    }, {
+      "text" : "Хочу сотрудничать"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/В какое время вы работаете?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "вы открыты ночью"
+    }, {
+      "text" : "в какие часы работаете"
+    }, {
+      "text" : "рабочие часы"
+    }, {
+      "text" : "рабочее время"
+    }, {
+      "text" : "Часы когда вы открыты"
+    }, {
+      "text" : "в какое время можно подъехать"
+    }, {
+      "text" : "В какое время вы работаете?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/KnowledgeBase/FAQ.Контакты/Root/В каких странах есть офисы?",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "в каких странах открыты ваши офисы"
+    }, {
+      "text" : "страны где вы представлены"
+    }, {
+      "text" : "где есть представительства в мире"
+    }, {
+      "text" : "международные филиалы"
+    }, {
+      "text" : "где офисы за границей"
+    }, {
+      "text" : "В каких странах есть офисы?"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -2438,7 +2688,7 @@
       "value" : "{\"code\":\"alts\"}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Тартып", "Тартыпа" ],
+      "rule" : [ "Тартып", "Тартыпа", "торты" ],
       "value" : "{\"code\":\"tartyp\"}"
     }, {
       "type" : "synonyms",
@@ -2918,6 +3168,69 @@
     "name" : "zb.number",
     "enabled" : false
   } ],
-  "faq" : [ ],
+  "faq" : [ {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Какой у вас номер телефона?",
+    "replies" : [ ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Где вы находитесь?",
+    "replies" : [ {
+      "type" : "text",
+      "text" : "Наш адрес - Карасай батыра 155, угол Байзакова",
+      "markup" : "plain",
+      "key" : "_rx10283p1"
+    } ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В каких городах есть офисы?",
+    "replies" : [ {
+      "type" : "text",
+      "text" : "У нас есть офис только в Алматы. ",
+      "markup" : "plain",
+      "key" : "_jchqu42qn"
+    } ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Как связаться со службой поддержки?",
+    "replies" : [ ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/По каким дням вы работаете?",
+    "replies" : [ {
+      "type" : "text",
+      "text" : "мы работаем по будням с 8 до 17 ",
+      "markup" : "plain",
+      "key" : "_bsgfietvq"
+    } ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Как вас найти в интернете?",
+    "replies" : [ {
+      "type" : "text",
+      "text" : "наш сайт - алсеко точка кей зет",
+      "markup" : "plain",
+      "key" : "_pk8x3qpr8"
+    } ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Есть ли у вас мобильное приложение?",
+    "replies" : [ {
+      "type" : "text",
+      "text" : "да. оно доступно для скачивания в апп сторе и плей маркете",
+      "markup" : "plain",
+      "key" : "_23o7l0ugk"
+    } ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Какая у вас электронная почта?",
+    "replies" : [ ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Хочу сотрудничать",
+    "replies" : [ ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В какое время вы работаете?",
+    "replies" : [ {
+      "type" : "text",
+      "text" : "Мы работаем с 8 утра до 17 вечера",
+      "markup" : "plain",
+      "key" : "_1pqyefwdi"
+    } ]
+  }, {
+    "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В каких странах есть офисы?",
+    "replies" : [ ]
+  } ],
   "skills" : [ ]
 }

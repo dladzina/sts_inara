@@ -35,5 +35,10 @@
     "id" : "/repeat",
     "x" : 240,
     "y" : 3358
+  }, {
+    "id" : "/KnowledgeBase",
+    "name" : "KnowledgeBase",
+    "x" : 0,
+    "y" : 0
   } ]
 }
