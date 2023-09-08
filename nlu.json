@@ -123,7 +123,7 @@
         "predicate" : "CONTAINS_NOT"
       } ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "{(хочу/нужно/необходимо) узнать}" ],
     "priority" : 0
   }, {
     "path" : "/Несогласие_подожду",
@@ -1178,7 +1178,7 @@
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ "телефон [по|за] (@Услуга|@УслугаСл)" ],
+    "patterns" : [ "телефон [по|за] (@Услуга|@УслугаСл)", "@Услуга" ],
     "slots" : [ {
       "name" : "Услуга",
       "entity" : "Услуга",
@@ -2039,14 +2039,6 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/Новый интент",
-    "enabled" : true,
-    "shared" : false,
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "priority" : 0
-  }, {
     "path" : "/контактыАлсекоАдрес",
     "enabled" : true,
     "shared" : false,
@@ -2139,7 +2131,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Какой у вас номер телефона?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "как вам позвонить"
@@ -2163,7 +2155,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Где вы находитесь?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "какой у вас адрес"
@@ -2187,7 +2179,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/В каких городах есть офисы?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "В каких городах есть офисы?"
@@ -2209,7 +2201,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Как связаться со службой поддержки?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "номер службы поддержки"
@@ -2233,7 +2225,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/По каким дням вы работаете?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "По каким дням вы работаете?"
@@ -2255,7 +2247,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Как вас найти в интернете?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "Как вас найти в интернете?"
@@ -2275,7 +2267,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Есть ли у вас мобильное приложение?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "скачать мобильное приложение"
@@ -2299,7 +2291,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Какая у вас электронная почта?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "адрес электронной почты"
@@ -2321,7 +2313,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Хочу сотрудничать",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "куда обращаться по вопросам сотрудничества"
@@ -2343,7 +2335,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/В какое время вы работаете?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "вы открыты ночью"
@@ -2367,7 +2359,7 @@
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/В каких странах есть офисы?",
-    "enabled" : true,
+    "enabled" : false,
     "shared" : false,
     "phrases" : [ {
       "text" : "в каких странах открыты ваши офисы"
@@ -2395,7 +2387,7 @@
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ "* сто пятьдесят [пять] *" ],
+    "patterns" : [ "* сто пятьдесят [пять] *", "* адрес (можно/повторите) [еще/пожалуйста] *", "* (караса*/касаба/хорошо батыр*) [сто пятьдесят] [пять] *" ],
     "priority" : 0
   } ],
   "entities" : [ {
@@ -2615,7 +2607,7 @@
       "value" : " {\"SERV_ID\": [377,337,336,116,114,25,21,17,6]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Домофон" ],
+      "rule" : [ "Домофон", "домофонный компания" ],
       "value" : " {\"SERV_ID\": [128]}"
     }, {
       "type" : "synonyms",

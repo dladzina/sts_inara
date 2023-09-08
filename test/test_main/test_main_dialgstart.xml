@@ -91,5 +91,15 @@
         <q>/start</q><a></a><a></a><a></a>
         <q>девушка здравствуйте меня интересует такой вопрос</q>
         <a state = '/Start/DialogMakeQuestion'></a>
-    </test-case>	
+    </test-case>
+    # BOT-295
+    
+    <test-case>
+        <q>/start</q>
+        <a></a>
+        <a></a>
+        <a></a>
+        <q>хочу узнать</q>
+        <a state="/Start/DialogMakeQuestion"/>
+    </test-case>    
 </test>

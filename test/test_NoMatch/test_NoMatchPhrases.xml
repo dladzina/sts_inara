@@ -85,16 +85,7 @@
         <a state = "/NoMatch"></a>
     </test-case>
     
-    # BOT-295
-    
-    <test-case>
-        <q>/start</q>
-        <a></a>
-        <a></a>
-        <a></a>
-        <q>хочу узнать</q>
-        <a state="/NoMatch"/>
-    </test-case>
+
     
 
 
