@@ -252,4 +252,11 @@ theme: /NoElectricService
                 intent: /Несогласие_помочь
                 go!: /bye
                 
-                
+    state: NoService
+        intent!: /Услуга_ПодключитьОтключить
+        if: (($parseTree._Услуга) && ($parseTree._Услуга[0]==13))
+            go!: /NoElectricService/CallerNoElectric
+        else:
+            go!: /OtherTheme
+            
+         

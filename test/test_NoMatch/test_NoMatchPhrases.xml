@@ -100,5 +100,11 @@
         <a state="/NoMatch"/>
     </test-case>
 
-
+    # BOT-380
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне надо вызвать на дом электрика</q>
+        <a state="/NoMatch"/>
+    </test-case>
 </test>
