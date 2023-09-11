@@ -49,7 +49,7 @@ function SupplContactsGetServicesArray(){
     
 }
 
-function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts){
+function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_suppl_name ){
     // есть ЛС, есть коды услуг
     // надо обратиться к сервису и получить значения
     var $session = $jsapi.context().session;
@@ -102,7 +102,10 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts){
                     // собираем строку из контактов
                     // проверяем, если это основной поставщик, то даем его наименование 
                     // если нет, то данные из сервиса 
+                    if (need_suppl_name)
                         ret_contacts.text = suppl_name + ' - ' + elem.supplierContacts
+                    else 
+                        ret_contacts.text = elem.supplierContacts
                     
                 });
             }

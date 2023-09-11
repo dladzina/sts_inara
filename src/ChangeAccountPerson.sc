@@ -24,7 +24,7 @@ theme: /ChangeAccountPerson
             q: [я] не (умею/могу/знаю) *
             intent: /CantDoThis
             intent: /Несогласие
-            event: speechNotRecognized
+            # event: speechNotRecognized
             a: Вы можете обратиться в абонентский отдел любого из поставщиков услуг, указанных в верхней части счёта на оплату или в Алсеко по адресу Карасай Батыра, 155.
             # script:
             # # встраиваем перебивание в длинный ответ 
@@ -38,7 +38,11 @@ theme: /ChangeAccountPerson
                 a: Хотите узнать, к каким поставщикам можно обратиться?
                 # script:
                 #     if ($session.Account && $session.Account.Number < 0) FindAccountNumberClear();
-                
+                state: AlsecoAddressConfirm
+                    # q: * сто пятьдесят * 
+                    intent: /AlsecoAdressConfirm
+                    a: Вы можете обратиться к нам по адресу Карасай батыра сто пятьдесят пять, угол Байзакова
+                    go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
     
                 state: No_Suppliers_List
                     q: $no
@@ -217,3 +221,23 @@ theme: /ChangeAccountPerson
                 intent: /Несогласие_помочь
                 intent: /greeting
                 go!: /bye        
+                
+    state: ChangeAccountPerson_Question
+        intent!: /ChangeAccountPerson_MayBe
+        random:
+            a: Вы хот+ите измен+ить фам+илию в квитанции? 
+            
+        state: ChangeAccountPerson_QuestionYes
+            q: $yes
+            q: $agree
+            intent: /Согласие
+            intent: /Согласие_адрес_определен_верно
+
+            go!:/ChangeAccountPerson/ChangeAccountPerson
+
+        state: ChangeAccountPerson_QuestionNo
+            intent: /Несогласие
+            intent: /AnotherQuestion
+            event: noMatch
+            go!: /WhatDoYouWant
+                                
