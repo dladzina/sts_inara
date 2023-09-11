@@ -180,4 +180,9 @@
         <q>я вам уже сказала мне по оплате нужно узнать</q>
         <a state = '/PaymentTotal/PaymentQuestion'></a><a></a>
     </test-case>    
+    <test-case id='errors_dialog_start_12'>
+          <q>/start</q><a></a><a></a><a></a>
+        <q>проверить оплату</q>
+        <a state = '/PaymentTotal/PaymentQuestion'></a><a></a>
+    </test-case>    
 </test>

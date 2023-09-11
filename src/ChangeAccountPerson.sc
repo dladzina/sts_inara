@@ -221,3 +221,23 @@ theme: /ChangeAccountPerson
                 intent: /Несогласие_помочь
                 intent: /greeting
                 go!: /bye        
+                
+    state: ChangeAccountPerson_Question
+        intent!: /ChangeAccountPerson_MayBe
+        random:
+            a: Вы хот+ите измен+ить фам+илию в квитанции? 
+            
+        state: ChangeAccountPerson_QuestionYes
+            q: $yes
+            q: $agree
+            intent: /Согласие
+            intent: /Согласие_адрес_определен_верно
+
+            go!:/ChangeAccountPerson/ChangeAccountPerson
+
+        state: ChangeAccountPerson_QuestionNo
+            intent: /Несогласие
+            intent: /AnotherQuestion
+            event: noMatch
+            go!: /WhatDoYouWant
+                                

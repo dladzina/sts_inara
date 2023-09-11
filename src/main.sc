@@ -45,6 +45,8 @@ require: CommonAnswers.yaml
 #########################################
 # Функции
 require: init.js
+
+require: Functions/CommonFunctions.js
     
 patterns:
     # $Yes_for_contacts = (сейчас/*диктуй*/говори*/давай*)
@@ -116,7 +118,12 @@ theme: /
     state: WhatDoYouWant
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
-        a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
+            $temp.counter = countRepeats();
+        if: $temp.counter > 4
+            a: Пох+оже, я не мог+у Вас пон+ять. Перевожу звон+ок на опер+атора
+            go!: /CallTheOperator
+        else:
+            a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
 
     state: WhatDoYouWantNoContext || noContext = true
         script:

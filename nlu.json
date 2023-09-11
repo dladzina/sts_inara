@@ -718,6 +718,8 @@
       "text" : "за какой месяц идет оплата @квитанция"
     }, {
       "text" : "обращаюсь по вопросу оплаты @Услуга"
+    }, {
+      "text" : "проверить оплату"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2393,6 +2395,18 @@
     "shared" : false,
     "phrases" : [ {
       "text" : "подключить @Услуга"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ChangeAccountPerson_MayBe",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "перерегистрация @квитанция"
     } ],
     "classificationRules" : {
       "refs" : [ ]
