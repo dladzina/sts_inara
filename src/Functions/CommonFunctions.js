@@ -1,10 +1,10 @@
 // счетчик попаданий
 function countRepeats(key) {
     var state = key || $.currentState;
-    log('countRepeats, state = ' + state)
+    // log('countRepeats, state = ' + state)
     $.session.repeats = $.session.repeats || {};
     $.session.repeats[state] = $.session.repeats[state] ? $.session.repeats[state] + 1 : 1;
-    log('countRepeats, repeats = ' + toPrettyString($.session.repeats))
+    // log('countRepeats, repeats = ' + toPrettyString($.session.repeats))
     return $.session.repeats[state];
 }
 
