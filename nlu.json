@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_dlya_sts-1000039011-rMg",
-    "name" : "inara_dlya_sts-1000039011-rMg",
+    "id" : "inara_bot_406-1000039011-yuj",
+    "name" : "inara_bot_406-1000039011-yuj",
     "folder" : "/platform"
   },
   "settings" : {
@@ -1393,7 +1393,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/АдресАлсеко",
+    "path" : "/AlsecoGiveAddress",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
@@ -1829,7 +1829,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/контактыАлсеко",
+    "path" : "/AlsecoGivePhones",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
@@ -2039,28 +2039,6 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/контактыАлсекоАдрес",
-    "enabled" : true,
-    "shared" : false,
-    "phrases" : [ {
-      "text" : "дайте адрес @алсеко"
-    }, {
-      "text" : "где вы находитесь"
-    }, {
-      "text" : "какой у вас адрес"
-    }, {
-      "text" : "адрес ваш"
-    }, {
-      "text" : "скажите где находится"
-    }, {
-      "text" : "адрес скажите"
-    } ],
-    "classificationRules" : {
-      "refs" : [ ]
-    },
-    "patterns" : [ ],
-    "priority" : 0
-  }, {
     "path" : "/Услуга_НетСвета",
     "enabled" : true,
     "shared" : false,
@@ -2162,8 +2140,6 @@
     }, {
       "text" : "по какому адресу вы расположены"
     }, {
-      "text" : "Где вы находитесь?"
-    }, {
       "text" : "как к вам подъехать"
     }, {
       "text" : "какой адрес главного офиса"
@@ -2171,6 +2147,8 @@
       "text" : "где головное отделение"
     }, {
       "text" : "узнать месторасположение"
+    }, {
+      "text" : "Где вы находитесь?"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2228,8 +2206,6 @@
     "enabled" : false,
     "shared" : false,
     "phrases" : [ {
-      "text" : "По каким дням вы работаете?"
-    }, {
       "text" : "дни работы офисов"
     }, {
       "text" : "рабочие дни"
@@ -2239,6 +2215,8 @@
       "text" : "по каким дням недели вы открыты"
     }, {
       "text" : "график работы"
+    }, {
+      "text" : "По каким дням вы работаете?"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2250,8 +2228,6 @@
     "enabled" : false,
     "shared" : false,
     "phrases" : [ {
-      "text" : "Как вас найти в интернете?"
-    }, {
       "text" : "вы есть в соцсетях"
     }, {
       "text" : "инстаграм компании"
@@ -2259,6 +2235,8 @@
       "text" : "телеграм канал компании"
     }, {
       "text" : "дайте ссылку на аккаунт"
+    }, {
+      "text" : "Как вас найти в интернете?"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2302,9 +2280,9 @@
     }, {
       "text" : "подскажите емейл"
     }, {
-      "text" : "Какая у вас электронная почта?"
-    }, {
       "text" : "отправить письмо на электронку"
+    }, {
+      "text" : "Какая у вас электронная почта?"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2407,6 +2385,124 @@
     "shared" : false,
     "phrases" : [ {
       "text" : "перерегистрация @квитанция"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoGiveWorkingDays",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "график работы"
+    }, {
+      "text" : "дни работы офисов"
+    }, {
+      "text" : "к вам можно подъехать на выходных"
+    }, {
+      "text" : "по каким дням недели вы открыты"
+    }, {
+      "text" : "рабочие дни"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoGiveMobApp",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "есть приложение на телефон"
+    }, {
+      "text" : "в формате приложения"
+    }, {
+      "text" : "вас можно найти в апп сторе"
+    }, {
+      "text" : "вы есть в гугл плей"
+    }, {
+      "text" : "скачать мобильное приложение"
+    }, {
+      "text" : "удобнее через приложение"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoGiveSite",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "вы есть в соцсетях"
+    }, {
+      "text" : "дайте ссылку на аккаунт"
+    }, {
+      "text" : "инстаграм компании"
+    }, {
+      "text" : "телеграм канал компании"
+    }, {
+      "text" : "какой сайт"
+    }, {
+      "text" : "как в интернете найти"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoGiveEmail",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "адрес электронной почты"
+    }, {
+      "text" : "как написать вам на почту"
+    }, {
+      "text" : "какая у вас почта"
+    }, {
+      "text" : "отправить письмо на электронку"
+    }, {
+      "text" : "подскажите емейл"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoGivePartnersSaleContacts",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Есть бизнес предложение"
+    }, {
+      "text" : "есть возможность партнерства"
+    }, {
+      "text" : "контакты для возможных партнеров"
+    }, {
+      "text" : "куда обращаться по вопросам сотрудничества"
+    }, {
+      "text" : "предлагаем совместный проект"
+    }, {
+      "text" : "контакт отдела продаж "
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoGiveFinance",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "мне бухгалтерия ваша"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2663,8 +2759,8 @@
       "value" : " {\"SERV_ID\": [1]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Уборка подъезд", "убирать подъезд" ],
-      "value" : "{\"SERV_ID\": [82]}"
+      "rule" : [ "Уборка подъезд", "убирать подъезд", "клининг", "клининговая организация", "клининговая компания", "уборщица дома", "уборка дома" ],
+      "value" : "{\n  \"SERV_ID\": [\n    82\n  ]\n}"
     }, {
       "type" : "synonyms",
       "rule" : [ "замена лифт", "заменить лифт", "поменять лифт" ],
@@ -3201,9 +3297,14 @@
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Где вы находитесь?",
     "replies" : [ {
       "type" : "text",
-      "text" : "Наш адрес - Карасай батыра 155, угол Байзакова",
+      "text" : "Наш адрес - Карасай батыра 155, угол Виноградова. Возможно, я или оператор сможем Вам помочь по телефону? Задайте Ваш вопрос",
       "markup" : "plain",
       "key" : "_rx10283p1"
+    }, {
+      "type" : "text",
+      "text" : "Карасай батыра, 155 угол Виноградова. Может, мы можем решить вопрос по телефону?",
+      "markup" : "plain",
+      "key" : "_apfmp5maz"
     } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В каких городах есть офисы?",
@@ -3220,7 +3321,7 @@
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/По каким дням вы работаете?",
     "replies" : [ {
       "type" : "text",
-      "text" : "мы работаем по будням с 8 до 17 ",
+      "text" : "мы работаем в будни с 8 до 16. суббота, воскресенье - выходной",
       "markup" : "plain",
       "key" : "_bsgfietvq"
     } ]
@@ -3228,29 +3329,44 @@
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Как вас найти в интернете?",
     "replies" : [ {
       "type" : "text",
-      "text" : "наш сайт - алсеко точка кей зет",
+      "text" : "В интернете у нас есть сайт - алсеко точка кей зет",
       "markup" : "plain",
       "key" : "_pk8x3qpr8"
+    }, {
+      "type" : "text",
+      "text" : "в интернете вы нас можете найти на сайте алсеко кей зет \n",
+      "markup" : "plain",
+      "key" : "_cbuyf6lh3"
     } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Есть ли у вас мобильное приложение?",
     "replies" : [ {
       "type" : "text",
-      "text" : "да. оно доступно для скачивания в апп сторе и плей маркете",
+      "text" : "Приложение Алсеко доступно для скачивания в апп сторе и плей маркете",
       "markup" : "plain",
       "key" : "_23o7l0ugk"
     } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Какая у вас электронная почта?",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "наш емейл - info собачка алсеко кей зет. буква к в Алсеко пишется через букву си - как эс на русском. ",
+      "markup" : "plain",
+      "key" : "_udwcevsyd"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/Хочу сотрудничать",
-    "replies" : [ ]
+    "replies" : [ {
+      "type" : "text",
+      "text" : "По поводу партнерства с нами вы можете позвонить по телефону 339 50 15",
+      "markup" : "plain",
+      "key" : "_i9w0cybmc"
+    } ]
   }, {
     "intentPath" : "/KnowledgeBase/FAQ.Контакты/Root/В какое время вы работаете?",
     "replies" : [ {
       "type" : "text",
-      "text" : "Мы работаем с 8 утра до 17 вечера",
+      "text" : "Мы работаем с 8 до 16. Звонки принимаем до 18 00 ",
       "markup" : "plain",
       "key" : "_1pqyefwdi"
     } ]
