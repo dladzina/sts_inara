@@ -5,12 +5,12 @@ theme: /AlsecoCommon
         random:
             a: Наш адрес - Карасай батыра 155, угол Виноградова. Возможно, я или оператор сможем Вам помочь по телефону? 
             a: Карасай батыра, 155, угол Виноградова. Может, мы можем решить вопрос по телефону?
-        go!: /WhatDoYouWantNoContext
         script:
             $dialer.bargeInResponse({
                 bargeIn: "forced",
                 bargeInTrigger: "final",
                 noInterruptTime: 0});
+        go!: /WhatDoYouWantNoContext
 
         state: AlsecoAddressRepeat
             intent: /AlsecoAdressConfirm
