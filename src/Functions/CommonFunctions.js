@@ -11,10 +11,12 @@ function countRepeats(key) {
 // счетчик попаданий подряд
 function countRepeatsInRow() {
     $.temp.entryState = $.currentState;
-    if ($.session.lastEntryState === $.currentState) {
+
+    if ($.session._lastState === $.currentState) {
         $.session.repeatsInRow += 1;
-    } else {
+    } else{
        $.session.repeatsInRow = 1; // число раз подряд
     }
+    log($.session.repeatsInRow)
     return $.session.repeatsInRow;
 }

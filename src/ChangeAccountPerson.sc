@@ -186,6 +186,16 @@ theme: /ChangeAccountPerson
                     a:  Подходят --копии договора купли-продажи, -дарения, -справка о наличии недвижимого имущества, или  зарегистрированных правах на недвижимое имущество с портала е гов
                     # a:  Интент "Инициация завершения диалога"
                     go!: /ChangeAccountPerson/ChangeAccountPerson/CanIHelpYou
+                    
+        state: WhoBringsDocuments
+            intent: /собственник_привозит_документы
+            a: Документы может принести владелец жилья. Либо заявку может подать доверенное лицо - - тогда еще понадобится доверенность от собственника жилья. - - 
+            go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
+            
+        # state: DocsToBring
+        #     intent: /перечисление_документов
+        #     go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson/Yes_List_Doc
+
 
         state: CanIHelpYou 
             # CommonAnswers

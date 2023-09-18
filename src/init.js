@@ -19,7 +19,11 @@ init:
     });
     
     bind("postProcess", function($context) {
+        // предыдущий стейт с учетом неконтекстных
         $context.session.lastState = $context.currentState;
+        // предыдущий стейт без учета неконтестных
+        $context.session.prevState = $context.contextPath;
+        
         // $analytics.setComment(toPrettyString($dialer.getTtsConfig()))
         //$context.session._lastState = $context.currentState;
         // log("**********" + toPrettyString($context.currentState));

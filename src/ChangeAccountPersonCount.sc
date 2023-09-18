@@ -163,6 +163,15 @@ theme: /ChangeAccountPersonCount
                 a:  Необходимые документы: удостоверение личности собственника и сведения о зарегистрированных лицах с портала е гов
                 go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/CanIHelpYou
 
+        state: WhoBringsDocuments
+            intent: /собственник_привозит_документы
+            a: Документы может принести владелец жилья. Либо заявку может подать доверенное лицо - - тогда еще понадобится доверенность от собственника жилья. - - 
+            go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
+            
+        # state: DocsToBring
+        #     intent: /перечисление_документов
+        #     go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangeAccountPersonCount/Yes_List_Doc
+        
         state: CanIHelpYou 
             script:
                 $temp.index = $reactions.random(CommonAnswers.CanIHelpYou.length);

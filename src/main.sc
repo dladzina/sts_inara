@@ -67,6 +67,8 @@ theme: /
         q!: $regex</start>
         script:
             $context.session.AnswerCnt = 0;
+            $.session.repeatsInRow = 0;
+            $.session.repeats = {};
         # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
         a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
         a: подсказать дату последней оплаты или контакты поставщика услуг
@@ -129,6 +131,7 @@ theme: /
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}        
+
 
     state: OtherTheme
         intent!: /РазноеНаОператора
@@ -330,6 +333,12 @@ theme: /
         event!: sessionDataSoftLimitExceeded
         script:
             SendWarningMessage('Достигнут лимит sessionDataSoftLimitExceeded')
+    
+    state: BotTooSlow
+        event!: timeLimit
+        script:
+            SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
+        
 
 theme: /ИнициацияЗавершения
     

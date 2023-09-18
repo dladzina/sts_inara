@@ -10,13 +10,14 @@ theme: /SupplierContacts
             $session.RepeatCnt = $session.RepeatCnt || {};
             $session.RepeatCnt.ServRepeat = 0;
             # log("SupplierContacts = " + toPrettyString($parseTree))
-
+            # log("SupplierContacts entity = " + toPrettyString($entities))
+            
             if ($parseTree._ОсновнойПоставщик){
                 if ($parseTree._ОсновнойПоставщик[0])
                     SupplContactsSetSuppl($parseTree._ОсновнойПоставщик[0])
                 else 
                     SupplContactsSetSuppl($parseTree._ОсновнойПоставщик)
-            }else if ($parseTree._Услуга){
+            } else if ($parseTree._Услуга){
             # если есть услуга, то выделяем ее 
                 $temp.Service = $parseTree._Услуга;
                 # log("1. $temp.Service"+toPrettyString($temp.Service))
@@ -31,7 +32,7 @@ theme: /SupplierContacts
                     $temp.Service = $temp.Service[0];
                 # log("3. $temp.Service"+toPrettyString($temp.Service))
                 SupplContactsSetServ($temp.Service.SERV_ID)
-            }else if($parseTree._УслугаСл){
+            } else if($parseTree._УслугаСл){
                 $temp.Service = $parseTree._УслугаСл;
                 if (typeof($temp.Service)=="string"){
                     var  Names = $temp.Service;
@@ -43,7 +44,10 @@ theme: /SupplierContacts
                     $temp.Service = $temp.Service[0];
                 # log("3. $temp.Service"+toPrettyString($temp.Service))
                 SupplContactsSetServ($temp.Service.SERV_ID)
+            } else if ($parseTree._алсеко){
+                $reactions.transition("/AlsecoCommon/AlsecoPhones");
             }
+            
 
         # a: даем контакты по услуге
         if: SupplContactsIsSuppSet()
@@ -186,6 +190,7 @@ theme: /NoElectricService
         random:
             a: У Вас нет электричества, правильно? 
             a: Так, у Вас отключили свет?
+            a: Нужен телефон по свету? 
             
         state: CallerNoElectricYes
             intent: /Согласие
@@ -202,7 +207,7 @@ theme: /NoElectricService
                     a: Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.
                 else:
                     a: 356, 99, 99. Код города - 727. || tts = "356 <break strength='strong'/> 99 <break strength='strong'/> 99. Код города - 727."
-                if: $session.RepeatCnt.ServRepeat<3
+                if: $session.RepeatCnt.ServRepeat < 3
                     a: Повторить? 
                 else:
                     go!:../../CanIHelpYou
