@@ -333,6 +333,12 @@ theme: /
         event!: sessionDataSoftLimitExceeded
         script:
             SendWarningMessage('Достигнут лимит sessionDataSoftLimitExceeded')
+    
+    state: BotTooSlow
+        event!: timeLimit
+        script:
+            SendWarningMessage('Сработал лимит timeLimit - по обработке сообщения ботом')
+        
 
 theme: /ИнициацияЗавершения
     
