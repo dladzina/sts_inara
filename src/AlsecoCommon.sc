@@ -4,8 +4,13 @@ theme: /AlsecoCommon
         intent!:/AlsecoGiveAddress
         random:
             a: Наш адрес - Карасай батыра 155, угол Виноградова. Возможно, я или оператор сможем Вам помочь по телефону? 
-            a: Карасай батыра, 155 угол Виноградова. Может, мы можем решить вопрос по телефону?
+            a: Карасай батыра, 155, угол Виноградова. Может, мы можем решить вопрос по телефону?
         go!: /WhatDoYouWantNoContext
+        script:
+            $dialer.bargeInResponse({
+                bargeIn: "forced",
+                bargeInTrigger: "final",
+                noInterruptTime: 0});
 
         state: AlsecoAddressRepeat
             intent: /AlsecoAdressConfirm
@@ -14,7 +19,7 @@ theme: /AlsecoCommon
 
 
 # телефоны алсеко
-# на этот вопрос не ответчаем
+# на этот вопрос не отвечаем
     state: AlsecoPhones
         intent!:/AlsecoGivePhones
         go!: /NoMatch
@@ -56,7 +61,13 @@ theme: /AlsecoCommon
             intent: /Согласие_повторить
             intent: /Повторить
             q: $numbersByWords 
-            go!: ..        
+            a: +7 701 485 79 86
+            if: countRepeatsInRow() < 3
+            # if:    countRepeats() < 3
+                a: Повторить?
+            else: 
+                go!:../../CanIHelpYou  
+            # go!: ..        
 
         state: SaleContactsDecline
             intent: /Несогласие
