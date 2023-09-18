@@ -1354,6 +1354,8 @@
       "text" : "по какой причине у нас отключают газ"
     }, {
       "text" : "вызвать электрика на дом"
+    }, {
+      "text" : "осе же канал рымы"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1422,6 +1424,17 @@
       "refs" : [ ]
     },
     "patterns" : [ ],
+    "slots" : [ {
+      "name" : "алсеко",
+      "entity" : "алсеко",
+      "required" : false,
+      "prompts" : [ ]
+    }, {
+      "name" : "ивц",
+      "entity" : "ивц",
+      "required" : false,
+      "prompts" : [ ]
+    } ],
     "priority" : 0
   }, {
     "path" : "/Квитанция_Доставка",
@@ -2398,8 +2411,6 @@
     "phrases" : [ {
       "text" : "график работы"
     }, {
-      "text" : "дни работы офисов"
-    }, {
       "text" : "к вам можно подъехать на выходных"
     }, {
       "text" : "по каким дням недели вы открыты"
@@ -2469,9 +2480,14 @@
       "text" : "отправить письмо на электронку"
     }, {
       "text" : "подскажите емейл"
+    }, {
+      "text" : "куда вам написать"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "жалоба",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "priority" : 0
@@ -3248,6 +3264,44 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "оплата", "платеж", "заявка" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "ивц",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : true,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "и в", "и вот с", "и вэ цэ", "ивц" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "жалоба",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "жалоба", "претензия" ],
       "value" : ""
     } ]
   } ],

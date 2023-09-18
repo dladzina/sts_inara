@@ -2,15 +2,18 @@ theme: /AlsecoCommon
 # адрес Алсеко
     state: AlsecoAddress
         intent!:/AlsecoGiveAddress
-        random:
-            a: Наш адрес - Карасай батыра 155, угол Виноградова. Возможно, я или оператор сможем Вам помочь по телефону? 
-            a: Карасай батыра, 155, угол Виноградова. Может, мы можем решить вопрос по телефону?
-        script:
-            $dialer.bargeInResponse({
-                bargeIn: "forced",
-                bargeInTrigger: "final",
-                noInterruptTime: 0});
-        go!: /WhatDoYouWantNoContext
+        if: (($parseTree._ивц) && (!$parseTree._алсеко))
+            go!: /NoMatch
+        else:
+            random:
+                a: Наш адрес - Карасай батыра 155, угол Виноградова. Возможно, . я или опер+атор сможем **Вам пом+очь** по телеф+ону? 
+                a: Карасай батыра, 155, угол Виноградова. Может, мы м+ожем реш+ить **Ваш вопр+ос** по телеф+ону?
+            script:
+                $dialer.bargeInResponse({
+                    bargeIn: "forced",
+                    bargeInTrigger: "final",
+                    noInterruptTime: 0});
+            go!: /WhatDoYouWantNoContext
 
         state: AlsecoAddressRepeat
             intent: /AlsecoAdressConfirm
@@ -38,12 +41,30 @@ theme: /AlsecoCommon
     state: AlsecoEmail
         intent!:/AlsecoGiveEmail
         random:
-            a: наш емейл - info собачка алсеко кей зет.буква Ка в Алсеко пишется через букву си - или эс на русском. 
+            a: наш емейл - -  инфо собачка алсеко точка кей зет.
+        if:    countRepeats() < 3
+            a: Повторить?
+        else: 
+            go!:../CanIHelpYou 
+
+        state: AlsecoEmailRepeat:
+            intent: /Повторить
+            intent: /Согласие_продиктовать_список_поставщиков
+            intent: /Согласие_повторить
+            intent: /Повторить
+            q: $numbersByWords 
+            a: инфо собачка алсеко точка кей зет. Диктую слово алсеко по буквам.  - А. - Л. - С, как доллар. - Е. - К, как буква "с" русская. - О. алсеко
+            if: countRepeatsInRow() < 3
+            # if:    countRepeats() < 3
+                a: Повторить?
+            else: 
+                go!:../../CanIHelpYou              
  
     state: AlsecoWorkingDays
         intent!:/AlsecoGiveWorkingDays
         random:
-            a: мы работаем в будни с 8 до 16, звонки принимаем до 18 00. суббота, воскресенье - выходной
+            a: мы работаем в будни с 8 до 16, звонки принимаем до 18 00. Суббота и воскресенье - выходной
+        go!:../CanIHelpYou
 
     state: AlsecoPartnersSaleContacts
         intent!:/AlsecoGivePartnersSaleContacts
@@ -77,9 +98,9 @@ theme: /AlsecoCommon
     
     state: AlsecoFinance
         intent!:/AlsecoGiveFinance
-        random:
-            a: Перевожу Ваш звон+ок на опер+атора
-            go!: /CallTheOperator
+        # random:
+        a: Перевожу **Ваш звон+ок** на опер+атора
+        go!: /CallTheOperator
 
     state: CanIHelpYou ||noContext = false
         # CommonAnswers
