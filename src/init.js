@@ -19,7 +19,11 @@ init:
     });
     
     bind("postProcess", function($context) {
+        // предыдущий стейт с учетом неконтекстных
         $context.session.lastState = $context.currentState;
+        // предыдущий стейт без учета неконтестных
+        $context.session.prevState = $context.contextPath;
+        
         // $analytics.setComment(toPrettyString($dialer.getTtsConfig()))
         //$context.session._lastState = $context.currentState;
         // log("**********" + toPrettyString($context.currentState));
@@ -50,8 +54,8 @@ init:
     bind("selectNLUResult", 
     function($context) {
         
-        log("$context 1 = "  + toPrettyString( $context ) );
-        log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
+        // log("$context 1 = "  + toPrettyString( $context ) );
+        // log("$context.nluResults 1 = "  + toPrettyString( $context.nluResults) );
         
         // Для блока ввод ЛС - когда вводим цифры не применять приоритет интетов над паттернами.
         // ошибка происходит, если говоришь - "четыре" (синоним хорошо) или "пять" (синоним отлично)

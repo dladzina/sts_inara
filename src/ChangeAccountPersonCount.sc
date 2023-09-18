@@ -166,11 +166,11 @@ theme: /ChangeAccountPersonCount
         state: WhoBringsDocuments
             intent: /собственник_привозит_документы
             a: Документы может принести владелец жилья. Либо заявку может подать доверенное лицо - - тогда еще понадобится доверенность от собственника жилья. - - 
-            go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangeAccountPerson
+            go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangePersonCount
             
-        state: DocsToBring
-            intent: /перечисление_документов
-            go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangeAccountPersonCount/Yes_List_Doc
+        # state: DocsToBring
+        #     intent: /перечисление_документов
+        #     go!: /ChangeAccountPersonCount/ChangeAccountPersonCount/DocumentsToChangeAccountPersonCount/Yes_List_Doc
         
         state: CanIHelpYou 
             script:

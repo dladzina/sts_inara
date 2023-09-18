@@ -207,7 +207,7 @@ theme: /NoElectricService
                     a: Позвоните в АлматыЭнергоСбыт по телефону 356, 99, 99. Код города - 727.
                 else:
                     a: 356, 99, 99. Код города - 727. || tts = "356 <break strength='strong'/> 99 <break strength='strong'/> 99. Код города - 727."
-                if: $session.RepeatCnt.ServRepeat<3
+                if: $session.RepeatCnt.ServRepeat < 3
                     a: Повторить? 
                 else:
                     go!:../../CanIHelpYou

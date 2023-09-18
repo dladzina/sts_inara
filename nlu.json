@@ -2491,11 +2491,13 @@
       "text" : "предлагаем совместный проект"
     }, {
       "text" : "контакт отдела продаж "
+    }, {
+      "text" : "сотрудничать с вами"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "* сотрудничеств* *" ],
     "priority" : 0
   }, {
     "path" : "/AlsecoGiveFinance",

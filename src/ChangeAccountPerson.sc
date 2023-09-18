@@ -192,9 +192,9 @@ theme: /ChangeAccountPerson
             a: Документы может принести владелец жилья. Либо заявку может подать доверенное лицо - - тогда еще понадобится доверенность от собственника жилья. - - 
             go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
             
-        state: DocsToBring
-            intent: /перечисление_документов
-            go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson/Yes_List_Doc
+        # state: DocsToBring
+        #     intent: /перечисление_документов
+        #     go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson/Yes_List_Doc
 
 
         state: CanIHelpYou 
