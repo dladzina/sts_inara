@@ -189,8 +189,8 @@ theme: /ChangeAccountPerson
                     
         state: WhoBringsDocuments
             intent: /собственник_привозит_документы
-            a: Только владелец или тот, кому владелец поручил, имеют право представить документы по этому вопросу
-            go!: /WhatDoYouWantNoContext
+            a: Документы может принести владелец жилья. Либо заявку может подать доверенное лицо - - тогда еще понадобится доверенность от собственника жилья
+            go!: /ChangeAccountPerson/ChangeAccountPerson/DocumentsToChangeAccountPerson
             
         state: DocsToBring
             intent: /перечисление_документов
