@@ -130,6 +130,7 @@ theme: /
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}        
 
+
     state: OtherTheme
         intent!: /РазноеНаОператора
         intent!:/Квитанция_Дубликат

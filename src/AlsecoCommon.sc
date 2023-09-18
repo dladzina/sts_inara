@@ -13,17 +13,17 @@ theme: /AlsecoCommon
     state: AlsecoMobApp
         intent!: /AlsecoGiveMobApp
         random:
-            a: наше приложение Алсеко есть в гугл плей и апп сторе 
+            a: наше приложение Алсеко есть в гугл плей и ап сторе 
 
     state: AlsecoSite
         intent!:/AlsecoGiveSite
         random:
-            a: в интернете вы нас можете найти на сайте алсеко кей зет 
+            a: в интернете вы нас можете найти на сайте алсеко точка кей зет 
  
     state: AlsecoEmail
         intent!:/AlsecoGiveEmail
         random:
-            a: наш емейл - info собачка алсеко кей зет.буква к в Алсеко пишется через букву си - или эс на русском. 
+            a: наш емейл - info собачка алсеко кей зет.буква Ка в Алсеко пишется через букву си - или эс на русском. 
  
     state: AlsecoWorkingDays
         intent!:/AlsecoGiveWorkingDays
@@ -33,7 +33,8 @@ theme: /AlsecoCommon
     state: AlsecoPartnersSaleContacts
         intent!:/AlsecoGivePartnersSaleContacts
         random:
-            a: мы работаем в будни с 8 до 16, звонки принимаем до 18 00. суббота, воскресенье - выходной
+            a: По поводу партнерства с нами вы можете позвонить по телефону XXXX
+
     
     state: AlsecoFinance
         intent!:/AlsecoGiveFinance

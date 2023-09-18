@@ -1,32 +1,150 @@
 <test>
+
     <test-case>
         <q>скажите где находится и в</q>
         <a state = "/NoMatch"></a>
-        
     </test-case>
+
+    <!--адрес алсеко-->
     <test-case>
         <q>мне нужен адрес ваш</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a>
-    </test-case>
-    
-    # BOT-379
-    
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>подскажите телефон алеко</q>
-        <a state="/NoMatch"/>
-    </test-case>
-        # BOT-316
-        
-    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
-        <q>алло здравствуйте мне нужен контакт отдела продаж фика</q>
-        <a state="/NoMatch"/>
     </test-case>
     <test-case>
         <q>/start</q><a></a><a></a><a></a>
         <q>мне адрес дайте пожалуйста олежку</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a>
     </test-case>
+    <test-case>
+        <q>а скажите пожалуйста где ваш адрес находится</q>
+		<a state="/AlsecoCommon/AlsecoAddress"></a>
+    </test-case>
+    
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>как к вам приехать</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>как к вам подъехать</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>где вы находитесь</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>какое у вас месторасположение</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>подскажите ваш адрес</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>дайте адрес алеко</q>
+        <a state = "/AlsecoCommon/AlsecoAddress"></a>
+    </test-case>
+    # BOT-379
+<!--телефон алсеко    -->
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>подскажите телефон алеко</q>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>хочу позвонить в аптека</q>
+        <a state="/NoMatch"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>хочу дозвониться в алсеко</q>
+        <a state="/NoMatch"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>скажите ваш телефон</q>
+        <a state="/NoMatch"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>подскажите как дозвониться к вам</q>
+        <a state="/NoMatch"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>подскажите телефон компании</q>
+        <a state="/NoMatch"/>
+    </test-case>
+        # BOT-316
+        
+<!--отдел продаж / сотрудничество-->
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>алло здравствуйте мне нужен контакт отдела продаж фика</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/>
+    </test-case>
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>Есть бизнес предложение</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/>
+    </test-case>
+
+   <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>есть возможность партнерства</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>контакты для возможных партнеров</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>куда обращаться по вопросам сотрудничества</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>предлагаем совместный проект</q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/>
+    </test-case>
+        
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>контакт отдела продаж </q>
+        <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/>
+    </test-case>
+
+
+
+<!--связаться с бухгалтерией-->
+    <test-case>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне бухгалтерия ваша</q>
+        <a class="/AlsecoCommon/AlsecoFinance"/>
+        <a state="/NoMatch"/>
+    </test-case>
+    <test-case id='change_person_error82'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>мне не нужно поменять фамилию и в этом мне нужен мне нужна бухгалтерия ваша</q>
+        <a class="/AlsecoCommon/AlsecoFinance"/>
+        <a state="/NoMatch"/>
+    </test-case>
+    
 
 </test>
