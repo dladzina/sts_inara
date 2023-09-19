@@ -259,7 +259,26 @@ theme: /NoElectricService
                 
     state: NoService
         intent!: /Услуга_ПодключитьОтключить
-        if: (($parseTree._Услуга) && ($parseTree._Услуга[0]==13))
+        # a: Услуга_ПодключитьОтключить
+        # a: {{toPrettyString($parseTree)}}
+        # a: {{toPrettyString($parseTree._Услуга)}}
+        script:
+            // проверяем наличие услуги ЭЭ в запросе
+            // если есть услуга ЭЭ, то отправляем ветка - у вас нет света? 
+            // если нет услуг или это другие услуги, то уже говорим - что-то другое
+            $temp.HasElectricService = false
+            if ($parseTree._Услуга){
+                $temp.Service = $parseTree._Услуга;
+                if (typeof($temp.Service)=="string"){
+                    var  Names = $temp.Service;
+                    Names = Names.replaceAll( "\"","\'");
+                    Names = Names.replaceAll( "\'","\"");
+                    $temp.Service = JSON.parse(Names);
+                }
+                $temp.HasElectricService = $temp.Service.SERV_ID[0] == 23
+            }
+        # a: {{$temp.Service}}
+        if: $temp.HasElectricService
             go!: /NoElectricService/CallerNoElectric
         else:
             go!: /OtherTheme

@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_bot_406-1000039011-yuj",
-    "name" : "inara_bot_406-1000039011-yuj",
+    "id" : "inara_dlya_sts-1000039011-rMg",
+    "name" : "inara_dlya_sts-1000039011-rMg",
     "folder" : "/platform"
   },
   "settings" : {
@@ -1201,7 +1201,8 @@
       "name" : "алсеко",
       "entity" : "алсеко",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
@@ -1428,12 +1429,14 @@
       "name" : "алсеко",
       "entity" : "алсеко",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     }, {
       "name" : "ивц",
       "entity" : "ивц",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
@@ -2391,6 +2394,13 @@
       "refs" : [ ]
     },
     "patterns" : [ ],
+    "slots" : [ {
+      "name" : "Услуга",
+      "entity" : "Услуга",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : true
+    } ],
     "priority" : 0
   }, {
     "path" : "/ChangeAccountPerson_MayBe",
