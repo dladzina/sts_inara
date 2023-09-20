@@ -12,7 +12,7 @@
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>мне адрес дайте пожалуйста олежку</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
@@ -22,32 +22,32 @@
     </test-case>
     
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>как к вам приехать</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>как к вам подъехать</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>где вы находитесь</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>какое у вас месторасположение</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>подскажите ваш адрес</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>дайте адрес алеко</q>
         <a state = "/AlsecoCommon/AlsecoAddress"></a><a state = "/WhatDoYouWantNoContext"></a>
     </test-case>
@@ -57,36 +57,36 @@
 <!--***********************************************************-->
 <!--телефон алсеко    -->
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>подскажите телефон алеко</q>
         <a state="/NoMatch"/>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>хочу позвонить в аптека</q>
         <a state="/NoMatch"/>
     </test-case>
         
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>хочу дозвониться в алсеко</q>
         <a state="/NoMatch"/>
     </test-case>
         
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>скажите ваш телефон</q>
         <a state="/NoMatch"/>
     </test-case>
         
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>подскажите как дозвониться к вам</q>
         <a state="/NoMatch"/>
     </test-case>
         
     <!--<test-case>-->
-    <!--    <q>/start</q><a></a><a></a><a></a>-->
+    <!--    <q>/start</q><a></a><a></a>-->
     <!--    <q>подскажите телефон компании</q>-->
     <!--    <a state="/NoMatch"/>-->
     <!--</test-case>-->
@@ -97,42 +97,42 @@
 <!--***********************************************************-->
 <!--отдел продаж / сотрудничество-->
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>алло здравствуйте мне нужен контакт отдела продаж фика</q>
         <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>Есть бизнес предложение</q>
         <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
     </test-case>
 
    <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>есть возможность партнерства</q>
         <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
     </test-case>
         
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>контакты для возможных партнеров</q>
         <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
     </test-case>
         
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>куда обращаться по вопросам сотрудничества</q>
         <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
     </test-case>
         
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>предлагаем совместный проект</q>
         <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
     </test-case>
         
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>контакт отдела продаж </q>
         <a state="/AlsecoCommon/AlsecoPartnersSaleContacts"/><a>Повторить?</a>
     </test-case>
@@ -142,14 +142,14 @@
 <!--***********************************************************-->
 <!--связаться с бухгалтерией-->
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>мне бухгалтерия ваша</q>
         <a state="/AlsecoCommon/AlsecoFinance"/>
         <!--<a state="/CallTheOperator"/>-->
     </test-case>
     
     <test-case id='change_person_error82'>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>мне не нужно поменять фамилию и в этом мне нужен мне нужна бухгалтерия ваша</q>
         <a state="/AlsecoCommon/AlsecoFinance"/>
         <!--<a state="/CallTheOperator"/>-->
@@ -157,93 +157,93 @@
 <!--***********************************************************-->
 <!--приложение алсеко-->
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>у вас есть приложение</q>
         <a state="/AlsecoCommon/AlsecoMobApp"/>
         <!--<a state="/CallTheOperator"/>-->
     </test-case>    
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>удобнее через приложение</q>
         <a state="/AlsecoCommon/AlsecoMobApp"/>
         <!--<a state="/CallTheOperator"/>-->
     </test-case>    
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>скачать мобильное приложение</q>
         <a state="/AlsecoCommon/AlsecoMobApp"/>
     </test-case>   
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>вы есть в гугл плей</q>
         <a state="/AlsecoCommon/AlsecoMobApp"/>
     </test-case>    
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>вас можно найти в апп сторе</q>
         <a state="/AlsecoCommon/AlsecoMobApp"/>
     </test-case>    
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>в формате приложения</q>
         <a state="/AlsecoCommon/AlsecoMobApp"/>
     </test-case>    
     <test-case>
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>есть приложение на телефон</q>
         <a state="/AlsecoCommon/AlsecoMobApp"/>
     </test-case>    
 <!--***********************************************************-->
 <!--вы есть в соц сетях?-->
     <test-case id="AlsecoEmail_1">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>подскажите емейл</q>
         <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
     </test-case>
     <test-case id="AlsecoEmail_2">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>отправить письмо на электронку</q>
         <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
     </test-case>
     <test-case id="AlsecoEmail_3">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>какая у вас почта</q>
         <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
     </test-case>
     <test-case id="AlsecoEmail_4">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>как написать вам на почту</q>
         <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
     </test-case>
     <test-case id="AlsecoEmail_5">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>адрес электронной почты</q>
         <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
     </test-case>
         <test-case id="AlsecoEmail_5">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>куда вам можно написать</q>
         <a state="/AlsecoCommon/AlsecoEmail"/><a>Повторить?</a>
     </test-case>
 <!--***********************************************************-->
 <!--вы есть в соц сетях?-->
     <test-case id="AlsecoWorkingDays_1">
-        <q>/start</q><a></a><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>рабочие дни</q>
         <a state="/AlsecoCommon/AlsecoWorkingDays"/><a state="/AlsecoCommon/CanIHelpYou"></a>
     </test-case>
     <test-case id="AlsecoWorkingDays_2">
-          <q>/start</q><a></a><a></a><a></a>
+          <q>/start</q><a></a><a></a>
         <q>по каким дням недели вы открыты</q>
         <a state="/AlsecoCommon/AlsecoWorkingDays"/><a state="/AlsecoCommon/CanIHelpYou"></a>
     </test-case>
     <test-case id="AlsecoWorkingDays_3">
-          <q>/start</q><a></a><a></a><a></a>
+          <q>/start</q><a></a><a></a>
         <q>к вам можно подъехать на выходных</q>
         <a state="/AlsecoCommon/AlsecoWorkingDays"/><a state="/AlsecoCommon/CanIHelpYou"></a>
     </test-case>
     <test-case id="AlsecoWorkingDays_4">
-          <q>/start</q><a></a><a></a><a></a>
+          <q>/start</q><a></a><a></a>
         <q>график работы</q>
         <a state="/AlsecoCommon/AlsecoWorkingDays"/><a state="/AlsecoCommon/CanIHelpYou"></a>
     </test-case>
