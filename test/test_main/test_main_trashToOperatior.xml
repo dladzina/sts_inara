@@ -4,6 +4,7 @@
 		<q>/start</q>
 		<a state="/Start"></a>
 		<a state="/Start"></a>
+		<a state="/Start"></a>
 		<q>девушка вас беспокоит</q>
 		<a state="/NoMatch"></a>
     </test-case>
@@ -11,6 +12,7 @@
     <test-case>
 		<random>0</random>
 		<q>/start</q>
+		<a state="/Start"></a>
 		<a state="/Start"></a>
 		<a state="/Start"></a>
 		<q>где я могу исправить буковку название улицы</q>
@@ -21,12 +23,14 @@
 		<q>/start</q>
 		<a state="/Start"></a>
 		<a state="/Start"></a>
+		<a state="/Start"></a>
 		<q>девушка вас беспокоит</q>
 		<a state="/NoMatch"></a>
     </test-case>  
     <test-case>
 		<random>0</random>
 		<q>/start</q>
+		<a state="/Start"></a>
 		<a state="/Start"></a>
 		<a state="/Start"></a>
 		<q>еще раз скажите где я могу исправить буковку название улицы</q>
@@ -36,119 +40,119 @@
     </test-case>     
     
     <test-case id="откатить платеж">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>скажите пожалуйста я вот деньги закинул не туда как мне их перевести</q>
 		<a state="/NoMatch"></a>
     </test-case>
     
     <test-case  id = "Доставка_квитанций_4">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>скажите пожалуйста почему мне не пришла квитанция за май месяц</q>
 		<a state="/NoMatch"></a>
     </test-case>
     <test-case  id = "Доставка_квитанций_3">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>у меня такой вопрос пришла квитанция</q>
 		<a state="/NoMatch"></a>
     </test-case>    
     <test-case  id = "Доставка_квитанций_2">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>не приходит квитанция</q>
 		<a state="/NoMatch"></a>
     </test-case>        
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>подскажите пожалуйста там в квитанции неправильно указали объем квадратуру домов как можно это изменить</q>
 		<a state="/NoMatch"></a>
     </test-case>       
     
 <!--про получение дубликатов квитанций    -->
     <test-case id="Дубликат_квитанции_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>как можно как можно получить дубликат квитанции</q>
 		<a state="/NoMatch"></a>
     </test-case>       
     <test-case id="Дубликат_квитанции_2">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>как можно как можно получить дубликат квитанции</q>
 		<a state="/NoMatch"></a>
     </test-case>  
     <test-case id="Дубликат_квитанции_3">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>копию квитанции на оплату</q>
 		<a state="/NoMatch"></a>
     </test-case>  
     <test-case id="Дубликат_квитанции_4">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>хочу получить квитанции за прошлые месяца</q>
 		<a state="/NoMatch"></a>
     </test-case>  
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>я юридическое лицо не пришли квитанции</q>
 		<a state="/NoMatch"></a>
     </test-case>       
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>я хочу узнать почему не приносят бумажный носитель квитанции</q>
 		<a state="/NoMatch"></a>
     </test-case>   
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>да почему не приносят квитанцию в бумажном носителе</q>
 		<a state="/NoMatch"></a>
     </test-case>       
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>май месяц нет квитанции на оплату коммунальных услуг почему</q>
 		<a state="/NoMatch"></a>
     </test-case>       
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>почему не приносят в бумажном носителе квитанцию</q>
 		<a state="/NoMatch"></a>
     </test-case>       
 
     <test-case id = "Доставка_квитанций_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>нужно мне оплатить коммунальные услуги то есть квитанцию сегодня май месяц до сих пор нет в чем дело</q>
 		<a state="/NoMatch"></a>
     </test-case>      
 
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>подскажите пожалуйста недавно пришла квитанция примерно пятого мая за какой месяц она пришла</q>
 		<a state="/NoMatch"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>пропала строка из квитанции</q>
 		<a state="/NoMatch"></a>
     </test-case>
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>нужно скажите пожалуйста почему мне прислали долг</q>
 		<a state="/NoMatch"></a>
     </test-case>
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мне нужно сделать возврат</q>
 		<a state="/NoMatch"></a>
     </test-case>
     
     <test-case id ="Договорной 1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>мы поменяли компанию клининговую</q>
 		<a state="/NoMatch"></a>
     </test-case>
     
 
     <test-case id ="Возврат платежа">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>я хотела вообще то сделать возврат и заново заполнить</q>
 		<a state="/NoMatch"></a>
 		<q>мне нужно сделать возврат</q>
@@ -156,7 +160,7 @@
     </test-case>    
     
     <test-case id ="Счетчик">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>необходимо заменить счетчик приходил ваш сотрудник и сказал менять счетчик</q>
 		<a state="/NoMatch"></a>
 		<q>необходимо заменить счетчик</q>
@@ -166,7 +170,7 @@
     #  /BOT-24
     
     <test-case id ="копию квитанции на оплату">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>копию квитанции на оплату</q>
         <a state ="/NoMatch"></a>
         <q>копию квитанции на оплату</q>
@@ -176,7 +180,7 @@
     #  /NoMatch_BOT-238
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Появилась здесь у меня квитанция.</q>
         <a state="/NoMatch"></a>
         <q>Появилась здесь у меня квитанция.</q>
@@ -184,7 +188,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Доставили ко мне тут квитанцию.</q>
         <a state="/NoMatch"></a>
         <q>Доставили ко мне тут квитанцию.</q>
@@ -192,7 +196,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Принесли сюда мне квитанцию.</q>
         <a state="/NoMatch"></a>
         <q>Принесли сюда мне квитанцию.</q>
@@ -200,7 +204,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Я получил тут квитанцию.</q>
         <a state="/NoMatch"></a>
         <q>Я получил тут квитанцию.</q>
@@ -208,7 +212,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Прибыла сюда ко мне квитанция.</q>
         <a state="/NoMatch"></a>
         <q>Прибыла сюда ко мне квитанция.</q>
@@ -216,7 +220,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Мне привезли сюда квитанцию.</q>
         <a state="/NoMatch"></a>
         <q>Мне привезли сюда квитанцию.</q>
@@ -224,7 +228,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Пришла ко мне сюда квитанция.</q>
         <a state="/NoMatch"></a>
         <q>Пришла ко мне сюда квитанция.</q>
@@ -232,7 +236,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Мне доставили сюда квитанцию.</q>
         <a state="/NoMatch"></a>
         <q>Мне доставили сюда квитанцию.</q>
@@ -240,7 +244,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Появилась у меня здесь квитанция.</q>
         <a state="/NoMatch"></a>
         <q>Появилась у меня здесь квитанция.</q>
@@ -248,7 +252,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Я получил здесь квитанцию.</q>
         <a state="/NoMatch"></a>
         <q>Я получил здесь квитанцию.</q>
@@ -259,7 +263,7 @@
     
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Желаю получить дубликат квитанции.</q>
         <a state="/NoMatch"></a>
         <q>Желаю получить дубликат квитанции.</q>
@@ -267,7 +271,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Нужна копия квитанции.</q>
         <a state="/NoMatch"></a>
         <q>Нужна копия квитанции.</q>
@@ -275,7 +279,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Имею желание получить репринт квитанции.</q>
         <a state="/NoMatch"></a>
         <q>Имею желание получить репринт квитанции.</q>
@@ -283,7 +287,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Хотел бы получить второй экземпляр квитанции.</q>
         <a state="/NoMatch"></a>
         <q>Хотел бы получить второй экземпляр квитанции.</q>
@@ -291,7 +295,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Прошу о предоставлении копии квитанции.</q>
         <a state="/NoMatch"></a>
         <q>Прошу о предоставлении копии квитанции.</q>
@@ -302,7 +306,7 @@
     
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Девушка, извините, что мешаю вас своим вопросом.</q>
         <a state="/NoMatch"></a>
         <q>Девушка, извините, что мешаю вас своим вопросом.</q>
@@ -310,7 +314,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Девушка, простите за беспокойство по этому поводу.</q>
         <a state="/NoMatch"></a>
         <q>Девушка, простите за беспокойство по этому поводу.</q>
@@ -318,7 +322,7 @@
     </test-case>
     
     <test-case id="Перевод на оператора_1">
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Девушка, извините за неудобство, связанное с этим вопросом.</q>
         <a state="/NoMatch"></a>
         <q>Девушка, извините за неудобство, связанное с этим вопросом.</q>
@@ -329,7 +333,7 @@
     
     <test-case>
         <random>0</random>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Я не получил квитанцию.</q>
         <a state="/NoMatch"></a>
         <q>Я не получил квитанцию.</q>
@@ -339,6 +343,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Мне не пришла квитанция.</q>
@@ -352,6 +357,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Квитанция не доставлена мне.</q>
         <a state="/NoMatch"></a>
         <q>Квитанция не доставлена мне.</q>
@@ -361,6 +367,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Квитанция не пришла ко мне.</q>
@@ -372,13 +379,13 @@
     #  BOT-300
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Будьте добры, объясните, почему мне прислали долг?</q>
         <a state="/NoMatch"></a>
     </test-case>
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>Можете объяснить, почему я получил задолженность?</q>
         <a state="/NoMatch"></a>
     </test-case>
@@ -386,6 +393,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Пожалуйста, скажите, почему я получил долг?</q>
@@ -399,6 +407,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Я желаю вернуть деньги</q>
         <!--<a>Давайте посмотрим Ваши платежи, а потом я переведу Вас на оператора</a>-->
         <!--<a>Назовите номер вашего лицевого счета</a>-->
@@ -408,6 +417,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Хотелось бы сделать возврат.</q>
@@ -420,6 +430,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Мне нужно сделать возврат средств.</q>
         <a state="/NoMatch"></a>
     </test-case>
@@ -427,6 +438,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Необходимо осуществить возврат.</q>
@@ -441,6 +453,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Мы сменили фирму по клинингу.</q>
         <a state="/NoMatch"></a>  
     </test-case>
@@ -448,6 +461,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Мы выбрали другую компанию для уборки.</q>
@@ -459,6 +473,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Было принято решение заменить клининговую компанию.</q>
         <a state="/NoMatch"></a>  
     </test-case>
@@ -468,6 +483,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Мы решили перейти на нового поставщика услуг клининга.</q>
         <a state="/NoMatch"></a>  
     </test-case>
@@ -475,6 +491,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>У нас теперь другая организация, занимающаяся уборкой.</q>
@@ -488,6 +505,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Пожалуйста, подскажите, за какой месяц пришла недавно полученная квитанция, примерно пятого мая?</q>
         <a state="/NoMatch"></a>  
     </test-case>
@@ -495,6 +513,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Можете ли вы сказать, за какой период была выставлена квитанция, которую я получил недавно, примерно пятого мая?</q>
@@ -506,6 +525,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Недавно я получил квитанцию, примерно пятого мая. Можете подсказать, за какой месяц она была?</q>
         <a state="/NoMatch"></a>  
     </test-case>
@@ -515,6 +535,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Подскажите, пожалуйста, за какой месяц пришла квитанция, которую я получил недавно, примерно пятого мая?</q>
         <a state="/NoMatch"></a>  
     </test-case>
@@ -522,6 +543,7 @@
     <test-case>
         <random>0</random>
         <q>/start</q>
+        <a state="/Start"></a>
         <a state="/Start"></a>
         <a state="/Start"></a>
         <q>Мне пришла квитанция примерно пятого мая. Можете сказать, за какой месяц она была выставлена?</q>
@@ -535,6 +557,7 @@
 		<q>/start</q>
 		<a state="/Start"></a>
 		<a state="/Start"></a>
+		<a state="/Start"></a>
 		<q>на лицевой счет</q>
 		<a state="/NoMatch"></a>
     </test-case>    
@@ -543,6 +566,7 @@
     <test-case>
 		<random>0</random>
 		<q>/start</q>
+		<a state="/Start"></a>
 		<a state="/Start"></a>
 		<a state="/Start"></a>
 		<q>здравствуйте как можно зайти на циску анекот контакт</q>
@@ -555,6 +579,7 @@
         <q>/start</q>
         <a state="/Start"></a>
         <a state="/Start"></a>
+        <a state="/Start"></a>
         <q>Понял.</q>
         <a state="/NoMatch"></a>
     </test-case>
@@ -563,19 +588,19 @@
     # BOT-374
     
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>я хотела спросить что мы поменяли адрес но мне приходит</q>
         <a state="/NoMatch"></a>
     </test-case>
 
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>я говорю на этот месяц пришла квитанция и торты написано долг сто тридцать одна ну там сто тридцать одна девяносто четыре копейки но у меня никак не может быть</q>
         <a state="/NoMatch"></a>
     </test-case>
 
     <test-case>
-        <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a><a></a>
         <q>ну у меня здесь на этот месяц пришел пришла квитанция что то было я должна сто тридцать одна деньги с мелочь короче но я не должна</q>
         <a state="/NoMatch"></a>
     </test-case>

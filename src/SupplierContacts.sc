@@ -107,6 +107,17 @@ theme: /SupplierContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
                     go!: /CallTheOperator
+
+            state: SupplierContactsByAccountPhone
+                q: телефон
+                script:
+                    SupplContactsSetServ([18, 202, 211, 289])
+                if: SupplContactsGetServices()
+                    go!:../../SupplierContactsSayContacts
+                else:
+                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    go!: /CallTheOperator                    
+
             state: SupplierContactsByAccountServGetServNoMatch
                 event: noMatch
                 a: Я не нашла услугу. Перевожу Вас на оператора

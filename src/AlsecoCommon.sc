@@ -47,7 +47,7 @@ theme: /AlsecoCommon
         else: 
             go!:../CanIHelpYou 
 
-        state: AlsecoEmailRepeat:
+        state: AlsecoEmailRepeat
             intent: /Повторить
             intent: /Согласие_продиктовать_список_поставщиков
             intent: /Согласие_повторить
