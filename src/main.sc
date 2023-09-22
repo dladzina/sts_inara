@@ -70,8 +70,9 @@ theme: /
             $.session.repeatsInRow = 0;
             $.session.repeats = {};
         # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
-        a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
-        a: подсказать дату последней оплаты или контакты поставщика услуг
+        a: Я Инара, ваш виртуальный помощник.
+        # Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
+        # a: подсказать дату последней оплаты или контакты поставщика услуг
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
@@ -82,7 +83,7 @@ theme: /
                 bargeIn: "phrase",
                 bargeInTrigger: "final",
                 noInterruptTime: 0});
-             FindAccountNumberClear();
+            FindAccountNumberClear();
         
         state: DialogMakeQuestion
             intent: /НачалоРазговора 

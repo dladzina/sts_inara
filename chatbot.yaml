@@ -7,8 +7,9 @@ language: ru
 
 tests:
     include:
+        # test_AlsecoCommon/*.xml
         # - test_SupplierContacts/*.xml
-        - test_AlsecoCommon/test_AlsecoCommonEmail.xml
+        #   - test_AlsecoCommon/test_AlsecoCommonPatnersSalePhonesErrors.xml
         # - test_AccountInput/test_AccountInput_NumbersPartCheck2.xml
         #  - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_nols.xml
         #  - test_ChangeAccountPersonCount/test_ChangeAccountPersonCount_offline.xml
@@ -25,8 +26,11 @@ tests:
         # - test_ChangeAccountPersonCount/*.xml
         # - test_ChangeAccountPerson/test_ChangeAccountPerson_errors.xml
         # - test_local_intents/*.xml
-    #exclude: 
+    exclude: 
+        # - *.*
+        # - *
         # - test_i/test_irina.xml
+        # - test_AlsecoCommon/*.xml
 
 messages:
   onError:

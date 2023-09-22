@@ -2603,6 +2603,16 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/DontUnderstand",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ "[я/что [то]] [вас/тебя] не понял* [$oneWord]" ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
