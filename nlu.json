@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_bot_406-1000039011-yuj",
-    "name" : "inara_bot_406-1000039011-yuj",
+    "id" : "inara_dlya_sts-1000039011-rMg",
+    "name" : "inara_dlya_sts-1000039011-rMg",
     "folder" : "/platform"
   },
   "settings" : {
@@ -1225,7 +1225,8 @@
       "name" : "КСК",
       "entity" : "КСК",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
