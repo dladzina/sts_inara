@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_dlya_sts-1000039011-rMg",
-    "name" : "inara_dlya_sts-1000039011-rMg",
+    "id" : "inara_bot_406-1000039011-yuj",
+    "name" : "inara_bot_406-1000039011-yuj",
     "folder" : "/platform"
   },
   "settings" : {
@@ -62,11 +62,13 @@
       "text" : "вы уже живой человек"
     }, {
       "text" : "привет ты робот"
+    }, {
+      "text" : "автоответчик сделали"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "{ $oneWord (~бот/~робот/~автоответчик) $oneWord}" ],
     "priority" : 0
   }, {
     "path" : "/НачалоРазговора",
@@ -177,6 +179,10 @@
       "text" : "сначала можно"
     }, {
       "text" : "можешь повторить помедленнее"
+    }, {
+      "text" : "да спасибо большое"
+    }, {
+      "text" : "спасибо да"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -287,6 +293,8 @@
       "text" : "я вас приветствую"
     }, {
       "text" : "доброго времени суток"
+    }, {
+      "text" : "здравствуйте "
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -391,6 +399,10 @@
       "text" : "поговорить с оператором не виртуальным"
     }, {
       "text" : "уже разговаривала с вами не смогли помочь"
+    }, {
+      "text" : "кроме автоответчика никого живой"
+    }, {
+      "text" : "@Оператор не @Робот"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -622,6 +634,8 @@
       "text" : "наверное я так думаю в офис можно обратиться"
     }, {
       "text" : "у меня нет компьютера лучше заехать"
+    }, {
+      "text" : "в офис куда подъехать"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -983,6 +997,8 @@
       "text" : "о норм"
     }, {
       "text" : "давай"
+    }, {
+      "text" : "да спасибо"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1104,6 +1120,8 @@
       "text" : "ну давай"
     }, {
       "text" : "придется подождать"
+    }, {
+      "text" : "да спасибо"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1203,6 +1221,11 @@
       "required" : false,
       "prompts" : [ ],
       "array" : false
+    }, {
+      "name" : "КСК",
+      "entity" : "КСК",
+      "required" : false,
+      "prompts" : [ ]
     } ],
     "priority" : 0
   }, {
@@ -1407,7 +1430,7 @@
     }, {
       "text" : "скажите где находится"
     }, {
-      "text" : "мне нужен адрес ваш"
+      "text" : "мне адрес ваш"
     }, {
       "text" : "где ваш адрес находится"
     }, {
@@ -1422,7 +1445,10 @@
       "text" : "узнать месторасположение"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "КСК",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "slots" : [ {
@@ -1468,7 +1494,7 @@
     }, {
       "text" : "пришли квитанции а мне пришла"
     }, {
-      "text" : "мне нужна @квитанция а ее нет"
+      "text" : "мне @квитанция а ее нет"
     }, {
       "text" : "почему нет @квитанция не принесли"
     }, {
@@ -1961,13 +1987,15 @@
     }, {
       "text" : "счетчики пломбы посадили"
     }, {
-      "text" : " хотела насчет пломбы"
+      "text" : " насчет пломбы"
     }, {
       "text" : "что счетчики пломбы посадили"
     }, {
-      "text" : "хотел узнать по поводу счетчиков @Услуга"
+      "text" : "узнать по поводу счетчиков @Услуга"
     }, {
       "text" : " нет поступления на счетчика"
+    }, {
+      "text" : "снять @Счетчик"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2601,6 +2629,46 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/DontUnderstand",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ "[я/что [то]] [вас/тебя] не понял* [$oneWord]" ],
+    "priority" : 0
+  }, {
+    "path" : "/SiteRepeat",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "подскажите как сайт называется"
+    }, {
+      "text" : "какой сайт"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoAddresOther",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "еще есть адреса"
+    }, {
+      "text" : "в другом месте вы есть"
+    }, {
+      "text" : "у вас только один офис"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -2847,7 +2915,7 @@
       "value" : " {\"SERV_ID\": [134]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Расходы на содержание жилища", "содержание дома", "расходы жилье" ],
+      "rule" : [ "Расходы на содержание жилища", "содержание дома", "расходы жилье", "Расходы на содержание жилья" ],
       "value" : " {\"SERV_ID\": [1]}"
     }, {
       "type" : "synonyms",
@@ -2910,7 +2978,7 @@
       "value" : "{\"code\": \"almaty_gaz\"}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "АлматыСу", "алматысу", "горводоканал", "водоканал", "матсу" ],
+      "rule" : [ "АлматыСу", "алматысу", "горводоканал", "водоканал", "матсу", "алмат осу" ],
       "value" : "{\"code\":\"almaty_su\"}"
     } ]
   }, {
@@ -3004,6 +3072,10 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "эксперт" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "живой оператор" ],
       "value" : ""
     } ]
   }, {
@@ -3136,7 +3208,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека" ],
+      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека", "аска" ],
       "value" : ""
     } ]
   }, {
@@ -3160,6 +3232,10 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "счет", "лицевой счет" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ки танцы" ],
       "value" : ""
     } ]
   }, {
@@ -3254,7 +3330,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "кск", "киска", "ск", "кк" ],
+      "rule" : [ "кск", "киска", "ск", "кк", "тск", "домоуправление", "дом управление", "песка" ],
       "value" : ""
     } ]
   }, {
@@ -3312,6 +3388,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "жалоба", "претензия" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Робот",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "бот", "робот", "автомат", "автоответчик" ],
       "value" : ""
     } ]
   } ],

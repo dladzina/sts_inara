@@ -46,6 +46,8 @@ theme: /SupplierContacts
                 SupplContactsSetServ($temp.Service.SERV_ID)
             } else if ($parseTree._алсеко){
                 $reactions.transition("/AlsecoCommon/AlsecoPhones");
+            } else if ($parseTree._КСК){
+                SupplContactsSetServ([1])
             }
             
 
@@ -107,6 +109,57 @@ theme: /SupplierContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
                     go!: /CallTheOperator
+
+            state: SupplierContactsByAccountPhone
+                q: телефон
+                q: * (телефония/телефонная связь) * 
+                script:
+                    SupplContactsSetServ([18, 202, 211, 289])
+                if: SupplContactsGetServices()
+                    go!:../../SupplierContactsSayContacts
+                else:
+                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    go!: /CallTheOperator    
+            
+            state: SupplierContactsByAccountWater
+                q: вода
+                a: уточните, какая вода интересует - горячая или холодная? 
+                go: SupplierContactsByAccountServ
+                
+                state: SupplierContactsByAccountHotWater
+                    q: * горяч* *
+                    script:
+                        SupplContactsSetServ([206, 178, 14, 7, 209])
+                    if: SupplContactsGetServices()
+                        go!:../../../SupplierContactsSayContacts
+
+                state: SupplierContactsByAccountColdWater
+                    q: * холод* *
+                    script:
+                        SupplContactsSetServ([454, 452, 376, 375, 357, 335, 327, 185, 12, 5])
+                    if: SupplContactsGetServices()
+                        go!:../../../SupplierContactsSayContacts
+            
+            state: SupplierContactsByAccountKSK
+                q: * (@КСК/как) *
+                script:
+                    SupplContactsSetServ([1])
+                if: SupplContactsGetServices()
+                    go!:../../SupplierContactsSayContacts
+                else:
+                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    go!: /CallTheOperator 
+                    
+            state: 
+                q: * газовщик* *
+                script:
+                    SupplContactsSetServ([450, 38, 22])
+                if: SupplContactsGetServices()
+                    go!:../../SupplierContactsSayContacts
+                else:
+                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    go!: /CallTheOperator 
+
             state: SupplierContactsByAccountServGetServNoMatch
                 event: noMatch
                 a: Я не нашла услугу. Перевожу Вас на оператора
@@ -160,6 +213,7 @@ theme: /SupplierContacts
                 intent: /Согласие_продиктовать_список_поставщиков
                 intent: /Согласие_повторить
                 intent: /Повторить
+                q: * @duckling.number *
                 go!: ../../SupplierContactsSayContacts
 
             state: CanIHelpYouAgree
@@ -175,6 +229,7 @@ theme: /SupplierContacts
                 q: $disagree
                 intent: /Несогласие
                 intent: /Несогласие_помочь
+                intent: /Несогласие_перечислить
                 go!: /bye                    
             
             

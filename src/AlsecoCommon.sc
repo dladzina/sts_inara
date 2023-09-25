@@ -1,6 +1,6 @@
 theme: /AlsecoCommon
 # адрес Алсеко
-    state: AlsecoAddress
+    state: AlsecoAddress                                                                                                                                                                       
         intent!:/AlsecoGiveAddress
         if: (($parseTree._ивц) && (!$parseTree._алсеко))
             go!: /NoMatch
@@ -18,13 +18,18 @@ theme: /AlsecoCommon
         state: AlsecoAddressRepeat
             intent: /AlsecoAdressConfirm
             intent: /Повторить
+            intent: /DontUnderstand
             go!: ..
+            
+        state: AlsecoAddressHaveOtherAddress
+            intent: /AlsecoAddresOther
+            a: у алсеко только один офис.  
 
 
 # телефоны алсеко
 # на этот вопрос не отвечаем
     state: AlsecoPhones
-        intent!:/AlsecoGivePhones
+        intent!:/AlsecoGivePhones                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
         go!: /NoMatch
 
 
@@ -47,10 +52,11 @@ theme: /AlsecoCommon
         else: 
             go!:../CanIHelpYou 
 
-        state: AlsecoEmailRepeat:
+        state: AlsecoEmailRepeat
             intent: /Повторить
             intent: /Согласие_продиктовать_список_поставщиков
             intent: /Согласие_повторить
+            intent: /Согласие
             intent: /Повторить
             q: $numbersByWords 
             a: инфо собачка алсеко точка кей зет. Диктую слово алсеко по буквам.  - А. - Л. - С, как доллар. - Е. - К, как буква "с" русская. - О. алсеко
@@ -58,7 +64,12 @@ theme: /AlsecoCommon
             # if:    countRepeats() < 3
                 a: Повторить?
             else: 
-                go!:../../CanIHelpYou              
+                go!:../../CanIHelpYou   
+        
+        state: AlsecoEmailFinish
+            intent: /Несогласие
+            intent: /Несогласие_повторить
+            go!:../../CanIHelpYou   
  
     state: AlsecoWorkingDays
         intent!:/AlsecoGiveWorkingDays
@@ -80,6 +91,7 @@ theme: /AlsecoCommon
             intent: /Повторить
             intent: /Согласие_продиктовать_список_поставщиков
             intent: /Согласие_повторить
+            intent: /Согласие
             intent: /Повторить
             q: $numbersByWords 
             a: +7 701 485 79 86
