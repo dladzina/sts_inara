@@ -91,6 +91,7 @@ theme: /
             q: девушка
             q: * мне [надо/нужно] поменять
             q: * [меня] интересует [такой] вопрос
+            q: [$oneWord] знаете [$oneWord]
             script:
                 $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.

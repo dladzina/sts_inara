@@ -20,6 +20,10 @@ theme: /AlsecoCommon
             intent: /Повторить
             intent: /DontUnderstand
             go!: ..
+            
+        state: AlsecoAddressHaveOtherAddress
+            intent: /AlsecoAddresOther
+            a: у алсеко только один офис.  
 
 
 # телефоны алсеко

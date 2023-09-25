@@ -62,11 +62,13 @@
       "text" : "вы уже живой человек"
     }, {
       "text" : "привет ты робот"
+    }, {
+      "text" : "автоответчик сделали"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "{ $oneWord (~бот/~робот/~автоответчик) $oneWord}" ],
     "priority" : 0
   }, {
     "path" : "/НачалоРазговора",
@@ -282,7 +284,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/приветсамо со",
+    "path" : "/привет",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
@@ -291,6 +293,8 @@
       "text" : "я вас приветствую"
     }, {
       "text" : "доброго времени суток"
+    }, {
+      "text" : "здравствуйте "
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -395,6 +399,10 @@
       "text" : "поговорить с оператором не виртуальным"
     }, {
       "text" : "уже разговаривала с вами не смогли помочь"
+    }, {
+      "text" : "кроме автоответчика никого живой"
+    }, {
+      "text" : "@Оператор не @Робот"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -626,6 +634,8 @@
       "text" : "наверное я так думаю в офис можно обратиться"
     }, {
       "text" : "у меня нет компьютера лучше заехать"
+    }, {
+      "text" : "в офис куда подъехать"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -1420,7 +1430,7 @@
     }, {
       "text" : "скажите где находится"
     }, {
-      "text" : "мне нужен адрес ваш"
+      "text" : "мне адрес ваш"
     }, {
       "text" : "где ваш адрес находится"
     }, {
@@ -1484,7 +1494,7 @@
     }, {
       "text" : "пришли квитанции а мне пришла"
     }, {
-      "text" : "мне нужна @квитанция а ее нет"
+      "text" : "мне @квитанция а ее нет"
     }, {
       "text" : "почему нет @квитанция не принесли"
     }, {
@@ -2629,6 +2639,36 @@
     },
     "patterns" : [ "[я/что [то]] [вас/тебя] не понял* [$oneWord]" ],
     "priority" : 0
+  }, {
+    "path" : "/SiteRepeat",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "подскажите как сайт называется"
+    }, {
+      "text" : "какой сайт"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoAddresOther",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "еще есть адреса"
+    }, {
+      "text" : "в другом месте вы есть"
+    }, {
+      "text" : "у вас только один офис"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -3033,6 +3073,10 @@
       "type" : "synonyms",
       "rule" : [ "эксперт" ],
       "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "живой оператор" ],
+      "value" : ""
     } ]
   }, {
     "entity" : {
@@ -3164,7 +3208,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека" ],
+      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека", "аска" ],
       "value" : ""
     } ]
   }, {
@@ -3188,6 +3232,10 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "счет", "лицевой счет" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ки танцы" ],
       "value" : ""
     } ]
   }, {
@@ -3340,6 +3388,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "жалоба", "претензия" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Робот",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "бот", "робот", "автомат", "автоответчик" ],
       "value" : ""
     } ]
   } ],

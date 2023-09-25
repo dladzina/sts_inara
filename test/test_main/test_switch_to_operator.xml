@@ -280,13 +280,13 @@
     </test-case>    
 
     <test-case id='errors_switch_check_11'>
-          <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>оператора мне надо</q>
         <a state = '/SwitchToOperator'></a>
     </test-case>    
 
     <test-case id='errors_switch_check_10'>
-          <q>/start</q><a></a><a></a>
+        <q>/start</q><a></a><a></a>
         <q>не надо мне виртуального помощника</q>
         <a state = '/SwitchToOperator'></a>
     </test-case>
@@ -300,4 +300,25 @@
         <q>мне нужно оператор</q>
         <a state = '/SwitchToOperator'></a>
     </test-case>    
+    <test-case id='errors_switch_check_9'>
+        <q>/start</q><a></a><a></a>
+        <q>живой оператор можно живу о оператора</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>   
+    <test-case id='errors_switch_check_10'>
+        <q>/start</q><a></a><a></a>
+        <q>переведи меня на живого оператора</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>    
+    <test-case id='errors_switch_check_11'>
+        <q>/start</q><a></a><a></a>
+        <q>и живой человек вообще с кем можно разговаривать</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>     
+    <test-case id='errors_switch_check_12'>
+        <q>/start</q><a></a><a></a>
+        <q>живого оператора не надо мне автомат</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>  
+    
 </test>
