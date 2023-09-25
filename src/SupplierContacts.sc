@@ -110,6 +110,7 @@ theme: /SupplierContacts
 
             state: SupplierContactsByAccountPhone
                 q: телефон
+                q: * телефония * 
                 script:
                     SupplContactsSetServ([18, 202, 211, 289])
                 if: SupplContactsGetServices()
