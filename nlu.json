@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_bot_406-1000039011-yuj",
-    "name" : "inara_bot_406-1000039011-yuj",
+    "id" : "inara_bot_516-1000039011-zBl",
+    "name" : "inara_bot_516-1000039011-zBl",
     "folder" : "/platform"
   },
   "settings" : {
@@ -2064,6 +2064,8 @@
       "text" : "@Услуга такая сумма большая"
     }, {
       "text" : "у нас @Квитанция пришла @duckling.number @duckling.number @duckling.number"
+    }, {
+      "text" : "не правильно выставляют показания"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2142,6 +2144,8 @@
       "text" : "вырубает автомат"
     }, {
       "text" : "оплатил электроэнергию света нет"
+    }, {
+      "text" : "в квартале нет электричества"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -2149,7 +2153,13 @@
         "predicate" : "CONTAINS"
       } ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "[да] (нет/отсутствует/отключили) (электричеств*/свет*) (да/правильно/верно)" ],
+    "slots" : [ {
+      "name" : "Услуга",
+      "entity" : "Услуга",
+      "required" : false,
+      "prompts" : [ ]
+    } ],
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Какой у вас номер телефона?",
@@ -2669,6 +2679,22 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/Наличие",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "есть"
+    }, {
+      "text" : "нет @Услуга есть"
+    }, {
+      "text" : "есть почему"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -2868,7 +2894,7 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "Газ" ],
-      "value" : "{\n  \"SERV_ID\": [\n    36, 37\n  ]\n}"
+      "value" : "{\n  \"SERV_ID\": [\n    36,\n    37\n  ]\n}"
     }, {
       "type" : "synonyms",
       "rule" : [ "Приготовление пищи" ],
@@ -2980,6 +3006,10 @@
       "type" : "synonyms",
       "rule" : [ "АлматыСу", "алматысу", "горводоканал", "водоканал", "матсу", "алмат осу" ],
       "value" : "{\"code\":\"almaty_su\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "казактелеком", "ростелеком", "казахтелеком", "казах телеком", "казак телеком" ],
+      "value" : "{\n  \"code\": \"kaz_tel\"\n}"
     } ]
   }, {
     "entity" : {
