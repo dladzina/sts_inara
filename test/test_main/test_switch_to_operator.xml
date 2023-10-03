@@ -320,4 +320,9 @@
         <q>живого оператора не надо мне автомат</q>
         <a state = '/SwitchToOperator'></a>
     </test-case> 
+    <test-case id='errors_switch_check_13'>
+        <q>/start</q><a></a><a></a>
+        <q>техподдержка пожалуйста</q>
+        <a state = '/SwitchToOperator'></a>
+    </test-case>     
 </test>
