@@ -301,7 +301,7 @@ theme: /NoElectricService
             a: Похоже, я неправильно Вас поняла
             go!: /WhatDoYouWant
             
-		state: CallerNoElectricNo
+        state: CallerNoElectricNo
             intent: /Несогласие
             intent: /AnotherQuestion
             go!: /WhatDoYouWant

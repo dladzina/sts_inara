@@ -1,7 +1,7 @@
 {
   "project" : {
-    "id" : "inara_bot_516-1000039011-zBl",
-    "name" : "inara_bot_516-1000039011-zBl",
+    "id" : "inara_bot_406-1000039011-yuj",
+    "name" : "inara_bot_406-1000039011-yuj",
     "folder" : "/platform"
   },
   "settings" : {
@@ -1225,7 +1225,8 @@
       "name" : "КСК",
       "entity" : "КСК",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
@@ -2158,7 +2159,8 @@
       "name" : "Услуга",
       "entity" : "Услуга",
       "required" : false,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
