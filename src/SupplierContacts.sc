@@ -149,6 +149,20 @@ theme: /SupplierContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
                     go!: /CallTheOperator 
+            
+            state: SupplContactsNeedElectricSant
+                q: * ~электрик *
+                q: * сантехник* *                    
+                a: Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон
+                script:
+                    $reactions.timeout({interval: '1s', targetState: '../SupplierContactsByAccountKSK'});
+                    $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+
+                state: SupplContactsNeedElectricSantAnyWord
+                    q: *
+                    event: speechNotRecognized
+                    go!: ../../SupplierContactsByAccountKSK
+                    
                     
             state: 
                 q: * газовщик* *
@@ -164,7 +178,7 @@ theme: /SupplierContacts
                 event: noMatch
                 a: Я не нашла услугу. Перевожу Вас на оператора
                 go!: /CallTheOperator
-                
+        
         
         state: SupplierContactsSayContacts
             script:
@@ -247,10 +261,11 @@ theme: /NoElectricService
             a: Так, у Вас отключили свет?
             a: Нужен телефон по свету? 
             
+        
         state: CallerNoElectricYes
             intent: /Согласие
             intent: /Согласие_адрес_определен_верно
-            intent: /Услуга_НетСвета
+            
             q: $yes *
             q: $agree *
             go!: CallerNoElectricSayAES
@@ -276,9 +291,31 @@ theme: /NoElectricService
             # state: CallerNoElectricYesFinish
                 intent: /Несогласие || toState = "../../CanIHelpYou"
                 intent: /Несогласие_повторить || toState = "../../CanIHelpYou"
-                
-                
-        
+        state: NotElectric
+            intent: /Услуга_НетСвета
+            script:
+                $temp.HasElectricService = false
+                if ($parseTree._Услуга){
+                    $temp.Service = $parseTree._Услуга;
+                    if (typeof($temp.Service)=="string"){
+                        var  Names = $temp.Service;
+                        Names = Names.replaceAll( "\"","\'");
+                        Names = Names.replaceAll( "\'","\"");
+                        $temp.Service = JSON.parse(Names);
+                    }
+                    $temp.HasElectricService = $temp.Service.SERV_ID[0] == 23
+                }
+            # a: {{$temp.Service}}
+            if: $temp.HasElectricService
+                go!:../CallerNoElectricYes
+            else:
+                go!: /WhatDoYouWant
+
+        state: CallerNoElectricHaveEl
+            intent: /Наличие
+            a: Похоже, я неправильно Вас поняла
+            go!: /WhatDoYouWant
+            
         state: CallerNoElectricNo
             intent: /Несогласие
             intent: /AnotherQuestion

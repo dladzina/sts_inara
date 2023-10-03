@@ -802,5 +802,12 @@
         <q>переименовать квитанцию</q>
         <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
     </test-case>
+    
+    
+    <test-case id='ChangeAccountPerson_179'>
+        <q>/start</q><a></a><a></a>
+        <q>изменение собственника квартиры</q>
+        <a state = '/ChangeAccountPerson/ChangeAccountPerson'></a>
+    </test-case>    
 
 </test>
