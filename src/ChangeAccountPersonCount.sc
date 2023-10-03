@@ -16,7 +16,7 @@ theme: /ChangeAccountPersonCount
             intent: /AnotherQuestion
             random:
                 a: Наверное, я неправильно Вас поняла. Можете задать свой вопрос по другому?
-                a: А что Вы хотите узнать?
+                a: А Чем я могу помочь Вам?
                 a: А чем могу я вам помочь? 
             go:/WhatDoYouWant
         

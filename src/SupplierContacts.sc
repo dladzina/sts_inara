@@ -207,7 +207,7 @@ theme: /NoElectricService
         state: CallerNoElectricYes
             intent: /Согласие
             intent: /Согласие_адрес_определен_верно
-            intent: /Услуга_НетСвета
+            
             q: $yes *
             q: $agree *
             go!: CallerNoElectricSayAES
@@ -233,9 +233,31 @@ theme: /NoElectricService
             # state: CallerNoElectricYesFinish
                 intent: /Несогласие || toState = "../../CanIHelpYou"
                 intent: /Несогласие_повторить || toState = "../../CanIHelpYou"
-                
-                
-        
+        state: NotElectric
+            intent: /Услуга_НетСвета
+            script:
+                $temp.HasElectricService = false
+                if ($parseTree._Услуга){
+                    $temp.Service = $parseTree._Услуга;
+                    if (typeof($temp.Service)=="string"){
+                        var  Names = $temp.Service;
+                        Names = Names.replaceAll( "\"","\'");
+                        Names = Names.replaceAll( "\'","\"");
+                        $temp.Service = JSON.parse(Names);
+                    }
+                    $temp.HasElectricService = $temp.Service.SERV_ID[0] == 23
+                }
+            # a: {{$temp.Service}}
+            if: $temp.HasElectricService
+                go!:../CallerNoElectricYes
+            else:
+                go!: /WhatDoYouWant
+
+        state: CallerNoElectricHaveEl
+            intent: /Наличие
+            a: Похоже, я неправильно Вас поняла
+            go!: /WhatDoYouWant
+            
         state: CallerNoElectricNo
             intent: /Несогласие
             intent: /AnotherQuestion
