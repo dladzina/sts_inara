@@ -158,6 +158,10 @@ theme: /SupplierContacts
                     $reactions.timeout({interval: '1s', targetState: '../SupplierContactsByAccountKSK'});
                     $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
 
+                state: SupplContactsNeedElectricSantAnyWord
+                    q: *
+                    event: speechNotRecognized
+                    go!: ../../SupplierContactsByAccountKSK
                     
                     
             state: 
@@ -257,6 +261,7 @@ theme: /NoElectricService
             a: Так, у Вас отключили свет?
             a: Нужен телефон по свету? 
             
+        
         state: CallerNoElectricYes
             intent: /Согласие
             intent: /Согласие_адрес_определен_верно

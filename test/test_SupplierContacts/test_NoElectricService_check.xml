@@ -374,4 +374,11 @@
         <q>я живу тут ден петрова тридцать шесть</q>
         <a state='/NoMatch'></a>
     </test-case>      
+        <test-case id='no_electric_service_check_repeat_8'>
+        <q>/start</q><a></a><a></a>
+        <q>света нет что то дома</q>
+        <a>У Вас нет электричества, правильно?</a>
+        <q>газ газ отключили газ</q>
+        <a state='/WhatDoYouWant'></a>
+    </test-case>   
 </test>
