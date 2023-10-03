@@ -149,6 +149,16 @@ theme: /SupplierContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
                     go!: /CallTheOperator 
+            
+            state: SupplContactsNeedElectricSant
+                q: * ~электрик *
+                q: * сантехник* *                    
+                a: Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон
+                script:
+                    $reactions.timeout({interval: '1s', targetState: '../SupplierContactsByAccountKSK'});
+                    $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+
+                    
                     
             state: 
                 q: * газовщик* *

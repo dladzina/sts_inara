@@ -30,6 +30,8 @@ require: AlsecoCommon.sc
 require: AboutInara.sc
 # вопросы по налогам
 require: Tax.sc
+
+require: KazLanguage.sc
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv

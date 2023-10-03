@@ -6,9 +6,9 @@ botEngine: v2
 language: ru
 
 tests:
-    # include:
+    include:
         # test_AlsecoCommon/*.xml
-        # - test_SupplierContacts/*.xml
+        # - test_SupplierContacts/test_SupplierContacts_checkservices_in_dialog2.xml
         #   - test_AlsecoCommon/test_AlsecoCommonPatnersSalePhonesErrors.xml
         # - test_AccountInput/test_AccountInput_NumbersPartCheck2.xml
         # - test_ChangeAccountPerson/test_ChangeAccountPerson_offline_ls.xml
@@ -27,10 +27,11 @@ tests:
         # - test_ChangeAccountPerson/test_ChangeAccountPerson_errors.xml
         # - test_local_intents/*.xml
         # - test_SupplierContacts/*.xml
+        # - test_Bills/*.xml
     exclude: 
         # - *.*
         # - *
-        - test_i/test_irina.xml
+        # - test_i/test_irina.xml
         # - test_AlsecoCommon/*.xml
 
 messages:

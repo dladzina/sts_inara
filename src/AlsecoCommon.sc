@@ -1,4 +1,11 @@
 theme: /AlsecoCommon
+    
+    # вопросы, связанные с ПТК (программами алсеко)
+    state: AlsecoPTK
+        intent!: /AlsecoPTK
+        a: Переключаю Вас на оператора. Пожалуйста, подождите
+        go!: /CallTheOperator
+        
 # адрес Алсеко
     state: AlsecoAddress                                                                                                                                                                       
         intent!:/AlsecoGiveAddress

@@ -515,6 +515,8 @@
       "text" : "как поменять фамилия и количество проживающих в @квитанция"
     }, {
       "text" : "переименовать @квитанция"
+    }, {
+      "text" : "изменение @Собственник @Недвижимость"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1933,6 +1935,8 @@
       "text" : "не от квитанции"
     }, {
       "text" : "Мне привезли сюда квитанцию"
+    }, {
+      "text" : "по квитанциям"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2693,6 +2697,33 @@
       "text" : "нет @Услуга есть"
     }, {
       "text" : "есть почему"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/КазахскийЯзык",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "какие лекарста"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoPTK",
+    "description" : "вопросы по недоступности передачи данных в алсеко",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "передать данные в @алсеко"
+    }, {
+      "text" : "ошибка подключения к серверу"
     } ],
     "classificationRules" : {
       "refs" : [ ]
