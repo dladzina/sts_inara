@@ -687,19 +687,7 @@
     }, {
       "text" : "узнать по оплате"
     }, {
-      "text" : "оплатила дважды"
-    }, {
-      "text" : "я заплатила случайно дважды"
-    }, {
-      "text" : "оплата прошла несколько раз"
-    }, {
-      "text" : "возврат денег"
-    }, {
       "text" : "возврат @duckling.number не поступила сумма"
-    }, {
-      "text" : "оплатила дважды"
-    }, {
-      "text" : " платила два раза за месяц"
     }, {
       "text" : "узнать сроки оплаты"
     }, {
@@ -2597,6 +2585,172 @@
       "text" : "вместо владельца написать заявления"
     }, {
       "text" : "подписать бумаги за собственника"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/SecondPayment",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "оплатила дважды"
+    }, {
+      "text" : " платила два раза за месяц"
+    }, {
+      "text" : "возврат денег"
+    }, {
+      "text" : "оплата прошла несколько раз"
+    }, {
+      "text" : "банк списал деньги дважды"
+    }, {
+      "text" : "в приложении снялось два раза"
+    }, {
+      "text" : "несколько раз отправил деньги"
+    }, {
+      "text" : "вернуть переплату"
+    }, {
+      "text" : "вернуть деньги"
+    }, {
+      "text" : "отменить платеж"
+    }, {
+      "text" : "возврат средств"
+    }, {
+      "text" : "двойная оплата"
+    }, {
+      "text" : "двойной платеж"
+    }, {
+      "text" : "сдвоенный платеж"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/TimeToGetMoney",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "как быстро вернут деньги"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Whobringsdocs",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "кто может привезти бумаги"
+    }, {
+      "text" : "кто может прийти"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/ComeToAlseco",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "А можно к вам прийти"
+    }, {
+      "text" : "у вас решить этот вопрос"
+    }, {
+      "text" : "через вас можно"
+    }, {
+      "text" : "а в алсеко это можно сделать"
+    }, {
+      "text" : "но в алсеко прийти"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/HowFindContacts",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "как найти их контакты"
+    }, {
+      "text" : "хочу с ними связаться"
+    }, {
+      "text" : "подскажите контакты поставщиков"
+    }, {
+      "text" : "нужны их телефоны"
+    }, {
+      "text" : "продиктуйте телефоны поставщиков"
+    }, {
+      "text" : "подскажите их контакты"
+    }, {
+      "text" : "как с ними можно связаться"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_двойная_оплата",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "так точно"
+    }, {
+      "text" : "да проплатила дважды"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Не_знаю",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "не знаю я"
+    }, {
+      "text" : "не помню"
+    }, {
+      "text" : "давно было"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Согласие_сегодня",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "Только что оплатил"
+    }, {
+      "text" : "совсем недавно"
+    }, {
+      "text" : "сегодня сделал"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/WhereToGo",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "куда идти"
     } ],
     "classificationRules" : {
       "refs" : [ ]

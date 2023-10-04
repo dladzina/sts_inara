@@ -28,6 +28,8 @@ require: SupplierContacts.sc
 require: AlsecoCommon.sc
 # общие вопросы по Инаре
 require: AboutInara.sc
+# сценарий по двойной оплате
+require: SecondPayments.sc
 # вопросы по налогам
 require: Tax.sc
 #########################################

@@ -1,0 +1,126 @@
+<test>
+    
+    <test-case id='sp_today_wo_extra_questions'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Согласие_сегодня"/>
+        <a state="/SecondPayment/SecondPayment/Agreement/Согласие_сегодня/Question"/>
+    </test-case>
+
+    <test-case id='sp_ago_wo_extra_questions'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>давно</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+    </test-case>
+    
+    <test-case id='sp_dontknow_wo_extra_questions'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>не знаю</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+    </test-case>
+    
+    <test-case id='sp_ago_cometoalseco'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>давно</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>а можно к вам прийти</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/ComeToAlseco"/>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+    </test-case>
+    
+    <test-case id='sp_ago_WhereToGo'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>давно</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>а куда идти</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/WhereToGo"/>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+    </test-case>
+    
+    <test-case id='sp_ago_HowFindContacts'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>давно</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>подскажите их контакты</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/HowFindContacts"/><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+    </test-case>
+    
+    
+    <test-case id='sp_ago_Whobringsdocs'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>давно</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>кто может принести документы</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/Whobringsdocs"/>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+    </test-case>
+    
+    <test-case id='sp_ago_WhereToGo_Whobringsdocs'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>давно</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>а куда идти</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/WhereToGo"/>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>кто может принести документы</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/Whobringsdocs"/>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+    </test-case>
+    
+    <test-case id='sp_ago_WhereToGo_ChangeAccountPerson'>
+        <q>/start</q><a></a><a></a><a></a>
+        <q>оплатили дважды</q>
+        <a state="/SecondPayment/SecondPayment"/>
+        <q>да</q>
+        <a state="/SecondPayment/SecondPayment/Agreement"/>
+        <q>давно</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю"/><a></a><a></a>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>а куда идти</q>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/WhereToGo"/>
+        <a state="/SecondPayment/SecondPayment/Agreement/Несогласие_не_знаю/CanIHelpYou"/>
+        <q>как сменить собственника</q>
+        <a state="/ChangeAccountPerson/ChangeAccountPerson"/>
+    </test-case>
+    
+</test>
