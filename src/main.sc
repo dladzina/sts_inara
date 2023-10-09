@@ -32,8 +32,6 @@ require: AboutInara.sc
 require: SecondPayments.sc
 # вопросы по налогам
 require: Tax.sc
-
-require: KazLanguage.sc
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv
@@ -74,9 +72,8 @@ theme: /
             $.session.repeatsInRow = 0;
             $.session.repeats = {};
         # a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, подсказать дату последней оплаты или подсказать контакты поставщика услуг
-        a: Я Инара, ваш виртуальный помощник.
-        # Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
-        # a: подсказать дату последней оплаты или контакты поставщика услуг
+        a: Я Инара, ваш виртуальный помощник. Я могу рассказать, как поменять фамилию или количество человек в квитанции, 
+        a: подсказать дату последней оплаты или контакты поставщика услуг
         script:
             $temp.index = $reactions.random(CommonAnswers.WhatDoYouWant.length);
         a: {{CommonAnswers.WhatDoYouWant[$temp.index]}}
@@ -87,7 +84,7 @@ theme: /
                 bargeIn: "phrase",
                 bargeInTrigger: "final",
                 noInterruptTime: 0});
-            FindAccountNumberClear();
+             FindAccountNumberClear();
         
         state: DialogMakeQuestion
             intent: /НачалоРазговора 
@@ -95,7 +92,6 @@ theme: /
             q: девушка
             q: * мне [надо/нужно] поменять
             q: * [меня] интересует [такой] вопрос
-            q: [$oneWord] знаете [$oneWord]
             script:
                 $session.DialogMakeQuestion = $session.DialogMakeQuestion || {};
                 //Начинаем считать попадания в кэчол с нуля, когда предыдущий стейт не кэчол.

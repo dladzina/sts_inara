@@ -27,9 +27,9 @@ function SendBotChannelMessage(header,message, addBotInfo){
 
 
     var url = "https://api.telegram.org/bot"+token+"/sendMessage?chat_id="+chat_id+"&text="+header + "\n"+message;//+"&parse_mode=Markdown";
-    var response =  $http.query(url, {method: "GET"
+    var response =  $http.query(url, {method: "GET"})
     //,timeout: 20000        // таймаут выполнения запроса в мс
-            })
+            
     
     
 }

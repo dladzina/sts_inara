@@ -2,6 +2,7 @@ theme: /SecondPayment
     
     state: SecondPayment
         intent!: /SecondPayment
+        intent!: /ReturnPayment
         random: 
             a: Вы ошибочно оплатили счет дважды? Правильно?
             a: Вы оплатили два раза? Правильно?
