@@ -12,7 +12,8 @@ function AddRequestComplaint(){
             "supplierCodeName": "Aes",
             "serviceCode": 13,
             "userText": $.request.query,
-            "audioLink": $dialer.getCallRecordingFullUrl(),
+            // "audioLink": $dialer.getCallRecordingFullUrl(),
+            "audioLink": $dialer.getCallRecordingPath(),
             "userPhoneNumber": $dialer.getCaller(),
             "complaintType": "WRONG_PHONE_NUMBER"
         }
