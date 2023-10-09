@@ -57,7 +57,7 @@ function SupplContactsGetContactsByAccountServ(MainSuppList, ret_contacts, need_
     // есть ЛС и есть услуга
     if ((FindAccountIsAccountSet()) && (SupplContactsIsServSet())){
         // обращаемся к сервису для получения данных по услуге
-        var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден");
+        var addr = $env.get("InaraSeviceAddress", "Адрес сервиса не найден") + 'accounts/';
         var token = $secrets.get("InaraSeviceToken", "Токен не найден");
 
         var url = addr + $session.Account.Number + '/services/contacts?';

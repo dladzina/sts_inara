@@ -3,6 +3,8 @@ require: slotfilling/slotFilling.sc
   
 require: patterns.sc
   module = sys.zb-common
+require: common.js
+  module = sys.zb-common
 require: dateTime/dateTime.sc
   module = sys.zb-common  
 

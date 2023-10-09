@@ -1,5 +1,5 @@
 require:  Functions/SupplContacts.js
-
+require:  Functions/RequestsComplaint.js
 
 
 theme: /SupplierContacts
@@ -164,7 +164,7 @@ theme: /SupplierContacts
                     go!: ../../SupplierContactsByAccountKSK
                     
                     
-            state: 
+            state: VDGOContacts
                 q: * газовщик* *
                 script:
                     SupplContactsSetServ([450, 38, 22])
@@ -214,6 +214,14 @@ theme: /SupplierContacts
             q: * @duckling.number * || toState = "."
             q: * @Услуга * || toState = ".."
             q: * @УслугаСл * || toState = ".."
+            q: * [этот] [номер/телефон] не отвечает * || toState = "../MakeRequest"
+            
+        state: MakeRequest
+            # Делаем заявку на то, что номер недоступен 
+            a: фиксирую заявку 
+            script:
+                AddRequestComplaint()
+            
 
         
         state: CanIHelpYou ||noContext = false
