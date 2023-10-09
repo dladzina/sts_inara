@@ -62,11 +62,13 @@
       "text" : "вы уже живой человек"
     }, {
       "text" : "привет ты робот"
+    }, {
+      "text" : "автоответчик сделали"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "{ $oneWord (~бот/~робот/~автоответчик) $oneWord}" ],
     "priority" : 0
   }, {
     "path" : "/НачалоРазговора",
@@ -177,6 +179,10 @@
       "text" : "сначала можно"
     }, {
       "text" : "можешь повторить помедленнее"
+    }, {
+      "text" : "да спасибо большое"
+    }, {
+      "text" : "спасибо да"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -278,7 +284,7 @@
     "patterns" : [ ],
     "priority" : 0
   }, {
-    "path" : "/приветсамо со",
+    "path" : "/привет",
     "enabled" : true,
     "shared" : false,
     "phrases" : [ {
@@ -287,6 +293,8 @@
       "text" : "я вас приветствую"
     }, {
       "text" : "доброго времени суток"
+    }, {
+      "text" : "здравствуйте "
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -391,6 +399,10 @@
       "text" : "поговорить с оператором не виртуальным"
     }, {
       "text" : "уже разговаривала с вами не смогли помочь"
+    }, {
+      "text" : "кроме автоответчика никого живой"
+    }, {
+      "text" : "@Оператор не @Робот"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -503,6 +515,8 @@
       "text" : "как поменять фамилия и количество проживающих в @квитанция"
     }, {
       "text" : "переименовать @квитанция"
+    }, {
+      "text" : "изменение @Собственник @Недвижимость"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -622,6 +636,8 @@
       "text" : "наверное я так думаю в офис можно обратиться"
     }, {
       "text" : "у меня нет компьютера лучше заехать"
+    }, {
+      "text" : "в офис куда подъехать"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -971,6 +987,8 @@
       "text" : "о норм"
     }, {
       "text" : "давай"
+    }, {
+      "text" : "да спасибо"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1092,6 +1110,8 @@
       "text" : "ну давай"
     }, {
       "text" : "придется подождать"
+    }, {
+      "text" : "да спасибо"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1162,6 +1182,8 @@
       "text" : "газовая служба"
     }, {
       "text" : "узнать номер телефона @ОсновнойПоставщик"
+    }, {
+      "text" : "контакт по оплате @Услуга"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -1188,6 +1210,12 @@
     }, {
       "name" : "алсеко",
       "entity" : "алсеко",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    }, {
+      "name" : "КСК",
+      "entity" : "КСК",
       "required" : false,
       "prompts" : [ ],
       "array" : false
@@ -1395,7 +1423,7 @@
     }, {
       "text" : "скажите где находится"
     }, {
-      "text" : "мне нужен адрес ваш"
+      "text" : "мне адрес ваш"
     }, {
       "text" : "где ваш адрес находится"
     }, {
@@ -1410,7 +1438,10 @@
       "text" : "узнать месторасположение"
     } ],
     "classificationRules" : {
-      "refs" : [ ]
+      "refs" : [ {
+        "entityName" : "КСК",
+        "predicate" : "CONTAINS_NOT"
+      } ]
     },
     "patterns" : [ ],
     "slots" : [ {
@@ -1456,7 +1487,7 @@
     }, {
       "text" : "пришли квитанции а мне пришла"
     }, {
-      "text" : "мне нужна @квитанция а ее нет"
+      "text" : "мне @квитанция а ее нет"
     }, {
       "text" : "почему нет @квитанция не принесли"
     }, {
@@ -1851,11 +1882,13 @@
       "text" : "подскажите как дозвониться в @алсеко"
     }, {
       "text" : "подскажите телефон @алсеко"
+    }, {
+      "text" : "позвонить в @алсеко"
     } ],
     "classificationRules" : {
       "refs" : [ ]
     },
-    "patterns" : [ "{[как] (*скажи*/дозвонит*/позвони*/телефон) [в] @алсеко}" ],
+    "patterns" : [ "{[как/хочу] (*скажи*/дозвонит*/позвони*/телефон) [в] @алсеко}" ],
     "slots" : [ ],
     "priority" : 0
   }, {
@@ -1892,6 +1925,8 @@
       "text" : "не от квитанции"
     }, {
       "text" : "Мне привезли сюда квитанцию"
+    }, {
+      "text" : "по квитанциям"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2026,6 +2061,8 @@
       "text" : "@Услуга такая сумма большая"
     }, {
       "text" : "у нас @Квитанция пришла @duckling.number @duckling.number @duckling.number"
+    }, {
+      "text" : "не правильно выставляют показания"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -2104,6 +2141,8 @@
       "text" : "вырубает автомат"
     }, {
       "text" : "оплатил электроэнергию света нет"
+    }, {
+      "text" : "в квартале нет электричества"
     } ],
     "classificationRules" : {
       "refs" : [ {
@@ -2111,7 +2150,14 @@
         "predicate" : "CONTAINS"
       } ]
     },
-    "patterns" : [ ],
+    "patterns" : [ "[да] (нет/отсутствует/отключили) (электричеств*/свет*) (да/правильно/верно)" ],
+    "slots" : [ {
+      "name" : "Услуга",
+      "entity" : "Услуга",
+      "required" : false,
+      "prompts" : [ ],
+      "array" : false
+    } ],
     "priority" : 0
   }, {
     "path" : "/KnowledgeBase/FAQ.Контакты/Root/Какой у вас номер телефона?",
@@ -2757,6 +2803,89 @@
     },
     "patterns" : [ ],
     "priority" : 0
+  }, {
+    "path" : "/DontUnderstand",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ "[я/что [то]] [вас/тебя] не понял* [$oneWord]" ],
+    "priority" : 0
+  }, {
+    "path" : "/SiteRepeat",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "подскажите как сайт называется"
+    }, {
+      "text" : "какой сайт"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoAddresOther",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "еще есть адреса"
+    }, {
+      "text" : "в другом месте вы есть"
+    }, {
+      "text" : "у вас только один офис"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/Наличие",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "есть"
+    }, {
+      "text" : "нет @Услуга есть"
+    }, {
+      "text" : "есть почему"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/КазахскийЯзык",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "какие лекарста"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/AlsecoPTK",
+    "description" : "вопросы по недоступности передачи данных в алсеко",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "передать данные в @алсеко"
+    }, {
+      "text" : "ошибка подключения к серверу"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
   } ],
   "entities" : [ {
     "entity" : {
@@ -2956,7 +3085,7 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "Газ" ],
-      "value" : "{\n  \"SERV_ID\": [\n    36, 37\n  ]\n}"
+      "value" : "{\n  \"SERV_ID\": [\n    36,\n    37\n  ]\n}"
     }, {
       "type" : "synonyms",
       "rule" : [ "Приготовление пищи" ],
@@ -3003,7 +3132,7 @@
       "value" : " {\"SERV_ID\": [134]}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "Расходы на содержание жилища", "содержание дома", "расходы жилье" ],
+      "rule" : [ "Расходы на содержание жилища", "содержание дома", "расходы жилье", "Расходы на содержание жилья" ],
       "value" : " {\"SERV_ID\": [1]}"
     }, {
       "type" : "synonyms",
@@ -3066,8 +3195,12 @@
       "value" : "{\"code\": \"almaty_gaz\"}"
     }, {
       "type" : "synonyms",
-      "rule" : [ "АлматыСу", "алматысу", "горводоканал", "водоканал", "матсу" ],
+      "rule" : [ "АлматыСу", "алматысу", "горводоканал", "водоканал", "матсу", "алмат осу" ],
       "value" : "{\"code\":\"almaty_su\"}"
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "казактелеком", "ростелеком", "казахтелеком", "казах телеком", "казак телеком" ],
+      "value" : "{\n  \"code\": \"kaz_tel\"\n}"
     } ]
   }, {
     "entity" : {
@@ -3151,6 +3284,10 @@
     },
     "records" : [ {
       "type" : "synonyms",
+      "rule" : [ "техподдержка" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
       "rule" : [ "оператор", "менеджер", "консультант", "диспетчер", "специалист", "сотрудник" ],
       "value" : ""
     }, {
@@ -3160,6 +3297,10 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "эксперт" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "живой оператор" ],
       "value" : ""
     } ]
   }, {
@@ -3292,7 +3433,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека" ],
+      "rule" : [ "алсеко", "алека", "алеко", "алико", "олежку", "аптека", "аска" ],
       "value" : ""
     } ]
   }, {
@@ -3316,6 +3457,10 @@
     }, {
       "type" : "synonyms",
       "rule" : [ "счет", "лицевой счет" ],
+      "value" : ""
+    }, {
+      "type" : "synonyms",
+      "rule" : [ "ки танцы" ],
       "value" : ""
     } ]
   }, {
@@ -3410,7 +3555,7 @@
     },
     "records" : [ {
       "type" : "synonyms",
-      "rule" : [ "кск", "киска", "ск", "кк" ],
+      "rule" : [ "кск", "киска", "ск", "кк", "тск", "домоуправление", "дом управление", "песка" ],
       "value" : ""
     } ]
   }, {
@@ -3468,6 +3613,25 @@
     "records" : [ {
       "type" : "synonyms",
       "rule" : [ "жалоба", "претензия" ],
+      "value" : ""
+    } ]
+  }, {
+    "entity" : {
+      "name" : "Робот",
+      "enabled" : true,
+      "shared" : false,
+      "type" : "annotation",
+      "priority" : 1,
+      "noSpelling" : true,
+      "noMorph" : false,
+      "phoneticSearch" : false,
+      "fuzzySearch" : false,
+      "client" : false,
+      "hidden" : false
+    },
+    "records" : [ {
+      "type" : "synonyms",
+      "rule" : [ "бот", "робот", "автомат", "автоответчик" ],
       "value" : ""
     } ]
   } ],

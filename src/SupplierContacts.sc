@@ -46,6 +46,8 @@ theme: /SupplierContacts
                 SupplContactsSetServ($temp.Service.SERV_ID)
             } else if ($parseTree._алсеко){
                 $reactions.transition("/AlsecoCommon/AlsecoPhones");
+            } else if ($parseTree._КСК){
+                SupplContactsSetServ([1])
             }
             
 
@@ -110,19 +112,73 @@ theme: /SupplierContacts
 
             state: SupplierContactsByAccountPhone
                 q: телефон
+                q: * (телефония/телефонная связь) * 
                 script:
                     SupplContactsSetServ([18, 202, 211, 289])
                 if: SupplContactsGetServices()
                     go!:../../SupplierContactsSayContacts
                 else:
                     a: Я не нашла услугу. Перевожу Вас на оператора
-                    go!: /CallTheOperator                    
+                    go!: /CallTheOperator    
+            
+            state: SupplierContactsByAccountWater
+                q: вода
+                a: уточните, какая вода интересует - горячая или холодная? 
+                go: SupplierContactsByAccountServ
+                
+                state: SupplierContactsByAccountHotWater
+                    q: * горяч* *
+                    script:
+                        SupplContactsSetServ([206, 178, 14, 7, 209])
+                    if: SupplContactsGetServices()
+                        go!:../../../SupplierContactsSayContacts
+
+                state: SupplierContactsByAccountColdWater
+                    q: * холод* *
+                    script:
+                        SupplContactsSetServ([454, 452, 376, 375, 357, 335, 327, 185, 12, 5])
+                    if: SupplContactsGetServices()
+                        go!:../../../SupplierContactsSayContacts
+            
+            state: SupplierContactsByAccountKSK
+                q: * (@КСК/как) *
+                script:
+                    SupplContactsSetServ([1])
+                if: SupplContactsGetServices()
+                    go!:../../SupplierContactsSayContacts
+                else:
+                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    go!: /CallTheOperator 
+            
+            state: SupplContactsNeedElectricSant
+                q: * ~электрик *
+                q: * сантехник* *                    
+                a: Это Вам надо обратиться к Вашему органу управления:  к+а +эс к+а   или ос+и. Сейчас посмотрю, есть ли у меня телефон
+                script:
+                    $reactions.timeout({interval: '1s', targetState: '../SupplierContactsByAccountKSK'});
+                    $dialer.setNoInputTimeout(1000); // Бот ждёт ответ 1 секунду и начинает искать.
+
+                state: SupplContactsNeedElectricSantAnyWord
+                    q: *
+                    event: speechNotRecognized
+                    go!: ../../SupplierContactsByAccountKSK
+                    
+                    
+            state: 
+                q: * газовщик* *
+                script:
+                    SupplContactsSetServ([450, 38, 22])
+                if: SupplContactsGetServices()
+                    go!:../../SupplierContactsSayContacts
+                else:
+                    a: Я не нашла услугу. Перевожу Вас на оператора
+                    go!: /CallTheOperator 
 
             state: SupplierContactsByAccountServGetServNoMatch
                 event: noMatch
                 a: Я не нашла услугу. Перевожу Вас на оператора
                 go!: /CallTheOperator
-                
+        
         
         state: SupplierContactsSayContacts
             script:
@@ -171,6 +227,7 @@ theme: /SupplierContacts
                 intent: /Согласие_продиктовать_список_поставщиков
                 intent: /Согласие_повторить
                 intent: /Повторить
+                q: * @duckling.number *
                 go!: ../../SupplierContactsSayContacts
 
             state: CanIHelpYouAgree
@@ -186,6 +243,7 @@ theme: /SupplierContacts
                 q: $disagree
                 intent: /Несогласие
                 intent: /Несогласие_помочь
+                intent: /Несогласие_перечислить
                 go!: /bye                    
             
             
@@ -203,10 +261,11 @@ theme: /NoElectricService
             a: Так, у Вас отключили свет?
             a: Нужен телефон по свету? 
             
+        
         state: CallerNoElectricYes
             intent: /Согласие
             intent: /Согласие_адрес_определен_верно
-            intent: /Услуга_НетСвета
+            
             q: $yes *
             q: $agree *
             go!: CallerNoElectricSayAES
@@ -232,9 +291,31 @@ theme: /NoElectricService
             # state: CallerNoElectricYesFinish
                 intent: /Несогласие || toState = "../../CanIHelpYou"
                 intent: /Несогласие_повторить || toState = "../../CanIHelpYou"
-                
-                
-        
+        state: NotElectric
+            intent: /Услуга_НетСвета
+            script:
+                $temp.HasElectricService = false
+                if ($parseTree._Услуга){
+                    $temp.Service = $parseTree._Услуга;
+                    if (typeof($temp.Service)=="string"){
+                        var  Names = $temp.Service;
+                        Names = Names.replaceAll( "\"","\'");
+                        Names = Names.replaceAll( "\'","\"");
+                        $temp.Service = JSON.parse(Names);
+                    }
+                    $temp.HasElectricService = $temp.Service.SERV_ID[0] == 23
+                }
+            # a: {{$temp.Service}}
+            if: $temp.HasElectricService
+                go!:../CallerNoElectricYes
+            else:
+                go!: /WhatDoYouWant
+
+        state: CallerNoElectricHaveEl
+            intent: /Наличие
+            a: Похоже, я неправильно Вас поняла
+            go!: /WhatDoYouWant
+            
         state: CallerNoElectricNo
             intent: /Несогласие
             intent: /AnotherQuestion
