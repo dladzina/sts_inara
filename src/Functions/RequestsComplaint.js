@@ -9,12 +9,13 @@ function AddRequestComplaint(){
         var token = $secrets.get("InaraSeviceToken", "Токен не найден")
         var request_params = {
             "accountId": GetAccountNumber(),
-            "supplierCodeName": "Aes",
-            "serviceCode": 13,
-            "userText": $.request.query,
+            "supplierCodeName": $.session.SupplContracts.TalkContacts.supplierCodeName,
+            "serviceCode": $.session.SupplContracts.TalkContacts.serviceCode,
+            "taklContacts": $.session.SupplContracts.TalkContacts.talkContacts,
+            "userText": $.session.MakeRequest.text,
             "audioLink": $dialer.getCallRecordingFullUrl(),
             // "audioLink": $dialer.getCallRecordingPath(),
-            "userPhoneNumber": $dialer.getCaller(),
+            "userPhoneNumber": $.session.MakeRequest.userPhoneNumber,
             "complaintType": "WRONG_PHONE_NUMBER"
         }
 

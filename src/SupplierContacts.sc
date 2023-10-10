@@ -218,9 +218,24 @@ theme: /SupplierContacts
             
         state: MakeRequest
             # Делаем заявку на то, что номер недоступен 
-            a: фиксирую заявку 
             script:
-                AddRequestComplaint()
+                $session.MakeRequest = {};
+                $session.MakeRequest.text = $request.query;
+                $session.MakeRequest.userPhoneNumber = $dialer.getCaller();
+            a: Давайте я зафиксирую вашу заявку. Мы ее обработаем и сообщим Вам правильный номер телефона. 
+                Давайте проверим ваш контактный номер телефона. {{$dialer.getCaller()}}, это ваш номер? 
+            
+            state: MakeRequestPhoneCorrect
+                q: $yes
+                q: $agree
+                intent: /Согласие
+                intent: /Согласие_помочь
+                go!: ../MakeRequestSave
+                    
+            state: MakeRequestSave
+                script:
+                    AddRequestComplaint()
+                a: Я сохранила Вашу заявку 
             
 
         
