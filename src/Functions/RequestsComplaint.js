@@ -30,27 +30,17 @@ function AddRequestComplaint(){
             //$reactions.answer("Что-то сервер барахлит. ");
             log('--------------- произошла ошибка AddRequestComplaint' );
             SendErrorMessage("onHttpRequest", 'Функция: AddRequestComplaint')
-
-            
             return false;
         };
 
         if(response.isOk){
-            if (response.data /*&& response.data.data[0]*/){
-                $session.Account.PaymentInfo = $session.Account.PaymentInfo || {};
-
-                $session.Account.PaymentInfo.date_last_pay =  response.data.payDate;
-                $session.Account.PaymentInfo.registration_date =  response.data.registrationDate;
-
-                // $session.Account.PaymentInfo.date_last_pay =  response.data.data[0].date_last_pay;
-                // $session.Account.PaymentInfo.sum_last_pay =  response.data.data[0].sum_last_pay;
-                // $session.Account.PaymentInfo.registration_date =  response.data.data[0].registration_date;
-
-            }
+            // заявка зафиксирована
+            return true;
         }
         else{
             // произошла ошибка сервиса - надо залогировать
-            SendErrorMessage("onHttpResponseError", toPrettyString(response.error))
+            SendErrorMessage("onHttpResponseError AddRequestComplaint", toPrettyString(response.error))
+            return false;
         }
     }
 }

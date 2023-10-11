@@ -234,8 +234,13 @@ theme: /SupplierContacts
                     
             state: MakeRequestSave
                 script:
-                    AddRequestComplaint()
-                a: Я сохранила Вашу заявку 
+                    $temp.IsRequestAdded = AddRequestComplaint()
+                if: $temp.IsRequestAdded
+                    a: Я сохранила Вашу заявку. С Вами обязательно свяжется наш специалист и сообщит результаты. 
+                    go!: ../../CanIHelpYou
+                else:
+                    a: Мне не удалось сохранить заявку. Для решения Вашего вопроса перевожу Вас на оператора
+                    go!: /CallTheOperator 
             
 
         
