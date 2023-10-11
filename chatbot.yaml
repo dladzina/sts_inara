@@ -31,7 +31,7 @@ tests:
         #  - test_AlsecoCommon/test_AlsecoCommonErrors.xml
          
         # - test_i/test_irina.xml
-          - test_AccountInput/test_AccountInput_NumbersCheck1.xml
+          - test_AccountInput/test_AccountInput_NumbersPartCheck2.xml
 
 
 messages:
