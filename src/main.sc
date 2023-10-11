@@ -34,6 +34,9 @@ require: AboutInara.sc
 require: Tax.sc
 
 require: KazLanguage.sc
+
+# Сохранение данных по клиенту 
+require: Functions/ClientData.js
 #########################################
 # Справочник - основные поставщики
 require: dicts/MainSuppl.csv
@@ -300,7 +303,9 @@ theme: /
     state: HangUp
         event!: hangup
         event!: botHangup
-        script: FindAccountNumberClear()
+        script: 
+            SaveClientLastData();
+            FindAccountNumberClear()
 
     state: WhereAreYou || noContext = true
         q!: где ты [сейчас]
